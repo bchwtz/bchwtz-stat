@@ -3,7 +3,7 @@ bookdown::gitbook:
   config:
     toc:
       before: |
-        <li><a href="./"><b>Forecasting</b></a></li>
+        <li><a href="./"><b>Statistics</b></a></li>
       after: |
         <li><a href="http://www.bchwtz.de" target="blank"><center>www.<b>BCHWTZ</b>.de</center></a></li>
     edit: https://github.com/rstudio/bookdown-demo/edit/master/%s
