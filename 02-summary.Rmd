@@ -1,0 +1,8 @@
+# (PART\*) Appendix {-} 
+
+# System Info {-}
+```{r}
+Sys.time()
+sessionInfo()
+```
+

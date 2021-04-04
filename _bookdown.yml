@@ -1,0 +1,6 @@
+book_filename: "bchwtz-forc"
+language:
+  ui:
+    chapter_name: "Chapter "
+delete_merged_file: true
+
