@@ -1,3 +1,7 @@
 fig:unnamed-chunk-3
-prerequisites
-introduction
+fig:unnamed-chunk-4
+fig:unnamed-chunk-5
+einführung
+r-rstudio
+grundlegende-begriffe
+begriff-der-häufigkeit
