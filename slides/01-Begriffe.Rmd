@@ -35,11 +35,64 @@ knitr::knit_hooks$set(chunk = function(x, options) {
 
 ## Beispiel: Grundlegende Begriffe
 
-## Klassifikation von Merkmalen (Qualitativ & Quantitativ) 
+Im Rahmen einer Vollerhebung sollen verschiedene Eigenschaften von allen Mescheder Studenten dieser Vorlesung in diesem Raum untersucht werden.
 
+- **Grundgesamtheit:** Alle Mescheder Studenten (räumliche Identifikation) dieser Vorlesung (sachliche Identifikation), die heute (zeitliche Identifikation) anwesend sind
+- **Merkmalsträger:** Jede/r Studierende
+- **Merkmale:** Alter, Geschlecht, Wohnort, Note in Mathe
+
+**Merkmalsausprägungen:**
+
+```{r, echo=F}
+d <- data.frame(
+  Alter = c(19,20,22,25), 
+  Geschlecht = c("m","f","f","m"), 
+  Wohnort = c("Meschede","Meschede","Brilon","Winterberg"), 
+  Note = c("2,3", "1,3", "4,0", "3,0"))
+row.names(d) <- paste("Student",letters[1:nrow(d)])
+kable(d, booktabs=T, align = "c")
+```
+
+## Klassifikation von Merkmalen (qualitativ & quantitativ) 
+
+- **Qualitative Merkmale:** variieren artmäßig
+    + z.B. Geschlecht, Rechtsform von Unternehmen, Haarfarbe etc.
+- **Quanittative Merkmale:** variieren der Größe nach
+    + z.B. Alter, Einkommen, Kinderzahl etc.
+    
 ## Klassifikation von Merkmalen (Skalenniveau)
 
+- **Nominalskala:** für qualitative Merkmale, für die keine sinnvolle Reihenfolge der Ausprägungen gegeben ist.
+    + z.B. Studiengang, Religionszugehörigkeit, Geschlecht
+- **Ordinalskala:** für Merkmale mit einer natürlichen Reihenfolge. Die Abstände zwischen den Ausprägungen sind nicht quantifizierbar.
+    + z.B. Schulnoten, Bildungsabschlüsse
+- **Metrische Skala:** für Merkmale bei denen sowohl die Reihenfolge als auch die Abstände zwischen den Ausprägungen sinnvoll definiert sind.
+    + z.B. Umsatz, Alter, Temperatur in °C
+    
 ## Klassifikation von Merkmalen (Stetig und Diskret)
 
+- **Diskrete Merkmale:** können nur bestimmte Werte (z.B. nur ganzzahlige )
+annehmen
+    + z.B. Anzahl der Studenten an einer Hochschule, Anzahl der Einwohner eines Landes
+- **Stetige Merkmale:** können in einem bestimmten Intervall jeden beliebigen Wert annehmen
+    + z.B. Längen, Breiten, Gewichte
+    
 ## Verständnisfragen
+
+- Kann unsere Hochschule eine Untersuchungseinheit sein?
+
+- Nach welchen Kriterien werden Grundgesamtheiten abgegrenzt?
+
+- Was ist der Unterschied zwischen einem Merkmalsträger und einer Merkmalsausprägung?
+
+## Verständnisfragen (Antworten)
+
+- Kann unsere Hochschule eine Untersuchungseinheit sein?
+    + Ja, wenn die Grundgesamtheit z.B. aus allen Hochschulen eines Landes besteht.
+    
+- Nach welchen Kriterien werden Grundgesamtheiten abgegrenzt?
+    + Räumlich, sachlich, zeitlich
+    
+- Was ist der Unterschied zwischen einem Merkmalsträger und einer Merkmalsausprägung?
+    + Merkmalsträger ist die Person oder das Objekt, das untersucht wird, Merkmalsausprägung ist eine der Erscheinungsformen einer Eigenschaft des Merkmalsträgers.
 
