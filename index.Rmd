@@ -33,7 +33,3 @@ knitr::opts_chunk$set(echo = TRUE, fig.align = "center")
 knitr::include_graphics("slides/gifs/00-Intro.gif")
 ```
 
-
-## R & RStudio
-
-Content
