@@ -12,9 +12,7 @@ github-repo: bchwtz/bchwtz-stat
 description: "Statistics Course Notes"
 ---
 
-# Prerequisites 
-
-This repo contains course materials.
+# Einführung 
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
@@ -27,7 +25,13 @@ knitr::write_bib(c(
 # Load Packages
 library("knitr")
 library("kableExtra")
-
 knitr::opts_chunk$set(echo = TRUE, fig.align = "center")
 ```
 
+
+```{r, out.width="80%", fig.cap="[Download Slides](slides/00-Intro.pdf)"}
+knitr::include_graphics("slides/gifs/00-Intro.gif")
+```
+
+
+## R & RStudio

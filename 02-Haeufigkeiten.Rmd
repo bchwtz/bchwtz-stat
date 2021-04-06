@@ -1,0 +1,6 @@
+# Begriff der Häufigkeit 
+ 
+```{r, out.width="80%", fig.cap="[Download Slides](slides/02-Haeufigkeiten.pdf)"}
+knitr::include_graphics("slides/gifs/02-Haeufigkeiten.gif")
+```
+
