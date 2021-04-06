@@ -1,6 +1,6 @@
 book_filename: "bchwtz-stat"
 language:
   ui:
-    chapter_name: "Chapter "
+    chapter_name: "Kapitel "
 delete_merged_file: true
 

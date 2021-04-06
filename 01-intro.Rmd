@@ -1,6 +1,6 @@
 # Grundlegende Begriffe 
  
-```{r, out.width="80%", fig.cap="[Download Slides](slides/01-Begriffe.pdf)"}
+```{r, echo = F, out.width="80%", fig.cap="[Download Slides](slides/01-Begriffe.pdf)"}
 knitr::include_graphics("slides/gifs/01-Begriffe.gif")
 ```
 

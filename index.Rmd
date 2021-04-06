@@ -12,7 +12,7 @@ github-repo: bchwtz/bchwtz-stat
 description: "Statistics Course Notes"
 ---
 
-# Einführung 
+# Einführung {-}
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
@@ -29,9 +29,11 @@ knitr::opts_chunk$set(echo = TRUE, fig.align = "center")
 ```
 
 
-```{r, out.width="80%", fig.cap="[Download Slides](slides/00-Intro.pdf)"}
+```{r, echo = F, out.width="80%", fig.cap="[Download Slides](slides/00-Intro.pdf)"}
 knitr::include_graphics("slides/gifs/00-Intro.gif")
 ```
 
 
 ## R & RStudio
+
+Content
