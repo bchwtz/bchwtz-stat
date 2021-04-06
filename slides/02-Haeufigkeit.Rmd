@@ -1,0 +1,176 @@
+---
+title: "Statistik"
+author: "CH.2 - Begriff der Häufigkeit"
+date: "SS 2021 || Prof. Dr. Buchwitz"
+output:
+  beamer_presentation:
+    fig_width: 8
+    fig_height: 5
+    highlight: tango
+    theme: metropolis
+    includes:
+      in_header: header.tex
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+library(HistogramTools)
+knitr::opts_chunk$set(echo = TRUE, cache=TRUE, size="scriptsize", 
+                      fig.align = "center")
+def.chunk.hook  <- knitr::knit_hooks$get("chunk")
+knitr::knit_hooks$set(chunk = function(x, options) {
+  x <- def.chunk.hook(x, options)
+  ifelse(options$size != "normalsize", paste0("\n \\", options$size,"\n\n", x, "\n\n \\normalsize"), x)
+})
+
+```
+
+## Absolute und relative Häufigkeiten
+
+### Definition: Absolute Häufigkeit
+
+Beobachtet man an $n$ statistischen Einheiten ein Merkmal $X$ mit $k$ Merkmalsausprägungen so gilt für die **absolute Häufigkeit** $H_j$ der $j$-ten Merkmalsausprägung.
+
+$$
+\begin{aligned}
+H_j = \text{"Anzahl der Beobachtungswerte, die in der} \\
+j \text{-ten Ausprägung auftreten" für } j = 1, \ldots, k
+\end{aligned}
+$$
+
+### Definition: Relative Häufigkeit
+
+Die **relative Häufigkeit** $h_j$ gibt den prozentualen Anteil der statistischen Einheiten, die die $j$-te Merkmalsausprägung tragen an.
+
+$$
+h_j = \frac{1}{n} \cdot H_j \quad \text{für} \quad j=1, \ldots, k
+$$
+
+## Beispiel: Absolute und relative Häufigkeit
+
+```{r}
+# Daten: Alter befragter Personen
+age <- c(19, 21, 20, 21, 19, 23, 22, 19, 20, 19)
+```
+
+```{r}
+# Absolute Häufigkeit
+table(age) 
+# Relative Häufigkeit
+proportions(table(age))
+```
+
+## Beispiel: Graphische Darstellungsmöglichkeiten von Häufigkeiten
+
+```{r, fig.height = 3.5}
+par(mfrow=c(1,3))
+plot(table(age), main = "Stabdiagramm",
+     xlab = "Alter", ylab = expression(H[j]))
+barplot(table(age), main = "Säulendiagramm",
+        xlab = "Alter", ylab = expression(H[j]))
+plot(table(age), type="b", main = "Häufigkeitspolygon",
+     xlab = "Alter", ylab = expression(H[j]))
+
+```
+
+## Histogramm
+
+* Ein Histogramm ist eine Möglichkeit, die Häufigkeitsverteilung klassierter Daten graphisch darzustellen.
+
+* Die Häufigkeiten werden als aneinander stoßende Rechtecke dargestellt, deren Flächen proportional zur Häufigkeit der Beobachtungswerte der Klassen sind. 
+
+* Nicht die Höhe des Rechteckes über eine Klasse ist proportional zur Klassenhäufigkeit, sondern die Fläche selbst.
+
+* Erstellt werden können Histogramme mit dem R-Befehl `hist()`.
+
+## Beispiel: Histogramm
+
+* In einer Befragung wurden $n=80$ Personen nach der Anzahl der verbrachten Urlaubstage pro Jahr befragt. Die Daten wurden in Klassen unterschiedlicher Breiten erfasst und die jeweiligen Häufigkeiten ausgezählt bzw. berechnet.
+
+```{r, echo=F}
+b <- c(0,8,18,25,30,35,43) # Klassengrenzen
+w <- b[-1] - b[-length(b)] # Klassenbreite
+m <- b[-length(b)] + diff(b)/2 # Klassenmitten
+H <- c(6,16,20,14,12,12) # abs. Klassenhäufigkeiten
+x <- rep(m,times=H) # Datenvektor
+n <- length(x)
+
+h <- H/n # rel. Klassenhäufigkeit
+H_norm <- H / w # normierte abs. Klassenhäufigkeit
+h_norm <- h / w # normierte rel. Klassenhäufigkeit
+K_names <- paste0("[",b[-length(b)],";",b[-1],")")
+
+histog <- hist(x,breaks=b, plot = F)
+histog$density <- H_norm  
+
+tab <- data.frame(1:length(K_names), K_names, H, h, w, H_norm, h_norm)
+kable(tab, digits = 4, booktabs=T, align ="c",
+      col.names = c("$j$","Klasse $K_j$","$H_j$","$h_j$",
+                    "Klassenbreite","norm. $H_j$","norm. $h_j$"))
+```
+
+\tiny Die normierten absoluten und relativen Klassenhäufigkeiten setzten die Klassenhäufigkeiten in Relation zur Klassenbreite, sodass diese Werte einen Vergleich erlauben. Es gilt $\text{norm. } H_j = H_j / \text{Klassenbreite}$ ($\text{norm. } h_j$ analog).
+
+## Beispiel: Histogramm
+
+```{r, echo=F, out.width="90%"}
+plot(histog, xlab = "Anzahl Urlaubstage", ylab = "Normierte abs. Klassenhäufigkeit",
+     main = "Histogramm der klassifizierten Urlaubstage",
+     ylim=c(0,3), xlim=c(0,50))
+```
+\begin{alertblock}{}
+Die Fläche der zu den Klassen 5 und 6 gehörenden Rechtecke ist identisch, da gilt $H_5 = H_6$ (bzw. $h_5 = h_6$).
+\end{alertblock}
+
+## Empirische Verteilungsfunktion
+
+### Definition: Empirische Verteilungsfunktion
+
+Die empirische Verteilungsfunktion $S$ eines an $n$ Untersuchungseinheiten beobachteten Merkmals $X$, das $k$ Merkmalsausprägungen $a_1, \ldots, a_k$ besitzt wird durch die Folge der relativen Summenhäufigkeiten bestimmt.
+
+$$
+S_j = \frac{1}{n} \sum_{i=1}^{j} H_j = \sum_{i=1}^{j} h_j  
+\quad \text{für} \quad j=1,\ldots,k
+$$
+
+## Beispiel: Empirische Verteilungsfunktion
+
+* Fortsetzung auf Basis der Befragung zum Urlaubsverhaltens von $n=80$ Personen.
+
+```{r, echo=F}
+tab <- data.frame(1:length(K_names), K_names, H, h, cumsum(h))
+kable(tab, digits = 4, booktabs=T, align ="c",
+      col.names = c("$j$","Klasse $K_j$","$H_j$","$h_j$",
+                    "emp. Verteilungsfkt."))
+```
+
+## Beispiel: Empirische Verteilungsfunktion
+
+```{r, echo=F}
+plot(HistToEcdf(histog), main="Empirische Verteilungsfunktion",
+     xlab = expression(x[i]), ylab = expression(S(x[i])))
+```
+
+
+## Verständnisfragen
+
+- Wodurch unterscheiden sich absolute von relativen Häufigkeiten?
+    
+- Was ist der Unterschied zwischen einem Stabdiagramm und einem Histogramm?
+
+- Was zeigt die empirische Verteilungsfunktion?
+
+    
+## Verständnisfragen (Antworten)
+
+- Wodurch unterscheiden sich absolute von relativen Häufigkeiten?
+    + Die absolute Häufigkeit gibt die Anzahl der Beobachtungen wieder, die relative Häufigkeit gibt den Anteil der Beobachtung an der Gesamtanzahl wieder.
+    
+- Was ist der Unterschied zwischen einem Stabdiagramm und einem Histogramm?
+    + In einem Stabdiagramm gibt die Höhe des Stabs die Häufigkeit wieder, in einem Histogramm ist es die Fläche der Balken, die die Häufigkeit wiedergibt.
+
+- Was ist eine empirische Verteilungsfunktion?
+    + Anhand der empirischen Verteilungsfunktion kann man die relative Häufigkeit ablesen mit der ein Wert höchstens eine bestimmte Größe hat. Die empirische Verteilungsfunktion gibt so die kumulierten relativen Häufigkeiten bis zu einem bestimmten Wert an.
+
+
+
