@@ -1,2 +1,11 @@
 # Introduction 
  
+ Ok lets have a look at the slides
+ 
+![](slides/gifs/02-Haeufigkeiten.gif)
+
+Some more explanation here. and a downloadlink
+
+[Download Slides](slides/02-Haeufigkeit.pdf)
+
+ok go
