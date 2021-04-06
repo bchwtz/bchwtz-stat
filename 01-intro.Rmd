@@ -1,5 +1,11 @@
 # Introduction 
  
+```
+# Using Imagemagick
+convert -delay 250 -geometry 640x480 02-Haeufigkeit.pdf gifs/02-Haeufigkeiten.gif
+
+```
+ 
  Ok lets have a look at the slides
  
 ![](slides/gifs/02-Haeufigkeiten.gif)
@@ -8,4 +14,10 @@ Some more explanation here. and a downloadlink
 
 [Download Slides](slides/02-Haeufigkeit.pdf)
 
-ok go
+ok go and test something else
+
+
+```{r, fig.cap="[Download Slides](slides/02-Haeufigkeit.pdf)"}
+knitr::include_graphics("slides/gifs/02-Haeufigkeiten.gif")
+```
+

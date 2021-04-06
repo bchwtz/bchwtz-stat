@@ -27,5 +27,7 @@ knitr::write_bib(c(
 # Load Packages
 library("knitr")
 library("kableExtra")
+
+knitr::opts_chunk$set(echo = TRUE, fig.align = "center")
 ```
 
