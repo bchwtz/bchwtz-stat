@@ -37,6 +37,20 @@ Gesicht zeigen & Mitmachen & Professionell sein \\
 \end{tabular}
 \end{center}
 
+## Vorstellung und Kontaktdetails 
+
+**Benjamin Buchwitz**
+
+- B.Sc. Business Informatics, Berlin School of Economics and Law.
+- M.Sc. Management Science, University of Eichstätt-Ingolstadt.
+- Ph.D. (Doctorate) at the Chair of Statistics and Quantitative Methods, University of Eichstätt-Ingolstadt.
+- Work Experience in Consulting, Information Technology and Renewable Energy Sector, e.g. for IBM, Siemens and own Company.
+
+### Prof. Dr. Benjamin Buchwitz
+- Professur für Data Science und Data Engineering
+- Raum 2.3.14, Lindenstr. 53, Meschede
+- **Email:** buchwitz.benjamin@fh-swf.de
+
 ## Was ist Statistik?
 
 ```{r, echo=F, out.height="80%"}
