@@ -25,6 +25,18 @@ knitr::knit_hooks$set(chunk = function(x, options) {
 
 ```
 
+## Nettiquette
+
+```{r, echo=F, out.width="100%"}
+knitr::include_graphics("figs/00-Regeln.png")
+```
+
+\begin{center}
+\begin{tabular}{ p{0.3\textwidth}p{0.3\textwidth}p{0.3\textwidth}} 
+Gesicht zeigen & Mitmachen & Professionell sein \\ 
+\end{tabular}
+\end{center}
+
 ## Was ist Statistik?
 
 ```{r, echo=F, out.height="80%"}
@@ -111,3 +123,31 @@ Wie groß ist die Wahrscheinlichkeit, dass eine gerade noch zulässige Lieferung
 
 - Für ein Konzert in Meschede wurden die Karten im Radio verlost. Sie befragen alle 400 Besucher des Konzertes nach ihrem Schokoladenkonsum zu Weihnachten (Dezember `r as.numeric(format(Sys.time(), format = "%Y")) - 1`). Dabei ermitteln Sie einen durchschnittlichen Schokoladenkonsum von 455 g bei einer Standardabweichung von 130 g.
 Mit diesen Daten möchten Sie auf den Schokoladenkonsum der Bevölkerung im Hochsauerlandkreis schließen. Geben Sie an in welchem Bereich der durchschnittlich Schokoladenkonsum eines HSK-Bürgers mit 90%iger Sicherheit lag.
+
+## R und RStudio
+
+### R Installieren
+https://cloud.r-project.org/
+
+### RStudio intallieren
+https://www.rstudio.com/products/rstudio/download/#download
+
+### In Moodle Kurs einschreiben
+Nur so erhalten Sie eine Einladung zu einem kurzen Onlinekurs zur Einführung in R
+
+## Was ist Statistiksoftware
+
+- Eine Programm, das Zahlen als Input nimmt, und daraus Tabellen (und Grafiken) erzeugt?
+- Ein(e) (Sammlung von) Programm(en) für Exploration, Inferenz und Modellierung?
+- Ein Werkzeug zur Verwaltung, Manipulation und Analyse von Daten?
+- Ein Kommunikationsmedium mit CPU (Grafikkarte, Drucker, . . . ) des Rechners?
+
+## Wieso R
+- R ist eine kostenlose Software-Umgebung für statistische Datenanalyse und Graphiken. Es beruht auf einer Implementation der Sprache S. Anfänglich wurde R von Ross Ihaka und Robert Gentleman (Univ. Auckland) entwickelt und wird seit Mitte der 90er Jahre von einem Entwickler-Kollektiv (R-Core) betreut.
+- Sehen Sie Statistiksoftware als Hilfsmittel, um dem Computer mitzuteilen, wie Sie Ihre Daten analysieren wollen.
+- Für einfache Analysen reichen einfache Programme, aber gerade in Excel Sie irgendwann das letzte Untermenü oder die letzte Formel erreicht und können nicht mehr weiter arbeiten.
+- R-Befehle sind Ihre Anweisungen an den Computer.
+
+## Backup 1
+## Backup 2
+## Backup 3
