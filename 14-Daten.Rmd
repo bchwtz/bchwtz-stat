@@ -1,4 +1,4 @@
-# Daten {-}
+# Daten
 
 ## Taxi Trips
 
@@ -149,7 +149,7 @@ write.csv(d,
           row.names = FALSE)
 ```
 
-## Datenbeschreibung
+### Datenbeschreibung
 
 - `id`: a unique identifier for each offer
 - `price`: the requested price in Euro to buy the building
@@ -241,7 +241,7 @@ write.csv(d,
 - `EngagementSurvey`:	Results from the last engagement survey, managed by our external partner	
 - `EmpSatisfaction`:	A basic satisfaction score between 1 and 5, as reported on a recent employee satisfaction survey
 - `SpecialProjectsCount`:	The number of special projects that the employee worked on during the last 6 months	
-- `LastPerformanceReviewDate`:	The most recent date of the person’s last performance review.	
+- `LastPerformanceReviewDate`:	The most recent date of the person’s last performance review	
 - `DaysLateLast30`:	The number of times that the employee was late to work during the last 30 days	
 - `Absences`:	The number of times the employee was absent from work
 
