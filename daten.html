@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Daten | Statistics</title>
+  <meta name="description" content="Daten | Statistics Course Notes" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Daten | Statistics" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Daten | Statistics Course Notes" />
+  <meta name="github-repo" content="bchwtz/bchwtz-stat" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Daten | Statistics" />
+  
+  <meta name="twitter:description" content="Daten | Statistics Course Notes" />
+  
+
+<meta name="author" content="Benjamin Buchwitz" />
+
+
+<meta name="date" content="2021-04-08" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="zeitreihenanalyse.html"/>
+<link rel="next" href="system-info.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"><b>Statistik</b></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Einführung</a></li>
+<li class="chapter" data-level="1" data-path="grundlegende-begriffe.html"><a href="grundlegende-begriffe.html"><i class="fa fa-check"></i><b>1</b> Grundlegende Begriffe</a></li>
+<li class="chapter" data-level="2" data-path="begriff-der-häufigkeit.html"><a href="begriff-der-häufigkeit.html"><i class="fa fa-check"></i><b>2</b> Begriff der Häufigkeit</a></li>
+<li class="chapter" data-level="3" data-path="maßzahlen.html"><a href="maßzahlen.html"><i class="fa fa-check"></i><b>3</b> Maßzahlen</a></li>
+<li class="chapter" data-level="4" data-path="zweidimensionale-verteilungen.html"><a href="zweidimensionale-verteilungen.html"><i class="fa fa-check"></i><b>4</b> Zweidimensionale Verteilungen</a></li>
+<li class="chapter" data-level="5" data-path="kombinatorik.html"><a href="kombinatorik.html"><i class="fa fa-check"></i><b>5</b> Kombinatorik</a></li>
+<li class="chapter" data-level="6" data-path="wahrscheinlichkeitsrechnung.html"><a href="wahrscheinlichkeitsrechnung.html"><i class="fa fa-check"></i><b>6</b> Wahrscheinlichkeitsrechnung</a></li>
+<li class="chapter" data-level="7" data-path="anwendungen-der-wahrscheinlichkeitsrechnung.html"><a href="anwendungen-der-wahrscheinlichkeitsrechnung.html"><i class="fa fa-check"></i><b>7</b> Anwendungen der Wahrscheinlichkeitsrechnung</a></li>
+<li class="chapter" data-level="8" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html"><i class="fa fa-check"></i><b>8</b> Wahrscheinlichkeitsverteilungen</a></li>
+<li class="chapter" data-level="9" data-path="spezielle-verteilungen.html"><a href="spezielle-verteilungen.html"><i class="fa fa-check"></i><b>9</b> Spezielle Verteilungen</a></li>
+<li class="chapter" data-level="10" data-path="von-der-stichprobe-zur-grundgesamtheit.html"><a href="von-der-stichprobe-zur-grundgesamtheit.html"><i class="fa fa-check"></i><b>10</b> Von der Stichprobe zur Grundgesamtheit</a></li>
+<li class="chapter" data-level="11" data-path="lineare-regression.html"><a href="lineare-regression.html"><i class="fa fa-check"></i><b>11</b> Lineare Regression</a></li>
+<li class="chapter" data-level="12" data-path="multiple-regression.html"><a href="multiple-regression.html"><i class="fa fa-check"></i><b>12</b> Multiple Regression</a></li>
+<li class="chapter" data-level="13" data-path="zeitreihenanalyse.html"><a href="zeitreihenanalyse.html"><i class="fa fa-check"></i><b>13</b> Zeitreihenanalyse</a></li>
+<li class="chapter" data-level="" data-path="daten.html"><a href="daten.html"><i class="fa fa-check"></i>Daten</a><ul>
+<li class="chapter" data-level="13.1" data-path="daten.html"><a href="daten.html#taxi-trips"><i class="fa fa-check"></i><b>13.1</b> Taxi Trips</a><ul>
+<li class="chapter" data-level="13.1.1" data-path="daten.html"><a href="daten.html#datenbeschreibung"><i class="fa fa-check"></i><b>13.1.1</b> Datenbeschreibung</a></li>
+<li class="chapter" data-level="13.1.2" data-path="daten.html"><a href="daten.html#daten-laden"><i class="fa fa-check"></i><b>13.1.2</b> Daten laden</a></li>
+<li class="chapter" data-level="13.1.3" data-path="daten.html"><a href="daten.html#ergänzungen"><i class="fa fa-check"></i><b>13.1.3</b> Ergänzungen</a></li>
+<li class="chapter" data-level="13.1.4" data-path="daten.html"><a href="daten.html#quellen"><i class="fa fa-check"></i><b>13.1.4</b> Quellen</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="daten.html"><a href="daten.html#hauspreise"><i class="fa fa-check"></i><b>13.2</b> Hauspreise</a></li>
+<li class="chapter" data-level="13.3" data-path="daten.html"><a href="daten.html#human-ressources"><i class="fa fa-check"></i><b>13.3</b> Human Ressources</a></li>
+</ul></li>
+<li class="part"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="" data-path="system-info.html"><a href="system-info.html"><i class="fa fa-check"></i>System Info</a></li>
+<li class="divider"></li>
+<li><a href="http://www.bchwtz.de" target="blank"><center>www.<b>BCHWTZ</b>.de</center></a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="daten" class="section level1 unnumbered">
+<h1>Daten</h1>
+<div id="taxi-trips" class="section level2">
+<h2><span class="header-section-number">13.1</span> Taxi Trips</h2>
+<div id="datenbeschreibung" class="section level3">
+<h3><span class="header-section-number">13.1.1</span> Datenbeschreibung</h3>
+<p><strong>Variablen</strong>
+- <code>id</code>: a unique identifier for each trip
+- <code>vendor_id</code>: a code indicating the provider associated with the trip record
+- <code>pickup_datetime</code>: date and time when the meter was engaged
+- <code>dropoff_datetime</code>: date and time when the meter was disengaged
+- <code>passenger_count</code>: the number of passengers in the vehicle (driver entered value)
+- <code>pickup_longitude</code>: the longitude where the meter was engaged
+- <code>pickup_latitude</code>: the latitude where the meter was engaged
+- <code>dropoff_longitude</code>: the longitude where the meter was disengaged
+- <code>dropoff_latitude</code>: the latitude where the meter was disengaged
+- <code>store_and_fwd_flag</code>: This flag indicates whether the trip record was held in vehicle memory before sending to the vendor because the vehicle did not have a connection to the server - Y=store and forward; N=not a store and forward trip
+- <code>trip_duration</code>: duration of the trip in seconds</p>
+<p><strong>Ergänzte Variablen</strong>
+- <code>osrm_distance</code>: the travel distance by car in kilometers as calculated by the Open Streetmap Routing Machine
+- <code>osrm_duration</code>: the estimated duration for travelling the route by car in minutes as estimated by the Open Streetmap Routing Machine
+- <code>geodesic_distance</code>: the geodesic distance in meters between the pickup and dropoff coordinates calculated using the method of Karney (2013)
+- <code>weekday:</code> the day of the week when the trip was started</p>
+</div>
+<div id="daten-laden" class="section level3">
+<h3><span class="header-section-number">13.1.2</span> Daten laden</h3>
+<p>Der Datensatz kann mit dem folgenden Befehl in R geladen werden:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="daten.html#cb1-1"></a><span class="co"># Load Data</span></span>
+<span id="cb1-2"><a href="daten.html#cb1-2"></a>x &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;~/bchwtz/nyctaxi.csv&quot;</span>)</span></code></pre></div>
+</div>
+<div id="ergänzungen" class="section level3">
+<h3><span class="header-section-number">13.1.3</span> Ergänzungen</h3>
+<p>Die ergänzten Variablen wurden mit Hilfe des folgenden Programmcodes erzeugt.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="daten.html#cb2-1"></a><span class="kw">library</span>(geodist)</span>
+<span id="cb2-2"><a href="daten.html#cb2-2"></a><span class="kw">library</span>(osrm)</span>
+<span id="cb2-3"><a href="daten.html#cb2-3"></a></span>
+<span id="cb2-4"><a href="daten.html#cb2-4"></a>x &lt;-<span class="st"> </span><span class="kw">head</span>(x, <span class="dv">50</span>) <span class="co"># Shorten the data to speed up the example</span></span>
+<span id="cb2-5"><a href="daten.html#cb2-5"></a></span>
+<span id="cb2-6"><a href="daten.html#cb2-6"></a><span class="co"># Function to make points dataframe</span></span>
+<span id="cb2-7"><a href="daten.html#cb2-7"></a>make_pts &lt;-<span class="st"> </span><span class="cf">function</span>(x){</span>
+<span id="cb2-8"><a href="daten.html#cb2-8"></a>  pts &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">long =</span> <span class="kw">c</span>(x[<span class="st">&quot;pickup_longitude&quot;</span>], x[<span class="st">&quot;dropoff_longitude&quot;</span>]), </span>
+<span id="cb2-9"><a href="daten.html#cb2-9"></a>                    <span class="dt">lat =</span> <span class="kw">c</span>(x[<span class="st">&quot;pickup_latitude&quot;</span>], x[<span class="st">&quot;dropoff_latitude&quot;</span>]),</span>
+<span id="cb2-10"><a href="daten.html#cb2-10"></a>                    <span class="dt">row.names =</span> <span class="ot">NULL</span>)</span>
+<span id="cb2-11"><a href="daten.html#cb2-11"></a>  <span class="kw">return</span>(pts)</span>
+<span id="cb2-12"><a href="daten.html#cb2-12"></a>}</span>
+<span id="cb2-13"><a href="daten.html#cb2-13"></a></span>
+<span id="cb2-14"><a href="daten.html#cb2-14"></a></span>
+<span id="cb2-15"><a href="daten.html#cb2-15"></a><span class="co"># Function to request route information from openstreetmap</span></span>
+<span id="cb2-16"><a href="daten.html#cb2-16"></a>make_dist_duration &lt;-<span class="st"> </span><span class="cf">function</span>(x, <span class="dt">type=</span><span class="kw">c</span>(<span class="st">&quot;car&quot;</span>,<span class="st">&quot;bike&quot;</span>,<span class="st">&quot;foot&quot;</span>)[<span class="dv">1</span>]){</span>
+<span id="cb2-17"><a href="daten.html#cb2-17"></a>  pts &lt;-<span class="st"> </span><span class="kw">make_pts</span>(x)</span>
+<span id="cb2-18"><a href="daten.html#cb2-18"></a>  route &lt;-<span class="st"> </span>osrm<span class="op">::</span><span class="kw">osrmRoute</span>(<span class="dt">loc=</span>pts, <span class="dt">returnclass =</span> <span class="st">&quot;sf&quot;</span>, <span class="dt">osrm.profile =</span> type)</span>
+<span id="cb2-19"><a href="daten.html#cb2-19"></a>  <span class="kw">return</span>(<span class="kw">c</span>(<span class="dt">osrm_distance=</span>route<span class="op">$</span>dist, <span class="dt">osrm_duration=</span>route<span class="op">$</span>duration))</span>
+<span id="cb2-20"><a href="daten.html#cb2-20"></a>}</span>
+<span id="cb2-21"><a href="daten.html#cb2-21"></a></span>
+<span id="cb2-22"><a href="daten.html#cb2-22"></a></span>
+<span id="cb2-23"><a href="daten.html#cb2-23"></a><span class="co"># Funtion to calculate geodesic_distance</span></span>
+<span id="cb2-24"><a href="daten.html#cb2-24"></a>make_geodesic_distance &lt;-<span class="st"> </span><span class="cf">function</span>(x){</span>
+<span id="cb2-25"><a href="daten.html#cb2-25"></a>  pickup_loc &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">longitude=</span>x[<span class="st">&quot;pickup_longitude&quot;</span>],</span>
+<span id="cb2-26"><a href="daten.html#cb2-26"></a>                  <span class="dt">latitude=</span>x[<span class="st">&quot;pickup_latitude&quot;</span>])</span>
+<span id="cb2-27"><a href="daten.html#cb2-27"></a>  dropoff_loc &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">longitude=</span>x[<span class="st">&quot;dropoff_longitude&quot;</span>],</span>
+<span id="cb2-28"><a href="daten.html#cb2-28"></a>                   <span class="dt">latitude=</span>x[<span class="st">&quot;dropoff_latitude&quot;</span>])</span>
+<span id="cb2-29"><a href="daten.html#cb2-29"></a>  geodesic_distance &lt;-<span class="st"> </span>geodist<span class="op">::</span><span class="kw">geodist</span>(<span class="dt">x=</span>pickup_loc,</span>
+<span id="cb2-30"><a href="daten.html#cb2-30"></a>                                        <span class="dt">y=</span>dropoff_loc, </span>
+<span id="cb2-31"><a href="daten.html#cb2-31"></a>                                        <span class="dt">measure =</span> <span class="st">&quot;geodesic&quot;</span>)</span>
+<span id="cb2-32"><a href="daten.html#cb2-32"></a>  <span class="kw">return</span>(geodesic_distance)</span>
+<span id="cb2-33"><a href="daten.html#cb2-33"></a>}</span>
+<span id="cb2-34"><a href="daten.html#cb2-34"></a></span>
+<span id="cb2-35"><a href="daten.html#cb2-35"></a><span class="co"># Generate route information and add to dataset</span></span>
+<span id="cb2-36"><a href="daten.html#cb2-36"></a>res &lt;-<span class="st"> </span><span class="kw">apply</span>(x, <span class="dt">MARGIN=</span><span class="dv">1</span>, make_dist_duration)</span>
+<span id="cb2-37"><a href="daten.html#cb2-37"></a>df &lt;-<span class="st"> </span><span class="kw">cbind</span>(x,<span class="kw">t</span>(res))</span>
+<span id="cb2-38"><a href="daten.html#cb2-38"></a></span>
+<span id="cb2-39"><a href="daten.html#cb2-39"></a><span class="co"># Add day of the week to dataset</span></span>
+<span id="cb2-40"><a href="daten.html#cb2-40"></a>df<span class="op">$</span>weekday &lt;-<span class="st"> </span><span class="kw">weekdays</span>(<span class="kw">as.Date</span>(df<span class="op">$</span>pickup_datetime))</span>
+<span id="cb2-41"><a href="daten.html#cb2-41"></a></span>
+<span id="cb2-42"><a href="daten.html#cb2-42"></a><span class="co"># Add geodesic distance to dataset</span></span>
+<span id="cb2-43"><a href="daten.html#cb2-43"></a>df<span class="op">$</span>gedesic_distance &lt;-<span class="st"> </span><span class="kw">apply</span>(df, <span class="dt">MARGIN=</span><span class="dv">1</span>, make_geodesic_distance)</span></code></pre></div>
+</div>
+<div id="quellen" class="section level3">
+<h3><span class="header-section-number">13.1.4</span> Quellen</h3>
+<ul>
+<li><a href="https://www.kaggle.com/c/nyc-taxi-trip-duration/" class="uri">https://www.kaggle.com/c/nyc-taxi-trip-duration/</a></li>
+<li><a href="https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page" class="uri">https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page</a></li>
+</ul>
+</div>
+</div>
+<div id="hauspreise" class="section level2">
+<h2><span class="header-section-number">13.2</span> Hauspreise</h2>
+</div>
+<div id="human-ressources" class="section level2">
+<h2><span class="header-section-number">13.3</span> Human Ressources</h2>
+
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="zeitreihenanalyse.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="system-info.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/14-Daten.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bchwtz-stat.pdf", "bchwtz-stat.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

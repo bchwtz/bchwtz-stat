@@ -14,3 +14,10 @@ von-der-stichprobe-zur-grundgesamtheit
 lineare-regression
 multiple-regression
 zeitreihenanalyse
+taxi-trips
+datenbeschreibung
+daten-laden
+ergänzungen
+quellen
+hauspreise
+human-ressources
