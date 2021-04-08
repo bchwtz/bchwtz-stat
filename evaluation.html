@@ -150,19 +150,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13" data-path="zeitreihenanalyse.html"><a href="zeitreihenanalyse.html"><i class="fa fa-check"></i><b>13</b> Zeitreihenanalyse</a></li>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html"><i class="fa fa-check"></i>Daten</a><ul>
 <li class="chapter" data-level="13.1" data-path="daten.html"><a href="daten.html#taxi-trips"><i class="fa fa-check"></i><b>13.1</b> Taxi Trips</a><ul>
-<li class="chapter" data-level="13.1.1" data-path="daten.html"><a href="daten.html#datenbeschreibung"><i class="fa fa-check"></i><b>13.1.1</b> Datenbeschreibung</a></li>
-<li class="chapter" data-level="13.1.2" data-path="daten.html"><a href="daten.html#daten-laden"><i class="fa fa-check"></i><b>13.1.2</b> Daten laden</a></li>
-<li class="chapter" data-level="13.1.3" data-path="daten.html"><a href="daten.html#ergänzungen"><i class="fa fa-check"></i><b>13.1.3</b> Ergänzungen</a></li>
+<li class="chapter" data-level="13.1.1" data-path="daten.html"><a href="daten.html#vorbereitungen"><i class="fa fa-check"></i><b>13.1.1</b> Vorbereitungen</a></li>
+<li class="chapter" data-level="13.1.2" data-path="daten.html"><a href="daten.html#datenbeschreibung"><i class="fa fa-check"></i><b>13.1.2</b> Datenbeschreibung</a></li>
+<li class="chapter" data-level="13.1.3" data-path="daten.html"><a href="daten.html#daten-laden"><i class="fa fa-check"></i><b>13.1.3</b> Daten laden</a></li>
 <li class="chapter" data-level="13.1.4" data-path="daten.html"><a href="daten.html#quellen"><i class="fa fa-check"></i><b>13.1.4</b> Quellen</a></li>
 </ul></li>
 <li class="chapter" data-level="13.2" data-path="daten.html"><a href="daten.html#hauspreise"><i class="fa fa-check"></i><b>13.2</b> Hauspreise</a><ul>
-<li class="chapter" data-level="13.2.1" data-path="daten.html"><a href="daten.html#vorbereitungen"><i class="fa fa-check"></i><b>13.2.1</b> Vorbereitungen</a></li>
+<li class="chapter" data-level="13.2.1" data-path="daten.html"><a href="daten.html#vorbereitungen-1"><i class="fa fa-check"></i><b>13.2.1</b> Vorbereitungen</a></li>
 </ul></li>
 <li class="chapter" data-level="13.3" data-path="daten.html"><a href="daten.html#datenbeschreibung-1"><i class="fa fa-check"></i><b>13.3</b> Datenbeschreibung</a><ul>
 <li class="chapter" data-level="13.3.1" data-path="daten.html"><a href="daten.html#daten-laden-1"><i class="fa fa-check"></i><b>13.3.1</b> Daten laden</a></li>
 <li class="chapter" data-level="13.3.2" data-path="daten.html"><a href="daten.html#quellen-1"><i class="fa fa-check"></i><b>13.3.2</b> Quellen</a></li>
 </ul></li>
-<li class="chapter" data-level="13.4" data-path="daten.html"><a href="daten.html#human-ressources"><i class="fa fa-check"></i><b>13.4</b> Human Ressources</a></li>
+<li class="chapter" data-level="13.4" data-path="daten.html"><a href="daten.html#human-ressources"><i class="fa fa-check"></i><b>13.4</b> Human Ressources</a><ul>
+<li class="chapter" data-level="13.4.1" data-path="daten.html"><a href="daten.html#vorbereitungen-2"><i class="fa fa-check"></i><b>13.4.1</b> Vorbereitungen</a></li>
+<li class="chapter" data-level="13.4.2" data-path="daten.html"><a href="daten.html#datenbeschreibung-2"><i class="fa fa-check"></i><b>13.4.2</b> Datenbeschreibung</a></li>
+<li class="chapter" data-level="13.4.3" data-path="daten.html"><a href="daten.html#daten-laden-2"><i class="fa fa-check"></i><b>13.4.3</b> Daten laden</a></li>
+<li class="chapter" data-level="13.4.4" data-path="daten.html"><a href="daten.html#quellen-2"><i class="fa fa-check"></i><b>13.4.4</b> Quellen</a></li>
+</ul></li>
 </ul></li>
 <li class="part"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="" data-path="evaluation.html"><a href="evaluation.html"><i class="fa fa-check"></i>Evaluation</a></li>
@@ -189,14 +194,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="evaluation" class="section level1 unnumbered">
 <h1>Evaluation</h1>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="evaluation.html#cb4-1"></a>stats_ss2021 &lt;-<span class="st"> </span><span class="kw">tribble</span>(</span>
-<span id="cb4-2"><a href="evaluation.html#cb4-2"></a>  <span class="op">~</span>date, <span class="op">~</span>vg, <span class="op">~</span>g, <span class="op">~</span>n, <span class="op">~</span>b, <span class="op">~</span>vb, <span class="op">~</span>total,</span>
-<span id="cb4-3"><a href="evaluation.html#cb4-3"></a>  <span class="st">&quot;07.04.2021&quot;</span>,<span class="dv">45</span>,<span class="dv">71</span>,<span class="dv">7</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">128</span></span>
-<span id="cb4-4"><a href="evaluation.html#cb4-4"></a>)</span>
-<span id="cb4-5"><a href="evaluation.html#cb4-5"></a>evcnames&lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Datum&quot;</span>,<span class="st">&quot;sehr zufrieden&quot;</span>, <span class="st">&quot;zufrieden&quot;</span>, </span>
-<span id="cb4-6"><a href="evaluation.html#cb4-6"></a>           <span class="st">&quot;weder zufrieden noch unzufrieden&quot;</span>, </span>
-<span id="cb4-7"><a href="evaluation.html#cb4-7"></a>           <span class="st">&quot;unzufrieden&quot;</span>, <span class="st">&quot;sehr unzufrieden&quot;</span>, <span class="st">&quot;anwesend&quot;</span>)</span>
-<span id="cb4-8"><a href="evaluation.html#cb4-8"></a><span class="kw">kable</span>(stats_ss2021, <span class="dt">booktabbs=</span>T, <span class="dt">col.names =</span> evcnames)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="evaluation.html#cb7-1"></a>stats_ss2021 &lt;-<span class="st"> </span><span class="kw">tribble</span>(</span>
+<span id="cb7-2"><a href="evaluation.html#cb7-2"></a>  <span class="op">~</span>date, <span class="op">~</span>vg, <span class="op">~</span>g, <span class="op">~</span>n, <span class="op">~</span>b, <span class="op">~</span>vb, <span class="op">~</span>total,</span>
+<span id="cb7-3"><a href="evaluation.html#cb7-3"></a>  <span class="st">&quot;07.04.2021&quot;</span>,<span class="dv">45</span>,<span class="dv">71</span>,<span class="dv">7</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">128</span></span>
+<span id="cb7-4"><a href="evaluation.html#cb7-4"></a>)</span>
+<span id="cb7-5"><a href="evaluation.html#cb7-5"></a>evcnames&lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Datum&quot;</span>,<span class="st">&quot;sehr zufrieden&quot;</span>, <span class="st">&quot;zufrieden&quot;</span>, </span>
+<span id="cb7-6"><a href="evaluation.html#cb7-6"></a>           <span class="st">&quot;weder zufrieden noch unzufrieden&quot;</span>, </span>
+<span id="cb7-7"><a href="evaluation.html#cb7-7"></a>           <span class="st">&quot;unzufrieden&quot;</span>, <span class="st">&quot;sehr unzufrieden&quot;</span>, <span class="st">&quot;anwesend&quot;</span>)</span>
+<span id="cb7-8"><a href="evaluation.html#cb7-8"></a><span class="kw">kable</span>(stats_ss2021, <span class="dt">booktabbs=</span>T, <span class="dt">col.names =</span> evcnames)</span></code></pre></div>
 <table>
 <thead>
 <tr>

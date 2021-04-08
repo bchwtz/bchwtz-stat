@@ -150,19 +150,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13" data-path="zeitreihenanalyse.html"><a href="zeitreihenanalyse.html"><i class="fa fa-check"></i><b>13</b> Zeitreihenanalyse</a></li>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html"><i class="fa fa-check"></i>Daten</a><ul>
 <li class="chapter" data-level="13.1" data-path="daten.html"><a href="daten.html#taxi-trips"><i class="fa fa-check"></i><b>13.1</b> Taxi Trips</a><ul>
-<li class="chapter" data-level="13.1.1" data-path="daten.html"><a href="daten.html#datenbeschreibung"><i class="fa fa-check"></i><b>13.1.1</b> Datenbeschreibung</a></li>
-<li class="chapter" data-level="13.1.2" data-path="daten.html"><a href="daten.html#daten-laden"><i class="fa fa-check"></i><b>13.1.2</b> Daten laden</a></li>
-<li class="chapter" data-level="13.1.3" data-path="daten.html"><a href="daten.html#ergänzungen"><i class="fa fa-check"></i><b>13.1.3</b> Ergänzungen</a></li>
+<li class="chapter" data-level="13.1.1" data-path="daten.html"><a href="daten.html#vorbereitungen"><i class="fa fa-check"></i><b>13.1.1</b> Vorbereitungen</a></li>
+<li class="chapter" data-level="13.1.2" data-path="daten.html"><a href="daten.html#datenbeschreibung"><i class="fa fa-check"></i><b>13.1.2</b> Datenbeschreibung</a></li>
+<li class="chapter" data-level="13.1.3" data-path="daten.html"><a href="daten.html#daten-laden"><i class="fa fa-check"></i><b>13.1.3</b> Daten laden</a></li>
 <li class="chapter" data-level="13.1.4" data-path="daten.html"><a href="daten.html#quellen"><i class="fa fa-check"></i><b>13.1.4</b> Quellen</a></li>
 </ul></li>
 <li class="chapter" data-level="13.2" data-path="daten.html"><a href="daten.html#hauspreise"><i class="fa fa-check"></i><b>13.2</b> Hauspreise</a><ul>
-<li class="chapter" data-level="13.2.1" data-path="daten.html"><a href="daten.html#vorbereitungen"><i class="fa fa-check"></i><b>13.2.1</b> Vorbereitungen</a></li>
+<li class="chapter" data-level="13.2.1" data-path="daten.html"><a href="daten.html#vorbereitungen-1"><i class="fa fa-check"></i><b>13.2.1</b> Vorbereitungen</a></li>
 </ul></li>
 <li class="chapter" data-level="13.3" data-path="daten.html"><a href="daten.html#datenbeschreibung-1"><i class="fa fa-check"></i><b>13.3</b> Datenbeschreibung</a><ul>
 <li class="chapter" data-level="13.3.1" data-path="daten.html"><a href="daten.html#daten-laden-1"><i class="fa fa-check"></i><b>13.3.1</b> Daten laden</a></li>
 <li class="chapter" data-level="13.3.2" data-path="daten.html"><a href="daten.html#quellen-1"><i class="fa fa-check"></i><b>13.3.2</b> Quellen</a></li>
 </ul></li>
-<li class="chapter" data-level="13.4" data-path="daten.html"><a href="daten.html#human-ressources"><i class="fa fa-check"></i><b>13.4</b> Human Ressources</a></li>
+<li class="chapter" data-level="13.4" data-path="daten.html"><a href="daten.html#human-ressources"><i class="fa fa-check"></i><b>13.4</b> Human Ressources</a><ul>
+<li class="chapter" data-level="13.4.1" data-path="daten.html"><a href="daten.html#vorbereitungen-2"><i class="fa fa-check"></i><b>13.4.1</b> Vorbereitungen</a></li>
+<li class="chapter" data-level="13.4.2" data-path="daten.html"><a href="daten.html#datenbeschreibung-2"><i class="fa fa-check"></i><b>13.4.2</b> Datenbeschreibung</a></li>
+<li class="chapter" data-level="13.4.3" data-path="daten.html"><a href="daten.html#daten-laden-2"><i class="fa fa-check"></i><b>13.4.3</b> Daten laden</a></li>
+<li class="chapter" data-level="13.4.4" data-path="daten.html"><a href="daten.html#quellen-2"><i class="fa fa-check"></i><b>13.4.4</b> Quellen</a></li>
+</ul></li>
 </ul></li>
 <li class="part"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="" data-path="evaluation.html"><a href="evaluation.html"><i class="fa fa-check"></i>Evaluation</a></li>
@@ -191,8 +196,66 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1>Daten</h1>
 <div id="taxi-trips" class="section level2">
 <h2><span class="header-section-number">13.1</span> Taxi Trips</h2>
+<div id="vorbereitungen" class="section level3">
+<h3><span class="header-section-number">13.1.1</span> Vorbereitungen</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="daten.html#cb1-1"></a><span class="kw">library</span>(geodist)</span>
+<span id="cb1-2"><a href="daten.html#cb1-2"></a><span class="kw">library</span>(osrm)</span>
+<span id="cb1-3"><a href="daten.html#cb1-3"></a></span>
+<span id="cb1-4"><a href="daten.html#cb1-4"></a><span class="co"># load raw data</span></span>
+<span id="cb1-5"><a href="daten.html#cb1-5"></a>coursepath &lt;-<span class="st"> &quot;~/sciebo/courses/bchwtz-stat&quot;</span></span>
+<span id="cb1-6"><a href="daten.html#cb1-6"></a>filepath &lt;-<span class="st"> &quot;nongit/data/2021-taxi/nyctaxi.csv&quot;</span></span>
+<span id="cb1-7"><a href="daten.html#cb1-7"></a>savepath &lt;-<span class="st"> &quot;data&quot;</span></span>
+<span id="cb1-8"><a href="daten.html#cb1-8"></a>d &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="kw">file.path</span>(coursepath, filepath))</span>
+<span id="cb1-9"><a href="daten.html#cb1-9"></a></span>
+<span id="cb1-10"><a href="daten.html#cb1-10"></a><span class="co"># select a subset of the data</span></span>
+<span id="cb1-11"><a href="daten.html#cb1-11"></a>n &lt;-<span class="st"> </span><span class="dv">10000</span></span>
+<span id="cb1-12"><a href="daten.html#cb1-12"></a><span class="kw">set.seed</span>(<span class="dv">20210408</span>)</span>
+<span id="cb1-13"><a href="daten.html#cb1-13"></a>d &lt;-<span class="st"> </span>d[<span class="kw">sample</span>(<span class="kw">nrow</span>(d), <span class="dt">size =</span> n), ]</span>
+<span id="cb1-14"><a href="daten.html#cb1-14"></a></span>
+<span id="cb1-15"><a href="daten.html#cb1-15"></a><span class="co"># Function to make points dataframe</span></span>
+<span id="cb1-16"><a href="daten.html#cb1-16"></a>make_pts &lt;-<span class="st"> </span><span class="cf">function</span>(x){</span>
+<span id="cb1-17"><a href="daten.html#cb1-17"></a>  pts &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">long =</span> <span class="kw">c</span>(x[<span class="st">&quot;pickup_longitude&quot;</span>], x[<span class="st">&quot;dropoff_longitude&quot;</span>]), </span>
+<span id="cb1-18"><a href="daten.html#cb1-18"></a>                    <span class="dt">lat =</span> <span class="kw">c</span>(x[<span class="st">&quot;pickup_latitude&quot;</span>], x[<span class="st">&quot;dropoff_latitude&quot;</span>]),</span>
+<span id="cb1-19"><a href="daten.html#cb1-19"></a>                    <span class="dt">row.names =</span> <span class="ot">NULL</span>)</span>
+<span id="cb1-20"><a href="daten.html#cb1-20"></a>  <span class="kw">return</span>(pts)</span>
+<span id="cb1-21"><a href="daten.html#cb1-21"></a>}</span>
+<span id="cb1-22"><a href="daten.html#cb1-22"></a></span>
+<span id="cb1-23"><a href="daten.html#cb1-23"></a><span class="co"># Function to request route information from openstreetmap</span></span>
+<span id="cb1-24"><a href="daten.html#cb1-24"></a>make_dist_duration &lt;-<span class="st"> </span><span class="cf">function</span>(x, <span class="dt">type=</span><span class="kw">c</span>(<span class="st">&quot;car&quot;</span>,<span class="st">&quot;bike&quot;</span>,<span class="st">&quot;foot&quot;</span>)[<span class="dv">1</span>]){</span>
+<span id="cb1-25"><a href="daten.html#cb1-25"></a>  pts &lt;-<span class="st"> </span><span class="kw">make_pts</span>(x)</span>
+<span id="cb1-26"><a href="daten.html#cb1-26"></a>  route &lt;-<span class="st"> </span>osrm<span class="op">::</span><span class="kw">osrmRoute</span>(<span class="dt">loc=</span>pts, <span class="dt">returnclass =</span> <span class="st">&quot;sf&quot;</span>, <span class="dt">osrm.profile =</span> type)</span>
+<span id="cb1-27"><a href="daten.html#cb1-27"></a>  <span class="kw">return</span>(<span class="kw">c</span>(<span class="dt">osrm_distance=</span>route<span class="op">$</span>dist, <span class="dt">osrm_duration=</span>route<span class="op">$</span>duration))</span>
+<span id="cb1-28"><a href="daten.html#cb1-28"></a>}</span>
+<span id="cb1-29"><a href="daten.html#cb1-29"></a></span>
+<span id="cb1-30"><a href="daten.html#cb1-30"></a><span class="co"># Funtion to calculate geodesic_distance</span></span>
+<span id="cb1-31"><a href="daten.html#cb1-31"></a>make_geodesic_distance &lt;-<span class="st"> </span><span class="cf">function</span>(x){</span>
+<span id="cb1-32"><a href="daten.html#cb1-32"></a>  pickup_loc &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">longitude=</span>x[<span class="st">&quot;pickup_longitude&quot;</span>],</span>
+<span id="cb1-33"><a href="daten.html#cb1-33"></a>                  <span class="dt">latitude=</span>x[<span class="st">&quot;pickup_latitude&quot;</span>])</span>
+<span id="cb1-34"><a href="daten.html#cb1-34"></a>  dropoff_loc &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">longitude=</span>x[<span class="st">&quot;dropoff_longitude&quot;</span>],</span>
+<span id="cb1-35"><a href="daten.html#cb1-35"></a>                   <span class="dt">latitude=</span>x[<span class="st">&quot;dropoff_latitude&quot;</span>])</span>
+<span id="cb1-36"><a href="daten.html#cb1-36"></a>  geodesic_distance &lt;-<span class="st"> </span>geodist<span class="op">::</span><span class="kw">geodist</span>(<span class="dt">x=</span>pickup_loc,</span>
+<span id="cb1-37"><a href="daten.html#cb1-37"></a>                                        <span class="dt">y=</span>dropoff_loc, </span>
+<span id="cb1-38"><a href="daten.html#cb1-38"></a>                                        <span class="dt">measure =</span> <span class="st">&quot;geodesic&quot;</span>)</span>
+<span id="cb1-39"><a href="daten.html#cb1-39"></a>  <span class="kw">return</span>(geodesic_distance)</span>
+<span id="cb1-40"><a href="daten.html#cb1-40"></a>}</span>
+<span id="cb1-41"><a href="daten.html#cb1-41"></a></span>
+<span id="cb1-42"><a href="daten.html#cb1-42"></a><span class="co"># Generate route information and add to dataset</span></span>
+<span id="cb1-43"><a href="daten.html#cb1-43"></a>res &lt;-<span class="st"> </span><span class="kw">apply</span>(d, <span class="dt">MARGIN=</span><span class="dv">1</span>, make_dist_duration)</span>
+<span id="cb1-44"><a href="daten.html#cb1-44"></a>df &lt;-<span class="st"> </span><span class="kw">cbind</span>(d, <span class="kw">t</span>(res))</span>
+<span id="cb1-45"><a href="daten.html#cb1-45"></a></span>
+<span id="cb1-46"><a href="daten.html#cb1-46"></a><span class="co"># Add day of the week to dataset</span></span>
+<span id="cb1-47"><a href="daten.html#cb1-47"></a>df<span class="op">$</span>weekday &lt;-<span class="st"> </span><span class="kw">weekdays</span>(<span class="kw">as.Date</span>(df<span class="op">$</span>pickup_datetime))</span>
+<span id="cb1-48"><a href="daten.html#cb1-48"></a></span>
+<span id="cb1-49"><a href="daten.html#cb1-49"></a><span class="co"># Add geodesic distance to dataset</span></span>
+<span id="cb1-50"><a href="daten.html#cb1-50"></a>df<span class="op">$</span>gedesic_distance &lt;-<span class="st"> </span><span class="kw">apply</span>(df, <span class="dt">MARGIN=</span><span class="dv">1</span>, make_geodesic_distance)</span>
+<span id="cb1-51"><a href="daten.html#cb1-51"></a></span>
+<span id="cb1-52"><a href="daten.html#cb1-52"></a><span class="co"># export to csv</span></span>
+<span id="cb1-53"><a href="daten.html#cb1-53"></a><span class="kw">write.csv</span>(df,</span>
+<span id="cb1-54"><a href="daten.html#cb1-54"></a>          <span class="dt">file =</span> <span class="kw">file.path</span>(coursepath,savepath,<span class="st">&quot;2021_fhswf_stat_taxi.csv&quot;</span>),</span>
+<span id="cb1-55"><a href="daten.html#cb1-55"></a>          <span class="dt">row.names =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+</div>
 <div id="datenbeschreibung" class="section level3">
-<h3><span class="header-section-number">13.1.1</span> Datenbeschreibung</h3>
+<h3><span class="header-section-number">13.1.2</span> Datenbeschreibung</h3>
 <p><strong>Variablen</strong></p>
 <ul>
 <li><code>id</code>: a unique identifier for each trip</li>
@@ -216,57 +279,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 <div id="daten-laden" class="section level3">
-<h3><span class="header-section-number">13.1.2</span> Daten laden</h3>
-<p>Der Datensatz kann mit dem folgenden Befehl in R geladen werden:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="daten.html#cb1-1"></a><span class="co"># Load Data</span></span>
-<span id="cb1-2"><a href="daten.html#cb1-2"></a>x &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;~/bchwtz/nyctaxi.csv&quot;</span>)</span></code></pre></div>
-</div>
-<div id="ergänzungen" class="section level3">
-<h3><span class="header-section-number">13.1.3</span> Ergänzungen</h3>
-<p>Die ergänzten Variablen wurden mit Hilfe des folgenden Programmcodes erzeugt.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="daten.html#cb2-1"></a><span class="kw">library</span>(geodist)</span>
-<span id="cb2-2"><a href="daten.html#cb2-2"></a><span class="kw">library</span>(osrm)</span>
-<span id="cb2-3"><a href="daten.html#cb2-3"></a></span>
-<span id="cb2-4"><a href="daten.html#cb2-4"></a>x &lt;-<span class="st"> </span><span class="kw">head</span>(x, <span class="dv">50</span>) <span class="co"># Shorten the data to speed up the example</span></span>
-<span id="cb2-5"><a href="daten.html#cb2-5"></a></span>
-<span id="cb2-6"><a href="daten.html#cb2-6"></a><span class="co"># Function to make points dataframe</span></span>
-<span id="cb2-7"><a href="daten.html#cb2-7"></a>make_pts &lt;-<span class="st"> </span><span class="cf">function</span>(x){</span>
-<span id="cb2-8"><a href="daten.html#cb2-8"></a>  pts &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">long =</span> <span class="kw">c</span>(x[<span class="st">&quot;pickup_longitude&quot;</span>], x[<span class="st">&quot;dropoff_longitude&quot;</span>]), </span>
-<span id="cb2-9"><a href="daten.html#cb2-9"></a>                    <span class="dt">lat =</span> <span class="kw">c</span>(x[<span class="st">&quot;pickup_latitude&quot;</span>], x[<span class="st">&quot;dropoff_latitude&quot;</span>]),</span>
-<span id="cb2-10"><a href="daten.html#cb2-10"></a>                    <span class="dt">row.names =</span> <span class="ot">NULL</span>)</span>
-<span id="cb2-11"><a href="daten.html#cb2-11"></a>  <span class="kw">return</span>(pts)</span>
-<span id="cb2-12"><a href="daten.html#cb2-12"></a>}</span>
-<span id="cb2-13"><a href="daten.html#cb2-13"></a></span>
-<span id="cb2-14"><a href="daten.html#cb2-14"></a></span>
-<span id="cb2-15"><a href="daten.html#cb2-15"></a><span class="co"># Function to request route information from openstreetmap</span></span>
-<span id="cb2-16"><a href="daten.html#cb2-16"></a>make_dist_duration &lt;-<span class="st"> </span><span class="cf">function</span>(x, <span class="dt">type=</span><span class="kw">c</span>(<span class="st">&quot;car&quot;</span>,<span class="st">&quot;bike&quot;</span>,<span class="st">&quot;foot&quot;</span>)[<span class="dv">1</span>]){</span>
-<span id="cb2-17"><a href="daten.html#cb2-17"></a>  pts &lt;-<span class="st"> </span><span class="kw">make_pts</span>(x)</span>
-<span id="cb2-18"><a href="daten.html#cb2-18"></a>  route &lt;-<span class="st"> </span>osrm<span class="op">::</span><span class="kw">osrmRoute</span>(<span class="dt">loc=</span>pts, <span class="dt">returnclass =</span> <span class="st">&quot;sf&quot;</span>, <span class="dt">osrm.profile =</span> type)</span>
-<span id="cb2-19"><a href="daten.html#cb2-19"></a>  <span class="kw">return</span>(<span class="kw">c</span>(<span class="dt">osrm_distance=</span>route<span class="op">$</span>dist, <span class="dt">osrm_duration=</span>route<span class="op">$</span>duration))</span>
-<span id="cb2-20"><a href="daten.html#cb2-20"></a>}</span>
-<span id="cb2-21"><a href="daten.html#cb2-21"></a></span>
-<span id="cb2-22"><a href="daten.html#cb2-22"></a></span>
-<span id="cb2-23"><a href="daten.html#cb2-23"></a><span class="co"># Funtion to calculate geodesic_distance</span></span>
-<span id="cb2-24"><a href="daten.html#cb2-24"></a>make_geodesic_distance &lt;-<span class="st"> </span><span class="cf">function</span>(x){</span>
-<span id="cb2-25"><a href="daten.html#cb2-25"></a>  pickup_loc &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">longitude=</span>x[<span class="st">&quot;pickup_longitude&quot;</span>],</span>
-<span id="cb2-26"><a href="daten.html#cb2-26"></a>                  <span class="dt">latitude=</span>x[<span class="st">&quot;pickup_latitude&quot;</span>])</span>
-<span id="cb2-27"><a href="daten.html#cb2-27"></a>  dropoff_loc &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">longitude=</span>x[<span class="st">&quot;dropoff_longitude&quot;</span>],</span>
-<span id="cb2-28"><a href="daten.html#cb2-28"></a>                   <span class="dt">latitude=</span>x[<span class="st">&quot;dropoff_latitude&quot;</span>])</span>
-<span id="cb2-29"><a href="daten.html#cb2-29"></a>  geodesic_distance &lt;-<span class="st"> </span>geodist<span class="op">::</span><span class="kw">geodist</span>(<span class="dt">x=</span>pickup_loc,</span>
-<span id="cb2-30"><a href="daten.html#cb2-30"></a>                                        <span class="dt">y=</span>dropoff_loc, </span>
-<span id="cb2-31"><a href="daten.html#cb2-31"></a>                                        <span class="dt">measure =</span> <span class="st">&quot;geodesic&quot;</span>)</span>
-<span id="cb2-32"><a href="daten.html#cb2-32"></a>  <span class="kw">return</span>(geodesic_distance)</span>
-<span id="cb2-33"><a href="daten.html#cb2-33"></a>}</span>
-<span id="cb2-34"><a href="daten.html#cb2-34"></a></span>
-<span id="cb2-35"><a href="daten.html#cb2-35"></a><span class="co"># Generate route information and add to dataset</span></span>
-<span id="cb2-36"><a href="daten.html#cb2-36"></a>res &lt;-<span class="st"> </span><span class="kw">apply</span>(x, <span class="dt">MARGIN=</span><span class="dv">1</span>, make_dist_duration)</span>
-<span id="cb2-37"><a href="daten.html#cb2-37"></a>df &lt;-<span class="st"> </span><span class="kw">cbind</span>(x,<span class="kw">t</span>(res))</span>
-<span id="cb2-38"><a href="daten.html#cb2-38"></a></span>
-<span id="cb2-39"><a href="daten.html#cb2-39"></a><span class="co"># Add day of the week to dataset</span></span>
-<span id="cb2-40"><a href="daten.html#cb2-40"></a>df<span class="op">$</span>weekday &lt;-<span class="st"> </span><span class="kw">weekdays</span>(<span class="kw">as.Date</span>(df<span class="op">$</span>pickup_datetime))</span>
-<span id="cb2-41"><a href="daten.html#cb2-41"></a></span>
-<span id="cb2-42"><a href="daten.html#cb2-42"></a><span class="co"># Add geodesic distance to dataset</span></span>
-<span id="cb2-43"><a href="daten.html#cb2-43"></a>df<span class="op">$</span>gedesic_distance &lt;-<span class="st"> </span><span class="kw">apply</span>(df, <span class="dt">MARGIN=</span><span class="dv">1</span>, make_geodesic_distance)</span></code></pre></div>
+<h3><span class="header-section-number">13.1.3</span> Daten laden</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="daten.html#cb2-1"></a><span class="co"># load the data</span></span>
+<span id="cb2-2"><a href="daten.html#cb2-2"></a>x &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_taxi.csv&quot;</span>)</span></code></pre></div>
 </div>
 <div id="quellen" class="section level3">
 <h3><span class="header-section-number">13.1.4</span> Quellen</h3>
@@ -278,7 +293,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="hauspreise" class="section level2">
 <h2><span class="header-section-number">13.2</span> Hauspreise</h2>
-<div id="vorbereitungen" class="section level3">
+<div id="vorbereitungen-1" class="section level3">
 <h3><span class="header-section-number">13.2.1</span> Vorbereitungen</h3>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="daten.html#cb3-1"></a><span class="kw">library</span>(tidyverse)</span>
 <span id="cb3-2"><a href="daten.html#cb3-2"></a></span>
@@ -357,6 +372,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div id="daten-laden-1" class="section level3">
 <h3><span class="header-section-number">13.3.1</span> Daten laden</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="daten.html#cb4-1"></a><span class="co"># load the data</span></span>
+<span id="cb4-2"><a href="daten.html#cb4-2"></a>x &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_housing.csv&quot;</span>)</span></code></pre></div>
 </div>
 <div id="quellen-1" class="section level3">
 <h3><span class="header-section-number">13.3.2</span> Quellen</h3>
@@ -367,7 +384,99 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="human-ressources" class="section level2">
 <h2><span class="header-section-number">13.4</span> Human Ressources</h2>
+<div id="vorbereitungen-2" class="section level3">
+<h3><span class="header-section-number">13.4.1</span> Vorbereitungen</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="daten.html#cb5-1"></a><span class="co"># load raw data</span></span>
+<span id="cb5-2"><a href="daten.html#cb5-2"></a>coursepath &lt;-<span class="st"> &quot;~/sciebo/courses/bchwtz-stat&quot;</span></span>
+<span id="cb5-3"><a href="daten.html#cb5-3"></a>filepath &lt;-<span class="st"> &quot;nongit/data/2021-hr/HRDataset_v14.csv&quot;</span></span>
+<span id="cb5-4"><a href="daten.html#cb5-4"></a>savepath &lt;-<span class="st"> &quot;data&quot;</span></span>
+<span id="cb5-5"><a href="daten.html#cb5-5"></a>d &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="kw">file.path</span>(coursepath, filepath))</span>
+<span id="cb5-6"><a href="daten.html#cb5-6"></a></span>
+<span id="cb5-7"><a href="daten.html#cb5-7"></a><span class="co"># harmonize variable names</span></span>
+<span id="cb5-8"><a href="daten.html#cb5-8"></a><span class="kw">names</span>(d) &lt;-<span class="st"> </span><span class="kw">gsub</span>(<span class="st">&quot;_&quot;</span>,<span class="st">&quot;&quot;</span>,<span class="kw">names</span>(d))</span>
+<span id="cb5-9"><a href="daten.html#cb5-9"></a></span>
+<span id="cb5-10"><a href="daten.html#cb5-10"></a><span class="co"># export to csv</span></span>
+<span id="cb5-11"><a href="daten.html#cb5-11"></a><span class="kw">write.csv</span>(d,</span>
+<span id="cb5-12"><a href="daten.html#cb5-12"></a>          <span class="dt">file =</span> <span class="kw">file.path</span>(coursepath,savepath,<span class="st">&quot;2021_fhswf_stat_hr.csv&quot;</span>),</span>
+<span id="cb5-13"><a href="daten.html#cb5-13"></a>          <span class="dt">row.names =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+</div>
+<div id="datenbeschreibung-2" class="section level3">
+<h3><span class="header-section-number">13.4.2</span> Datenbeschreibung</h3>
+<ul>
+<li><code>EmployeeName</code>: Employee’s full name<br />
+</li>
+<li><code>EmpID</code>: Employee ID is unique to each employee<br />
+</li>
+<li><code>MarriedID</code>: Is the person married (1 or 0 for yes or no)<br />
+</li>
+<li><code>MaritalStatusID</code>: Marital status code that matches the text field MaritalDesc</li>
+<li><code>EmpStatusID</code>: Employment status code that matches text field EmploymentStatus</li>
+<li><code>DeptID   Department</code>: ID code that matches the department the employee works in<br />
+</li>
+<li><code>PerfScoreID</code>: Performance Score code that matches the employee’s most recent performance score<br />
+</li>
+<li><code>FromDiversityJobFairID</code>: Was the employee sourced from the Diversity job fair? 1 or 0 for yes or no<br />
+</li>
+<li><code>PayRate</code>: The person’s hourly pay rate. All salaries are converted to hourly pay rate</li>
+<li><code>Termd</code>: Has this employee been terminated - 1 or 0<br />
+</li>
+<li><code>PositionID</code>: An integer indicating the person’s position</li>
+<li><code>Position</code>: The text name/title of the position the person has<br />
+</li>
+<li><code>State</code>: The state that the person lives in<br />
+</li>
+<li><code>Zip</code>: The zip code for the employee<br />
+</li>
+<li><code>DOB</code>: Date of Birth for the employee<br />
+</li>
+<li><code>Sex</code>: Sex - M or F<br />
+</li>
+<li><code>MaritalDesc</code>: The marital status of the person (divorced, single, widowed, separated, etc)<br />
+</li>
+<li><code>CitizenDesc</code>: Label for whether the person is a Citizen or Eligible NonCitizen<br />
+</li>
+<li><code>HispanicLatino</code>: Yes or No field for whether the employee is Hispanic/Latino</li>
+<li><code>RaceDesc</code>: Description/text of the race the person identifies with</li>
+<li><code>DateofHire</code>: Date the person was hired<br />
+</li>
+<li><code>DateofTermination</code>: Date the person was terminated, only populated if, in fact, Termd = 1<br />
+</li>
+<li><code>TermReason</code>: A text reason / description for why the person was terminated<br />
+</li>
+<li><code>EmploymentStatus</code>: A description/category of the person’s employment status. Anyone currently working full time = Active<br />
+</li>
+<li><code>Department</code>: Name of the department that the person works in</li>
+<li><code>ManagerName</code>: The name of the person’s immediate manager<br />
+</li>
+<li><code>ManagerID</code>: A unique identifier for each manager</li>
+<li><code>RecruitmentSource</code>: The name of the recruitment source where the employee was recruited from<br />
+</li>
+<li><code>PerformanceScore</code>: Performance Score text/category (Fully Meets, Partially Meets, PIP, Exceeds)<br />
+</li>
+<li><code>EngagementSurvey</code>: Results from the last engagement survey, managed by our external partner<br />
+</li>
+<li><code>EmpSatisfaction</code>: A basic satisfaction score between 1 and 5, as reported on a recent employee satisfaction survey</li>
+<li><code>SpecialProjectsCount</code>: The number of special projects that the employee worked on during the last 6 months</li>
+<li><code>LastPerformanceReviewDate</code>: The most recent date of the person’s last performance review.<br />
+</li>
+<li><code>DaysLateLast30</code>: The number of times that the employee was late to work during the last 30 days<br />
+</li>
+<li><code>Absences</code>: The number of times the employee was absent from work</li>
+</ul>
+</div>
+<div id="daten-laden-2" class="section level3">
+<h3><span class="header-section-number">13.4.3</span> Daten laden</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="daten.html#cb6-1"></a><span class="co"># load the data</span></span>
+<span id="cb6-2"><a href="daten.html#cb6-2"></a>x &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_hr.csv&quot;</span>)</span></code></pre></div>
+</div>
+<div id="quellen-2" class="section level3">
+<h3><span class="header-section-number">13.4.4</span> Quellen</h3>
+<ul>
+<li><a href="https://www.kaggle.com/rhuebner/human-resources-data-set" class="uri">https://www.kaggle.com/rhuebner/human-resources-data-set</a></li>
+<li><a href="https://rpubs.com/rhuebner/hr_codebook_v14" class="uri">https://rpubs.com/rhuebner/hr_codebook_v14</a></li>
+</ul>
 
+</div>
 </div>
 </div>
 
