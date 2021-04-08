@@ -155,8 +155,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.1.3" data-path="daten.html"><a href="daten.html#ergänzungen"><i class="fa fa-check"></i><b>13.1.3</b> Ergänzungen</a></li>
 <li class="chapter" data-level="13.1.4" data-path="daten.html"><a href="daten.html#quellen"><i class="fa fa-check"></i><b>13.1.4</b> Quellen</a></li>
 </ul></li>
-<li class="chapter" data-level="13.2" data-path="daten.html"><a href="daten.html#hauspreise"><i class="fa fa-check"></i><b>13.2</b> Hauspreise</a></li>
-<li class="chapter" data-level="13.3" data-path="daten.html"><a href="daten.html#human-ressources"><i class="fa fa-check"></i><b>13.3</b> Human Ressources</a></li>
+<li class="chapter" data-level="13.2" data-path="daten.html"><a href="daten.html#hauspreise"><i class="fa fa-check"></i><b>13.2</b> Hauspreise</a><ul>
+<li class="chapter" data-level="13.2.1" data-path="daten.html"><a href="daten.html#vorbereitungen"><i class="fa fa-check"></i><b>13.2.1</b> Vorbereitungen</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="daten.html"><a href="daten.html#datenbeschreibung-1"><i class="fa fa-check"></i><b>13.3</b> Datenbeschreibung</a><ul>
+<li class="chapter" data-level="13.3.1" data-path="daten.html"><a href="daten.html#daten-laden-1"><i class="fa fa-check"></i><b>13.3.1</b> Daten laden</a></li>
+<li class="chapter" data-level="13.3.2" data-path="daten.html"><a href="daten.html#quellen-1"><i class="fa fa-check"></i><b>13.3.2</b> Quellen</a></li>
+</ul></li>
+<li class="chapter" data-level="13.4" data-path="daten.html"><a href="daten.html#human-ressources"><i class="fa fa-check"></i><b>13.4</b> Human Ressources</a></li>
 </ul></li>
 <li class="part"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="" data-path="evaluation.html"><a href="evaluation.html"><i class="fa fa-check"></i>Evaluation</a></li>
@@ -272,9 +278,96 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="hauspreise" class="section level2">
 <h2><span class="header-section-number">13.2</span> Hauspreise</h2>
+<div id="vorbereitungen" class="section level3">
+<h3><span class="header-section-number">13.2.1</span> Vorbereitungen</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="daten.html#cb3-1"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb3-2"><a href="daten.html#cb3-2"></a></span>
+<span id="cb3-3"><a href="daten.html#cb3-3"></a><span class="co"># load raw data</span></span>
+<span id="cb3-4"><a href="daten.html#cb3-4"></a>coursepath &lt;-<span class="st"> &quot;~/sciebo/courses/bchwtz-stat&quot;</span></span>
+<span id="cb3-5"><a href="daten.html#cb3-5"></a>filepath &lt;-<span class="st"> &quot;nongit/data/2021-housing/germany_housing.csv&quot;</span></span>
+<span id="cb3-6"><a href="daten.html#cb3-6"></a>savepath &lt;-<span class="st"> &quot;data&quot;</span></span>
+<span id="cb3-7"><a href="daten.html#cb3-7"></a>d &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="kw">file.path</span>(coursepath, filepath))</span>
+<span id="cb3-8"><a href="daten.html#cb3-8"></a></span>
+<span id="cb3-9"><a href="daten.html#cb3-9"></a><span class="co"># rename columns and select relevant ones</span></span>
+<span id="cb3-10"><a href="daten.html#cb3-10"></a>d &lt;-<span class="st"> </span>d <span class="op">%&gt;%</span></span>
+<span id="cb3-11"><a href="daten.html#cb3-11"></a><span class="st">  </span><span class="kw">rename</span>(</span>
+<span id="cb3-12"><a href="daten.html#cb3-12"></a>    <span class="dt">id =</span> X,</span>
+<span id="cb3-13"><a href="daten.html#cb3-13"></a>    <span class="dt">price =</span> Price,</span>
+<span id="cb3-14"><a href="daten.html#cb3-14"></a>    <span class="dt">type =</span> Type,</span>
+<span id="cb3-15"><a href="daten.html#cb3-15"></a>    <span class="dt">living_space =</span> Living_space,</span>
+<span id="cb3-16"><a href="daten.html#cb3-16"></a>    <span class="dt">lot_size =</span> Lot,</span>
+<span id="cb3-17"><a href="daten.html#cb3-17"></a>    <span class="dt">additional_area =</span> Usable_area,</span>
+<span id="cb3-18"><a href="daten.html#cb3-18"></a>    <span class="dt">availability =</span> Free_of_Relation,</span>
+<span id="cb3-19"><a href="daten.html#cb3-19"></a>    <span class="dt">rooms =</span> Rooms,</span>
+<span id="cb3-20"><a href="daten.html#cb3-20"></a>    <span class="dt">bedrooms =</span> Bedrooms,</span>
+<span id="cb3-21"><a href="daten.html#cb3-21"></a>    <span class="dt">bathrooms =</span> Bathrooms,</span>
+<span id="cb3-22"><a href="daten.html#cb3-22"></a>    <span class="dt">floors =</span> Floors,</span>
+<span id="cb3-23"><a href="daten.html#cb3-23"></a>    <span class="dt">year_construction =</span> Year_built,</span>
+<span id="cb3-24"><a href="daten.html#cb3-24"></a>    <span class="dt">year_modernization =</span> Year_renovated,</span>
+<span id="cb3-25"><a href="daten.html#cb3-25"></a>    <span class="dt">condition =</span> Condition,</span>
+<span id="cb3-26"><a href="daten.html#cb3-26"></a>    <span class="dt">heating =</span> Heating,</span>
+<span id="cb3-27"><a href="daten.html#cb3-27"></a>    <span class="dt">facility_quality =</span> Furnishing_quality,</span>
+<span id="cb3-28"><a href="daten.html#cb3-28"></a>    <span class="dt">energy_source =</span> Energy_source,</span>
+<span id="cb3-29"><a href="daten.html#cb3-29"></a>    <span class="dt">energy_certificate =</span> Energy_certificate,</span>
+<span id="cb3-30"><a href="daten.html#cb3-30"></a>    <span class="dt">energy_certificate_type =</span> Energy_certificate_type,</span>
+<span id="cb3-31"><a href="daten.html#cb3-31"></a>    <span class="dt">energy_consumption =</span> Energy_consumption,</span>
+<span id="cb3-32"><a href="daten.html#cb3-32"></a>    <span class="dt">energy_efficiency_class =</span> Energy_efficiency_class,</span>
+<span id="cb3-33"><a href="daten.html#cb3-33"></a>    <span class="dt">state =</span> State,</span>
+<span id="cb3-34"><a href="daten.html#cb3-34"></a>    <span class="dt">district =</span> City,</span>
+<span id="cb3-35"><a href="daten.html#cb3-35"></a>    <span class="dt">city =</span> Place,</span>
+<span id="cb3-36"><a href="daten.html#cb3-36"></a>    <span class="dt">parking_lot =</span> Garages,</span>
+<span id="cb3-37"><a href="daten.html#cb3-37"></a>    <span class="dt">parking_lot_type =</span> Garagetype</span>
+<span id="cb3-38"><a href="daten.html#cb3-38"></a>  ) <span class="op">%&gt;%</span></span>
+<span id="cb3-39"><a href="daten.html#cb3-39"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>availability)</span>
+<span id="cb3-40"><a href="daten.html#cb3-40"></a> </span>
+<span id="cb3-41"><a href="daten.html#cb3-41"></a><span class="co"># export to csv</span></span>
+<span id="cb3-42"><a href="daten.html#cb3-42"></a></span>
+<span id="cb3-43"><a href="daten.html#cb3-43"></a><span class="kw">write.csv</span>(d,</span>
+<span id="cb3-44"><a href="daten.html#cb3-44"></a>          <span class="dt">file =</span> <span class="kw">file.path</span>(coursepath,savepath,<span class="st">&quot;2021_fhswf_stat_housing.csv&quot;</span>),</span>
+<span id="cb3-45"><a href="daten.html#cb3-45"></a>          <span class="dt">row.names =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="datenbeschreibung-1" class="section level2">
+<h2><span class="header-section-number">13.3</span> Datenbeschreibung</h2>
+<ul>
+<li><code>id</code>: a unique identifier for each offer</li>
+<li><code>price</code>: the requested price in Euro to buy the building</li>
+<li><code>type</code>: the type of the offered building</li>
+<li><code>living_space</code>: the size of the usable living space in the building in square meters</li>
+<li><code>lot_size</code>: the size of the associated lot in square meters</li>
+<li><code>additional_area</code>: the size of the additionally available area in square meters that is not qualified living space due to legal reasons</li>
+<li><code>rooms</code>: the total number of rooms in the building</li>
+<li><code>bedrooms</code>: the number of bedrooms in the building</li>
+<li><code>bathrooms</code>: the number of bathrooms in the building</li>
+<li><code>floors</code>: number of storys in the building</li>
+<li><code>year_construction</code>: the year in which the building was first constructed</li>
+<li><code>year_modernization</code>: the year in which the building was lastly renovated</li>
+<li><code>facility_quality</code>: an indication of quality of the installed fixtures, facilities and if applicable furniture</li>
+<li><code>condition</code>: the general condition of the building and facilities</li>
+<li><code>heating</code>: the primary technology for heating the building</li>
+<li><code>energy_source</code>: the primary source of energy for heating and warm water</li>
+<li><code>energy_certificate</code>: an indication wheter and energy consumption certificate is required and/or available</li>
+<li><code>energy_certificate_type</code>: the type of the available energy certification</li>
+<li><code>energy_consumption</code>: the required amount of energy in <span class="math inline">\(kWh/m^2\)</span> per year to heat the building</li>
+<li><code>energy_efficiency_class</code>: an indication of the quality of the thermal insulation of the building according to the german EnEV, ranging from A+ (best) to H (worst)</li>
+<li><code>state</code>: the federal state of germany in which the building is located</li>
+<li><code>district</code>: the respective district of the federal stat in which the building is located</li>
+<li><code>city</code>: the name of the city to whom the building is allocated</li>
+<li><code>parking_lot</code>: the amount of registered parking lots that belong to the building</li>
+<li><code>parking_lot_type</code>: the type of the available parking lots</li>
+</ul>
+<div id="daten-laden-1" class="section level3">
+<h3><span class="header-section-number">13.3.1</span> Daten laden</h3>
+</div>
+<div id="quellen-1" class="section level3">
+<h3><span class="header-section-number">13.3.2</span> Quellen</h3>
+<ul>
+<li><a href="https://www.kaggle.com/scriptsultan/german-house-prices" class="uri">https://www.kaggle.com/scriptsultan/german-house-prices</a></li>
+</ul>
+</div>
 </div>
 <div id="human-ressources" class="section level2">
-<h2><span class="header-section-number">13.3</span> Human Ressources</h2>
+<h2><span class="header-section-number">13.4</span> Human Ressources</h2>
 
 </div>
 </div>
@@ -337,6 +430,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
