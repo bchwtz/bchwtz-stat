@@ -57,7 +57,7 @@ kable(d, booktabs=T, align = "c")
 
 - **Qualitative Merkmale:** variieren artmäßig
     + z.B. Geschlecht, Rechtsform von Unternehmen, Haarfarbe etc.
-- **Quanittative Merkmale:** variieren der Größe nach
+- **Quantitative Merkmale:** variieren der Größe nach
     + z.B. Alter, Einkommen, Kinderzahl etc.
     
 ## Klassifikation von Merkmalen (Skalenniveau)
