@@ -5,6 +5,7 @@
 ### Datenbeschreibung
 
 **Variablen**
+
 - `id`: a unique identifier for each trip
 - `vendor_id`: a code indicating the provider associated with the trip record
 - `pickup_datetime`: date and time when the meter was engaged
@@ -18,6 +19,7 @@
 - `trip_duration`: duration of the trip in seconds
 
 **Ergänzte Variablen**
+
 - `osrm_distance`: the travel distance by car in kilometers as calculated by the Open Streetmap Routing Machine
 - `osrm_duration`: the estimated duration for travelling the route by car in minutes as estimated by the Open Streetmap Routing Machine
 - `geodesic_distance`: the geodesic distance in meters between the pickup and dropoff coordinates calculated using the method of Karney (2013)
