@@ -2,6 +2,66 @@
 
 ## Taxi Trips
 
+### Vorbereitungen
+
+```{r, eval = FALSE}
+library(geodist)
+library(osrm)
+
+# load raw data
+coursepath <- "~/sciebo/courses/bchwtz-stat"
+filepath <- "nongit/data/2021-taxi/nyctaxi.csv"
+savepath <- "data"
+d <- read.csv(file.path(coursepath, filepath))
+
+# select a subset of the data
+n <- 10000
+set.seed(20210408)
+d <- d[sample(nrow(d), size = n), ]
+
+# Function to make points dataframe
+make_pts <- function(x){
+  pts <- data.frame(long = c(x["pickup_longitude"], x["dropoff_longitude"]), 
+                    lat = c(x["pickup_latitude"], x["dropoff_latitude"]),
+                    row.names = NULL)
+  return(pts)
+}
+
+# Function to request route information from openstreetmap
+make_dist_duration <- function(x, type=c("car","bike","foot")[1]){
+  pts <- make_pts(x)
+  route <- osrm::osrmRoute(loc=pts, returnclass = "sf", osrm.profile = type)
+  return(c(osrm_distance=route$dist, osrm_duration=route$duration))
+}
+
+# Funtion to calculate geodesic_distance
+make_geodesic_distance <- function(x){
+  pickup_loc <- c(longitude=x["pickup_longitude"],
+                  latitude=x["pickup_latitude"])
+  dropoff_loc <- c(longitude=x["dropoff_longitude"],
+                   latitude=x["dropoff_latitude"])
+  geodesic_distance <- geodist::geodist(x=pickup_loc,
+                                        y=dropoff_loc, 
+                                        measure = "geodesic")
+  return(geodesic_distance)
+}
+
+# Generate route information and add to dataset
+res <- apply(d, MARGIN=1, make_dist_duration)
+df <- cbind(d, t(res))
+
+# Add day of the week to dataset
+df$weekday <- weekdays(as.Date(df$pickup_datetime))
+
+# Add geodesic distance to dataset
+df$gedesic_distance <- apply(df, MARGIN=1, make_geodesic_distance)
+
+# export to csv
+write.csv(df,
+          file = file.path(coursepath,savepath,"2021_fhswf_stat_taxi.csv"),
+          row.names = FALSE)
+```
+
 ### Datenbeschreibung
 
 **Variablen**
@@ -27,61 +87,9 @@
 
 ### Daten laden
 
-Der Datensatz kann mit dem folgenden Befehl in R geladen werden:
-
 ```{r, eval = FALSE}
-# Load Data
-x <- read.csv("~/bchwtz/nyctaxi.csv")
-```
-
-### Ergänzungen
-
-Die ergänzten Variablen wurden mit Hilfe des folgenden Programmcodes erzeugt.
-
-```{r, eval = FALSE}
-library(geodist)
-library(osrm)
-
-x <- head(x, 50) # Shorten the data to speed up the example
-
-# Function to make points dataframe
-make_pts <- function(x){
-  pts <- data.frame(long = c(x["pickup_longitude"], x["dropoff_longitude"]), 
-                    lat = c(x["pickup_latitude"], x["dropoff_latitude"]),
-                    row.names = NULL)
-  return(pts)
-}
-
-
-# Function to request route information from openstreetmap
-make_dist_duration <- function(x, type=c("car","bike","foot")[1]){
-  pts <- make_pts(x)
-  route <- osrm::osrmRoute(loc=pts, returnclass = "sf", osrm.profile = type)
-  return(c(osrm_distance=route$dist, osrm_duration=route$duration))
-}
-
-
-# Funtion to calculate geodesic_distance
-make_geodesic_distance <- function(x){
-  pickup_loc <- c(longitude=x["pickup_longitude"],
-                  latitude=x["pickup_latitude"])
-  dropoff_loc <- c(longitude=x["dropoff_longitude"],
-                   latitude=x["dropoff_latitude"])
-  geodesic_distance <- geodist::geodist(x=pickup_loc,
-                                        y=dropoff_loc, 
-                                        measure = "geodesic")
-  return(geodesic_distance)
-}
-
-# Generate route information and add to dataset
-res <- apply(x, MARGIN=1, make_dist_duration)
-df <- cbind(x,t(res))
-
-# Add day of the week to dataset
-df$weekday <- weekdays(as.Date(df$pickup_datetime))
-
-# Add geodesic distance to dataset
-df$gedesic_distance <- apply(df, MARGIN=1, make_geodesic_distance)
+# load the data
+x <- read.csv("https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_taxi.csv")
 ```
 
 ### Quellen
@@ -171,8 +179,9 @@ write.csv(d,
 
 ### Daten laden
 
-```{r}
-
+```{r, eval=FALSE}
+# load the data
+x <- read.csv("https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_housing.csv")
 ```
 
 ### Quellen
@@ -180,3 +189,69 @@ write.csv(d,
 
 ## Human Ressources
 
+### Vorbereitungen
+
+```{r, eval=FALSE}
+# load raw data
+coursepath <- "~/sciebo/courses/bchwtz-stat"
+filepath <- "nongit/data/2021-hr/HRDataset_v14.csv"
+savepath <- "data"
+d <- read.csv(file.path(coursepath, filepath))
+
+# harmonize variable names
+names(d) <- gsub("_","",names(d))
+
+# export to csv
+write.csv(d,
+          file = file.path(coursepath,savepath,"2021_fhswf_stat_hr.csv"),
+          row.names = FALSE)
+```
+
+### Datenbeschreibung
+
+- `EmployeeName`:	Employee’s full name	
+- `EmpID`:	Employee ID is unique to each employee	
+- `MarriedID`:	Is the person married (1 or 0 for yes or no)	
+- `MaritalStatusID`:	Marital status code that matches the text field MaritalDesc	
+- `EmpStatusID`:	Employment status code that matches text field EmploymentStatus	
+- `DeptID	Department`: ID code that matches the department the employee works in	
+- `PerfScoreID`:	Performance Score code that matches the employee’s most recent performance score	
+- `FromDiversityJobFairID`:	Was the employee sourced from the Diversity job fair? 1 or 0 for yes or no	
+- `PayRate`:	The person’s hourly pay rate. All salaries are converted to hourly pay rate	
+- `Termd`:	Has this employee been terminated - 1 or 0	
+- `PositionID`:	An integer indicating the person’s position	
+- `Position`:	The text name/title of the position the person has	
+- `State`:	The state that the person lives in	
+- `Zip`:	The zip code for the employee	
+- `DOB`:	Date of Birth for the employee	
+- `Sex`:	Sex - M or F	
+- `MaritalDesc`:	The marital status of the person (divorced, single, widowed, separated, etc)	
+- `CitizenDesc`:	Label for whether the person is a Citizen or Eligible NonCitizen	
+- `HispanicLatino`:	Yes or No field for whether the employee is Hispanic/Latino	
+- `RaceDesc`:	Description/text of the race the person identifies with	
+- `DateofHire`:	Date the person was hired	
+- `DateofTermination`:	Date the person was terminated, only populated if, in fact, Termd = 1	
+- `TermReason`:	A text reason / description for why the person was terminated	
+- `EmploymentStatus`:	A description/category of the person’s employment status. Anyone currently working full time = Active	
+- `Department`:	Name of the department that the person works in	
+- `ManagerName`:	The name of the person’s immediate manager	
+- `ManagerID`:	A unique identifier for each manager
+- `RecruitmentSource`:	The name of the recruitment source where the employee was recruited from	
+- `PerformanceScore`:	Performance Score text/category (Fully Meets, Partially Meets, PIP, Exceeds)	
+- `EngagementSurvey`:	Results from the last engagement survey, managed by our external partner	
+- `EmpSatisfaction`:	A basic satisfaction score between 1 and 5, as reported on a recent employee satisfaction survey
+- `SpecialProjectsCount`:	The number of special projects that the employee worked on during the last 6 months	
+- `LastPerformanceReviewDate`:	The most recent date of the person’s last performance review.	
+- `DaysLateLast30`:	The number of times that the employee was late to work during the last 30 days	
+- `Absences`:	The number of times the employee was absent from work
+
+### Daten laden
+
+```{r, eval=FALSE}
+# load the data
+x <- read.csv("https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_hr.csv")
+```
+
+### Quellen
+- https://www.kaggle.com/rhuebner/human-resources-data-set
+- https://rpubs.com/rhuebner/hr_codebook_v14
