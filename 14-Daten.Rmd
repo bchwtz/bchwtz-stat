@@ -136,7 +136,6 @@ d <- d %>%
   select(-availability)
  
 # export to csv
-
 write.csv(d,
           file = file.path(coursepath,savepath,"2021_fhswf_stat_housing.csv"),
           row.names = FALSE)
