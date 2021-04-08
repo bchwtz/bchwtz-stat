@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="zeitreihenanalyse.html"/>
-<link rel="next" href="system-info.html"/>
+<link rel="next" href="evaluation.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -159,6 +159,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.3" data-path="daten.html"><a href="daten.html#human-ressources"><i class="fa fa-check"></i><b>13.3</b> Human Ressources</a></li>
 </ul></li>
 <li class="part"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="" data-path="evaluation.html"><a href="evaluation.html"><i class="fa fa-check"></i>Evaluation</a></li>
 <li class="chapter" data-level="" data-path="system-info.html"><a href="system-info.html"><i class="fa fa-check"></i>System Info</a></li>
 <li class="divider"></li>
 <li><a href="http://www.bchwtz.de" target="blank"><center>www.<b>BCHWTZ</b>.de</center></a></li>
@@ -186,23 +187,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">13.1</span> Taxi Trips</h2>
 <div id="datenbeschreibung" class="section level3">
 <h3><span class="header-section-number">13.1.1</span> Datenbeschreibung</h3>
-<p><strong>Variablen</strong>
-- <code>id</code>: a unique identifier for each trip
-- <code>vendor_id</code>: a code indicating the provider associated with the trip record
-- <code>pickup_datetime</code>: date and time when the meter was engaged
-- <code>dropoff_datetime</code>: date and time when the meter was disengaged
-- <code>passenger_count</code>: the number of passengers in the vehicle (driver entered value)
-- <code>pickup_longitude</code>: the longitude where the meter was engaged
-- <code>pickup_latitude</code>: the latitude where the meter was engaged
-- <code>dropoff_longitude</code>: the longitude where the meter was disengaged
-- <code>dropoff_latitude</code>: the latitude where the meter was disengaged
-- <code>store_and_fwd_flag</code>: This flag indicates whether the trip record was held in vehicle memory before sending to the vendor because the vehicle did not have a connection to the server - Y=store and forward; N=not a store and forward trip
-- <code>trip_duration</code>: duration of the trip in seconds</p>
-<p><strong>Ergänzte Variablen</strong>
-- <code>osrm_distance</code>: the travel distance by car in kilometers as calculated by the Open Streetmap Routing Machine
-- <code>osrm_duration</code>: the estimated duration for travelling the route by car in minutes as estimated by the Open Streetmap Routing Machine
-- <code>geodesic_distance</code>: the geodesic distance in meters between the pickup and dropoff coordinates calculated using the method of Karney (2013)
-- <code>weekday:</code> the day of the week when the trip was started</p>
+<p><strong>Variablen</strong></p>
+<ul>
+<li><code>id</code>: a unique identifier for each trip</li>
+<li><code>vendor_id</code>: a code indicating the provider associated with the trip record</li>
+<li><code>pickup_datetime</code>: date and time when the meter was engaged</li>
+<li><code>dropoff_datetime</code>: date and time when the meter was disengaged</li>
+<li><code>passenger_count</code>: the number of passengers in the vehicle (driver entered value)</li>
+<li><code>pickup_longitude</code>: the longitude where the meter was engaged</li>
+<li><code>pickup_latitude</code>: the latitude where the meter was engaged</li>
+<li><code>dropoff_longitude</code>: the longitude where the meter was disengaged</li>
+<li><code>dropoff_latitude</code>: the latitude where the meter was disengaged</li>
+<li><code>store_and_fwd_flag</code>: This flag indicates whether the trip record was held in vehicle memory before sending to the vendor because the vehicle did not have a connection to the server - Y=store and forward; N=not a store and forward trip</li>
+<li><code>trip_duration</code>: duration of the trip in seconds</li>
+</ul>
+<p><strong>Ergänzte Variablen</strong></p>
+<ul>
+<li><code>osrm_distance</code>: the travel distance by car in kilometers as calculated by the Open Streetmap Routing Machine</li>
+<li><code>osrm_duration</code>: the estimated duration for travelling the route by car in minutes as estimated by the Open Streetmap Routing Machine</li>
+<li><code>geodesic_distance</code>: the geodesic distance in meters between the pickup and dropoff coordinates calculated using the method of Karney (2013)</li>
+<li><code>weekday:</code> the day of the week when the trip was started</li>
+</ul>
 </div>
 <div id="daten-laden" class="section level3">
 <h3><span class="header-section-number">13.1.2</span> Daten laden</h3>
@@ -282,7 +287,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="zeitreihenanalyse.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="system-info.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="evaluation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

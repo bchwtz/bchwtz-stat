@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Kapitel 5 Kombinatorik | Statistics</title>
-  <meta name="description" content="Kapitel 5 Kombinatorik | Statistics Course Notes" />
+  <title>Evaluation | Statistics</title>
+  <meta name="description" content="Evaluation | Statistics Course Notes" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Kapitel 5 Kombinatorik | Statistics" />
+  <meta property="og:title" content="Evaluation | Statistics" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Kapitel 5 Kombinatorik | Statistics Course Notes" />
+  <meta property="og:description" content="Evaluation | Statistics Course Notes" />
   <meta name="github-repo" content="bchwtz/bchwtz-stat" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Kapitel 5 Kombinatorik | Statistics" />
+  <meta name="twitter:title" content="Evaluation | Statistics" />
   
-  <meta name="twitter:description" content="Kapitel 5 Kombinatorik | Statistics Course Notes" />
+  <meta name="twitter:description" content="Evaluation | Statistics Course Notes" />
   
 
 <meta name="author" content="Benjamin Buchwitz" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="zweidimensionale-verteilungen.html"/>
-<link rel="next" href="wahrscheinlichkeitsrechnung.html"/>
+<link rel="prev" href="daten.html"/>
+<link rel="next" href="system-info.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -181,17 +181,76 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="kombinatorik" class="section level1">
-<h1><span class="header-section-number">Kapitel 5</span> Kombinatorik</h1>
-
+<div id="evaluation" class="section level1 unnumbered">
+<h1>Evaluation</h1>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="evaluation.html#cb3-1"></a>stats_ss2021 &lt;-<span class="st"> </span><span class="kw">tribble</span>(</span>
+<span id="cb3-2"><a href="evaluation.html#cb3-2"></a>  <span class="op">~</span>date, <span class="op">~</span>vg, <span class="op">~</span>g, <span class="op">~</span>n, <span class="op">~</span>b, <span class="op">~</span>vb, <span class="op">~</span>total,</span>
+<span id="cb3-3"><a href="evaluation.html#cb3-3"></a>  <span class="st">&quot;07.04.2021&quot;</span>,<span class="dv">45</span>,<span class="dv">71</span>,<span class="dv">7</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">128</span></span>
+<span id="cb3-4"><a href="evaluation.html#cb3-4"></a>)</span>
+<span id="cb3-5"><a href="evaluation.html#cb3-5"></a>evcnames&lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Datum&quot;</span>,<span class="st">&quot;sehr zufrieden&quot;</span>, <span class="st">&quot;zufrieden&quot;</span>, </span>
+<span id="cb3-6"><a href="evaluation.html#cb3-6"></a>           <span class="st">&quot;weder zufrieden noch unzufrieden&quot;</span>, </span>
+<span id="cb3-7"><a href="evaluation.html#cb3-7"></a>           <span class="st">&quot;unzufrieden&quot;</span>, <span class="st">&quot;sehr unzufrieden&quot;</span>, <span class="st">&quot;anwesend&quot;</span>)</span>
+<span id="cb3-8"><a href="evaluation.html#cb3-8"></a><span class="kw">kable</span>(stats_ss2021, <span class="dt">booktabbs=</span>T, <span class="dt">col.names =</span> evcnames)</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+Datum
+</th>
+<th style="text-align:right;">
+sehr zufrieden
+</th>
+<th style="text-align:right;">
+zufrieden
+</th>
+<th style="text-align:right;">
+weder zufrieden noch unzufrieden
+</th>
+<th style="text-align:right;">
+unzufrieden
+</th>
+<th style="text-align:right;">
+sehr unzufrieden
+</th>
+<th style="text-align:right;">
+anwesend
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+07.04.2021
+</td>
+<td style="text-align:right;">
+45
+</td>
+<td style="text-align:right;">
+71
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+128
+</td>
+</tr>
+</tbody>
+</table>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="zweidimensionale-verteilungen.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="wahrscheinlichkeitsrechnung.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="daten.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="system-info.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -222,7 +281,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/05-Kombinatorik.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/XX-Appendix.Rmd",
 "text": "Edit"
 },
 "history": {
