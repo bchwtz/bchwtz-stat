@@ -89,8 +89,95 @@ df$gedesic_distance <- apply(df, MARGIN=1, make_geodesic_distance)
 - https://www.kaggle.com/c/nyc-taxi-trip-duration/
 - https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page
 
+
 ## Hauspreise
 
+### Vorbereitungen
+
+```{r, eval=FALSE}
+library(tidyverse)
+
+# load raw data
+coursepath <- "~/sciebo/courses/bchwtz-stat"
+filepath <- "nongit/data/2021-housing/germany_housing.csv"
+savepath <- "data"
+d <- read.csv(file.path(coursepath, filepath))
+
+# rename columns and select relevant ones
+d <- d %>%
+  rename(
+    id = X,
+    price = Price,
+    type = Type,
+    living_space = Living_space,
+    lot_size = Lot,
+    additional_area = Usable_area,
+    availability = Free_of_Relation,
+    rooms = Rooms,
+    bedrooms = Bedrooms,
+    bathrooms = Bathrooms,
+    floors = Floors,
+    year_construction = Year_built,
+    year_modernization = Year_renovated,
+    condition = Condition,
+    heating = Heating,
+    facility_quality = Furnishing_quality,
+    energy_source = Energy_source,
+    energy_certificate = Energy_certificate,
+    energy_certificate_type = Energy_certificate_type,
+    energy_consumption = Energy_consumption,
+    energy_efficiency_class = Energy_efficiency_class,
+    state = State,
+    district = City,
+    city = Place,
+    parking_lot = Garages,
+    parking_lot_type = Garagetype
+  ) %>%
+  select(-availability)
+ 
+# export to csv
+
+write.csv(d,
+          file = file.path(coursepath,savepath,"2021_fhswf_stat_housing.csv"),
+          row.names = FALSE)
+```
+
+## Datenbeschreibung
+
+- `id`: a unique identifier for each offer
+- `price`: the requested price in Euro to buy the building
+- `type`: the type of the offered building
+- `living_space`: the size of the usable living space in the building in square meters
+- `lot_size`: the size of the associated lot in square meters
+- `additional_area`: the size of the additionally available area in square meters that is not qualified living space due to legal reasons
+- `rooms`: the total number of rooms in the building
+- `bedrooms`: the number of bedrooms in the building
+- `bathrooms`: the number of bathrooms in the building
+- `floors`: number of storys in the building
+- `year_construction`: the year in which the building was first constructed
+- `year_modernization`: the year in which the building was lastly renovated
+- `facility_quality`: an indication of quality of the installed fixtures, facilities and if applicable furniture
+- `condition`: the general condition of the building and facilities
+- `heating`: the primary technology for heating the building
+- `energy_source`: the primary source of energy for heating and warm water
+- `energy_certificate`: an indication wheter and energy consumption certificate is required and/or available
+- `energy_certificate_type`: the type of the available energy certification
+- `energy_consumption`: the required amount of energy in $kWh/m^2$ per year to heat the building
+- `energy_efficiency_class`: an indication of the quality of the thermal insulation of the building according to the german EnEV, ranging from A+ (best) to H (worst)
+- `state`: the federal state of germany in which the building is located
+- `district`: the respective district of the federal stat in which the building is located
+- `city`: the name of the city to whom the building is allocated
+- `parking_lot`: the amount of registered parking lots that belong to the building
+- `parking_lot_type`: the type of the available parking lots
+
+### Daten laden
+
+```{r}
+
+```
+
+### Quellen
+- https://www.kaggle.com/scriptsultan/german-house-prices
 
 ## Human Ressources
 
