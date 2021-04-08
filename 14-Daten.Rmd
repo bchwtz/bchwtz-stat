@@ -85,6 +85,7 @@ df$gedesic_distance <- apply(df, MARGIN=1, make_geodesic_distance)
 ```
 
 ### Quellen
+
 - https://www.kaggle.com/c/nyc-taxi-trip-duration/
 - https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page
 

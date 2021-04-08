@@ -23,7 +23,7 @@ knitr::write_bib(c(
 
 ```{r, include=FALSE}
 # Load Packages
-library(tidyverse)
+library("tidyverse")
 library("knitr")
 library("kableExtra")
 knitr::opts_chunk$set(echo = TRUE, fig.align = "center")
