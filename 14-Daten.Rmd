@@ -10,6 +10,50 @@
 
 ### Datenbeschreibung
 
+**Variablen**
+
+- `id`: a unique identifier for each trip
+- `vendor_id`: a code indicating the provider associated with the trip record
+- `pickup_datetime`: date and time when the meter was engaged
+- `dropoff_datetime`: date and time when the meter was disengaged
+- `passenger_count`: the number of passengers in the vehicle (driver entered value)
+- `pickup_longitude`: the longitude where the meter was engaged
+- `pickup_latitude`: the latitude where the meter was engaged
+- `dropoff_longitude`: the longitude where the meter was disengaged
+- `dropoff_latitude`: the latitude where the meter was disengaged
+- `store_and_fwd_flag`: This flag indicates whether the trip record was held in vehicle memory before sending to the vendor because the vehicle did not have a connection to the server - Y=store and forward; N=not a store and forward trip
+- `trip_duration`: duration of the trip in seconds
+
+**Ergänzte Variablen**
+
+- `osrm_distance`: the travel distance by car in kilometers as calculated by the Open Streetmap Routing Machine
+- `osrm_duration`: the estimated duration for travelling the route by car in minutes as estimated by the Open Streetmap Routing Machine
+- `geodesic_distance`: the geodesic distance in meters between the pickup and dropoff coordinates calculated using the method of Karney (2013)
+- `weekday:` the day of the week when the trip was started
+
+### Daten laden
+
+```{r, eval = FALSE}
+# load the data
+x <- read.csv("https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_taxi.csv")
+```
+
+### Quellen
+
+- https://www.kaggle.com/c/nyc-taxi-trip-duration/
+- https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+
+
+## Hauspreise
+
+### Vorbereitungen
+
+```{r, eval = FALSE, code=xfun::read_utf8("data/2021_fhswf_stat_housing.R")}
+
+```
+
+### Datenbeschreibung
+
 - `id`: a unique identifier for each offer
 - `price`: the requested price in Euro to buy the building
 - `type`: the type of the offered building
@@ -50,20 +94,8 @@ x <- read.csv("https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_housing
 
 ### Vorbereitungen
 
-```{r, eval=FALSE}
-# load raw data
-coursepath <- "~/sciebo/courses/bchwtz-stat"
-filepath <- "nongit/data/2021-hr/HRDataset_v14.csv"
-savepath <- "data"
-d <- read.csv(file.path(coursepath, filepath))
+```{r, eval = FALSE, code=xfun::read_utf8("data/2021_fhswf_stat_hr.R")}
 
-# harmonize variable names
-names(d) <- gsub("_","",names(d))
-
-# export to csv
-write.csv(d,
-          file = file.path(coursepath,savepath,"2021_fhswf_stat_hr.csv"),
-          row.names = FALSE)
 ```
 
 ### Datenbeschreibung
@@ -114,3 +146,6 @@ x <- read.csv("https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_hr.csv"
 ### Quellen
 - https://www.kaggle.com/rhuebner/human-resources-data-set
 - https://rpubs.com/rhuebner/hr_codebook_v14
+
+
+
