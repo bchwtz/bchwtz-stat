@@ -20,13 +20,8 @@ vorbereitungen
 datenbeschreibung
 daten-laden
 quellen
-hauspreise
+human-ressources
 vorbereitungen-1
 datenbeschreibung-1
 daten-laden-1
 quellen-1
-human-ressources
-vorbereitungen-2
-datenbeschreibung-2
-daten-laden-2
-quellen-2

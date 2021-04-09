@@ -24,7 +24,7 @@
 <meta name="author" content="Benjamin Buchwitz" />
 
 
-<meta name="date" content="2021-04-08" />
+<meta name="date" content="2021-04-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -155,17 +155,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.1.3" data-path="daten.html"><a href="daten.html#daten-laden"><i class="fa fa-check"></i><b>14.1.3</b> Daten laden</a></li>
 <li class="chapter" data-level="14.1.4" data-path="daten.html"><a href="daten.html#quellen"><i class="fa fa-check"></i><b>14.1.4</b> Quellen</a></li>
 </ul></li>
-<li class="chapter" data-level="14.2" data-path="daten.html"><a href="daten.html#hauspreise"><i class="fa fa-check"></i><b>14.2</b> Hauspreise</a><ul>
+<li class="chapter" data-level="14.2" data-path="daten.html"><a href="daten.html#human-ressources"><i class="fa fa-check"></i><b>14.2</b> Human Ressources</a><ul>
 <li class="chapter" data-level="14.2.1" data-path="daten.html"><a href="daten.html#vorbereitungen-1"><i class="fa fa-check"></i><b>14.2.1</b> Vorbereitungen</a></li>
 <li class="chapter" data-level="14.2.2" data-path="daten.html"><a href="daten.html#datenbeschreibung-1"><i class="fa fa-check"></i><b>14.2.2</b> Datenbeschreibung</a></li>
 <li class="chapter" data-level="14.2.3" data-path="daten.html"><a href="daten.html#daten-laden-1"><i class="fa fa-check"></i><b>14.2.3</b> Daten laden</a></li>
 <li class="chapter" data-level="14.2.4" data-path="daten.html"><a href="daten.html#quellen-1"><i class="fa fa-check"></i><b>14.2.4</b> Quellen</a></li>
-</ul></li>
-<li class="chapter" data-level="14.3" data-path="daten.html"><a href="daten.html#human-ressources"><i class="fa fa-check"></i><b>14.3</b> Human Ressources</a><ul>
-<li class="chapter" data-level="14.3.1" data-path="daten.html"><a href="daten.html#vorbereitungen-2"><i class="fa fa-check"></i><b>14.3.1</b> Vorbereitungen</a></li>
-<li class="chapter" data-level="14.3.2" data-path="daten.html"><a href="daten.html#datenbeschreibung-2"><i class="fa fa-check"></i><b>14.3.2</b> Datenbeschreibung</a></li>
-<li class="chapter" data-level="14.3.3" data-path="daten.html"><a href="daten.html#daten-laden-2"><i class="fa fa-check"></i><b>14.3.3</b> Daten laden</a></li>
-<li class="chapter" data-level="14.3.4" data-path="daten.html"><a href="daten.html#quellen-2"><i class="fa fa-check"></i><b>14.3.4</b> Quellen</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>Appendix</b></span></li>
@@ -238,109 +232,56 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-39"><a href="daten.html#cb1-39"></a>  <span class="kw">return</span>(geodesic_distance)</span>
 <span id="cb1-40"><a href="daten.html#cb1-40"></a>}</span>
 <span id="cb1-41"><a href="daten.html#cb1-41"></a></span>
-<span id="cb1-42"><a href="daten.html#cb1-42"></a><span class="co"># Generate route information and add to dataset</span></span>
-<span id="cb1-43"><a href="daten.html#cb1-43"></a>res &lt;-<span class="st"> </span><span class="kw">apply</span>(d, <span class="dt">MARGIN=</span><span class="dv">1</span>, make_dist_duration)</span>
-<span id="cb1-44"><a href="daten.html#cb1-44"></a>df &lt;-<span class="st"> </span><span class="kw">cbind</span>(d, <span class="kw">t</span>(res))</span>
+<span id="cb1-42"><a href="daten.html#cb1-42"></a></span>
+<span id="cb1-43"><a href="daten.html#cb1-43"></a><span class="co"># Getting route information involves an external server and needs to be batched</span></span>
+<span id="cb1-44"><a href="daten.html#cb1-44"></a><span class="co"># so that it does not time out</span></span>
 <span id="cb1-45"><a href="daten.html#cb1-45"></a></span>
-<span id="cb1-46"><a href="daten.html#cb1-46"></a><span class="co"># Add day of the week to dataset</span></span>
-<span id="cb1-47"><a href="daten.html#cb1-47"></a>df<span class="op">$</span>weekday &lt;-<span class="st"> </span><span class="kw">weekdays</span>(<span class="kw">as.Date</span>(df<span class="op">$</span>pickup_datetime))</span>
-<span id="cb1-48"><a href="daten.html#cb1-48"></a></span>
-<span id="cb1-49"><a href="daten.html#cb1-49"></a><span class="co"># Add geodesic distance to dataset</span></span>
-<span id="cb1-50"><a href="daten.html#cb1-50"></a>df<span class="op">$</span>gedesic_distance &lt;-<span class="st"> </span><span class="kw">apply</span>(df, <span class="dt">MARGIN=</span><span class="dv">1</span>, make_geodesic_distance)</span>
-<span id="cb1-51"><a href="daten.html#cb1-51"></a></span>
-<span id="cb1-52"><a href="daten.html#cb1-52"></a><span class="co"># export to csv</span></span>
-<span id="cb1-53"><a href="daten.html#cb1-53"></a><span class="kw">write.csv</span>(df,</span>
-<span id="cb1-54"><a href="daten.html#cb1-54"></a>          <span class="dt">file =</span> <span class="kw">file.path</span>(coursepath,savepath,<span class="st">&quot;2021_fhswf_stat_taxi.csv&quot;</span>),</span>
-<span id="cb1-55"><a href="daten.html#cb1-55"></a>          <span class="dt">row.names =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<span id="cb1-46"><a href="daten.html#cb1-46"></a>mb &lt;-<span class="st"> </span><span class="dv">15</span> <span class="co"># microbatch size</span></span>
+<span id="cb1-47"><a href="daten.html#cb1-47"></a>f &lt;-<span class="st"> </span><span class="kw">rep</span>((<span class="dv">1</span><span class="op">:</span><span class="kw">ceiling</span>(<span class="kw">nrow</span>(d)<span class="op">/</span>mb)), <span class="dt">each=</span>mb)[<span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(d)] <span class="co"># splitkey</span></span>
+<span id="cb1-48"><a href="daten.html#cb1-48"></a>dlist &lt;-<span class="st"> </span><span class="kw">split</span>(d, f)</span>
+<span id="cb1-49"><a href="daten.html#cb1-49"></a></span>
+<span id="cb1-50"><a href="daten.html#cb1-50"></a></span>
+<span id="cb1-51"><a href="daten.html#cb1-51"></a><span class="cf">for</span> (idx <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(dlist)){</span>
+<span id="cb1-52"><a href="daten.html#cb1-52"></a>  </span>
+<span id="cb1-53"><a href="daten.html#cb1-53"></a>  batch &lt;-<span class="st"> </span>dlist[[idx]]</span>
+<span id="cb1-54"><a href="daten.html#cb1-54"></a>  <span class="co"># Generate route information and add to dataset</span></span>
+<span id="cb1-55"><a href="daten.html#cb1-55"></a>  <span class="kw">try</span>({</span>
+<span id="cb1-56"><a href="daten.html#cb1-56"></a>  res &lt;-<span class="st"> </span><span class="kw">apply</span>(batch, <span class="dt">MARGIN=</span><span class="dv">1</span>, make_dist_duration)</span>
+<span id="cb1-57"><a href="daten.html#cb1-57"></a>  df &lt;-<span class="st"> </span><span class="kw">cbind</span>(batch, <span class="kw">t</span>(res))</span>
+<span id="cb1-58"><a href="daten.html#cb1-58"></a>  </span>
+<span id="cb1-59"><a href="daten.html#cb1-59"></a>  <span class="co"># Add day of the week to dataset</span></span>
+<span id="cb1-60"><a href="daten.html#cb1-60"></a>  df<span class="op">$</span>weekday &lt;-<span class="st"> </span><span class="kw">weekdays</span>(<span class="kw">as.Date</span>(df<span class="op">$</span>pickup_datetime))</span>
+<span id="cb1-61"><a href="daten.html#cb1-61"></a>  </span>
+<span id="cb1-62"><a href="daten.html#cb1-62"></a>  <span class="co"># Add geodesic distance to dataset</span></span>
+<span id="cb1-63"><a href="daten.html#cb1-63"></a>  df<span class="op">$</span>geodesic_distance &lt;-<span class="st"> </span><span class="kw">apply</span>(df, <span class="dt">MARGIN=</span><span class="dv">1</span>, make_geodesic_distance)</span>
+<span id="cb1-64"><a href="daten.html#cb1-64"></a>  </span>
+<span id="cb1-65"><a href="daten.html#cb1-65"></a>  <span class="co"># caching: export to csv</span></span>
+<span id="cb1-66"><a href="daten.html#cb1-66"></a>  filename &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&quot;cache_&quot;</span>,idx,<span class="st">&quot;-2021_fhswf_stat_taxi.csv&quot;</span>)</span>
+<span id="cb1-67"><a href="daten.html#cb1-67"></a>  <span class="kw">write.csv</span>(df,</span>
+<span id="cb1-68"><a href="daten.html#cb1-68"></a>            <span class="dt">file =</span> <span class="kw">file.path</span>(coursepath,savepath,filename),</span>
+<span id="cb1-69"><a href="daten.html#cb1-69"></a>            <span class="dt">row.names =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb1-70"><a href="daten.html#cb1-70"></a>  })</span>
+<span id="cb1-71"><a href="daten.html#cb1-71"></a>  </span>
+<span id="cb1-72"><a href="daten.html#cb1-72"></a>  <span class="kw">Sys.sleep</span>(<span class="kw">runif</span>(<span class="dv">1</span>,<span class="dv">1</span>,mb))</span>
+<span id="cb1-73"><a href="daten.html#cb1-73"></a>  <span class="kw">message</span>(idx)</span>
+<span id="cb1-74"><a href="daten.html#cb1-74"></a>}</span>
+<span id="cb1-75"><a href="daten.html#cb1-75"></a></span>
+<span id="cb1-76"><a href="daten.html#cb1-76"></a>files &lt;-<span class="st"> </span><span class="kw">list.files</span>(<span class="kw">file.path</span>(coursepath,savepath), </span>
+<span id="cb1-77"><a href="daten.html#cb1-77"></a>                    <span class="dt">pattern =</span> <span class="st">&quot;^cache*&quot;</span>, <span class="dt">full.names =</span> T)</span>
+<span id="cb1-78"><a href="daten.html#cb1-78"></a><span class="kw">length</span>(files)</span>
+<span id="cb1-79"><a href="daten.html#cb1-79"></a>flist &lt;-<span class="st"> </span><span class="kw">lapply</span>(files, read.csv)</span>
+<span id="cb1-80"><a href="daten.html#cb1-80"></a>df &lt;-<span class="st"> </span><span class="kw">do.call</span>(<span class="st">&quot;rbind&quot;</span>, flist)</span>
+<span id="cb1-81"><a href="daten.html#cb1-81"></a></span>
+<span id="cb1-82"><a href="daten.html#cb1-82"></a><span class="co"># write final csv</span></span>
+<span id="cb1-83"><a href="daten.html#cb1-83"></a><span class="kw">write.csv</span>(df,</span>
+<span id="cb1-84"><a href="daten.html#cb1-84"></a>          <span class="dt">file =</span> <span class="kw">file.path</span>(coursepath,savepath,<span class="st">&quot;2021_fhswf_stat_taxi.csv&quot;</span>),</span>
+<span id="cb1-85"><a href="daten.html#cb1-85"></a>          <span class="dt">row.names =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb1-86"><a href="daten.html#cb1-86"></a></span>
+<span id="cb1-87"><a href="daten.html#cb1-87"></a><span class="co"># delete cache files</span></span>
+<span id="cb1-88"><a href="daten.html#cb1-88"></a><span class="kw">unlink</span>(files)</span></code></pre></div>
 </div>
 <div id="datenbeschreibung" class="section level3">
 <h3><span class="header-section-number">14.1.2</span> Datenbeschreibung</h3>
-<p><strong>Variablen</strong></p>
-<ul>
-<li><code>id</code>: a unique identifier for each trip</li>
-<li><code>vendor_id</code>: a code indicating the provider associated with the trip record</li>
-<li><code>pickup_datetime</code>: date and time when the meter was engaged</li>
-<li><code>dropoff_datetime</code>: date and time when the meter was disengaged</li>
-<li><code>passenger_count</code>: the number of passengers in the vehicle (driver entered value)</li>
-<li><code>pickup_longitude</code>: the longitude where the meter was engaged</li>
-<li><code>pickup_latitude</code>: the latitude where the meter was engaged</li>
-<li><code>dropoff_longitude</code>: the longitude where the meter was disengaged</li>
-<li><code>dropoff_latitude</code>: the latitude where the meter was disengaged</li>
-<li><code>store_and_fwd_flag</code>: This flag indicates whether the trip record was held in vehicle memory before sending to the vendor because the vehicle did not have a connection to the server - Y=store and forward; N=not a store and forward trip</li>
-<li><code>trip_duration</code>: duration of the trip in seconds</li>
-</ul>
-<p><strong>Ergänzte Variablen</strong></p>
-<ul>
-<li><code>osrm_distance</code>: the travel distance by car in kilometers as calculated by the Open Streetmap Routing Machine</li>
-<li><code>osrm_duration</code>: the estimated duration for travelling the route by car in minutes as estimated by the Open Streetmap Routing Machine</li>
-<li><code>geodesic_distance</code>: the geodesic distance in meters between the pickup and dropoff coordinates calculated using the method of Karney (2013)</li>
-<li><code>weekday:</code> the day of the week when the trip was started</li>
-</ul>
-</div>
-<div id="daten-laden" class="section level3">
-<h3><span class="header-section-number">14.1.3</span> Daten laden</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="daten.html#cb2-1"></a><span class="co"># load the data</span></span>
-<span id="cb2-2"><a href="daten.html#cb2-2"></a>x &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_taxi.csv&quot;</span>)</span></code></pre></div>
-</div>
-<div id="quellen" class="section level3">
-<h3><span class="header-section-number">14.1.4</span> Quellen</h3>
-<ul>
-<li><a href="https://www.kaggle.com/c/nyc-taxi-trip-duration/" class="uri">https://www.kaggle.com/c/nyc-taxi-trip-duration/</a></li>
-<li><a href="https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page" class="uri">https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page</a></li>
-</ul>
-</div>
-</div>
-<div id="hauspreise" class="section level2">
-<h2><span class="header-section-number">14.2</span> Hauspreise</h2>
-<div id="vorbereitungen-1" class="section level3">
-<h3><span class="header-section-number">14.2.1</span> Vorbereitungen</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="daten.html#cb3-1"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb3-2"><a href="daten.html#cb3-2"></a></span>
-<span id="cb3-3"><a href="daten.html#cb3-3"></a><span class="co"># load raw data</span></span>
-<span id="cb3-4"><a href="daten.html#cb3-4"></a>coursepath &lt;-<span class="st"> &quot;~/sciebo/courses/bchwtz-stat&quot;</span></span>
-<span id="cb3-5"><a href="daten.html#cb3-5"></a>filepath &lt;-<span class="st"> &quot;nongit/data/2021-housing/germany_housing.csv&quot;</span></span>
-<span id="cb3-6"><a href="daten.html#cb3-6"></a>savepath &lt;-<span class="st"> &quot;data&quot;</span></span>
-<span id="cb3-7"><a href="daten.html#cb3-7"></a>d &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="kw">file.path</span>(coursepath, filepath))</span>
-<span id="cb3-8"><a href="daten.html#cb3-8"></a></span>
-<span id="cb3-9"><a href="daten.html#cb3-9"></a><span class="co"># rename columns and select relevant ones</span></span>
-<span id="cb3-10"><a href="daten.html#cb3-10"></a>d &lt;-<span class="st"> </span>d <span class="op">%&gt;%</span></span>
-<span id="cb3-11"><a href="daten.html#cb3-11"></a><span class="st">  </span><span class="kw">rename</span>(</span>
-<span id="cb3-12"><a href="daten.html#cb3-12"></a>    <span class="dt">id =</span> X,</span>
-<span id="cb3-13"><a href="daten.html#cb3-13"></a>    <span class="dt">price =</span> Price,</span>
-<span id="cb3-14"><a href="daten.html#cb3-14"></a>    <span class="dt">type =</span> Type,</span>
-<span id="cb3-15"><a href="daten.html#cb3-15"></a>    <span class="dt">living_space =</span> Living_space,</span>
-<span id="cb3-16"><a href="daten.html#cb3-16"></a>    <span class="dt">lot_size =</span> Lot,</span>
-<span id="cb3-17"><a href="daten.html#cb3-17"></a>    <span class="dt">additional_area =</span> Usable_area,</span>
-<span id="cb3-18"><a href="daten.html#cb3-18"></a>    <span class="dt">availability =</span> Free_of_Relation,</span>
-<span id="cb3-19"><a href="daten.html#cb3-19"></a>    <span class="dt">rooms =</span> Rooms,</span>
-<span id="cb3-20"><a href="daten.html#cb3-20"></a>    <span class="dt">bedrooms =</span> Bedrooms,</span>
-<span id="cb3-21"><a href="daten.html#cb3-21"></a>    <span class="dt">bathrooms =</span> Bathrooms,</span>
-<span id="cb3-22"><a href="daten.html#cb3-22"></a>    <span class="dt">floors =</span> Floors,</span>
-<span id="cb3-23"><a href="daten.html#cb3-23"></a>    <span class="dt">year_construction =</span> Year_built,</span>
-<span id="cb3-24"><a href="daten.html#cb3-24"></a>    <span class="dt">year_modernization =</span> Year_renovated,</span>
-<span id="cb3-25"><a href="daten.html#cb3-25"></a>    <span class="dt">condition =</span> Condition,</span>
-<span id="cb3-26"><a href="daten.html#cb3-26"></a>    <span class="dt">heating =</span> Heating,</span>
-<span id="cb3-27"><a href="daten.html#cb3-27"></a>    <span class="dt">facility_quality =</span> Furnishing_quality,</span>
-<span id="cb3-28"><a href="daten.html#cb3-28"></a>    <span class="dt">energy_source =</span> Energy_source,</span>
-<span id="cb3-29"><a href="daten.html#cb3-29"></a>    <span class="dt">energy_certificate =</span> Energy_certificate,</span>
-<span id="cb3-30"><a href="daten.html#cb3-30"></a>    <span class="dt">energy_certificate_type =</span> Energy_certificate_type,</span>
-<span id="cb3-31"><a href="daten.html#cb3-31"></a>    <span class="dt">energy_consumption =</span> Energy_consumption,</span>
-<span id="cb3-32"><a href="daten.html#cb3-32"></a>    <span class="dt">energy_efficiency_class =</span> Energy_efficiency_class,</span>
-<span id="cb3-33"><a href="daten.html#cb3-33"></a>    <span class="dt">state =</span> State,</span>
-<span id="cb3-34"><a href="daten.html#cb3-34"></a>    <span class="dt">district =</span> City,</span>
-<span id="cb3-35"><a href="daten.html#cb3-35"></a>    <span class="dt">city =</span> Place,</span>
-<span id="cb3-36"><a href="daten.html#cb3-36"></a>    <span class="dt">parking_lot =</span> Garages,</span>
-<span id="cb3-37"><a href="daten.html#cb3-37"></a>    <span class="dt">parking_lot_type =</span> Garagetype</span>
-<span id="cb3-38"><a href="daten.html#cb3-38"></a>  ) <span class="op">%&gt;%</span></span>
-<span id="cb3-39"><a href="daten.html#cb3-39"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>availability)</span>
-<span id="cb3-40"><a href="daten.html#cb3-40"></a> </span>
-<span id="cb3-41"><a href="daten.html#cb3-41"></a><span class="co"># export to csv</span></span>
-<span id="cb3-42"><a href="daten.html#cb3-42"></a><span class="kw">write.csv</span>(d,</span>
-<span id="cb3-43"><a href="daten.html#cb3-43"></a>          <span class="dt">file =</span> <span class="kw">file.path</span>(coursepath,savepath,<span class="st">&quot;2021_fhswf_stat_housing.csv&quot;</span>),</span>
-<span id="cb3-44"><a href="daten.html#cb3-44"></a>          <span class="dt">row.names =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
-</div>
-<div id="datenbeschreibung-1" class="section level3">
-<h3><span class="header-section-number">14.2.2</span> Datenbeschreibung</h3>
 <ul>
 <li><code>id</code>: a unique identifier for each offer</li>
 <li><code>price</code>: the requested price in Euro to buy the building</li>
@@ -369,38 +310,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>parking_lot_type</code>: the type of the available parking lots</li>
 </ul>
 </div>
-<div id="daten-laden-1" class="section level3">
-<h3><span class="header-section-number">14.2.3</span> Daten laden</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="daten.html#cb4-1"></a><span class="co"># load the data</span></span>
-<span id="cb4-2"><a href="daten.html#cb4-2"></a>x &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_housing.csv&quot;</span>)</span></code></pre></div>
+<div id="daten-laden" class="section level3">
+<h3><span class="header-section-number">14.1.3</span> Daten laden</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="daten.html#cb2-1"></a><span class="co"># load the data</span></span>
+<span id="cb2-2"><a href="daten.html#cb2-2"></a>x &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_housing.csv&quot;</span>)</span></code></pre></div>
 </div>
-<div id="quellen-1" class="section level3">
-<h3><span class="header-section-number">14.2.4</span> Quellen</h3>
+<div id="quellen" class="section level3">
+<h3><span class="header-section-number">14.1.4</span> Quellen</h3>
 <ul>
 <li><a href="https://www.kaggle.com/scriptsultan/german-house-prices" class="uri">https://www.kaggle.com/scriptsultan/german-house-prices</a></li>
 </ul>
 </div>
 </div>
 <div id="human-ressources" class="section level2">
-<h2><span class="header-section-number">14.3</span> Human Ressources</h2>
-<div id="vorbereitungen-2" class="section level3">
-<h3><span class="header-section-number">14.3.1</span> Vorbereitungen</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="daten.html#cb5-1"></a><span class="co"># load raw data</span></span>
-<span id="cb5-2"><a href="daten.html#cb5-2"></a>coursepath &lt;-<span class="st"> &quot;~/sciebo/courses/bchwtz-stat&quot;</span></span>
-<span id="cb5-3"><a href="daten.html#cb5-3"></a>filepath &lt;-<span class="st"> &quot;nongit/data/2021-hr/HRDataset_v14.csv&quot;</span></span>
-<span id="cb5-4"><a href="daten.html#cb5-4"></a>savepath &lt;-<span class="st"> &quot;data&quot;</span></span>
-<span id="cb5-5"><a href="daten.html#cb5-5"></a>d &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="kw">file.path</span>(coursepath, filepath))</span>
-<span id="cb5-6"><a href="daten.html#cb5-6"></a></span>
-<span id="cb5-7"><a href="daten.html#cb5-7"></a><span class="co"># harmonize variable names</span></span>
-<span id="cb5-8"><a href="daten.html#cb5-8"></a><span class="kw">names</span>(d) &lt;-<span class="st"> </span><span class="kw">gsub</span>(<span class="st">&quot;_&quot;</span>,<span class="st">&quot;&quot;</span>,<span class="kw">names</span>(d))</span>
-<span id="cb5-9"><a href="daten.html#cb5-9"></a></span>
-<span id="cb5-10"><a href="daten.html#cb5-10"></a><span class="co"># export to csv</span></span>
-<span id="cb5-11"><a href="daten.html#cb5-11"></a><span class="kw">write.csv</span>(d,</span>
-<span id="cb5-12"><a href="daten.html#cb5-12"></a>          <span class="dt">file =</span> <span class="kw">file.path</span>(coursepath,savepath,<span class="st">&quot;2021_fhswf_stat_hr.csv&quot;</span>),</span>
-<span id="cb5-13"><a href="daten.html#cb5-13"></a>          <span class="dt">row.names =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<h2><span class="header-section-number">14.2</span> Human Ressources</h2>
+<div id="vorbereitungen-1" class="section level3">
+<h3><span class="header-section-number">14.2.1</span> Vorbereitungen</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="daten.html#cb3-1"></a><span class="co"># load raw data</span></span>
+<span id="cb3-2"><a href="daten.html#cb3-2"></a>coursepath &lt;-<span class="st"> &quot;~/sciebo/courses/bchwtz-stat&quot;</span></span>
+<span id="cb3-3"><a href="daten.html#cb3-3"></a>filepath &lt;-<span class="st"> &quot;nongit/data/2021-hr/HRDataset_v14.csv&quot;</span></span>
+<span id="cb3-4"><a href="daten.html#cb3-4"></a>savepath &lt;-<span class="st"> &quot;data&quot;</span></span>
+<span id="cb3-5"><a href="daten.html#cb3-5"></a>d &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="kw">file.path</span>(coursepath, filepath))</span>
+<span id="cb3-6"><a href="daten.html#cb3-6"></a></span>
+<span id="cb3-7"><a href="daten.html#cb3-7"></a><span class="co"># harmonize variable names</span></span>
+<span id="cb3-8"><a href="daten.html#cb3-8"></a><span class="kw">names</span>(d) &lt;-<span class="st"> </span><span class="kw">gsub</span>(<span class="st">&quot;_&quot;</span>,<span class="st">&quot;&quot;</span>,<span class="kw">names</span>(d))</span>
+<span id="cb3-9"><a href="daten.html#cb3-9"></a></span>
+<span id="cb3-10"><a href="daten.html#cb3-10"></a><span class="co"># export to csv</span></span>
+<span id="cb3-11"><a href="daten.html#cb3-11"></a><span class="kw">write.csv</span>(d,</span>
+<span id="cb3-12"><a href="daten.html#cb3-12"></a>          <span class="dt">file =</span> <span class="kw">file.path</span>(coursepath,savepath,<span class="st">&quot;2021_fhswf_stat_hr.csv&quot;</span>),</span>
+<span id="cb3-13"><a href="daten.html#cb3-13"></a>          <span class="dt">row.names =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
 </div>
-<div id="datenbeschreibung-2" class="section level3">
-<h3><span class="header-section-number">14.3.2</span> Datenbeschreibung</h3>
+<div id="datenbeschreibung-1" class="section level3">
+<h3><span class="header-section-number">14.2.2</span> Datenbeschreibung</h3>
 <ul>
 <li><code>EmployeeName</code>: Employee’s full name<br />
 </li>
@@ -463,13 +404,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>Absences</code>: The number of times the employee was absent from work</li>
 </ul>
 </div>
-<div id="daten-laden-2" class="section level3">
-<h3><span class="header-section-number">14.3.3</span> Daten laden</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="daten.html#cb6-1"></a><span class="co"># load the data</span></span>
-<span id="cb6-2"><a href="daten.html#cb6-2"></a>x &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_hr.csv&quot;</span>)</span></code></pre></div>
+<div id="daten-laden-1" class="section level3">
+<h3><span class="header-section-number">14.2.3</span> Daten laden</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="daten.html#cb4-1"></a><span class="co"># load the data</span></span>
+<span id="cb4-2"><a href="daten.html#cb4-2"></a>x &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_hr.csv&quot;</span>)</span></code></pre></div>
 </div>
-<div id="quellen-2" class="section level3">
-<h3><span class="header-section-number">14.3.4</span> Quellen</h3>
+<div id="quellen-1" class="section level3">
+<h3><span class="header-section-number">14.2.4</span> Quellen</h3>
 <ul>
 <li><a href="https://www.kaggle.com/rhuebner/human-resources-data-set" class="uri">https://www.kaggle.com/rhuebner/human-resources-data-set</a></li>
 <li><a href="https://rpubs.com/rhuebner/hr_codebook_v14" class="uri">https://rpubs.com/rhuebner/hr_codebook_v14</a></li>
