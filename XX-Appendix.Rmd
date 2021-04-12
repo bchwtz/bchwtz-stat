@@ -5,7 +5,8 @@
 ```{r}
 stats_ss2021 <- tribble(
   ~date, ~vg, ~g, ~n, ~b, ~vb, ~total,
-  "07.04.2021",45,71,7,0,0,128
+  "07.04.2021",45,71,7,0,0,128,
+  "11.04.2021",24,63,10,0,0,119
 )
 evcnames<- c("Datum","sehr zufrieden", "zufrieden", 
            "weder zufrieden noch unzufrieden", 
