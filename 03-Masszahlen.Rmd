@@ -1,2 +1,5 @@
 # Maßzahlen
  
+```{r, echo = F, out.width="80%", fig.cap="[Download Slides](slides/03-Maßzahlen.pdf)"}
+knitr::include_graphics("slides/gifs/03-Maßzahlen.gif")
+```

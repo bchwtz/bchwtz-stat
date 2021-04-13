@@ -1,0 +1,427 @@
+---
+title: "Statistik"
+author: "CH.3 - Maßzahlen"
+date: "SS 2021 || Prof. Dr. Buchwitz, Sommer, Henke"
+output:
+  beamer_presentation:
+    fig_width: 8
+    fig_height: 5
+    highlight: tango
+    theme: metropolis
+    includes:
+      in_header: header.tex
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+library(HistogramTools)
+knitr::opts_chunk$set(echo = TRUE, cache=TRUE, size="scriptsize", 
+                      fig.align = "center")
+def.chunk.hook  <- knitr::knit_hooks$get("chunk")
+knitr::knit_hooks$set(chunk = function(x, options) {
+  x <- def.chunk.hook(x, options)
+  ifelse(options$size != "normalsize", paste0("\n \\", options$size,"\n\n", x, "\n\n \\normalsize"), x)
+})
+
+```
+
+## Maßzahlen
+Ziel der folgenden Maßzahlen ist die Reduktion der Daten auf Kennzahlen, die einen Großteil der *wesentlichen* Infromationen der zugrundeliegenden statistischen Variablen enthalten.
+
+\bigskip
+- **Lagemaße:** Beschreiben das Zentrum / die Mitte einer Beobachtungsreihe
+- **Streuungsmaße:** Beschreiben die Abweichung vom Zentrum einer Häufikeitsverteilung.
+- **Konzentrationsmaße:** beschreiben, wie sich die Summe der Merkmalswerte der Beobachtungsreihe auf die Untersuchungseinheiten verteilt.
+
+# Lagemaße
+## Beispiel
+
+Die folgenden Daten bilden das Gewicht (in kg) von zufällig ausgewählten Kugeln aus der Produktion einer Fabrik für Bowlingkugeln ab.
+
+- Handelt es sich bei den vorliegenden Daten um eine Stichprobe oder um eine Grundgesamtheit?
+- Welches Skalenniveau weisen die gezeigten Daten auf?
+- Wie könnte man die Daten beschreiben?
+
+```{r, echo=F}
+n <- 8
+set.seed(1)
+red <- rnorm(n, mean=3, sd=2)
+blue <- runif(n, min=4, max=12)
+```
+
+```{r, echo=F}
+knitr::kable(t(data.frame(red, blue)),booktabs=T, digits = 4,
+             col.names = paste("i =",1:n))
+```
+
+## Beispiel
+
+```{r, echo=F}
+
+plot(NA, ylim=c(0,2), xlim=c(min(0,min(c(red,blue))), max(c(red,blue))+1), 
+     main=paste("Gewicht von", n, "roten und",n,"blauen Kugeln"), yaxt='n', ylab="", xlab="")
+
+points(x=red,y=rep(0.9,length(red)), pch=19, col="red")
+points(x=blue,y=rep(1.1,length(blue)), pch=19, col="blue")
+```
+
+
+## Übersicht: Lagemaße
+
+Lagemaß                     Symbol                 Berechnung
+-------------------------   --------------------   ----------------
+Modus                       $\bar x_{Modus}$       $h_{Modus} \geq h_j$
+Median                      $\bar x_{Median}$      $x_{\frac{n+1}{2}} \text{ oder } \frac{1}{2} (x_{\frac{n}{2}} + x_{\frac{n}{2}+1})$
+Quantil                     $Q_\alpha$             Wert der Verteilungsfunktion
+Artimethisches Mittel       $\bar x$               $\frac{1}{n}\sum_{i=1}^{n}x_i$
+Geometrisches Mittel        $\bar x_{geo}$         $\sqrt[n]{x_1 \cdot x_2 \cdot \ldots \cdot x_n}$
+Harmonisches Mittel         $\bar x_{harm}$        $\frac{n}{\sum_{i=1}^{n} 1/x_i}$
+-------------------------   --------------------   ----------------
+
+**Achtung:** Nicht jede Maßzahl ist für jede Art der *Skalierung* und damit nicht für jede Variable (sinnvoll) bestimmbar.
+
+
+## Modus
+
+:::{.block}
+### Definition: Modus
+Der **Modus** oder **Modalwert** ist die häufigste Ausprägung einer Verteilung.
+:::
+
+- Der Modus *kann* für beliebig skalierte Variablen bestimmt werden.
+- Bei klassierten Daten wird die am häufigsten auftretende Klasse als Modalklasse bezeichnet.
+- Der Modus hat keine eigene **R-Funktion**, kann aber mittels absoluten oder relativen Häufigkeiten bestimmt werden.
+
+## Median
+
+:::{.block}
+### Definition: Median
+Sind $x_1 \leq x_2 \leq \ldots \leq x_n$ die der Größe nach geordneten Beobachtungswerte eines metrisch skalierten Merkmals $X$, ergibt sich der **Median** $\bar x_{Median}$ als 
+
+\begin{equation}
+\nonumber
+\bar x_{Median} = 
+\begin{cases} 
+x_{\frac{n+1}{2}} & \text{falls } n \text{ ungerade} \\
+\frac{1}{2} (x_{\frac{n}{2}} + x_{\frac{n}{2}+1}) & \text{falls } n \text{ gerade} \\
+\end{cases}
+\end{equation}
+:::
+
+- Der Median wird auch als Zentralwert bezeichnet.
+- Der Median teilt die Daten in zwei gleich Große Hälften.
+- Kann für metrische- und ordinalskalierte Merkmale verwendet werden.
+- Ist *robust* gegenüber Ausreißern.
+- **R-Funktion:** `median()`
+
+## Quantile
+
+:::{.block}
+### Definition: Quantil
+Das $\alpha-$Quantil eines Merkmals ist der Wert, unterhalb dessen ein vorgegebener Anteil $\alpha$ aller Beobachtungswerte der Verteilung liegt. Dieser Wert ergibt sich aus der (empirischen) Verteilungsfunktion $S()$.
+
+$$S(Q_\alpha) = \alpha$$
+:::
+
+- Quantile sind Verallgemeinerungen des Medians, dieser ist $Q_{0.5}$.
+- Einige Gruppen von Quantilen haben spezielle Namen
+  + Qua**r**tile: $Q_{0.25}, Q_{0.5}, Q_{0.75}$ 
+  + Percentile: $Q_{0.01}, Q_{0.02}, Q_{0.03}, Q_{0.04}, \ldots$
+- **R-Funktion:** `quantile()`
+
+## Aritmetisches Mittel 
+
+:::{.block}
+### Definition: Arithmetisches Mittel
+Sind $x_1,\ldots,x_n$ die Beobachtungswerte eines metrisch skalierten Merkmals $X$, so errechnet sich das **artimetische Mittel** durch
+
+$$\bar x = \frac{1}{n}\sum_{i=1}^{n}x_i$$
+:::
+
+- Das arithmetische Mittel ist nur für metrisch skalierte Daten definiert!
+- Ist eine Maßzahl die empfindlich gegenüber Ausreißern ist.
+- Das gewichtete arithmetische Mittel erlaubt die Bestimmung des arithmetischen Mittels für klassierte Daten.
+- **R-Funktion:** `mean()`
+
+## Beispiel: Median und arithmetisches Mittel für die roten Kugeln
+
+```{r,echo=F, fig.height=4}
+knitr::kable(t(data.frame(red, blue)),booktabs=T, digits = 4,
+             col.names = paste("i =",1:n))
+plot(NA, ylim=c(0,2), xlim=c(min(0,min(c(red,blue))), max(c(red,blue))+1), 
+     main=paste("Gewicht von", n, "roten und",n,"blauen Kugeln"), yaxt='n', ylab="", xlab="")
+
+points(x=red,y=rep(0.9,length(red)), pch=19, col="red")
+points(x=blue,y=rep(1.1,length(blue)), pch=19, col="blue")
+```
+
+## Beispiel: Median und arithmetisches Mittel für die roten Kugeln
+```{r}
+# Ausgabe der Daten
+red
+
+# Artimethisches Mittel
+mean(red)
+
+## Median
+median(red)
+
+# Zusammenfassung wesentlicher Lagemaße
+summary(red)
+```
+
+## Geometrisches und Harmonisches Mittel
+
+- Es gibt zahlreiche spezialisierte Mittelwerte, wie das **geometrische Mittel** $\bar x_{geo}$ und das **harmonische Mittel** $\bar x_{harm}$. Welcher Mittelwert genutzt werden muss, hängt von den zugrundeliegenden Daten ab. 
+- Ziel der Mittelwertbildung is, die durchschnittliche *Gesamtwirkung* von $n$ meist unterschiedlichen Werten mit einem einzigen wert zu beschreiben.
+
+**Geometrisches Mittel:**        $\quad \bar x_{geo} = \sqrt[n]{x_1 \cdot x_2 \cdot \ldots \cdot x_n} = \sqrt[n]{\prod_{i=1}^{n} x_i}$
+
+**Harmonisches Mittel:**         $\quad \bar x_{harm} = \frac{n}{\sum_{i=1}^{n} \frac{1}{x_i}}$
+
+- **Anwendung:** Geometrische Mittelwerte eigenen sich für Wachstumsraten, harmonische Mittelwerte für Geschwindigkeiten.
+
+## Beispiel: Geometrisches Mittel
+
+```{r}
+# Das Wertpapier-Beispiel (Bitcoin) aus der Einführung liefert die folgenden 
+# Wertveränderungen (returns) für ersten 3 Jahre des Assets.
+ret <- c(.12, .07, .01)
+
+# Geometrisches Mittel
+mean_gm <- prod(1 + ret)^(1/length(ret))
+mean_gm
+
+# Probe
+(100 * prod(1 + ret)) # Wert nach 3 Perioden bei 100 Euro Startwert
+(100 * mean_gm^3) # Wert nach 3 Perioden berechnet mit x_{geom}
+```
+
+## Schiefe
+
+- Wo liegen $\bar x$, $\bar x_{Median}$ und $\bar x_{Modus}$ bei den nachfolgend gezeigten Häufigkeitsverteilungen?
+
+```{r, echo=F, fig.height=4}
+library(fGarch)
+par(mfrow=c(1,3))
+xlim <- c(-18,18)
+set.seed(1)
+hist(rsnorm(n = 10000, sd=5,xi=1.5), probability=T, n=50, xlim=xlim, xlab ="", main="", xaxt='n', ylab=expression(h[j]))
+hist(rsnorm(n = 10000, sd=5,xi=1), probability=T, n=50, xlim=xlim, xlab ="", main="", xaxt='n', ylab=expression(h[j]))
+hist(rsnorm(n = 10000, sd=5,xi=-1.5), probability=T, n=50, xlim=xlim, xlab ="", main="", xaxt='n', ylab=expression(h[j]))
+```
+
+
+# Streuungsmaße
+
+## Beispiel: Streuungsmaße
+```{r, echo=F}
+set.seed(5)
+x1 <- hist(rnorm(500,5), n=20, plot = F)                     # centered at 4
+x2 <- hist(rnorm(500,15,2), n=20, plot = F)                     # centered at 6
+
+plot( x1, col=rgb(0,0,1,1/4), xlim=c(0,20), main="Häufigkeitsverteilungen", xlab="X", ylab=expression(H[j]))
+plot( x2, col=rgb(1,0,0,1/4), xlim=c(0,20), add=T)  # second
+```
+
+## Übersicht: Streuungsmaße
+
+Lagemaß                     Symbol                 Berechnung
+-------------------------   --------------------   ----------------
+Spannweite                  $R$                    $x_{max}- x_{min}$
+Interquartilsabstand        $IQR$                  $Q_{0.75} - Q_{0.25}$
+(empirische) Varianz        $s^2$                  $\frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar x)^2$
+Standardabweichung          $s$                    $\sqrt{s^2}$
+Variationskoeffizient       $V$                    $s / \bar x$
+-------------------------   --------------------   ----------------
+
+**Achtung:** Nicht jede Maßzahl ist für jede Art der *Skalierung* und damit nicht für jede Variable (sinnvoll) bestimmbar.
+
+## Spannweite
+
+:::{.block}
+### Definition: Spannweite
+Die Breite eines Streubereichs nennt man Spannweite $R$. Sie ergibt sich aus dem Maximum und Minimum der Daten.
+
+$$R = x_{max}- x_{min}$$
+:::
+
+- Nachteil: Nur zwei *extreme* Werte gehen in die Berechnung ein, der Großteil der Daten bleibt ungenutzt.
+- Die Spannweite hat keine eigene **R-Funktion**, kann aber einfach mittels `max()` und `min()` berechnet werden.
+
+## Interquartilsabstand
+
+:::{.block}
+### Definition: Interquartilsabstand
+Der **Quartilsabstand** gibt die Größe des Bereiches zwischem dem oberen und dem unteren Quartil einer Verteilung an, in dem die mittleren 50% der Beobachtungen fallen.
+
+$$IQR = Q_{0.75} - Q_{0.25}$$
+:::
+
+- Zwischen dem oberen und dem unteren Quartil liegen 50% der Beobachtungen.
+- Kann auch sinnvoll für ordinalskalierte Merkmale bestimmt werden.
+- Ist *robust* in dem Sinne, dass die $IQR$ weitgehend unempfindlich gegenüber Ausreißern ist.
+- **R-Funktion:** `IQR()`
+
+## Varianz
+
+:::{.block}
+### Definition: Varianz
+Der **Quartilsabstand** gibt die Größe des Bereiches zwischem dem oberen und dem unteren Quartil einer Verteilung an, in dem die mittleren 50% der Beobachtungen fallen.
+
+$$s^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar x)^2 \quad\text{oder}\quad s^2 = \frac{1}{N}\sum_{i=1}^{n}(x_i - \bar x)^2$$
+:::
+
+- Es gilt immer $s^2 \geq 0$
+- Wird unterschiedlich für die Population und für die Grundgesamtheit berechnet.
+- Grundidee: Einbezug aller Abweichungen vom Mittelwert
+- Beobachtungen die weit von $\bar x$ entfernt liegen werden überproportional stark gewichtet.
+- **R-Funktion:** `var()`
+
+## Standardabweichung
+
+:::{.block}
+### Definition: Standardabweichung
+Die **Standardabweichung** ist die Wurzel aus der Varianz.
+
+$$s = \sqrt{s^2}$$
+:::
+
+- Weißt die gleiche Maßeinheit wie die Daten auf
+- Ist i.d.R. einfacher zu interpretieren als die Varianz.
+- **R-Funktion:** `sd()`
+
+## Rechenbeispiel
+
+Berechnung der Varianz der blauen Kugeln aus dem Eingangsbeispiel.
+
+```{r, echo=F}
+tab <- data.frame(i=1:length(red),red, red-mean(red), (red-mean(red))^2)
+kable(tab, digits = 4, booktabs=T, align ="c", col.names=c("$i$","$x_i$","$x_i - \\bar x$", "$(x_i-\\bar x)^2$"))
+```
+
+$n=$ `r nrow(tab)` $\quad \bar x =$ `r round(mean(red),4)` $\quad  \sum (x_i - \bar x) =$ `r round(sum(red-mean(red)),4)` $\quad  \sum (x_i - \bar x)^2 =$ `r round(sum((red-mean(red))^2),4)` $\quad  s^2=$ `r round(var(red),4)`
+
+## Variationskoeffizient
+
+:::{.block}
+### Definition: Variationskoeffizient
+Der **Variationskoeffizient** ist der Quotient aus Standardabweichung und arithmetischem Mittel.
+
+$$V = \frac{s}{\bar x}$$
+:::
+
+- Ist dimensionslos und vergleichbar
+- Ist i.d.R. einfacher zu interpretieren als die Varianz.
+- Der Variationskoeffizient hat keine eigene **R-Funktion**, kann aber einfach mittels `sd()` und `mean()` berechnet werden.
+
+
+## Beispiel: Streuungsmaße
+```{r}
+# Ausgabe der Daten
+blue
+
+# Spannweite
+max(blue) - min(blue)
+
+## Varianz
+var(blue)
+
+# Interquartilsabstand
+IQR(blue)
+
+# Variationskoeffizient
+sd(blue) / sd(blue)
+```
+
+# Konzentrationsmaße
+
+## Konzentration
+
+:::{.block}
+### Definition: Konzentration
+Man spricht von Konzentration oder Ungleichheit, falls zu einem bestimmten Zeitpunkt ein relativ kleiner Anteil der Merkmalsträger einen hohen Anteil an der Summe der Merkmalswerte besitzt. 
+:::
+
+- Konzentration bzw. Ungleichheitsdiskussionen findent man häufig im Kontext von Einkommen oder Vermögen.
+- Beispiele: In Deutschland besitzen 10% der Bevölkerung des Vermögens.
+
+## Lorenzkurve
+
+:::{.block}
+### Definition: Lorenzkurve
+Der Polygonzug durch die Punkte $P_0=(0,0)$ und $P_j=(k_j,l_j)$ mit $j=1,\ldots,q$ heißt **Lorenzkurve**.
+
+$$ k_j = \sum_{i=1}^j \frac{H_j}{n} = \sum_{i=1}^j h_j \quad\quad l_j=\frac{\sum_{i=1}^j a_iH_i}{\sum_{i=1}^q a_iH_i}$$
+:::
+
+- Die Lorenzkurzve verläuft durch die Punkte $(0,0)$ und $(1,1)$
+- Die Lorenzkurve verläuft immer **unterhalb** der Winkelhalbierenden.
+- Die Lorenzkurve ist winkelhalbierend, wenn alle Mermalsausprägungen gleich häufig vorkommen. Dann liegt keine Konzentration vor. Je weiter die Lorenzkurve sich von der Winkelhalbierenden entfernt, desto größer ist die Ungleichheit.
+- **R-Funktion:** `Lc()` aus dem Zusatzpaket `ineq`
+
+## Beispiel
+
+Wir betrachten vereinfachend die Einkommensverteilungen der folgenden drei sehr kleinen Länder.
+
+```{r}
+A <- c(1000, 3000, 4000, 4000, 8000)
+B <- c(2000, 2000, 4000, 8000)
+C <- c(1000, 2000, 5000, 8000)
+```
+
+## Beispiel
+```{r}
+# Lorenzkurve für A [ohne Punkt (0,0) ]
+A <- sort(A)
+H <- table(A)
+n <- length(A)
+h <- H/n
+k <- cumsum(h)
+l <- cumsum(H * unique(A)) / sum(A)
+```
+
+```{r, echo=F}
+df <- data.frame(j=1:4, a=sort(unique(A)), k, l)
+#df <- rbind(c(0,"",0,0),df) # Ergänzen der 0
+kable(df, booktabs=T, row.names = F, col.names=c("j","$a_j$","$k_j$","$l_j$"))
+```
+
+## Gini Koeffizient
+
+:::{.block}
+### Definition: Gini Koeffizient
+Das Doppelte der Fläche zwischen der Lorenzkurve und der Winkelhalbierenden heißt **Gini-Koeffizient** $G$ und wird als Konzentrationsmaß einer Häufigkeitsverteilung verwendet. 
+
+$$ G = \sum_{i=1}^{n} (k_i+k_{i-1}) (l_i+l_{i-1})-1$$
+:::
+
+- Die Lorenzkurzve verläuft durch die Punkte $(0,0)$ und $(1,1)$
+- Die Lorenzkurve verläuft immer **unterhalb** der Winkelhalbierenden.
+- Die Lorenzkurve ist winkelhalbierend, wenn alle Mermalsausprägungen gleich häufig vorkommen. Dann liegt keine Konzentration vor. Je weiter die Lorenzkurve sich von der Winkelhalbierenden entfernt, desto größer ist die Ungleichheit.
+- **R-Funktion:** `Gini()` aus dem Zusatzpaket `ineq`
+
+## Lorenzkurve mit Gini-Koeffizient
+```{r, fig.height=4.2}
+library(ineq); par(pty="s") # Laden des Zusatzpaketes ineq + Plot quadratisch
+plot(Lc(A), main="Lorenzkurve")
+subtitle <- paste("Gini Koeffizient:", Gini(A))
+mtext(subtitle, line=0.5)
+```
+
+## Verständnisfragen
+
+- Welche Lage- und Streuungsparameter eignen sich für ordinalskalierte Merkmale? Welche sind für nominalskalierte Merkmale geeignet?
+- Welche Streuungsmaße berücksichtigen nur einzelne Beobachtungswerte der Häufigkeitsverteilung? 
+- Wie macht sich eine vollkommene Gleichheit in der Einkommensverteilung eines Landes in der Lorenzkurve bemerkbar? Wie groß ist dann der GINI-Koeffizient?
+
+## Verständnisfragen (Antworten)
+
+- Welche Lage- und Streuungsparameter eignen sich für ordinalskalierte Merkmale? Welche sind für nominalskalierte Merkmale geeignet?
+  + **Ordinal:** Median, Quantile, Modus, Quartilsabstände.
+  + **Nominal:** Modus. 
+- Welche Streuungsmaße berücksichtigen nur einzelne Beobachtungswerte der Häufigkeitsverteilung? 
+  + **Einzelne Beobachtungswerte:** Spannweite
+  + **Alle Beobachtungswerte:** alle weitern die vorgestellt wurden.
+- Wie macht sich eine vollkommene Gleichheit in der Einkommensverteilung eines Landes in der Lorenzkurve bemerkbar? Wie groß ist dann der GINI-Koeffizient?
+  + Winkelhalbierende, $G=0$
