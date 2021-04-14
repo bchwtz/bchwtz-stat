@@ -205,16 +205,16 @@ mean_gm
 par(mfrow=c(1,3))
 xlim <- c(-18,18)
 set.seed(1)
-hist(rsnorm(n = 10000, sd=5,xi=1.5), probability=T, n=50, xlim=xlim, xlab ="", main="", xaxt='n', ylab=expression(h[j]))
-hist(rsnorm(n = 10000, sd=5,xi=1), probability=T, n=50, xlim=xlim, xlab ="", main="", xaxt='n', ylab=expression(h[j]))
 hist(rsnorm(n = 10000, sd=5,xi=-1.5), probability=T, n=50, xlim=xlim, xlab ="", main="", xaxt='n', ylab=expression(h[j]))
+hist(rsnorm(n = 10000, sd=5,xi=1), probability=T, n=50, xlim=xlim, xlab ="", main="", xaxt='n', ylab=expression(h[j]))
+hist(rsnorm(n = 10000, sd=5,xi=1.5), probability=T, n=50, xlim=xlim, xlab ="", main="", xaxt='n', ylab=expression(h[j]))
 ```
 
 \pause
 \small
-- Rechtsschiefe Häufigkeitsverteilung: $\bar x > \bar x_{Median} > \bar x_{Median}$
-- Linksschiefe Häufigkeitsverteilung: $\bar x = \bar x_{Median} = \bar x_{Median}$
-- Symmetrische Häufigkeitsverteilung: $\bar x < \bar x_{Median} < \bar x_{Median}$
+- Linksschiefe Häufigkeitsverteilung: $\bar x = \bar x_{Median} = \bar x_{Modus}$
+- Symmetrische Häufigkeitsverteilung: $\bar x < \bar x_{Median} < \bar x_{Modus}$
+- Rechtsschiefe Häufigkeitsverteilung: $\bar x > \bar x_{Median} > \bar x_{Modus}$
 
 # Streuungsmaße
 
@@ -271,13 +271,13 @@ $$IQR = Q_{0.75} - Q_{0.25}$$
 
 :::{.block}
 ### Definition: Varianz
-Der **Quartilsabstand** gibt die Größe des Bereiches zwischem dem oberen und dem unteren Quartil einer Verteilung an, in dem die mittleren 50% der Beobachtungen fallen.
+Der **Varianz** ist die mittlere quadrierte Abweichung vom arithmetischen Mittel
 
 $$s^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar x)^2 \quad\text{oder}\quad s^2 = \frac{1}{N}\sum_{i=1}^{n}(x_i - \bar x)^2$$
 :::
 
 - Es gilt immer $s^2 \geq 0$
-- Wird unterschiedlich für die Population und für die Grundgesamtheit berechnet.
+- Wird unterschiedlich für die Stichprobe und für die Grundgesamtheit (Population) berechnet.
 - Grundidee: Einbezug aller Abweichungen vom Mittelwert
 - Beobachtungen die weit von $\bar x$ entfernt liegen werden überproportional stark gewichtet.
 - **R-Funktion:** `var()`
@@ -297,7 +297,7 @@ $$s = \sqrt{s^2}$$
 
 ## Rechenbeispiel
 
-Berechnung der Varianz der blauen Kugeln aus dem Eingangsbeispiel.
+Berechnung der Varianz der roten Kugeln aus dem Eingangsbeispiel.
 
 ```{r, echo=F}
 tab <- data.frame(i=1:length(red),red, red-mean(red), (red-mean(red))^2)
@@ -316,7 +316,6 @@ $$V = \frac{s}{\bar x}$$
 :::
 
 - Ist dimensionslos und vergleichbar
-- Ist i.d.R. einfacher zu interpretieren als die Varianz.
 - Der Variationskoeffizient hat keine eigene **R-Funktion**, kann aber einfach mittels `sd()` und `mean()` berechnet werden.
 
 
@@ -335,7 +334,7 @@ var(blue)
 IQR(blue)
 
 # Variationskoeffizient
-sd(blue) / sd(blue)
+sd(blue) / mean(blue)
 ```
 
 # Konzentrationsmaße
