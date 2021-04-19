@@ -1,0 +1,138 @@
+---
+title: "Statistik"
+author: "CH.4 - Zweidimensionale Verteilungen"
+date: "SS 2021 || Prof. Dr. Buchwitz, Sommer, Henke"
+output:
+  beamer_presentation:
+    fig_width: 8
+    fig_height: 5
+    highlight: tango
+    theme: metropolis
+    includes:
+      in_header: header.tex
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+library(fGarch)
+knitr::opts_chunk$set(echo = TRUE, cache=TRUE, size="scriptsize", 
+                      fig.align = "center")
+def.chunk.hook  <- knitr::knit_hooks$get("chunk")
+knitr::knit_hooks$set(chunk = function(x, options) {
+  x <- def.chunk.hook(x, options)
+  ifelse(options$size != "normalsize", paste0("\n \\", options$size,"\n\n", x, "\n\n \\normalsize"), x)
+})
+
+```
+
+## Zweidimensionale Verteilungen
+
+**Ausgangspunkt:**
+
+- Jede statistische Einehit einer Grundgesamtheit trägt eine Vielzahl von Merkmalen.
+- In diesem Kapitel werden zwei Merkmale gleichzeitig untersucht.
+- Bei der Darstellung und Analyse von Abhängigkeiten zwischen Variablen muss das Skalenniveau berücksichtigt werden.
+
+
+**Beispiel:**
+
+- Studierende
+  + Beispiel: Körpergröße und Gewicht $\rightarrow$ Streudiagramm
+  + Beispiel: Geschlecht und Studiengang $\rightarrow$ Kontingenztafel
+- Kraftfahrzeuge
+  + Beispiel: Höchstgeschwindigkeit und Motorleistung
+  + Beispiel: Kraftstoffverbrauch und Getriebeart (Manuell/Automatik)
+
+# Streudiagramme
+
+## Beispiel: Streudiagramm
+
+::: {.columns}
+::: {.column width=30%}
+```{r, echo=F,size="tiny"}
+height <- c(1.63,1.51,1.56,1.95,1.8,1.79,1.78,1.68,1.89,1.61,1.89,1.97,1.61,
+            1.57,1.83,1.8,1.72,1.52,1.54)
+weight <- c(68,81,72,128,60,64,94,62,109,75,76,126,98,71,66,111,89,76,45)
+
+hw <- data.frame(height, weight)
+kable(hw, col.names=c("Größe (m)","Gewicht (kg)"))
+
+```
+**R-Befehl:** `plot()`
+:::
+::: {.column width=70%}
+```{r, echo=F, fig.width=5}
+plot(x=height, y=weight, pch=19, main="Zusammenhang zwischen \n Größe und Gewicht",
+     ylab="Gewicht in kg", xlab="Größe in m", ylim=c(0, 140), xlim=c(1.2, 2.2))
+```
+:::
+:::
+
+
+
+# Kovarianz und Korrelation
+
+## Kovarianz
+
+
+$$ s_{XY} = Cov(X,Y) = \frac{1}{n-1} \sum_{i=1}^{n} (y_i - \bar{y})(x_i - \bar{x})$$
+
+- Die oben stehende Formeln gibt die Kovarianz zwischen $X$ und $Y$ an.
+- Das Vorzeichen der Kovarianz ist ein Indikator für die Richtung eines bestehenden **linearen** Zusammenhanges zwischen $Y$ und $X$.
+- Die Kovarianz erlaubt es nicht Aussagen über die Stärke eines Zusammenhanges zu treffen.
+- Die Größe der Kovarianz ist Abhängig von der zugrundeliegenden Einheit. Einheitenwechsel (z.B. von Euro zu TEuro) führen zu einer Wertveränderung.
+- **R-Befehl:** `cov()`
+
+## Korrelationskoeffizient
+
+$$ Cor(Y,X) = \frac{1}{n-1}\sum_{i=1}^{n} (\frac{y_i - \bar{y}}{s_y})(\frac{x_i - \bar{x}}{s_x}) = \frac{Cov(Y,X)}{s_ys_x} = \frac{s_{XY}}{s_x \cdot s_y}$$
+
+- Der Korrelationskoeffizient ist ein Maß für die Stärke des linearen Zusammenhanges.
+- Im Unterschied zur Kovarianz, ist $Cor(Y,X)$ nicht skalenabhängig und erlaubt die Einschätzung von Stärke und Richtung eines linearen Zusammenhangs. 
+- **R-Befehl:** `cor()`
+
+\begin{alertblock}{}\Large
+$Cor(Y,X) = 0$ bedeutet nicht, dass es zwischen $X$ und $Y$ keinen Zusammenhang gibt.
+\end{alertblock}
+
+## Eigenschaften
+
+1. Wertebereich: $-1 \leq r_{XY} \leq 1$
+2. Ist $r_{XY} = 0$, so sind $X$ und $Y$ nicht korreliert (unkorreliert).
+3. Ist $r_{XY} > 0$, so sind $X$ und $Y$ gleichläufig (gleichsinnig) korreliert.
+4. Ist $r_{XY} < 0$, so sind $X$ und $Y$ gegenläufig (ungleichsinnig) korreliert.
+5. Je größer $|r_{XY}|$ ist, desto stärker ist die Korrelation zwischen $X$ and $Y$.
+
+## Scheinkorrelation
+
+**Scheinkorrelation:** obwohl ein großer Wert des Korrelationskoeffizienten zwischen $X$ und $Y$ besteht, liegt kein *ursächlicher* (und/oder sachlogischer) Zusammenhang zwischen $X$ und $Y$ vor. 
+
+### Beispiel
+Zusammenhang zwischen Kindergeburten und der Anzahl der Storchenpaare, die sich in einer Region ansiedeln.
+
+## Scheinkorrelation
+
+```{r, echo=F, fig.height=4.5}
+# Suicides by hangig, strangulation and suffocation (count)
+x <-c(5427, 5688, 6198, 6462, 6635, 7336, 7248, 7491, 8161, 8578, 9000)
+# US Spending on science, space, and technology (bn dollars)
+y <- c(18.079, 18.594, 19.753, 20.734, 20.831, 23.029, 23.597, 23.584, 25.525, 27.731, 29.449)
+# Time
+t <- 1999:2009
+plot(t,y, ylim=c(15,30), type="b", ylab="", xlab="", 
+     main="US Spending on science, space, and technology and \n US Spending on science, space, and technology")
+mtext(paste("korrelation:",round(cor(x,y))))
+par(new=T)
+plot(t, x, type = "b", axes = FALSE, bty = "n", xlab = "", ylab = "", col="red")
+axis(side=4, at = pretty(range(x)), col="red", col.axis="red")
+```
+
+\tiny
+- Weitere Beispiele unter: http://tylervigen.com/spurious-correlations
+
+## Verständnisfragen
+
+- Welche Darstellungsmöglichkeiten gibt es für zweidimensionale Daten?
+- Bedeutet ein Korrelationskoeffizient nah bei 1, dass ein sachlicher Zusammenhang zwischen den untersuchten Merkmalen besteht?
+- Wie ist ein Korrelationskoeffizient nah bei -1 zu interpretieren?
+

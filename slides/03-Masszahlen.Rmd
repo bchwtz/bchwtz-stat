@@ -173,7 +173,7 @@ summary(red)
 ## Geometrisches und Harmonisches Mittel
 
 - Es gibt zahlreiche spezialisierte Mittelwerte, wie das **geometrische Mittel** $\bar x_{geo}$ und das **harmonische Mittel** $\bar x_{harm}$. Welcher Mittelwert genutzt werden muss, hängt von den zugrundeliegenden Daten ab. 
-- Ziel der Mittelwertbildung is, die durchschnittliche *Gesamtwirkung* von $n$ meist unterschiedlichen Werten mit einem einzigen wert zu beschreiben.
+- Ziel der Mittelwertbildung ist, die durchschnittliche *Gesamtwirkung* von $n$ meist unterschiedlichen Werten mit einem einzigen Wert zu beschreiben.
 
 **Geometrisches Mittel:**        $\quad \bar x_{geo} = \sqrt[n]{x_1 \cdot x_2 \cdot \ldots \cdot x_n} = \sqrt[n]{\prod_{i=1}^{n} x_i}$
 
@@ -212,8 +212,8 @@ hist(rsnorm(n = 10000, sd=5,xi=1.5), probability=T, n=50, xlim=xlim, xlab ="", m
 
 \pause
 \small
-- Linksschiefe Häufigkeitsverteilung: $\bar x = \bar x_{Median} = \bar x_{Modus}$
-- Symmetrische Häufigkeitsverteilung: $\bar x < \bar x_{Median} < \bar x_{Modus}$
+- Linksschiefe Häufigkeitsverteilung: $\bar x < \bar x_{Median} < \bar x_{Modus}$
+- Symmetrische Häufigkeitsverteilung: $\bar x = \bar x_{Median} = \bar x_{Modus}$
 - Rechtsschiefe Häufigkeitsverteilung: $\bar x > \bar x_{Median} > \bar x_{Modus}$
 
 # Streuungsmaße
@@ -306,6 +306,17 @@ kable(tab, digits = 4, booktabs=T, align ="c", col.names=c("$i$","$x_i$","$x_i -
 
 $n=$ `r nrow(tab)` $\quad \bar x =$ `r round(mean(red),4)` $\quad  \sum (x_i - \bar x) =$ `r round(sum(red-mean(red)),4)` $\quad  \sum (x_i - \bar x)^2 =$ `r round(sum((red-mean(red))^2),4)` $\quad  s^2=$ `r round(var(red),4)`
 
+## Rechenbeispiel
+
+Berechnung der Varianz der blauen Kugeln aus dem Eingangsbeispiel.
+
+```{r, echo=F}
+tab <- data.frame(i=1:length(blue),blue, blue-mean(blue), (blue-mean(blue))^2)
+kable(tab, digits = 4, booktabs=T, align ="c", col.names=c("$i$","$x_i$","$x_i - \\bar x$", "$(x_i-\\bar x)^2$"))
+```
+
+$n=$ `r nrow(tab)` $\quad \bar x =$ `r round(mean(blue),4)` $\quad  \sum (x_i - \bar x) =$ `r round(sum(blue-mean(blue)),4)` $\quad  \sum (x_i - \bar x)^2 =$ `r round(sum((blue-mean(blue))^2),4)` $\quad  s^2=$ `r round(var(blue),4)`
+
 ## Variationskoeffizient
 
 :::{.block}
@@ -374,7 +385,7 @@ C <- c(1000, 2000, 5000, 8000)
 ```
 
 ## Beispiel
-```{r}
+```{r, echo=F}
 # Lorenzkurve für A [ohne Punkt (0,0) ]
 A <- sort(A)
 H <- table(A)
@@ -386,7 +397,7 @@ l <- cumsum(H * unique(A)) / sum(A)
 
 ```{r, echo=F}
 df <- data.frame(j=1:4, a=sort(unique(A)), k, l)
-#df <- rbind(c(0,"",0,0),df) # Ergänzen der 0
+df <- rbind(c(0,"",0,0),df) # Ergänzen der 0
 kable(df, booktabs=T, row.names = F, col.names=c("j","$a_j$","$k_j$","$l_j$"))
 ```
 
@@ -405,7 +416,7 @@ $$ G = \sum_{i=1}^{n} (k_i+k_{i-1}) (l_i+l_{i-1})-1$$
 - **R-Funktion:** `Gini()` aus dem Zusatzpaket `ineq`
 
 ## Lorenzkurve mit Gini-Koeffizient
-```{r, fig.height=4.2}
+```{r, echo=F, fig.height=4.2}
 library(ineq); par(pty="s") # Laden des Zusatzpaketes ineq + Plot quadratisch
 plot(Lc(A), main="Lorenzkurve")
 subtitle <- paste("Gini Koeffizient:", Gini(A))

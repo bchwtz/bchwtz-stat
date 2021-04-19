@@ -1,2 +1,5 @@
 # Zweidimensionale Verteilungen
  
+```{r, echo = F, out.width="80%", fig.cap="[Download Slides](slides/04-Zusammenhang.pdf)"}
+knitr::include_graphics("slides/gifs/04-Zusammenhang.gif")
+```
