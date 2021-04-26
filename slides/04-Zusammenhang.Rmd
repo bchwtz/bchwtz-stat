@@ -121,7 +121,7 @@ y <- c(18.079, 18.594, 19.753, 20.734, 20.831, 23.029, 23.597, 23.584, 25.525, 2
 t <- 1999:2009
 plot(t,y, ylim=c(15,30), type="b", ylab="", xlab="", 
      main="US Spending on science, space, and technology and \n US Spending on science, space, and technology")
-mtext(paste("korrelation:",round(cor(x,y))))
+mtext(paste("korrelation:",signif(cor(x,y),digits=4)))
 par(new=T)
 plot(t, x, type = "b", axes = FALSE, bty = "n", xlab = "", ylab = "", col="red")
 axis(side=4, at = pretty(range(x)), col="red", col.axis="red")
