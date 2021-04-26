@@ -357,7 +357,7 @@ sd(blue) / mean(blue)
 Man spricht von Konzentration oder Ungleichheit, falls zu einem bestimmten Zeitpunkt ein relativ kleiner Anteil der Merkmalsträger einen hohen Anteil an der Summe der Merkmalswerte besitzt. 
 :::
 
-- Konzentration bzw. Ungleichheitsdiskussionen findent man häufig im Kontext von Einkommen oder Vermögen.
+- Konzentration bzw. Ungleichheitsdiskussionen findet man häufig im Kontext von Einkommen oder Vermögen.
 - Beispiele: In Deutschland besitzen 10% der Bevölkerung des Vermögens.
 
 ## Lorenzkurve
@@ -410,9 +410,9 @@ Das Doppelte der Fläche zwischen der Lorenzkurve und der Winkelhalbierenden hei
 $$ G = \sum_{i=1}^{n} (k_i+k_{i-1}) (l_i+l_{i-1})-1$$
 :::
 
-- Die Lorenzkurzve verläuft durch die Punkte $(0,0)$ und $(1,1)$
-- Die Lorenzkurve verläuft immer **unterhalb** der Winkelhalbierenden.
-- Die Lorenzkurve ist winkelhalbierend, wenn alle Mermalsausprägungen gleich häufig vorkommen. Dann liegt keine Konzentration vor. Je weiter die Lorenzkurve sich von der Winkelhalbierenden entfernt, desto größer ist die Ungleichheit.
+- Um den Gini-Koeffizienten zu berechnen sind alle Stützpunkte der Lorenzkurve erforderlich. Es gilt $0 \leq G \leq \frac{n-1}{n}<1$.
+- Wenn die Lorenzkurve winkelhalbierend ist, gilt $G=0$. In diesem Fall gibt es keine Einkommensunterschiede.
+- Werden *alle* Ausgangswerte $x_i$ mit einem Faktor $a$ multipliziert, sodass $y_i = a \cdot x_i$, dann gilt $G_y = G_x$.
 - **R-Funktion:** `Gini()` aus dem Zusatzpaket `ineq`
 
 ## Lorenzkurve mit Gini-Koeffizient
