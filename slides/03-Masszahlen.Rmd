@@ -407,7 +407,7 @@ kable(df, booktabs=T, row.names = F, col.names=c("j","$a_j$","$k_j$","$l_j$"))
 ### Definition: Gini Koeffizient
 Das Doppelte der Fläche zwischen der Lorenzkurve und der Winkelhalbierenden heißt **Gini-Koeffizient** $G$ und wird als Konzentrationsmaß einer Häufigkeitsverteilung verwendet. 
 
-$$ G = \sum_{i=1}^{n} (k_i+k_{i-1}) (l_i+l_{i-1})-1$$
+$$ G = \sum_{i=1}^{n} (k_i+k_{i-1}) (l_i-l_{i-1})-1$$
 :::
 
 - Um den Gini-Koeffizienten zu berechnen sind alle Stützpunkte der Lorenzkurve erforderlich. Es gilt $0 \leq G \leq \frac{n-1}{n}<1$.
