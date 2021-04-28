@@ -73,7 +73,7 @@ Lagemaß                     Symbol                 Berechnung
 Modus                       $\bar x_{Modus}$       $h_{Modus} \geq h_j$
 Median                      $\bar x_{Median}$      $x_{\frac{n+1}{2}} \text{ oder } \frac{1}{2} (x_{\frac{n}{2}} + x_{\frac{n}{2}+1})$
 Quantil                     $Q_\alpha$             Wert der Verteilungsfunktion
-Artimethisches Mittel       $\bar x$               $\frac{1}{n}\sum_{i=1}^{n}x_i$
+Arithmetisches Mittel       $\bar x$               $\frac{1}{n}\sum_{i=1}^{n}x_i$
 Geometrisches Mittel        $\bar x_{geo}$         $\sqrt[n]{x_1 \cdot x_2 \cdot \ldots \cdot x_n}$
 Harmonisches Mittel         $\bar x_{harm}$        $\frac{n}{\sum_{i=1}^{n} 1/x_i}$
 -------------------------   --------------------   ----------------
@@ -133,7 +133,7 @@ $$S(Q_\alpha) = \alpha$$
 
 :::{.block}
 ### Definition: Arithmetisches Mittel
-Sind $x_1,\ldots,x_n$ die Beobachtungswerte eines metrisch skalierten Merkmals $X$, so errechnet sich das **artimetische Mittel** durch
+Sind $x_1,\ldots,x_n$ die Beobachtungswerte eines metrisch skalierten Merkmals $X$, so errechnet sich das **arithmetische Mittel** durch
 
 $$\bar x = \frac{1}{n}\sum_{i=1}^{n}x_i$$
 :::
@@ -160,7 +160,7 @@ points(x=blue,y=rep(1.1,length(blue)), pch=19, col="blue")
 # Ausgabe der Daten
 red
 
-# Artimethisches Mittel
+# Arithmetisches Mittel
 mean(red)
 
 ## Median
