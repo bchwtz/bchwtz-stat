@@ -1,0 +1,292 @@
+---
+title: "Statistik"
+author: "CH.6 - Wahrscheinlichkeitsrechnung"
+date: "SS 2021 || Prof. Dr. Buchwitz, Sommer, Henke"
+output:
+  beamer_presentation:
+    fig_width: 8
+    fig_height: 5
+    highlight: tango
+    theme: metropolis
+    includes:
+      in_header: header.tex
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+library(fGarch)
+knitr::opts_chunk$set(echo = TRUE, cache=TRUE, size="scriptsize", 
+                      fig.align = "center")
+def.chunk.hook  <- knitr::knit_hooks$get("chunk")
+knitr::knit_hooks$set(chunk = function(x, options) {
+  x <- def.chunk.hook(x, options)
+  ifelse(options$size != "normalsize", paste0("\n \\", options$size,"\n\n", x, "\n\n \\normalsize"), x)
+})
+
+```
+
+## Wahrscheinlichkeitsrechnung
+
+- Zufallsexperimente sind der Ausgangspunkt der Wahrscheinlichkeitsrechnung.
+
+## Zufallsexperiment
+
+:::{.block}
+### Definition: Zufallsexperiment
+- Ein **Zufallsexperiment** ist ein Experiment, das alle der folgenden Bedingungen erfüllt:
+  + Es wird nach genau festgelegten Vorschriften durchgeführt.
+  + Es kann beliebig oft unter gleichen Bedingungen wiederholt werden.
+  + Das Ergebnis ist nicht genau vorhersehbar.
+  + Alle *möglichen* Ausgänge sind vor der Durchführung bekannt.
+:::
+
+- Die Menge aller möglichen Ergebnisses eines Zufallsexperiments nennt man **Ereignisraum** $\Omega$.
+- Teilmengen des Ereignisraumes $\Omega$ nennt man (*zufällige*) Ereignisse. Diese werden mit lateinischen Buchstaben ($A,B,C,..$) bezeichnet.
+- Ereignisse, die sich nicht weiter zerlegen lassen, heißen Elementarereignisse.
+
+## Beispiel: Zufallsexperiment
+
+```{r, echo=F}
+set.seed(5)
+```
+
+```{r}
+# Definition des Ereignisraumes
+Omega <- c(1, 2, 3, 4, 5, 6)
+
+# Durchführen des Experiments
+(E <- sample(Omega, size = 1, replace = FALSE))
+```
+
+```{r}
+# Erneute Durchführung des Experiments
+(E <- sample(Omega, size = 1, replace = FALSE))
+```
+
+## Ereignisse
+
+:::{.block}
+### Defintion: Sicheres Ereignis
+Ein Ereignis $E$ heißt **sicheres Ereignis**, wenn es bei jeder Ausführung des Zufallsexperiments eintritt.
+$$E = \Omega$$
+:::
+
+**Beispiel:** Würfeln einer Zahl zwischen 1 und 6 bei einem 6-seitigen Würfel.
+
+:::{.block}
+### Defintion: Unmögliches Ereignis
+Ein Ereignis $\varnothing$ heißt **unmögliches Ereignis**, wenn es niemals eintritt.
+$$\varnothing=\{\;\}$$
+:::
+
+**Beispiel:** Würfeln einer 9 bei einem 6-seitigen Würfel.
+
+
+## Rechnen mit Ereignissen
+
+- Ereignisse sind als Mengen definiert, folglich können die Notation und Operationen der Mengenlehre beim Rechnen verwendet werden.
+
+:::{.block}
+### Definition: Komplementärereignis
+Das Ereignis $\bar A \subset \Omega$, das genau dann eintritt, wenn $A$ nicht eintritt, heißt das **zu A komplementäre Ereignis**.
+:::
+
+**Beispiel:** $\bar A = B \quad \Omega = \{1,2,3,4,5,6\} \quad A=\{1,3,5\} \quad B=\{2,4,6\}$
+
+:::{.block}
+### Defnition: Disjunkte Ereignisse
+Zwei Ereignisse sind **disjunkt**, wenn sie nicht beide gleichzeitig eintreten können, also $A \cap B = \varnothing$.
+:::
+
+**Beispiel:** $C \cap D \quad \Omega = \{1,2,3,4,5,6\} \quad C=\{1,2\} \quad D=\{6\}$ 
+
+## Operatoren
+
+- Vereinigungsmenge $A \cup B$
+- Durchschnittsmenge $A \cap B$
+- Differenzmenge $A \setminus B$
+
+$$\Omega = \{1,2,3,4,5,6\}, \quad M_1=\{1,2,3,4,5\} \quad\text{und}\quad M_2=\{5,6\}$$
+\kariert{12}
+
+## Operatoren
+
+```{r}
+M1 <- c(1,2,3,4,5)
+M2 <- c(5,6)
+
+union(M1, M2)     # Vereinigungsmenge
+intersect(M1, M2) # Durchschnittsmenge
+setdiff(M1, M2)   # Differenzmenge
+```
+
+## Wahrscheinlichkeiten
+
+### Definition: Wahrscheinlichkeit (von Mieses)
+Die statistische Wahrscheinlichkeit eines Ereignisses $A$ ist der Grenzwert der relativen Häufigkeit des des Auftretens des Ereignisses, also die relative Häufigkeit bei einer sehr großen Anzahl von Wiederholungen.
+
+$$P(A) = \frac{\text{Anzahl des Eintreffens von A}}{\text{Anzahl der Wiederholungen des Zufallsexperiments}}$$
+
+## Wahrscheinlichkeiten
+
+```{r}
+# 5-malige Wiederholung Münzwurf
+Omega <- c("Kopf","Zahl")
+coin <- sample(Omega, size=5, replace=T) 
+prop <- proportions(table(coin))
+prop
+
+# Relativer Anteil für Ergebnis = Kopf
+prop[1]
+```
+
+## Wahrscheinlichkeiten
+
+```{r, echo=F}
+set.seed(10)
+n <- 100
+coin <- sample(c(1,0), size=n, replace=T) 
+
+x <- 1:n
+y <- cumsum(coin)/x
+plot(x, y, type="l", ylim=c(0,1), 
+     xlab="Anzahl Würfe", ylab="Anteil Ergebnis = Kopf",
+     main="Entwicklung des Anteils für das Auftreten des Ausgangs 'Kopf'")
+abline(h=0.5, col="red")
+```
+
+## Wahrscheinlichkeiten
+
+### Definition: Wahrscheinlichkeit (Laplace)
+Ein Experiment mit endlich vielen, gleich wahrscheinlichen Ausgängen heißt Laplace-Experiment.
+
+$$P(A)=\frac{|A|}{|\Omega|}=\frac{\text{Anzahl der für A 'günstigen' Ergebnisse}}{\text{Anzahl der möglichen Ergebnisse}}$$
+
+## Axiome
+
+**Axiome nach Kolomogorov:**
+
+- **Positivität:** $P(A) \geq 0 \quad\text{für}\quad A \in Omega$
+
+- **Normiertheit:** $P(\Omega)=1$
+
+- **Additivität:** $P(A \cup B)=P(A) + P(B) \quad\text{falls}\quad A \cap B = \varnothing$
+
+
+## Rechenregeln für Wahrscheinlichkeiten
+
+- Seien $A_i$ mit $i = 1,\ldots,n$ alle möglichen Ereignisse eines Experiments, sodass $\Omega=\{A_1,A_2,\ldots,A_{n-1},A_n\}$. Dann gilt
+
+$$\sum_{i=1}^n P(A_i) = 1$$
+\bigskip
+
+- Für das unmöglichen Ereignisses gilt
+
+$$P(\varnothing)=0$$
+\bigskip
+
+- Für das zu $A$ komplementäre Ereignis gilt
+
+$$P(\bar A) = 1- P(A)$$
+
+## Rechenregeln für Wahrscheinlichkeiten
+
+- Für die Vereinigung zweier beliegiber Ergebnisse $A$ und $B$ gilt
+
+$$ P(A \cup B) = P(A) + P(B) - P(A \cap B)$$
+\bigskip
+
+- Ist A Teilmenge von B, also $A \subset B$, dann gilt
+
+$$P(A) \leq P(B)$$
+\bigskip
+
+- Für disjunkte Ereignisse $A$ und $B$ gilt
+
+$$P(A \cap B)=0$$
+
+## Unabhängigkeit
+
+### Definition: Unabhägigkeit von Ereignissen
+Zwei Ereignisse $A$ und $B$ heißen **unabhängig**, wenn das Eintreten des einen Ereignisses die Wahrscheinlichkeit des Eintretens des anderen Ereignisses nicht beeinflusst. Dann gilt
+
+$$P(A \cap B) = P(A) \cdot P(B)$$
+
+## Bedingte Wahrscheinlichkeiten
+
+- Die Wahrscheinlichkeit eines Ereignisses $A$ kann davon abhängig sein, ob ein anderes Ereignis $B$ bereits eingetreten ist.
+\Huge
+$$P(A|B)$$
+\bigskip
+\normalsize
+**Beispiele:**
+
+- Die Wahrscheinlichkeit an einer Krankheit zu erkranken, kann davon abhängig sein, ob man gegen diese Krankheit geimpft ist.
+- Die Wahrscheinlichkeit Deutscher Meister beim Fußball zu werden ist davon abhängig ob man vorher Herbstmeister ist.
+
+## Bedingte Wahrscheinlichkeiten
+
+- Bedingte Wahrscheinlichkeiten können als Ergebnis von mehrstufigen Zufallsexperimenten verstanden werden und lassen sich als Baumdiagramm darstellen:
+
+\kariert{15}
+
+## Bedingte Wahrscheinlichkeiten
+
+:::{.block}
+### Definition: Bedingte Wahrscheinlichkeit
+Seien A und B zwei Ereignisse. Die Wahrscheinlichkeit des Ereignisses A unter der Bedingung, dass das Ereignis B bereits eingetreten ist, heißt **bedingte Wahrscheinlichkeit** von A unter B oder Wahrscheinlichkeit von A gegeben B und ist definiert als
+
+$$P(A|B) = \frac{P(A \cap B)}{P(B)} \quad \text{für}\quad P(B) \neq 0$$
+:::
+
+- $P(A \cap B)$ kann als die Wahrscheinlichkeit, das beide Ereignisse gleichzeitig eintreten interpretiert werden.
+
+## Bedingte Wahrscheinlichkeiten
+
+Durch Umformung der Defintion der bedingten Wahrscheinlichkeit erhält man den **Mulitpliationssatz** der Wahrscheinlichkeitsrechnung:
+
+$$P(A \cap B) = P(A) \cdot P(B|A) \quad\text{sowie}\quad P(B \cap A) = P(B) \cdot P(A|B)$$  
+Es gilt zudem:
+
+$$ P(B \cap A) + P(B \cap \bar A) = P(B)$$
+$$P(\bar A| B) = 1- P(A|B)$$
+
+## Satz der totalen Wahrscheinlichkeit
+
+### Definition: Satz der totalen Wahrscheinlichkeit
+Sei $A_1, A_2, ldots, A_k$ eine disjunkte Zerlegung des Ereignisraumes $\Omega$. Wenn $B \subset \Omega$ dann gilt
+
+$$P(B) = \sum_{i=1}^k P(A_i) \cdot P(B|A_i)$$
+
+## Satz von Bayes
+
+- Die bedingten Wahrscheinlichkeiten $P(A|B)$ und $P(B|A)$ sind nicht gleich!
+- Die Verbindung zwischen diesen Wahrscheinlichkeiten gibt der Satz von Bayes wieder.
+
+:::{.block}
+### Definition: Satz von Bayes
+Wenn der Ereignisraum $\Omega$ in $A$ und $\bar A$ partitioniert wird und $B$ ein beliebiges Ereignis aus $\Omega$ ist, gilt
+
+$$ P(A|B) = \frac{P(A) \cdot P(B|A)}{P(B)}$$
+:::
+
+Der Satz von Bayes ergibt sich aus Kombination von $P(A|B) = \frac{P(A \cap B)}{P(B)}$ und $P(B|A) = \frac{P(B \cap A)}{P(A)}$.
+
+
+## Beispiel
+
+- Eine Bank vergibt Privatkredite an Kunden.
+  + Sie weiß, dass 3% dieser Kunden den Privatkredit entweder nicht termingerecht oder überhaupt nicht zurückzahlen, in diesem Sinne also schlechte Kreditnehmer sind. Es ist ferner bekannt, dass 25% der schlechten Kreditnehmer mindestens einen weiteren Ratenkredit haben, die guten Kreditnehmer aber zu 85% keinen weiteren Ratenkredit bedienen müssen.
+  + Wie groß ist die Wahrscheinlichkeit, dass jemand ein schlechter Kreditnehmer ist, wenn er schon mindestens einen weiteren Ratenkredit bezieht?
+  + Wie viel Prozent derjenigen, die noch keinen Ratenkredit haben, sind gute Kreditnehmer?
+  
+## Beispiel
+**Lösungsskizze:**
+\kariert{18}
+
+## Verständnisfragen
+
+- Was versteht man unter komplementären Ereignissen?
+- Sind komplementäre Ereignisse unabhängig?
+- Ist die Aussage $P(A \cup B) = P(A) + P(B)$ korrekt?
+
