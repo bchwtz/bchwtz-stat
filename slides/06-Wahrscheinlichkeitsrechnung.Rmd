@@ -25,204 +25,268 @@ knitr::knit_hooks$set(chunk = function(x, options) {
 
 ```
 
-## Kombinatorik
+## Wahrscheinlichkeitsrechnung
 
-Die Kombinatorik ist das Teilgebiet der Mathematik, das sich mit dem Zählen von **Zusammenstellungen** von Elementen aus einer vorgegebenen endlichen Menge beschäftigt.
+- Zufallsexperimente sind der Ausgangspunkt der Wahrscheinlichkeitsrechnung.
 
-\vspace{1cm}
-- In diesem Kapitel werden wir folgende Fragen beantworten, um sie dann im nächsten Kapitel als Hilfsmittel zur **Berechnung von Wahrscheinlichkeiten** einzusetzen:
-  + Wie viele Möglichkeiten gibt es $n$ Elemente anzuordnen?
-  + Wie viele Möglichkeiten gibt es, aus $n$ Elementen $k$ auszuwählen?
-
-## Fakultäten
+## Zufallsexperiment
 
 :::{.block}
-### Definition: Fakultät
-
-$n!$ bezeichnet das Produkt der ersten $n$ natürlichen Zahlen. Es gilt $0! = 1$.
-
-$$n! = 1 \cdot 2 \cdot \ldots\cdot (n-1) \cdot n$$
+### Definition: Zufallsexperiment
+- Ein **Zufallsexperiment** ist ein Experiment, das alle der folgenden Bedingungen erfüllt:
+  + Es wird nach genau festgelegten Vorschriften durchgeführt.
+  + Es kann beliebig oft unter gleichen Bedingungen wiederholt werden.
+  + Das Ergebnis ist nicht genau vorhersehbar.
+  + Alle *möglichen* Ausgänge sind vor der Durchführung bekannt.
 :::
 
-- Fakultäten wachsen mit steigendem $n$ sehr schnell stark an.
-- Beispiel: $3! =$ `r factorial(3)` und $6! =$ `r factorial(6)` 
-- **R-Funktion:** `factorial()`
+- Die Menge aller möglichen Ergebnisses eines Zufallsexperiments nennt man **Ereignisraum** $\Omega$.
+- Teilmengen des Ereignisraumes $\Omega$ nennt man (*zufällige*) Ereignisse. Diese werden mit lateinischen Buchstaben ($A,B,C,..$) bezeichnet.
+- Ereignisse, die sich nicht weiter zerlegen lassen, heißen Elementarereignisse.
 
-## Fakultäten
+## Beispiel: Zufallsexperiment
 
 ```{r, echo=F}
-x <- 1:9
-y <- factorial(x)
-plot(x, y, type="b", ylab="", xlab="Fakultät", main=" Wachstum der Fakultäten", yaxt='n')
-marks <- c(1000, factorial(8), 100000, 200000, 300000, factorial(max(x)))
-axis(2,at=marks,labels=format(marks, scientific = F),las=1)
+set.seed(5)
 ```
 
-
-## Binomialkoeffizient
-
-:::{.block}
-### Definition: Binomialkoeffizient
-
-Der Binomialkoeffizient ist für $n>0$, $k\geq0$ und $n\geq k$ definiert als
-
-$$ \binom{n}{k} = \frac{n!}{k!\cdot(n-k)!} = \frac{n\cdot(n-1)\cdot (n-2) \cdot \ldots \cdot (n+1-k)}{k!}$$
-:::
-
-- Der Binomialkoeffizient gibt an, auf wie viele verschiedene Arten man $k$ Elemente aus einer begrenzten Menge von $n$ Elementen auswählen kann.
-- Der Binomiakoeffizient ist symmetrisch, es gilt $\binom{n}{k} = \binom{n}{n-k}$.
-- **R-Funktion:** `choose()`
-
-## Binomialkoeffizient
-
-:::{.columns}
-:::{.column}
-**Formel:**
-
-$$ \binom{n}{k} = \frac{n!}{k!\cdot(n-k)!}$$
-
-\vspace{1cm}
-
-**Rechenregeln:**
-
-a) $\binom{n}{1} = n \quad\text{für}\quad n \geq 0$
-b) $\binom{n}{n}=1$
-c) $\binom{n}{k} = \binom{n}{n-k} \quad\text{für}\quad k \leq n$
-d) $\binom{n}{k} + \binom{n}{k+1} = \binom{n+1}{k+1}$
-e) $\binom{n}{0} = 1 \quad\text{für}\quad n \geq 0$
-f) $\binom{n}{k} = 0 \quad\text{für}\quad k > n$
-:::
-
-:::{.column}
-**Aufgabe:** a) $\binom{8}{3}\;$ b) $\binom{10}{5}\;$ c) $\binom{12}{8}$
-\kariert{18}
-:::
-:::
-
-## Permutationen
-
-:::{.block}
-### Definition: Permutation
-Jede Zusammenstellung aus einer Menge mit $n$ Elementen, die dadurch entsteht, dass man die gegebenen Elemente in **beliebiger** Reihenfolge aufreiht, heißt eine *Permutation* dieser Elemente.
-:::
-
-- Sind alle $n$ Elemente verschieden, so ergibt sich die Anzahl der Permutationen $P_n = n!$
-- Lassen sich die $n$ Elemente in $k$ Klassen einteilen, wird die Anzahl der Permutationen wie folgt berechnet $P_n^{n_1,n_2,\ldots,n_k}=\frac{n!}{n_1! n_2! \;\ldots\; n_k! }$
-- **R-Funktion:** `permutations()` aus dem Zusatzpaket `gtools`
-
-## Permutationen
-
-:::{.columns}
-:::{.column}
-**Beispiel 1:**
-Wie viele Möglichkeiten gibt es drei verschiedenfarbige Kugeln anzuordnen?
-\kariert{15}
-:::
-:::{.column}
-**Beispiel 2:**
-Wie viele Möglichkeiten gibt es zwei gelbe und eine rote Kugel anzuordnen?
-\kariert{15}
-:::
-:::
-
-## Permutations
-
-:::{.columns}
-:::{.column}
-**Beispiel 1:**
-Wie viele Möglichkeiten gibt es drei verschiedenfarbige Kugeln anzuordnen?
 ```{r}
-library(gtools)
-balls <- c("red", "blue", "green")
-p <- permutations(v=balls, n=3, r=3,
-                  set=F, repeats = F)
-p
+# Definition des Ereignisraumes
+Omega <- c(1, 2, 3, 4, 5, 6)
+
+# Durchführen des Experiments
+(E <- sample(Omega, size = 1, replace = FALSE))
 ```
-:::
-:::{.column}
-**Beispiel 2:**
-Wie viele Möglichkeiten gibt es zwei gelbe und eine rote Kugel anzuordnen?
+
 ```{r}
-library(gtools)
-balls <- c("red", "yellow", "yellow")
-p <- permutations(v=balls, n=3, r=3,
-                  set=F, repeats = F)
-unique(p)
+# Erneute Durchführung des Experiments
+(E <- sample(Omega, size = 1, replace = FALSE))
 ```
-:::
-:::
 
-
-## Kombinationen
+## Ereignisse
 
 :::{.block}
-### Definition: Kombination
-Jede Zusammenstellung, aus $k$ Elementen einer Menge mit $n$ Elementen mit $k<n$ heißt Kombination k-ter Ordnung aus den $n$ Elementen.
+### Defintion: Sicheres Ereignis
+Ein Ereignis $E$ heißt **sicheres Ereignis**, wenn es bei jeder Ausführung des Zufallsexperiments eintritt.
+$$E = \Omega$$
 :::
 
-**Kombinationen können wie folgt unterschieden werden:**
+**Beispiel:** Würfeln einer Zahl zwischen 1 und 6 bei einem 6-seitigen Würfel.
 
-- **Reihenfolge:** Gelten zwei Kombinationen mit genau denselben $k$ Elementen aber in verschiedener Reihenfolge als verschiedenen so spricht man von *Variationen* (Kombinationen mit Berücksichtigung der Reihenfolge). 
-- **Wiederholung:** Dürfen die $k$ Elemente nur einmal vorkommen (keine Mehrfachauswahl des gleichen Elementes) spricht man von *Kombinationen ohne Wiederholung* (ohne zurücklegen).
-- **R-Funktion:** `combinations()` aus dem Zusatzpaket `gtools` und `expand.grid()`
+:::{.block}
+### Defintion: Unmögliches Ereignis
+Ein Ereignis $\varnothing$ heißt **unmögliches Ereignis**, wenn es niemals eintritt.
+$$\varnothing=\{\;\}$$
+:::
 
-## Kombinationen
+**Beispiel:** Würfeln einer 9 bei einem 6-seitigen Würfel.
 
-\small \textbf{Vier Möglichkeiten:} Wählen von 2 aus 3 verschiedenartigen Kugeln mit/ohne Wiederholung und mit/ohne Berücksichtigung der Reihenfolge.
+
+## Rechnen mit Ereignissen
+
+- Ereignisse sind als Mengen definiert, folglich können die Notation und Operationen der Mengenlehre beim Rechnen verwendet werden.
+
+:::{.block}
+### Definition: Komplementärereignis
+Das Ereignis $\bar A \subset \Omega$, das genau dann eintritt, wenn $A$ nicht eintritt, heißt das **zu A komplementäre Ereignis**.
+:::
+
+**Beispiel:** $\bar A = B \quad \Omega = \{1,2,3,4,5,6\} \quad A=\{1,3,5\} \quad B=\{2,4,6\}$
+
+:::{.block}
+### Defnition: Disjunkte Ereignisse
+Zwei Ereignisse sind **disjunkt**, wenn sie nicht beide gleichzeitig eintreten können, also $A \cap B = \varnothing$.
+:::
+
+**Beispiel:** $C \cap D \quad \Omega = \{1,2,3,4,5,6\} \quad C=\{1,2\} \quad D=\{6\}$ 
+
+## Operatoren
+
+- Vereinigungsmenge $A \cup B$
+- Durchschnittsmenge $A \cap B$
+- Differenzmenge $A \setminus B$
+
+$$\Omega = \{1,2,3,4,5,6\}, \quad M_1=\{1,2,3,4,5\} \quad\text{und}\quad M_2=\{5,6\}$$
+\kariert{12}
+
+## Operatoren
+
+```{r}
+M1 <- c(1,2,3,4,5)
+M2 <- c(5,6)
+
+union(M1, M2)     # Vereinigungsmenge
+intersect(M1, M2) # Durchschnittsmenge
+setdiff(M1, M2)   # Differenzmenge
+```
+
+## Wahrscheinlichkeiten
+
+### Definition: Wahrscheinlichkeit (von Mieses)
+Die statistische Wahrscheinlichkeit eines Ereignisses $A$ ist der Grenzwert der relativen Häufigkeit des des Auftretens des Ereignisses, also die relative Häufigkeit bei einer sehr großen Anzahl von Wiederholungen.
+
+$$P(A) = \frac{\text{Anzahl des Eintreffens von A}}{\text{Anzahl der Wiederholungen des Zufallsexperiments}}$$
+
+## Wahrscheinlichkeiten
+
+```{r}
+# 5-malige Wiederholung Münzwurf
+Omega <- c("Kopf","Zahl")
+coin <- sample(Omega, size=5, replace=T) 
+prop <- proportions(table(coin))
+prop
+
+# Relativer Anteil für Ergebnis = Kopf
+prop[1]
+```
+
+## Wahrscheinlichkeiten
+
+```{r, echo=F}
+set.seed(10)
+n <- 100
+coin <- sample(c(1,0), size=n, replace=T) 
+
+x <- 1:n
+y <- cumsum(coin)/x
+plot(x, y, type="l", ylim=c(0,1), 
+     xlab="Anzahl Würfe", ylab="Anteil Ergebnis = Kopf",
+     main="Entwicklung des Anteils für das Auftreten des Ausgangs 'Kopf'")
+abline(h=0.5, col="red")
+```
+
+## Wahrscheinlichkeiten
+
+### Definition: Wahrscheinlichkeit (Laplace)
+Ein Experiment mit endlich vielen, gleich wahrscheinlichen Ausgängen heißt Laplace-Experiment.
+
+$$P(A)=\frac{|A|}{|\Omega|}=\frac{\text{Anzahl der für A 'günstigen' Ergebnisse}}{\text{Anzahl der möglichen Ergebnisse}}$$
+
+## Axiome
+
+**Axiome nach Kolomogorov:**
+
+- **Positivität:** $P(A) \geq 0 \quad\text{für}\quad A \in Omega$
+
+- **Normiertheit:** $P(\Omega)=1$
+
+- **Additivität:** $P(A \cup B)=P(A) + P(B) \quad\text{falls}\quad A \cap B = \varnothing$
+
+
+## Rechenregeln für Wahrscheinlichkeiten
+
+- Seien $A_i$ mit $i = 1,\ldots,n$ alle möglichen Ereignisse eines Experiments, sodass $\Omega=\{A_1,A_2,\ldots,A_{n-1},A_n\}$. Dann gilt
+
+$$\sum_{i=1}^n P(A_i) = 1$$
+\bigskip
+
+- Für das unmöglichen Ereignisses gilt
+
+$$P(\varnothing)=0$$
+\bigskip
+
+- Für das zu $A$ komplementäre Ereignis gilt
+
+$$P(\bar A) = 1- P(A)$$
+
+## Rechenregeln für Wahrscheinlichkeiten
+
+- Für die Vereinigung zweier beliegiber Ergebnisse $A$ und $B$ gilt
+
+$$ P(A \cup B) = P(A) + P(B) - P(A \cap B)$$
+\bigskip
+
+- Ist A Teilmenge von B, also $A \subset B$, dann gilt
+
+$$P(A) \leq P(B)$$
+\bigskip
+
+- Für disjunkte Ereignisse $A$ und $B$ gilt
+
+$$P(A \cap B)=0$$
+
+## Unabhängigkeit
+
+### Definition: Unabhägigkeit von Ereignissen
+Zwei Ereignisse $A$ und $B$ heißen **unabhängig**, wenn das Eintreten des einen Ereignisses die Wahrscheinlichkeit des Eintretens des anderen Ereignisses nicht beeinflusst. Dann gilt
+
+$$P(A \cap B) = P(A) \cdot P(B)$$
+
+## Bedingte Wahrscheinlichkeiten
+
+- Die Wahrscheinlichkeit eines Ereignisses $A$ kann davon abhängig sein, ob ein anderes Ereignis $B$ bereits eingetreten ist.
+\Huge
+$$P(A|B)$$
+\bigskip
+\normalsize
+**Beispiele:**
+
+- Die Wahrscheinlichkeit an einer Krankheit zu erkranken, kann davon abhängig sein, ob man gegen diese Krankheit geimpft ist.
+- Die Wahrscheinlichkeit Deutscher Meister beim Fußball zu werden ist davon abhängig ob man vorher Herbstmeister ist.
+
+## Bedingte Wahrscheinlichkeiten
+
+- Bedingte Wahrscheinlichkeiten können als Ergebnis von mehrstufigen Zufallsexperimenten verstanden werden und lassen sich als Baumdiagramm darstellen:
+
+\kariert{15}
+
+## Bedingte Wahrscheinlichkeiten
+
+:::{.block}
+### Definition: Bedingte Wahrscheinlichkeit
+Seien A und B zwei Ereignisse. Die Wahrscheinlichkeit des Ereignisses A unter der Bedingung, dass das Ereignis B bereits eingetreten ist, heißt **bedingte Wahrscheinlichkeit** von A unter B oder Wahrscheinlichkeit von A gegeben B und ist definiert als
+
+$$P(A|B) = \frac{P(A \cap B)}{P(B)} \quad \text{für}\quad P(B) \neq 0$$
+:::
+
+- $P(A \cap B)$ kann als die Wahrscheinlichkeit, das beide Ereignisse gleichzeitig eintreten interpretiert werden.
+
+## Bedingte Wahrscheinlichkeiten
+
+Durch Umformung der Defintion der bedingten Wahrscheinlichkeit erhält man den **Mulitpliationssatz** der Wahrscheinlichkeitsrechnung:
+
+$$P(A \cap B) = P(A) \cdot P(B|A) \quad\text{sowie}\quad P(B \cap A) = P(B) \cdot P(A|B)$$  
+Es gilt zudem:
+
+$$ P(B \cap A) + P(B \cap \bar A) = P(B)$$
+$$P(\bar A| B) = 1- P(A|B)$$
+
+## Satz der totalen Wahrscheinlichkeit
+
+### Definition: Satz der totalen Wahrscheinlichkeit
+Sei $A_1, A_2, ldots, A_k$ eine disjunkte Zerlegung des Ereignisraumes $\Omega$. Wenn $B \subset \Omega$ dann gilt
+
+$$P(B) = \sum_{i=1}^k P(A_i) \cdot P(B|A_i)$$
+
+## Satz von Bayes
+
+- Die bedingten Wahrscheinlichkeiten $P(A|B)$ und $P(B|A)$ sind nicht gleich!
+- Die Verbindung zwischen diesen Wahrscheinlichkeiten gibt der Satz von Bayes wieder.
+
+:::{.block}
+### Definition: Satz von Bayes
+Wenn der Ereignisraum $\Omega$ in $A$ und $\bar A$ partitioniert wird und $B$ ein beliebiges Ereignis aus $\Omega$ ist, gilt
+
+$$ P(A|B) = \frac{P(A) \cdot P(B|A)}{P(B)}$$
+:::
+
+Der Satz von Bayes ergibt sich aus Kombination von $P(A|B) = \frac{P(A \cap B)}{P(B)}$ und $P(B|A) = \frac{P(B \cap A)}{P(A)}$.
+
+
+## Beispiel
+
+- Eine Bank vergibt Privatkredite an Kunden.
+  + Sie weiß, dass 3% dieser Kunden den Privatkredit entweder nicht termingerecht oder überhaupt nicht zurückzahlen, in diesem Sinne also schlechte Kreditnehmer sind. Es ist ferner bekannt, dass 25% der schlechten Kreditnehmer mindestens einen weiteren Ratenkredit haben, die guten Kreditnehmer aber zu 85% keinen weiteren Ratenkredit bedienen müssen.
+  + Wie groß ist die Wahrscheinlichkeit, dass jemand ein schlechter Kreditnehmer ist, wenn er schon mindestens einen weiteren Ratenkredit bezieht?
+  + Wie viel Prozent derjenigen, die noch keinen Ratenkredit haben, sind gute Kreditnehmer?
+  
+## Beispiel
+**Lösungsskizze:**
 \kariert{18}
-
-## Kombinationen
-
-:::{.columns}
-:::{.column}
-```{r, size="tiny"}
-balls <- c("red", "blue", "green")
-
-# Mit Wiederholung
-## und mit Reihenfolge 
-mwmr <- expand.grid(balls,balls)
-nrow(mwmr)
-
-## und ohne Reihenfolge
-mwor <- combinations(v=balls, n=3, r=2,
-                     repeats = T)
-nrow(mwor)
-```
-:::
-:::{.column}
-
-```{r, size="tiny"}
-balls <- c("red", "blue", "green")
-
-# Ohne Wiederholung
-## und mit Reihenfolge 
-owmr <- mwmr[mwmr$Var1 != mwmr$Var2, ]
-nrow(owmr)
-
-## und ohne Reihenfolge
-owor <- combinations(v=balls, n=3, r=2,
-                     repeats = F)
-nrow(owor)
-```
-:::
-:::
-
-
-## Zusammenfassung
-
-\small
-\begin{table}[]
-\begin{tabular}{c|c|c|c|}
-\cline{2-4}
-                                        & Permutationen                                                  & \multicolumn{2}{c|}{Kombinationen}                       \\ \cline{2-4} 
-                                        & \multicolumn{2}{c|}{Reihenfolge berücksichtigt}                                            & ohne Reihenfolge             \\ \hline
-\multicolumn{1}{|c|}{ohne Wiederholung} & $P_n=n!$                                                       & $V_n^k=\frac{n!}{(n-k)!}$ & $C_n^k=\binom{n}{k}$         \\ \hline
-\multicolumn{1}{|c|}{mit Wiederholung}  & $P_n^{n_1,n_2,\ldots,n_k}=\frac{n!}{n_1! n_2! \;\ldots\;n_k!}$ & $V_{w,n}^k=n^k$           & $C_{w,n}^k=\binom{n+k-1}{k}$ \\ \hline
-\end{tabular}
-\end{table}
 
 ## Verständnisfragen
 
-- Wieso wird bei Permutationen hinsichtlich der Reihenfolge unterschieden?
-- Wann wird eine Kombination Variation genannt?
-- Wie hoch sind die Gewinnchancen beim Lotto?
+- Was versteht man unter komplementären Ereignissen?
+- Sind komplementäre Ereignisse unabhängig?
+- Ist die Aussage $P(A \cup B) = P(A) + P(B)$ korrekt?
+

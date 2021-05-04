@@ -1,2 +1,7 @@
 # Wahrscheinlichkeitsrechnung
+
+```{r, echo = F, out.width="80%", fig.cap="[Download Slides](slides/06-Wahrscheinlichkeitsrechnung.pdf)"}
+knitr::include_graphics("slides/06-Wahrscheinlichkeitsrechnung.gif")
+```
+
  
