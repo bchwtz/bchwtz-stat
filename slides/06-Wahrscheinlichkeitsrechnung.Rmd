@@ -166,7 +166,7 @@ $$P(A)=\frac{|A|}{|\Omega|}=\frac{\text{Anzahl der für A 'günstigen' Ergebniss
 
 **Axiome nach Kolomogorov:**
 
-- **Positivität:** $P(A) \geq 0 \quad\text{für}\quad A \in Omega$
+- **Positivität:** $P(A) \geq 0 \quad\text{für}\quad A \in \Omega$
 
 - **Normiertheit:** $P(\Omega)=1$
 
@@ -243,7 +243,7 @@ $$P(A|B) = \frac{P(A \cap B)}{P(B)} \quad \text{für}\quad P(B) \neq 0$$
 
 ## Bedingte Wahrscheinlichkeiten
 
-Durch Umformung der Defintion der bedingten Wahrscheinlichkeit erhält man den **Mulitpliationssatz** der Wahrscheinlichkeitsrechnung:
+Durch Umformung der Defintion der bedingten Wahrscheinlichkeit erhält man den **Multiplikationssatz** der Wahrscheinlichkeitsrechnung:
 
 $$P(A \cap B) = P(A) \cdot P(B|A) \quad\text{sowie}\quad P(B \cap A) = P(B) \cdot P(A|B)$$  
 Es gilt zudem:
@@ -254,7 +254,7 @@ $$P(\bar A| B) = 1- P(A|B)$$
 ## Satz der totalen Wahrscheinlichkeit
 
 ### Definition: Satz der totalen Wahrscheinlichkeit
-Sei $A_1, A_2, ldots, A_k$ eine disjunkte Zerlegung des Ereignisraumes $\Omega$. Wenn $B \subset \Omega$ dann gilt
+Sei $A_1, A_2, \ldots, A_k$ eine disjunkte Zerlegung des Ereignisraumes $\Omega$. Wenn $B \subset \Omega$ dann gilt
 
 $$P(B) = \sum_{i=1}^k P(A_i) \cdot P(B|A_i)$$
 
