@@ -1,2 +1,5 @@
 # Anwendungen der Wahrscheinlichkeitsrechnung
  
+```{r, echo = F, out.width="80%", fig.cap="[Download Slides](slides/07-WskAnwendung.pdf)"}
+knitr::include_graphics("slides/gifs/07-WskAnwendung.gif")
+```
