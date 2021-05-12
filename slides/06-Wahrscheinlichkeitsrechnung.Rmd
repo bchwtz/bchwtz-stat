@@ -130,6 +130,7 @@ $$P(A) = \frac{\text{Anzahl des Eintreffens von A}}{\text{Anzahl der Wiederholun
 ## Wahrscheinlichkeiten
 
 ```{r}
+set.seed(11)
 # 5-malige Wiederholung Münzwurf
 Omega <- c("Kopf","Zahl")
 coin <- sample(Omega, size=5, replace=T) 
@@ -143,7 +144,7 @@ prop[1]
 ## Wahrscheinlichkeiten
 
 ```{r, echo=F}
-set.seed(10)
+set.seed(11)
 n <- 100
 coin <- sample(c(1,0), size=n, replace=T) 
 
