@@ -27,7 +27,12 @@ library(vcd)
 
 ## Anwendungen der Wahrscheinlichkeitsrechnung
 
-Bei der Anwendung der Wahrscheinlichkeitsrechnung
+Bei der Anwendung der Wahrscheinlichkeitsrechnung gibt es zahlreiche Sonderfälle und Überraschungen. Wir diskutieren die im Folgenden diese Themen:
+
+- Urnenmodell
+- Geburtstagsproblem
+- Simpson Paradoxon
+- Entscheidungsbäume
 
 # Urnenmodell
 
