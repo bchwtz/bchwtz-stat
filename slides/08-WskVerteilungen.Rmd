@@ -1,0 +1,206 @@
+---
+title: "Statistik"
+author: "CH.8 - Wahrscheinlichkeitsverteilungen"
+date: "SS 2021 || Prof. Dr. Buchwitz, Sommer, Henke"
+output:
+  beamer_presentation:
+    fig_width: 8
+    fig_height: 5
+    highlight: tango
+    theme: metropolis
+    includes:
+      in_header: header.tex
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+library(fGarch)
+knitr::opts_chunk$set(echo = TRUE, cache=TRUE, size="scriptsize", 
+                      fig.align = "center")
+def.chunk.hook  <- knitr::knit_hooks$get("chunk")
+knitr::knit_hooks$set(chunk = function(x, options) {
+  x <- def.chunk.hook(x, options)
+  ifelse(options$size != "normalsize", paste0("\n \\", options$size,"\n\n", x, "\n\n \\normalsize"), x)
+})
+library(vcd)
+```
+
+## Zufallsvariablen
+
+:::{.block}
+### Definition: Zufallsvariablen
+Unter einer Zufallsvariablen $X$ versteht man eine Funktion, die aufgrund eines Zufallsexperiments den Ergebnissen des Zufallsexperiments numerische Werte zuordnet. Jedes mögliche Ergebnis eines Zufallsexperiments führt dabei zu einem anderen numerischen Wert.
+:::
+
+- Kennzeichnend sind die Merkmalsausprägungen $x_i$ und die damit assoziierten Wahrscheinlichkeiten $P(X=x_i)$.
+- Zufallsvariablen werden in der Regel mit Großbuchstaben ($X$,$Y$,$X_i$) bezeichnet.
+
+## Beispiel: Zufallsvariablen
+
+- Das Zufallsexperiment „Werfen einer Münze“ mit den Ergebnissen **Kopf** und **Zahl** kann als Zufallsvariable $X$ modelliert werden:
+
+$$
+\begin{array}{ccccc}
+X(x=\text{Kopf}) & = & X(\text{Kopf}) & = & 0\\
+X(x=\text{Zahl}) & = & X(\text{Zahl})  & = & 1
+\end{array}
+$$
+
+\bigskip
+- Bei der gewählten Zuorndung kann man die Zufallsvariable $X$ auch als *Anzahl des Auftretens von Zahl beim Werfen einer Münze* auffassen.
+
+- Bei einer fairen Münze gilt $P(X=0) = P(X=1) = \frac{1}{2}$.
+
+## Diskrete und stetige Zufallsvariablen
+
+:::{.block}
+### Definition: Diskrete Zufallsvariable
+Eine Zufallsvariable heißt diskret, wenn sie **nur diskrete Werte**, also endlich viele oder abzählbar unendlich viele, Werte annimmt.
+:::
+
+- **Beispiel:** Anzahl defekter Glühbirnen in einer Stichprobe von 10 Stück
+- **Beispiel:** Anzhal der Kinder unter 18 Jahre in einem Haushalt
+
+:::{.block}
+### Definition: Stetige Zufallsvariable
+Eine Zufallsvariable heißt stetig, wenn sie mit zwei Werten definiert, auch **alle Werte im Intervall** zwischen diesen beiden Werten annehmen kann.
+:::
+
+- **Beispiel:** Zeitaufwand für die Produktion eines Werkstücks
+- **Beispiel:** Gewicht einer aus einer Abfüllanlage entnommenen Flasche
+
+## Wahrscheinlichkeitsfunktion
+
+:::{.block}
+### Definition: Wahrscheinlichkeitsfunktion
+Sei $X$ eine diskrete Zufallsvariable. Dann heißt die Funktion $f$ Wahrscheinlichkeitsfunktion von $X$.
+
+$$f(x) = P(X=x)$$
+:::
+
+- **Beispiel:** Als Zufallsexperiment wird eine faire Münze zweimal geworfen. Die Zufallsvariable $X$ beschreibt die Anzahl des Auftretens des Ereignisses „Zahl“.
+Definieren Sie die Zufallsvariable und skizzieren Sie die Wahrscheinlichkeitsfunktion?
+
+## Wahrscheinlichkeitsfunktion
+
+\kariert{20}
+
+## Verteilungsfunktion
+
+:::{.block}
+### Definition: Verteilungsfunktion
+Sei $X$ eine diskrete oder stetige Zufallsvariable. Dann heißt die Funktion $F$ Verteilungsfunktion von $X$.
+
+$$F(x) = P(X \leq x)$$
+:::
+
+- **Beispiel:** Als Zufallsexperiment wird eine faire Münze zweimal geworfen. Die Zufallsvariable $X$ beschreibt die Anzahl des Auftretens des Ereignisses „Zahl“.
+Skizzieren Sie die Verteilungsfunktion?
+
+## Verteilungsfunktion
+
+\kariert{20}
+
+## Dichtefunktion
+
+:::{.columns}
+:::{.column}
+Ist $X$ eine diskrete Zufallsvariable, dann gilt
+$$
+F(x) = \sum_{x_i<x} f(x_i)
+$$
+:::
+
+:::{.column}
+Ist $X$ eine stetige Zufallsvariable, dann gilt
+$$
+F(x) = \int_{-\infty}^{x} f(x_i) dx
+$$
+:::
+:::
+
+\kariert{13}
+
+## Dichtefunktion
+
+:::{.block}
+### Definition: Wahrscheinlichkeitsdichte bzw. Dichtefunktion.
+Die Funktion $f(x)$ heißt bei **stetigen** Zufallsvariablen Wahrscheinlichkeitsdichte bzw. Dichtefunktion.
+:::
+
+\medskip
+\kariert{14}
+
+## Eigenschaften Dichtefunktion
+
+**Für Wahrscheinlichkeits- und Dichtefunktionen gilt:**
+
+- Für alle $x_i$ gilt, dass $f(x_i) \geq 0$.
+- Für diskrete Verteilungen mit Wahrscheinlichkeitsfunktion gilt
+
+$$\sum_{\text{alle }x_i} f(x_i) = 1$$
+
+\bigskip
+- Für stetige Verteilungen mit Dichtefunktion gilt
+
+$$ \int_{-\infty}^\infty f(x) dx = 1$$
+
+## Eigenschaften Verteilungsfunktion
+
+**Für Verteilungsfunktionen gilt:**
+
+- $F(x)$ is monoton steigend
+- $\lim_{x \to -\infty} F(X) = 0$
+- $\lim_{x \to \infty} F(X) = 1$
+- $F(x)$ is in jedem Punkt (zumindest rechtsseitig) stetig
+
+## Erwartungswert
+
+:::{.block}
+### Definition: Erwartungswert
+Sei $X$ eine Zufallsvariable und $f$ die dazugehörige Wahrscheinlichkeits- bzw. Dichtefunktion. Der Erwartungswert $\mu$ ist definiert als
+
+$$
+E(X) =
+\begin{cases}
+ \sum_{\text{alle }x_i}x_i \cdot f(x_i),& \text{falls } X \text{ diskret} \\
+ \int_{-\infty}^{\infty} x \cdot f(x) \; dx,& \text{falls } X \text{ stetig}
+ \end{cases}       
+$$
+:::
+
+- **Beispiel:** Definieren Sie die Zufallsvariable $X$ für das Werfen eines Würfels und berechnen Sie deren Erwartungswert.
+
+## Erwartungswert
+
+\kariert{20}
+
+## Varianz
+
+:::{.block}
+### Definition: Varianz
+Sei $X$ eine Zufallsvariable und $f$ die dazugehörige Wahrscheinlichkeits- bzw. Dichtefunktion. Die Varianz $\sigma^2$ (Standardabweichung: $\sigma$) ist definiert als
+
+$$
+Var(X) =
+\begin{cases}
+ \sum_{\text{alle }x_i} (x_i - \mu)^2 \cdot f(x_i),& \text{falls } X \text{ diskret} \\
+ \int_{-\infty}^{\infty} (x - \mu)^2 \cdot f(x) \; dx,& \text{falls } X \text{ stetig}
+ \end{cases}       
+$$
+:::
+
+- **Beispiel:** Definieren Sie die Zufallsvariable $X$ für das Werfen eines Würfels und berechnen Sie deren Varianz.
+
+## Varianz
+
+\kariert{20}
+
+## Verständnisfragen
+
+1. Geben Sie jeweils ein Beispiel für eine diskrete und eine stetige Zufallsvariable.
+
+2. Erläutern Sie was man unter einer Verteilungsfunktion versteht.
+
+3. Welches ist der maximale Wert, den eine Verteilungsfunktion annehmen kann?
+

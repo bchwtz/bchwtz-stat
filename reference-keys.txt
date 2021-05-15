@@ -6,6 +6,7 @@ fig:unnamed-chunk-7
 fig:unnamed-chunk-8
 fig:unnamed-chunk-9
 fig:unnamed-chunk-10
+fig:unnamed-chunk-11
 grundlegende-begriffe
 begriff-der-häufigkeit
 maßzahlen
