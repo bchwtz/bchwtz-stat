@@ -1,0 +1,5 @@
+# Wahrscheinlichkeitsverteilungen
+ 
+```{r, echo = F, out.width="80%", fig.cap="[Download Slides](slides/08-WskVerteilungen.pdf)"}
+knitr::include_graphics("slides/gifs/08-WskVerteilungen.gif")
+```
