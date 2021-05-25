@@ -1,0 +1,363 @@
+---
+title: "Statistik"
+author: "CH.9 - Spezielle Verteilungen"
+date: "SS 2021 || Prof. Dr. Buchwitz, Sommer, Henke"
+output:
+  beamer_presentation:
+    fig_width: 8
+    fig_height: 5
+    highlight: tango
+    theme: metropolis
+    includes:
+      in_header: header.tex
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+library(fGarch)
+knitr::opts_chunk$set(echo = TRUE, cache=TRUE, size="scriptsize", 
+                      fig.align = "center")
+def.chunk.hook  <- knitr::knit_hooks$get("chunk")
+knitr::knit_hooks$set(chunk = function(x, options) {
+  x <- def.chunk.hook(x, options)
+  ifelse(options$size != "normalsize", paste0("\n \\", options$size,"\n\n", x, "\n\n \\normalsize"), x)
+})
+library(vcd)
+```
+
+## Spezielle Verteilungen
+
+- Im folgenden werden **stetige** und **diskrete** Verteilungen diskutiert, die vielfach in der Statistik angewandt werden.
+
+
+
+# Normalverteilung
+
+## Normalverteilung
+
+\Huge
+$$
+f(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2}
+$$
+
+## Normalverteilung
+
+```{r, echo=F}
+x <- seq(-4,4,0.01)
+y <- dnorm(x)
+plot(x,y,type="l",xlim=c(-3.5,3.5), ylab="f(x)", col="red", main="Dichte der Standardnormalverteilung")
+abline(h=0)
+```
+
+## Normalverteilung 
+
+```{r, echo=F}
+x <- seq(-10,10,0.01)
+y1 <- dnorm(x)
+y2 <- dnorm(x, mean=5, sd=1)
+y3 <- dnorm(x, mean=-5, sd=2)
+
+plot(NA,NA,type="l",xlim=range(x), ylim = range(c(y1,y2,y3)), ylab="f(x)", col="red", main="Dichten von Normalverteilungen")
+lines(x,y1, col="red")
+lines(x,y2, col="blue")
+lines(x,y3, col="green")
+abline(h=0)
+```
+
+## Normalverteilung 
+
+:::{.block}
+### Definition: Normalverteilung
+Eine stetige Zufallsvariable $X$ heißt **normalverteilt**, wenn ihre Dichtefunktion mit den beiden Parameter Erwartungswert $\mu$ und Standardabweichung $\sigma$ gegeben ist durch
+
+$$
+f(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2}
+$$
+\bigskip
+:::
+
+- Ist die am meisten verwendete stetige Verteilung.
+- Kann in der Praxis in vielen Situationen (näherungsweise) beobachtet werden.
+- Stellt oft eine hinreichend gute Approximation für andere Verteilungen dar.
+- **R-Funktion:** `dnorm()`, `pnorm()`, `qnorm()` und `rnorm()`
+
+## Normalverteilung 
+
+- Parameter der Normalverteilung sind Erwartungswert $\mu$ und Standardabweichung $\sigma$.
+- Die Kurzschreibweise für eine normalverteilte Zufallvariale $X$ mit Erwartungswert $\mu$ und Varianz $\sigma^2$ lautet: $X \sim N(\mu=0,\sigma^2=1)$.
+- Der Graph der Dichtefunktion der Normalverteilung ist **symmetrisch** an der Stelle $\mu$ und besitzt an dieser Stelle ein Maximum.
+- Der Wert an der Stelle $\mu$ ist **umso größer** (die Dichtefunktion also umso höher und steiler), **je kleiner** der Wert der Standardabweichung ist. 
+
+## Normalverteilung 
+
+- Die Wahrscheinlichkeit, dass der Wert einer normalverteilten Zufallsvariablen um den Betrag *einer Standardabweichung* $\sigma$ vom Erwartungswert $\mu$ abweicht, beträgt etwa 68%.
+$$
+P(\mu - \sigma \leq x \leq \mu + \sigma) \approx 0.6827
+$$
+
+- Die Wahrscheinlichkeit, dass der Wert einer normalverteilten Zufallsvariablen um den Betrag von *zwei Standardabweichungen* $\sigma$ vom Erwartungswert $\mu$ abweicht, beträgt etwa 95%.
+$$
+P(\mu - 2\sigma \leq x \leq \mu + 2\sigma) \approx 0.9545
+$$
+
+- Die Wahrscheinlichkeit, dass der Wert einer normalverteilten Zufallsvariablen um den Betrag von *drei Standardabweichungen* $\sigma$ vom Erwartungswert $\mu$ abweicht, beträgt über 99%.
+$$
+P(\mu - 3\sigma \leq x \leq \mu + 3\sigma) \approx 0.9973
+$$
+
+## Normalverteilung 
+
+```{r, echo=F}
+x <- seq(-4,4,0.01)
+y <- dnorm(x)
+plot(x,y,type="l",xlim=c(-3.5,3.5), ylab="f(x)", xlab="x", col="red", main="Dichte der Normalverteilung", xaxt='n', yaxt='n')
+abline(h=0)
+```
+
+
+## Standardnormalverteilung 
+
+```{r, echo=F}
+par(mfrow=c(1,2))
+x <- seq(-4,4,0.01)
+y <- dnorm(x)
+Y <- pnorm(x)
+plot(x, y, type="l", col="red", main="Dichtefunktion", ylab="f(x)")
+plot(x, Y, type="l", col="red", main ="Verteilungsfunktion", ylab="F(x)")
+```
+
+## Standardnormalverteilung 
+
+- Als **Standardnormalverteilung** wird die Normalverteilung mit den Parametern $\mu=0$ und $\sigma=1$ bezeichnet.
+- Durch Transformation lassen sich normalverteilte Daten in **standardnormalverteilte Daten** übertragen.
+- Die Transformation zur Standardisierung von normalverteilten zu standardnormalverteilten Zufallsvariablen heißt **z-Transformation**.
+
+\Huge
+$$
+z = \frac{x - \mu}{\sigma}
+$$
+
+## Standardnormalverteilung
+
+```{r, echo=F}
+x <- seq(-10,20,0.01)
+y1 <- dnorm(x)
+y2 <- dnorm(x, mean=10, sd=3)
+
+
+plot(NA,NA,type="l",xlim=range(x), ylim = range(c(y1,y2)), xlab="x", ylab="f(x)", col="red", main="Dichten von Normalverteilungen")
+lines(x,y1, col="red")
+lines(x,y2, col="blue")
+abline(h=0)
+```
+
+## Standardnormalverteilung
+
+Die Verteilungsfunktion der Normalverteilung wird per Definition durch Integration der Dichtefunktion zwischen $-\infty$ und $x$ bestimmt:
+
+$$
+F(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \int_{-\infty}^{x} e^{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2}
+$$
+
+\bigskip
+- Das erforderliche Integral ist nicht einfach lösbar und die Variantenvielfalt möglicher Normalverteilungen sehr groß. Tabelliert wird daher üblicherweise **nur die Standardnormalverteilung**. 
+- Die Verteilungsfunktion der Standardnormalverteilung wird üblicherweise zur einfachen Unterscheidung mit $\Phi(z)$ bezeichnet.
+
+## Standardnormalverteilung
+
+**Ablesen aus der Tabelle:**
+
+- Die Zeilen geben den $z$-Wert bis zur **ersten Nachkommastelle** an.
+- Die Spalten ergänzen die **zweite Nachkommastelle** des $z$-Wertes.
+- Innerhalb der Tabelle befindet sich der Flächeninhalt unter der Dichtefunktion von $-\infty$ bis zur Stelle $z$.
+
+$$
+\Phi(z)=F(z)=P(Z \leq z)
+$$
+
+\medskip
+
+- In den Tabellen sind aufgrund der Symmetrie nur Werte für positive $z$ angegeben. Es gilt $\Phi(-z) = F(-z)=1-F(z)$.
+
+\bigskip
+
+###
+\center
+**Die Tabellen befinden sich im Studienbuch auf S. 352 ff**
+
+## Standardnormalverteilung
+
+```{r, echo=F, size="tiny"}
+row <- seq(0,3,0.1)
+col <- seq(0,0.09, 0.01)
+
+p <- NULL
+for (rdx in 1:length(row)){
+  for (cdx in 1:length(col)){
+    p <- c(p,pnorm(row[rdx]+col[cdx]))
+  }
+}
+
+m <- matrix(p, nrow=length(row), ncol=length(col), byrow = T)
+colnames(m) <- col
+rownames(m) <- row
+
+knitr::kable(m, digits=4)
+```
+
+## Normalverteilung (R-Funktionen)
+
+```{r}
+# Dichtefunktion (Density)
+dnorm(0, mean=0, sd=1)
+
+# Verteilungsfunktion (Probabilitydistribution)
+pnorm(q=0, mean=0, sd=1)
+
+# Quantilsfunktion
+qnorm(p=0.5, mean=0, sd=1)
+
+# Zufallszahlengenerator (Random Number Generator)
+set.seed(100)
+rnorm(n=1, mean=0, sd=1)
+```
+
+## Beispiel: Normalverteilung
+
+Die Gleichspannung von Batterien, die zum Betrieb eines Sensors verwendet werden lässt sich als normalverteilte Zufallsgröße mit $\mu=12V$ und $\sigma=0.6V$ modellieren. Für den Betrieb des Sensors sind mehr als 11.3V notwendig.
+
+- Wie groß ist die Wahrscheinlichkeit, dass eine zufällig ausgewählte Batterie eine Spannung von mehr als 12V liefert?
+- Wie groß ist die Wahrscheinlichkeit, dass ein Sensor mit einer zufällig ausgewählten Batterie nicht betrieben werden kann?
+
+## Normalverteilung
+
+\kariert{20}
+
+
+# Binomialverteilung
+
+## Binomialverteilung (diskret)
+
+**Experiment:** $n$-fache stochastisch unabhängige Wiederholung eines Bernoulli-Experiments mit identischer Erfolgswahrscheinlichkeit $p$ und den Zufallsvariablen $X_i$ mit $i=1,\ldots,n$ und $X_i \in 0,1$.
+
+\bigskip
+- **Wahrscheinlichkeitsfunktion:** $f(x)=\binom{n}{k} \; p^x \; (1-p)^{n-x}$
+- **Erwartungswert:** $\mu=n \cdot p$
+- **Varianz:** $\sigma^2=n \cdot p \cdot (1-p)$
+
+:::{.block}
+### Anwendungsfall
+Qualitätssicherung bei großen Produktionsmengen: $n$ Proben werden zur Prüfung ausgewählt, $p$ ist die Wahrscheinlichkeit für einen Defekt.
+:::
+
+- **R-Funktion:** `dbinom()`, `pbinom()`, `qbinom()` und `rbinom()` 
+
+## Binomialverteilung (diskret)
+
+```{r, echo=F}
+size <- 28
+probs <- sapply(1:size, dbinom, size=size, prob=0.5)
+names(probs) <- 1:size
+barplot(probs, main="Binomialverteilung mit p=0.5 und n=28")
+```
+
+# Poissonverteilung
+
+## Poissonverteilung (diskret)
+
+**Experiment:** Modellierung seltener Ereignisse, die (theoretisch) in unbegrenzter Anzahl auftreten können.
+
+\bigskip
+- **Wahrscheinlichkeitsfunktion:** $f(x)=\frac{\lambda^x}{k!}e^{-\lambda}$
+- **Erwartungswert:** $\mu=\lambda$
+- **Varianz:** $\sigma^2=\lambda$
+
+:::{.block}
+### Anwendungsfall
+z.B. Anzahl Großbrände in einem Bezirk in einem Monat; Anzahl Personen, die sich in einem bestimmten Zeitintervall in eine Warteschlange stellen.
+:::
+
+- **R-Funktion:** `dpois()`, `ppois()`, `qpois()` und `rpois()` 
+
+## Poissonverteilung (diskret)
+
+```{r, echo=F}
+probs <- dpois(1:10, lambda=1.5)
+names(probs) <- 1:10
+barplot(probs, main="Poissonverteilung mit Lambda=1.5")
+```
+
+# Hypergeometrische Verteilung
+
+## Hypergeometrische Verteilung (diskret)
+
+**Experiment:** Eine Urne enthält $N$ Kugeln, von denen $N \cdot p$ weiß und $N\cdot(1-p)$ schwarz sind. Aus der Urne werden $n$ Kugeln ohne Zurücklegen gezogen. Die Zufallsvariable $X$ gibt die Anzahl der weißen Kugeln an.
+
+\bigskip
+- **Wahrscheinlichkeitsfunktion:** $f(x)=\frac{\binom{N \cdot p}{x} \cdot \binom{N \cdot (1-p)}{n-x}}{\binom{N}{n}}$
+- **Erwartungswert:** $\mu=n \cdot p$
+- **Varianz:** $\sigma^2=n \cdot p \cdot (1-p) \cdot \frac{N-n}{N-1}$
+
+:::{.block}
+### Anwendungsfall
+Ziehen ohne Zurücklegen, z.B. in der Qualitätskontrolle bei kleinen Stückzahlen ($n$ klein, $N$ nicht riesig).
+:::
+
+- **R-Funktion:** `dhyper()`, `phyper()`, `qhyper()` und `rhyper()` 
+
+## Hypergeometrische Verteilung (diskret)
+
+```{r, echo=F}
+probs <- dhyper(1:10, m=10, n=15, k=10)
+names(probs) <- 1:10
+barplot(probs, main="Hypergeometrische Verteilung \n Ziehung von 10 Kugeln aus einer Urne mit 10 weißen und 15 schwarzen Kugeln")
+```
+
+# Exponentialverteilung
+
+## Exponentialverteilung (stetig)
+
+**Experiment:** Modellierung der Zeit zwischen dem Auftreten zwei aufeinander folgender poisson-verteilter Ereignisse. 
+
+\bigskip
+- **dichtefunktion:** 
+$f(x)= \begin{cases}
+        0, & \text{für } x < 0\\
+        \lambda \cdot e^{-\lambda x}, & \text{für } x\geq 0
+        \end{cases}$
+- **Erwartungswert:** $\mu=\frac{1}{\lambda}$
+- **Varianz:** $\sigma^2=\frac{1}{\lambda^2}$
+
+:::{.block}
+### Anwendungsfall
+Verteilung der Ankunftszeiten in Warteschlangen.
+:::
+
+- **R-Funktion:** `dexp()`, `pexp()`, `qexp()` und `rexp()`
+
+## Exponentialverteilung (stetig)
+
+```{r, echo=F}
+x <- seq(0,5,0.01)
+y <- dexp(x, rate=1.5)
+plot(x,y,type="l", col="blue", main="Exponentialverteilung mit Lambda=1.5", ylab="f(x)")
+```
+
+## Approximation
+
+\kariert{20}
+
+## Weitere Verteilungen
+
+- Im Rahmen der Inferenzstatistik werden wir noch weitere Verteilungen kennenlernen, die zur Berechnung von Teststatistiken und Konfidenzintervallen benötigt werden.
+- Die **wichtigsten Verteilungen** sind im Studienbuch tabelliert.
+- Weitere Verteilungen sind:
+  + $\chi^2$-Verteilung
+  + t-Verteilung
+  + F-Verteilung
+  
+## Verständnisfragen
+
+1. Wieso ist es nützlich die Standardnormalverteilung zu kennen?
+2. Wie unterscheiden sich die Dichten $N(0,5)$, $N(0,0.5)$ und $N(5,1)$ von der Gestalt der Standardnormalverteilung?
+3. Wie kann eine normalverteilte Zufallsvariable in eine standardnormalverteilte Zufallsvariable überführt werden?

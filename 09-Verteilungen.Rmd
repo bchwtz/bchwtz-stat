@@ -1,2 +1,5 @@
 # Spezielle Verteilungen
  
+```{r, echo = F, out.width="80%", fig.cap="[Download Slides](slides/09-Verteilungen.pdf)"}
+knitr::include_graphics("slides/gifs/09-Verteilungen.gif")
+```
