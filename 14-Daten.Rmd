@@ -38,6 +38,16 @@
 x <- read.csv("https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_taxi.csv")
 ```
 
+### Tips & Tricks
+
+```{r}
+# Arbeiten mit Zeit- und Datumobjekten
+x$pickup_datetime <- as.POSIXlt(x$pickup_datetime, tz="America/New_York")
+x$pickup_datetime[1]
+weekdays(x$pickup_datetime[1])
+months(x$pickup_datetime[1])
+```
+
 ### Quellen
 
 - https://www.kaggle.com/c/nyc-taxi-trip-duration/
@@ -100,7 +110,7 @@ x <- read.csv("https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_housing
 
 ### Datenbeschreibung
 
-- `EmployeeName`:	Employee’s full name	
+- `EmployeeName`:	Employee’s full name	d
 - `EmpID`:	Employee ID is unique to each employee	
 - `MarriedID`:	Is the person married (1 or 0 for yes or no)	
 - `MaritalStatusID`:	Marital status code that matches the text field MaritalDesc	
@@ -141,6 +151,17 @@ x <- read.csv("https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_housing
 ```{r, eval=FALSE}
 # load the data
 x <- read.csv("https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_hr.csv")
+```
+
+### Tips & Tricks
+
+```{r}
+# Arbeiten mit Zeit- und Datumobjekten
+x$Date_Hiring <- as.Date(x$DateofHire,format='%m/%d/%Y')
+x$Date_Termination <- as.Date(x$DateofTermination,format='%m/%d/%Y')
+
+# Example difference between timepoints
+difftime(x$Date_Termination[2],x$Date_Hiring[2], units = "days")
 ```
 
 ### Quellen

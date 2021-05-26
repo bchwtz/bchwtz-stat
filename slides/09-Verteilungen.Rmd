@@ -268,7 +268,7 @@ barplot(probs, main="Binomialverteilung mit p=0.5 und n=28")
 **Experiment:** Modellierung seltener Ereignisse, die (theoretisch) in unbegrenzter Anzahl auftreten können.
 
 \bigskip
-- **Wahrscheinlichkeitsfunktion:** $f(x)=\frac{\lambda^x}{k!}e^{-\lambda}$
+- **Wahrscheinlichkeitsfunktion:** $f(x)=\frac{\lambda^x}{x!}e^{-\lambda}$
 - **Erwartungswert:** $\mu=\lambda$
 - **Varianz:** $\sigma^2=\lambda$
 
