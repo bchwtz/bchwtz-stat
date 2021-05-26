@@ -33,7 +33,7 @@
 
 ### Daten laden
 
-```{r, eval = FALSE}
+```{r}
 # load the data
 x <- read.csv("https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_taxi.csv")
 ```
@@ -41,7 +41,7 @@ x <- read.csv("https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_taxi.cs
 ### Tips & Tricks
 
 ```{r}
-# Arbeiten mit Zeit- und Datumobjekten
+# working with dates and times
 x$pickup_datetime <- as.POSIXlt(x$pickup_datetime, tz="America/New_York")
 x$pickup_datetime[1]
 weekdays(x$pickup_datetime[1])
@@ -148,7 +148,7 @@ x <- read.csv("https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_housing
 
 ### Daten laden
 
-```{r, eval=FALSE}
+```{r,}
 # load the data
 x <- read.csv("https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_hr.csv")
 ```
@@ -156,11 +156,11 @@ x <- read.csv("https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_hr.csv"
 ### Tips & Tricks
 
 ```{r}
-# Arbeiten mit Zeit- und Datumobjekten
+# working with dates and times
 x$Date_Hiring <- as.Date(x$DateofHire,format='%m/%d/%Y')
 x$Date_Termination <- as.Date(x$DateofTermination,format='%m/%d/%Y')
 
-# Example difference between timepoints
+# example difference between two timepoints
 difftime(x$Date_Termination[2],x$Date_Hiring[2], units = "days")
 ```
 
