@@ -26,6 +26,7 @@ taxi-trips
 vorbereitungen
 datenbeschreibung
 daten-laden
+tips-tricks
 quellen
 hauspreise
 vorbereitungen-1
@@ -36,4 +37,5 @@ human-ressources
 vorbereitungen-2
 datenbeschreibung-2
 daten-laden-2
+tips-tricks-1
 quellen-2
