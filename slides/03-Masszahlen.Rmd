@@ -273,7 +273,7 @@ $$IQR = Q_{0.75} - Q_{0.25}$$
 ### Definition: Varianz
 Der **Varianz** ist die mittlere quadrierte Abweichung vom arithmetischen Mittel
 
-$$s^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar x)^2 \quad\text{oder}\quad s^2 = \frac{1}{N}\sum_{i=1}^{n}(x_i - \bar x)^2$$
+$$s^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar x)^2 \quad\text{oder}\quad s^2 = \frac{1}{N}\sum_{i=1}^{N}(x_i - \bar x)^2$$
 :::
 
 - Es gilt immer $s^2 \geq 0$
