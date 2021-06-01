@@ -1,2 +1,5 @@
 # Von der Stichprobe zur Grundgesamtheit
  
+```{r, echo = F, out.width="80%", fig.cap="[Download Slides](slides/10-Schaetzung.pdf)"}
+knitr::include_graphics("slides/gifs/10-Schaetzung.gif")
+```
