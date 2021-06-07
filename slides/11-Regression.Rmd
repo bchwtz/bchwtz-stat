@@ -1,6 +1,6 @@
 ---
 title: "Statistik"
-author: "CH.10 - Schätzung"
+author: "CH.11 - Regression"
 date: "SS 2021 || Prof. Dr. Buchwitz, Sommer, Henke"
 output:
   beamer_presentation:
@@ -30,11 +30,9 @@ library(kableExtra)
 # Evaluation
 
 ## Evaluation
-\center
+
 \Huge
-Bitte evaluieren Sie den Kurs!
-\large
-http://evasys.fh-swf.de/evasys/online.php?pswd=64D4W
+EVALUATION
 
 # Konfidenzintervalle
 
