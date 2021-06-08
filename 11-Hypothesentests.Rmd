@@ -1,0 +1,5 @@
+# Hypothesentests
+ 
+```{r, echo = F, out.width="80%", fig.cap="[Download Slides](slides/11-Hypothesentests.pdf)"}
+knitr::include_graphics("slides/gifs/11-Hypothesentests.gif")
+```
