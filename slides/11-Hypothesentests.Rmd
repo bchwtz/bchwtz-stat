@@ -1,0 +1,224 @@
+---
+title: "Statistik"
+author: "CH.11 - Hypothesentests"
+date: "SS 2021 || Prof. Dr. Buchwitz, Sommer, Henke"
+output:
+  beamer_presentation:
+    fig_width: 8
+    fig_height: 5
+    highlight: tango
+    theme: metropolis
+    includes:
+      in_header: header.tex
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+library(fGarch)
+knitr::opts_chunk$set(echo = TRUE, cache=TRUE, size="scriptsize", 
+                      fig.align = "center")
+def.chunk.hook  <- knitr::knit_hooks$get("chunk")
+knitr::knit_hooks$set(chunk = function(x, options) {
+  x <- def.chunk.hook(x, options)
+  ifelse(options$size != "normalsize", paste0("\n \\", options$size,"\n\n", x, "\n\n \\normalsize"), x)
+})
+library(vcd)
+library(tidyverse)
+library(kableExtra)
+```
+
+# Evaluation
+
+## Evaluation
+\center
+\Huge
+Bitte evaluieren Sie den Kurs!
+\large
+http://evasys.fh-swf.de/evasys/online.php?pswd=64D4W
+
+
+
+
+# Vorgehen Hypothesentests
+
+## Vorgehen Hypothesentests
+
+1. Formulieren Sie Nullhypothese $H_0$ und Alternativhypothese $H_1$.
+2. Legen Sie ein Signifikanzniveau $\alpha$ fest.
+3. Wählen Sie die passende Teststatistik.
+4. Bestimmen Sie den Wert der Teststatistik, ab dem die Nullhypothese verworfen werden muss.
+5. Bestimmen Sie den Vergleichswert aus den Stichprobendaten.
+6. Entscheiden Sie durch Vergleich der Werte aus (4) und (5), ob Sie die Nullhypothese verwerfen können.
+
+# Tests für den Mittelwert
+
+## Tests für den Mittelwert bei bekannter Varianz
+
+\begin{table}[]
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Test         & $H_0$            & $H_1$            & Teststatistik                                                 & Verwerfe $H_0$, wenn gilt:      \\ \midrule
+Beidseitig   & $\mu = \mu_0$    & $\mu \neq \mu_0$ & \multirow{3}{*}{$z=\frac{\bar x - \mu_0}{\sigma / \sqrt{n}}$} & $\mid z \mid > z_{1-\alpha /2}$ \\
+Rechtsseitig & $\mu \leq \mu_0$ & $\mu > \mu_0$    &                                                               & $z< z_{\alpha}$                 \\
+Linksseitig  & $\mu \geq \mu_0$ & $\mu < \mu_0$    &                                                               & $z > z_{1-\alpha}$              \\ \bottomrule
+\end{tabular}
+\end{table}
+
+## Tests für den Mittelwert bei unbekannter Varianz
+
+\begin{table}[]
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Test         & $H_0$            & $H_1$            & Teststatistik                                            & Verwerfe $H_0$, wenn gilt:             \\ \midrule
+Beidseitig   & $\mu = \mu_0$    & $\mu \neq \mu_0$ & \multirow{3}{*}{$t=\frac{\bar x - \mu_0}{s / \sqrt{n}}$} & $\mid t \mid > t_{n-1, \;1-\alpha /2}$ \\
+Rechtsseitig & $\mu \leq \mu_0$ & $\mu > \mu_0$    &                                                          & $t < t_{n-1, \;\alpha}$                \\
+Linksseitig  & $\mu \geq \mu_0$ & $\mu < \mu_0$    &                                                          & $t > t_{n-1, \; 1-\alpha}$             \\ \bottomrule
+\end{tabular}
+\end{table}
+
+\bigskip
+
+- **R-Funktion:** `t.test()`
+
+# Tests für den Anteilswert
+
+## Tests für den Anteilswert
+
+\begin{table}[]
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Test         & $H_0$            & $H_1$            & Teststatistik                                                           & Verwerfe $H_0$, wenn gilt:      \\ \midrule
+Beidseitig   & $\pi = \pi_0$    & $\pi \neq \pi_0$ & \multirow{3}{*}{$z=\frac{p - \pi_0}{\sqrt{\frac{\pi_0 (1-\pi_0)}{n}}}$} & $\mid z \mid > z_{1-\alpha /2}$ \\
+Rechtsseitig & $\pi \leq \pi_0$ & $\pi > \pi_0$    &                                                                         & $z < z_\alpha$                  \\
+Linksseitig  & $\pi \geq \pi_0$ & $\pi < \pi_0$    &                                                                         & $z > z_{1-\alpha}$              \\ \bottomrule
+\end{tabular}
+\end{table}
+
+\bigskip
+
+- **R-Funktion:** `prop.test()`
+
+## Beispiel
+:::{.columns}
+:::{.column}
+\small
+**Aufgabe:**
+Ein Schraubenproduzent behauptet, dass seine Lieferung eines speziellen Schraubentyps einen Ausschussanteil von höchstens 1% enthält. Der Empfänger der Lieferung ist jedoch der Meinung,dass der Anteil höher ist. Er nimmt eine Stichprobe von 1000 Schrauben und findet in dieser 15 nicht den Anforderungen entsprechende Schrauben.
+
+- Kann die Behauptung des Lieferanten mit dieser Stichprobe bei einem Signifikanzniveau von $\alpha = 0.05$ widerlegt werden?
+- **Hinweis:** Verteilungstabelle siehe nächste Seite.
+
+:::
+:::{.column}
+\kariert{19}
+:::
+:::
+
+## Verteilungsfunktion $F(z)$ für $z \sim N(\mu=0,\sigma^2=1)$
+
+```{r, echo=F, size="tiny"}
+row <- seq(0,3,0.1); col <- seq(0,0.09, 0.01)
+m <- t(sapply(row, function(r,c){pnorm(r+c)},c=col))
+colnames(m) <- col; rownames(m) <- NULL
+m <- cbind(z=row,m)
+kbl(m, digits=4, booktabs=T, format = "latex", linesep="") %>%
+  add_header_above(header=c("Beispiel: $F(z) = P(z \\\\leq 1.96) = 0.9750$" = ncol(m)), escape=F) %>% 
+  add_header_above(header=c("Verteilungsfunktion $F(z)$ der Standardnormalverteilung $N(0,1)$" = ncol(m)), escape = F, bold=T, line= F) %>%
+  kable_styling(position = "center")
+```
+
+# Verteilungstest
+
+## Verteilungstest
+
+- **Ausgangssituation:** Es liegen Daten von zwei oder mehr **unabhägngig** gewonnenen Stichproben vor.
+- **Ziel:** Zwei (oder mehrere) Grundgesamtheiten sollen hinsichtlich ihrer *Verteilung* verglichen werden.
+- **Analytische Fragestellung:** Weichen die beiden *empirischen Verteilungen* so sehr voneinander ab, dass die Nullhypothese verworfen werden muss?
+
+$$H_0: F_1 = F_2 = \ldots = F_k$$
+
+- **Folge:** Wenn $H_0$ verworfen werden muss, dann kann man davon ausgehen, dass die Stichproben nicht die selbe Verteilungsfunktion aufweisen und infolgedessen nicht aus der gleichen Grundgesamtheit stammen.
+
+## Beispiel
+
+```{r, echo=F}
+m <- matrix(c(718,79,593,139), nrow=2)
+colnames(m) <- c("male", "female")
+rownames(m) <- c("Job", "No Job")
+```
+
+An einer Hochschule wurde in einer Befragung von `r sum(m)` Studierenden ermittelt, ob die Studierenden in den Semesterferien einem Ferienjob nachgehen.
+
+```{r, echo=F}
+knitr::kable(addmargins(m), booktabs=T) %>%
+  kable_styling(position = "center")
+```
+
+###
+Unterscheidet sich das Verhalten von männlichen und weiblichen Studierenden signifikant ($\alpha = 5%$)?
+
+
+## Chi-Quadrat Test
+
+- **Voraussetzung:** Jede Zelle muss mindestens 5 Beobachten enthalten.
+- **Vorgehensweise:** 6-Schritte Schema für das Testen von Hypothesen
+- **Teststatistik:** Die $\mathcal{X}^2$ Teststatistik setzt die Abweichungen von beobachteten ($f_o$) und erwarteten $f_e$ Häufigkeiten in Relation zu den erwarteten Häufigkeiten:
+
+$$\mathcal{X}^2 = \sum_{\text{alle Zellen}} \frac{(f_o - f_e)^2}{f_e}$$
+
+- Die $\mathcal{X}^2$ Teststatistik folg einer $\mathcal{X}^2$ Verteilung mit $(r-1)\cdot(s-1)$
+
+## Chi-Quadrat Test
+
+- Die **erwarteten** Häufigkeiten ergeben sich als:
+
+$$
+\frac{\sum \text{Saplte} \cdot \sum \text{Zeile}}{\text{Gesamtanzahl}}
+$$
+
+- Die Nullhypothese lautet stets:
+
+$$H_0: F_1 = F_2 = \ldots = F_k$$
+
+- Es handelt sich hier immer um einen **rechtsseitigen Test**.
+
+## $\mathcal{X}^2$ Verteilung
+
+```{r, echo=F}
+x <- seq(0,25,0.01)
+plot(y=dchisq(x, df =10), x=x, type="l", col="red", main="Chi-Quadrat-Verteilung")
+```
+
+
+## Quantile der $\mathcal{X}^2_{n;\,\gamma}$ Verteilung
+
+```{r, echo=F, size="tiny"}
+n <- c(1:29,seq(30,100,10),150,200,250,300,400,600,800,1000)
+gamma <- c(0.995, 0.990, 0.975, 0.950, 0.900, 0.750, 0.500, 0.250, 0.100, 0.050, 0.010, 0.005)
+m <- t(sapply(n, function(n,g){qchisq(g, df=n)}, g=gamma))
+rownames(m) <- NULL; colnames(m) <- gamma
+m <- cbind(df=n, m)
+
+kbl(m, digits = 4, booktabs=T, linesep="",col.names = c("$n \\setminus \\gamma$",colnames(m)[-1]), escape = F) %>%
+  add_header_above(header=c("Beispiel: $P(\\\\mathcal{X}^2_{10} \\\\leq 20.4832) = 0.975$" = ncol(m)), escape=F) %>% 
+  add_header_above(header=c("Quantile $\\\\mathcal{X}^2_{n;\\\\,\\\\gamma}$ der $\\\\mathcal{X}^2_n$-Verteilung" = ncol(m)), escape = F, bold=T, line= F) %>% 
+  kable_styling(position = "center")
+
+```
+
+# Unabhängigkeitstest
+
+## Unabhängigkeitstest
+
+- $\mathcal{X}^2$ Tests können auch verwendet werden um die Fragen zu beantworten, ob **zwei Merkmale unabhängig voneinander sind**.
+- Im **Beispiel:** Ist die Annahme von Ferienjobs abhängig vom Geschlecht der Studierenden?
+- Hypothesen: 
+  + $H_0:$ Annahme von Ferienjobs und Geschlecht sind voneinander **unabhängig**.
+  + $H_1:$ Annahme von Ferienjobs und Geschlecht sind voneinandern **ab**hängig.
+
+## Verständnisfragen
+
+1. Wozu können $\mathcal{X}^2$ Tests verwendet werden?
+2. wie müssen Null- und Alternativhypothese beim $\mathcal{X}^2$ Test ausgestaltet werden?
+3. Welches Sklaenniveau müssen die Merkmale aufweisen um im $\mathcal{X}^2$ Test verwendet werden zu können?
+

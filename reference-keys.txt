@@ -9,6 +9,7 @@ fig:unnamed-chunk-10
 fig:unnamed-chunk-11
 fig:unnamed-chunk-12
 fig:unnamed-chunk-13
+fig:unnamed-chunk-14
 grundlegende-begriffe
 begriff-der-häufigkeit
 maßzahlen
@@ -19,8 +20,9 @@ anwendungen-der-wahrscheinlichkeitsrechnung
 wahrscheinlichkeitsverteilungen
 spezielle-verteilungen
 von-der-stichprobe-zur-grundgesamtheit
-lineare-regression
+hypothesentests
 multiple-regression
+lineare-regression
 zeitreihenanalyse
 daten
 taxi-trips

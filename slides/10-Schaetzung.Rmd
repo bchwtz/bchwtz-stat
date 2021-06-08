@@ -179,10 +179,10 @@ Nehmen Sie an, dass die Varianz der wöchtenlichen Aufenthaltszeit in der Ganzta
 :::
 :::
 
-## Quantile der $t_{n\; \gamma}$ Verteilung
+## Quantile der $t_{n;\; \gamma}$ Verteilung
 
 ```{r, echo=F, size="tiny"}
-n <- c(1:9,seq(10,100,10),100,150,200,250,300,400,600,800,1000)
+n <- c(1:9,seq(10,100,10),150,200,250,300,400,600,800,1000)
 gamma <- c(0.995, 0.990, 0.975, 0.950, 0.900, 0.750, 0.500)
 m <- t(sapply(n, function(n,g){qt(g, df=n)}, g=gamma))
 rownames(m) <- NULL; colnames(m) <- gamma
