@@ -41,6 +41,10 @@ http://evasys.fh-swf.de/evasys/online.php?pswd=64D4W
 
 # Vorgehen Hypothesentests
 
+## Ausgangslage
+
+\kariert{19}
+
 ## Vorgehen Hypothesentests
 
 1. Formulieren Sie Nullhypothese $H_0$ und Alternativhypothese $H_1$.
