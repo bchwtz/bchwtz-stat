@@ -1,2 +1,5 @@
 # Lineare Regression
  
+```{r, echo = F, out.width="80%", fig.cap="[Download Slides](slides/12-Regression.pdf)"}
+knitr::include_graphics("slides/gifs/12-Regression.gif")
+```
