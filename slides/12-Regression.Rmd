@@ -1,0 +1,361 @@
+---
+title: "Statistik"
+author: "CH.11 - Regression"
+date: "SS 2021 || Prof. Dr. Buchwitz, Sommer, Henke"
+output:
+  beamer_presentation:
+    fig_width: 8
+    fig_height: 5
+    highlight: tango
+    theme: metropolis
+    includes:
+      in_header: header.tex
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+library(fGarch)
+knitr::opts_chunk$set(echo = TRUE, cache=TRUE, size="scriptsize", 
+                      fig.align = "center")
+def.chunk.hook  <- knitr::knit_hooks$get("chunk")
+knitr::knit_hooks$set(chunk = function(x, options) {
+  x <- def.chunk.hook(x, options)
+  ifelse(options$size != "normalsize", paste0("\n \\", options$size,"\n\n", x, "\n\n \\normalsize"), x)
+})
+library(vcd)
+library(tidyverse)
+```
+
+
+## Lineare Regression
+
+- **Ziel:** Erkennen von Abhängigkeiten und Zusammenhängen zwischen mehrere Merkmalen und Modellierung der Effektgrößen der Zusammenhänge.
+
+- **Beispiele:**
+  + Umsatz und Werbeetat einer Supermarktkette: *Hängt der Umsatz von den eingesetzten Werbemitteln ab?*
+  + Körpergröße und Gewicht von Personen: *Ist das Gewicht einer Person von dessen Körpergröße abhängig?*
+  + Benzinpreis und Mineralölpreis: *Ist der deutsche Benzinpreis eine Funktion des globalen Mineralölpreises?*
+
+## Sind die beiden gezeigten Größen voneinander Abhängig?
+
+```{r, echo=F}
+set.seed(1)
+x <- runif(25,0,20) # Experience
+y <- 25 + 1.5 * x + rnorm(length(x), sd=2.5)
+cbind(x,y)
+```
+
+\begin{textblock}{4.6}(7.5,1)
+\begin{alertblock}{Datenbeschreibung}
+\texttt{x}\; Berufserfahrung in Jahren\\
+\texttt{y}\; Gehalt in Euro\\
+\end{alertblock}
+\end{textblock}
+
+
+## Sind die beiden gezeigten Größen voneinander Abhängig?
+
+```{r, echo=F}
+
+plot(x, y, xlab="Experience in Years (X)", ylab="Salary in Euro (Y)",
+     main="Salary vs. Experience")
+```
+
+## Lineare Regression
+
+\Large 
+$$ Y = f(X) + \epsilon$$
+\bigskip
+\normalsize
+
+- Wir betrachten zunächst den einfachen Fall, bei dem die abhängige Variable $Y$ durch **eine** unabhängige Variable $X$ erklärt wird. Unabhängige Variablen bezeichnet man auch als Regressoren oder Prädiktoren.
+- $\epsilon$ bezeichnet den Anpassungsfehler und wird Fehlerterm oder Residuum genannt.
+- Wir verzichten auf die vollständige Herleitung der gezeigten Formeln und fokussieren auf die zugrundeliegenden Mechanismen und die zugehörige Intuition.
+
+## Kovarianz
+
+```{r, echo=F}
+set.seed(1)
+experience <- runif(25,0,20) # Experience
+salary <- 25 + 1.5* experience + rnorm(length(experience), sd=2.5)
+plot(experience, salary, xlab="Experience in Years (X)", ylab="Salary in Euro (Y)",
+     main="Salary vs. Experience", xaxt="n", yaxt="n")
+abline(h = mean(salary), col="red")
+abline(v = mean(experience), col="red")
+axis(1,at=mean(experience), labels=expression(bar(x)), col="red", col.axis="red")
+axis(2,at=mean(salary), labels=expression(bar(y)), col="red", col.axis="red")
+```
+
+
+## Kovarianz
+
+**Aufgabe: Bestimmen des Vorzeichens**
+
+- $y_i - \bar{y}$ ist die Differenz jeder Beobachtung $y_i$ vom arithmetischen Mittel der abhängigen Variablen
+- $x_i - \bar{x}$ ist die Abweichung $x_i$ vom arithmetischen Mittel des Prädiktors
+- $(y_i - \bar{y})(x_i - \bar{x})$ ist das Produkt der vorherigen beiden Größen
+
+```{r, echo=F}
+quandrant <- c("1 (top right)","2 (top left)","3 (bottom left", "4 (bottom right)")
+df <- data.frame(quandrant, x="", y="", z="")
+cnames <- c("Quadrant","$y_i - \\bar{y}$","$x_i - \\bar{x}$","$(y_i - \\bar{y})(x_i - \\bar{x})$")
+knitr::kable(df, booktabs=T, col.names = cnames, align = c("l","c","c","c"))
+```
+
+## Covariance
+
+### Positive Relationship
+- Wenn der Zusammenhang zwischen $Y$ und $X$ **positiv** ist (also wenn $X$ größer wird, dann wird auch $Y$ größer), dann sind mehr Datenpunkte im ersten und dritten Quadranten als im zweiten und vierten.
+- Die Summe der Elemente in der letzten Spalte der vorherigen Tabelle ist dann mit großer Wahrscheinlichkeit positiv, also $Cov(Y,X) > 0$.
+
+\pause
+
+### Negative Relationship
+- Wenn der lineare Zusammenhang zwischen $Y$ und $X$ **negativ** ist (also wenn $X$ sinkt, sinkt auch $Y$), dann befinden sich mehr Datenpunkte im zweiten und vierten Quadranten als im ersten und dritten.
+- Die Summe der Elemente in der letzten Spalte der vorherigen Tabelle ist dann mit großer Wahrscheinlichkeit negativ, also $Cov(Y,X) < 0$.
+
+## Kovarianz
+
+$$ Cov(X,Y) = \frac{1}{n-1} \sum_{i=1}^{n} (y_i - \bar{y})(x_i - \bar{x})$$
+
+\bigskip
+- Die aufwändig berechnete Größe ist die Kovarianz zwischen $Y$ und $X$.
+- Das Vorzeichen der Kovarianz gibt die Richtung des Zusammenhangs zwischen $Y$ und $X$ an.
+- Die Kovarianz gibt **nur die Richtung des Zusammenhangs an** und erlaubt keine Beurteilung der Stärke dieses Zusammenhangs.
+- Die Kovarianz verändert sich mit Veränderungen der Einheit der Daten (z.B. von Euro in TEuro).
+
+### Your turn
+Wie ändert sich die Kovarianz, wenn Sie $Cov(X,Y)$ anstelle von $Cov(Y,X)$ berechnen?
+
+## Korrelationskoeffizient
+
+$$ Cor(Y,X) = \frac{1}{n-1}\sum_{i=1}^{n} (\frac{y_i - \bar{y}}{s_y})(\frac{x_i - \bar{x}}{s_x}) = \frac{Cov(Y,X)}{s_ys_x}$$
+
+\bigskip
+- $Cor(Y,X)$ kann auf zwei Arten interpretiert werden:
+  + als Kovarianz der $z$-Standardisierten Variablen $X$ und $Y$.
+  + als Verhältnis von Kovarianz zum Produkt der Standardweichungen der Variablen.
+- Im Gegensatz zur Kovarianz ist $Cor(Y,X)$ skaleninvariant mit einem WErtebereich von  $-1 \geq Cor(Y,X) \leq 1$ und erlaubt daher die Beurteilung von **Richtung** und **Stärke** des Zusammenhangs.
+
+## Kovarianz und Korrelation
+
+```{r}
+cov(y, x)
+cor(y, x)
+```
+
+### Verwendung des Zusammenhangs
+Kovarianz und Korrelationskoeffizient können nicht für Vorhersagen ($X$ gegeben und $Y$ gesucht) verwendet werden!
+
+## Lineare Regression
+
+\Large 
+$$ Y = \beta_0 + \beta_1 X + \epsilon$$
+\bigskip
+\normalsize
+
+- Regressionsanalyse ist eine Erweiterung der Korrelationsanalyse und erlaubt es den Zusammehang zwischen abhängiger und unabhängigen Variablen numerisch zu beschreiben.
+- $\beta_0$ und $\beta_1$ sind konstanten die als **Regressionskoeffizienten** bezeichnet werden, $\epsilon$ ist der Fehlerterm
+  + $\beta_0$ ist der Achsenabschnitt und ist der vorhergesagte Wert, wenn $X=0$.
+  + $\beta_1$ ist die Steigung und kann interpretiert werden als Änderung in $Y$, wenn $X$ sich um eine Einheit erhöht.
+
+## Parameterschätzung
+
+\center \Huge Wie bestimmen wir \linebreak
+Werte für $\beta_0$ und $\beta_1$?
+
+## Parameterschätzung
+
+```{r, echo=F}
+plot(experience, salary, xlab="Experience (Years)", ylab="Salary (Euro)",
+     main="Salary vs. Experience")
+mod <- lm(salary ~ 1 + experience)
+abline(mod, col="red")
+```
+
+## Paramterschätzung
+
+```{r, echo=F}
+coef <- coefficients(mod)
+coef_sd <- summary(mod)$coefficients[,2]
+n <- 25
+b0 <- rnorm(n, mean = coef[1], sd=3*coef_sd[1])
+b1 <- rnorm(n, mean = coef[2], sd=3*coef_sd[2])
+plot(experience, salary, xlab="Experience (Years)", ylab="Salary (Euro)",
+     main="Salary vs. Experience")
+invisible(mapply(FUN = function(a,b){abline(a=a, b=b, col="lightgrey")}, 
+                 a=b0, b=b1))
+abline(mod, col="red")
+```
+
+## Residuen: Wieso ist die eingezeichnete Gereade optimal?
+
+```{r, echo=F, fig.height=4}
+plot(experience, salary, xlab="Experience (Years)", ylab="Salary (Euro)",
+     main="Salary vs. Experience")
+mod <- lm(salary ~ 1 + experience)
+abline(mod, col="red")
+```
+
+\pause
+
+$$
+\text{Minimieren:} \quad S(\beta_0,\beta_1) = \sum_{i=1}^n e_i^2 = \sum_{i=1}^n  (y_i-\hat y_i)^2 = \sum_{i=1}^n (y_i - (\beta_0 + \beta_1 \cdot x_i))^2
+$$
+
+## Lineare Regression
+
+$$
+S(\beta_0,\beta_1) = \sum_{i=1}^n e_i^2 = \sum_{i=1}^n  (y_i-\hat y_i)^2 = \sum_{i=1}^n (y_i - (\beta_0 + \beta_1 \cdot x_i))^2
+$$
+
+\bigskip
+- Die quadratische Funktion $S(\beta_0,\beta_1)$ muss minimiert werden und liefert dann die Lösung $\hat\beta_0$ und $\hat\beta_1$. Diese Werte werden zuweilen auch mit $b_0$ und $b_1$ bezeichnet.
+- Die Werte $\hat\beta_0 = b_0$ und $\hat\beta_1 = b_1$ werden **Kleinste-Quadrate-Schätzer** (Ordinary Least Squares Estimates, OLS Estimates) genannt und spezifizieren die Gerade mit der kleinsten möglichen Summe der quadrierten vertikalen Distanzen zu den Beobachtungen. 
+
+## Lineare Regression
+
+- Die mit der Methode der kleinsten Quadrate bestimmten Regresssionslinie existiert immer und ist gegeben durch:
+
+$$
+\hat Y = \hat\beta_0 + \hat\beta_1 X
+$$
+
+- Mit Hilfe der Beobachtungsgleichung können die angepassten Werte (fitted Values) berechnet werden:
+
+$$
+\hat y_i = \hat\beta_0 + \hat\beta_1 x_i \quad\text{for}\quad i=1,2,\ldots,n
+$$
+
+- Jeder Punkt $(x_i, \hat y_i)$ **liegt auf der Regressionsgerade**.
+
+- Die zugehörigen Residuen (Ordinary Least Squares Residuals) geben die vertikale Distanz zwischen Beobachtung und Gerade (Anpassungsfehler) an und können wie folgt berechnet werden:
+
+$$
+\hat\epsilon_i = y_i - \hat y_i \quad\text{for}\quad i=1,2,\ldots,n
+$$
+
+## Analytische Lösung
+
+- Für die Lösung des Minimierungsproblems gibt es eine analytische Lösung:
+
+$$\hat\beta_1 = b_1 =  \frac{\sum(y_i - \bar y)(y_i - \bar x)}{\sum (x_i - \bar x)} \quad\text{und}\quad \hat\beta_0 = b_0 = \bar y - \hat\beta_1 \bar x$$
+
+\bigskip
+**Herleitung der Formeln:**
+
+- Minimierung der quadratischen Funktion $S(\beta_0,\beta_1)$ mit Hilfe der Differentialrechnung
+- Bildung der pratiellen Ableitungen nach $b_0$ and $b_1$
+- Setzen der Ableitungen $= 0$
+- Lösen des resultierenden Gelichungssystems
+- Die gezeigten Fomeln sind die erhaltene Lösung
+
+## Lineare Regression
+
+```{r, size="tiny"}
+summary(x) # Experience in Years
+summary(y) # Salary in Euro
+cor(y,x)  
+lm(y ~ 1 + x)
+```
+
+## Hypothesentests
+
+- Die bestimmte Gerade beschreibt die Daten der **Stichprobe**. Interessant ist jedoch die Frage ob der Zusammenhang auch verallgemeinert werden und für die Grundgesamtheit angenommen werden kann.
+- Prüfen der Hypothese $\beta_1 = 0$ is equivalent zur Aussage, dass **kein linearer Zusammenhang** vorhanden ist.
+- Sollte $\beta_1 > 0$ oder $\beta_1 < 0$ gelten (Annahme der entsprechenden Alternativhypothese) liefert **Evidenz** (keinen Beweis) für die Existenz eines linearen Zusammenhangs.
+
+## Hypothesentests
+
+- Unter der Annahme, dass die Residuen **unabhängig und gleich verteilt** (i.i.d.) sind ($\epsilon \sim N(0,\sigma^2)$), kann die Residualvarianz $\sigma^2$ geschätzt werden.
+
+$$
+\hat\sigma^2 = \frac{\sum \epsilon_i^2}{n-2} = \frac{\sum (y_i - \hat y_i)^2}{n-2} = \frac{SSE}{n-2}
+$$
+
+\bigskip
+- Mit Hilfe der geschätzten Residualvarianz $\hat\sigma^2$ kann der Standardfehler (s.e.) der Regressionsparamter geschätzt werden.
+
+$$s.e.(\hat\beta_0) = \hat\sigma^2 \sqrt{\frac{1}{n} + \frac{\bar x^2}{\sum(x_i - \bar x)^2}} \quad\text{and}\quad s.e.(\hat\beta_1) = \frac{\hat\sigma^2}{\sqrt{\sum(x_i - \bar x)^2}}$$
+
+## Hypothesentests
+
+- Unter der Annahme der Normalverteilung kann der $t$-Tests für die Regressionskoeffizienten durchgeführt werden:
+
+$$H_0: \beta_1 = 0 \quad\text{versus}\quad H_1: \beta_1 \neq 0$$
+
+- Die Teststatistik $t$ folgt einer $t$-Verteilung mit n-2 Freiheitsgraden. Ergänzend muss noch eine Irrtumswahrscheinlichkeit $\alpha$ für den Test festgelegt werden.
+
+$$t_1 = \frac{\hat\beta_1}{s.e.(\hat\beta_1)} $$
+
+- Die Nullhypothese $\beta_0 = 0$ kann für eine gegebene Irrtumswahrscheinlichkeit $\alpha$ verworfen werden, wenn gilt:
+
+$$
+\mid t \mid \quad \geq \quad t_{(n-2, \alpha/2)}
+$$
+
+## Lineare Regression
+
+```{r}
+summary(lm(y ~ 1 + x))
+```
+
+## Anpassungsgüte
+
+Welche Gerade hat eine höhere Anpassungsgüte und bildet daher den Sachverhalt in den Daten präziser ab?
+
+```{r, echo=F}
+set.seed(1)
+b0 <- 10
+b1 <- 1
+n <- 100
+x1 <- x2 <- 1:n
+y1 <- b0 + x1 * b1 +  rnorm(n, sd=5)
+y2 <- b0 + x2 * b1 +  rnorm(n, sd=15)
+mod1 <- lm(y1~1+x1)
+mod2 <- lm(y2~1+x2)
+ylim <- range(c(y1,y2))
+par(mfrow=c(1,2))
+plot(x1,y1, ylim=ylim, main="(a)")
+abline(mod1, col="red")
+plot(x2,y2,ylim=ylim, main="(b)")
+abline(mod2, col="red")
+```
+
+
+## Anpassungsgüte
+
+**Definition von Streugrößen:**
+
+$$ SST = \sum(y_i - \bar y)^2 \qquad SSR = \sum(\hat y_i - \bar y)^2 \qquad SSE = \sum(y_i - \hat y_i)^2$$
+
+\bigskip
+- Sum of Squares Total (SST) ist die gesamte Abweichung von $Y$ vom zugehörigen arithmetischem Mittel $\bar y$.
+- Sum of Squares Regression (SSR) ist die erklärte Variation, die durch die Regressionsgerade abgebildet werden kann
+- Sum of Squares Error (SSE) ist die unerklärte Streuung und die Varianz der Residuen.
+
+## Bestimmtheitsmaß
+
+- **SSR**, misst die Qualität von $X$ als Prädiktor für $Y$
+- **SSE**, misst den Fehler in dieser Prädiktion
+- Das Verhältnis $R^2 = SSR/SST$ ist der Anteil der durch $X$ erklärten Varianz and der totalen Varianz. Zur Beurteilung der Anpassungsgüte einer Regressionsgerade kann entsprechend das Bestimmtheitsmaß $R^2$ herangezogen werden.
+
+$$R^2 = \frac{SSR}{SST} = 1 - \frac{SSE}{SST} = [Cor(Y,\hat Y)]^2$$
+
+- Es gilt $0 \leq R^2 \leq 1$ und je näher $R^2$ an 1 liegt, desto intensiver ausgeprägt ist der lineare Zusammenhang.
+
+### 
+\center
+Im Fall von nur einem einzigen Prädiktor gilt zudem $[Cor(Y,X)]^2$!
+
+## Lineare Regression
+
+```{r}
+summary(lm(y ~ 1 + x))
+```
+
+## Verständnisfragen
+
+- Wozu wird die Methoden der linearen Regression verwendet?
+- Was ist die zugrundeliegende Methodik zu bestimmung der Parameter der Regressionsgerade?
+- Wozu dient das Bestimmtheitsmaß $R^2$.
