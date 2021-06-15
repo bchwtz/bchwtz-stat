@@ -21,8 +21,8 @@ wahrscheinlichkeitsverteilungen
 spezielle-verteilungen
 von-der-stichprobe-zur-grundgesamtheit
 hypothesentests
-multiple-regression
 lineare-regression
+multiple-regression
 zeitreihenanalyse
 daten
 taxi-trips
