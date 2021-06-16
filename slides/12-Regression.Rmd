@@ -239,7 +239,7 @@ $$
 
 - Für die Lösung des Minimierungsproblems gibt es eine analytische Lösung:
 
-$$\hat\beta_1 = b_1 =  \frac{\sum(y_i - \bar y)(y_i - \bar x)}{\sum (x_i - \bar x)} \quad\text{und}\quad \hat\beta_0 = b_0 = \bar y - \hat\beta_1 \bar x$$
+$$\hat\beta_1 = b_1 =  \frac{\sum(y_i - \bar y)(x_i - \bar x)}{\sum (x_i - \bar x)} \quad\text{und}\quad \hat\beta_0 = b_0 = \bar y - \hat\beta_1 \bar x$$
 
 \bigskip
 **Herleitung der Formeln:**
@@ -288,10 +288,10 @@ $$H_0: \beta_1 = 0 \quad\text{versus}\quad H_1: \beta_1 \neq 0$$
 
 $$t_1 = \frac{\hat\beta_1}{s.e.(\hat\beta_1)} $$
 
-- Die Nullhypothese $\beta_0 = 0$ kann für eine gegebene Irrtumswahrscheinlichkeit $\alpha$ verworfen werden, wenn gilt:
+- Die Nullhypothese $\beta_1 = 0$ kann für eine gegebene Irrtumswahrscheinlichkeit $\alpha$ verworfen werden, wenn gilt:
 
 $$
-\mid t \mid \quad \geq \quad t_{(n-2, \alpha/2)}
+\mid t \mid \quad \geq \quad t_{(n-2, 1-\alpha/2)}
 $$
 
 ## Lineare Regression
