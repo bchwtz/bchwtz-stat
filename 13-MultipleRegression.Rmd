@@ -1,0 +1,6 @@
+# Multiple Regression
+ 
+ 
+```{r, echo = F, out.width="80%", fig.cap="[Download Slides](slides/13-MultipleRegression.pdf)"}
+knitr::include_graphics("slides/gifs/13-MultipleRegression.gif")
+```

@@ -57,7 +57,7 @@ cbind(x,y)
 
 ```{r, echo=F}
 
-plot(x, y, xlab="Experience in Years (X)", ylab="Salary in Euro (Y)",
+plot(x, y, xlab="Experience in Years (X)", ylab="Salary in TEuro (Y)",
      main="Salary vs. Experience")
 ```
 
@@ -78,7 +78,7 @@ $$ Y = f(X) + \epsilon$$
 set.seed(1)
 experience <- runif(25,0,20) # Experience
 salary <- 25 + 1.5* experience + rnorm(length(experience), sd=2.5)
-plot(experience, salary, xlab="Experience in Years (X)", ylab="Salary in Euro (Y)",
+plot(experience, salary, xlab="Experience in Years (X)", ylab="Salary in TEuro (Y)",
      main="Salary vs. Experience", xaxt="n", yaxt="n")
 abline(h = mean(salary), col="red")
 abline(v = mean(experience), col="red")
@@ -96,22 +96,22 @@ axis(2,at=mean(salary), labels=expression(bar(y)), col="red", col.axis="red")
 - $(y_i - \bar{y})(x_i - \bar{x})$ ist das Produkt der vorherigen beiden Größen
 
 ```{r, echo=F}
-quandrant <- c("1 (top right)","2 (top left)","3 (bottom left", "4 (bottom right)")
+quandrant <- c("1 (top right)","2 (top left)","3 (bottom left)", "4 (bottom right)")
 df <- data.frame(quandrant, x="", y="", z="")
 cnames <- c("Quadrant","$y_i - \\bar{y}$","$x_i - \\bar{x}$","$(y_i - \\bar{y})(x_i - \\bar{x})$")
 knitr::kable(df, booktabs=T, col.names = cnames, align = c("l","c","c","c"))
 ```
 
-## Covariance
+## Kovarianz
 
-### Positive Relationship
+### Positiver Zusammenhang
 - Wenn der Zusammenhang zwischen $Y$ und $X$ **positiv** ist (also wenn $X$ größer wird, dann wird auch $Y$ größer), dann sind mehr Datenpunkte im ersten und dritten Quadranten als im zweiten und vierten.
 - Die Summe der Elemente in der letzten Spalte der vorherigen Tabelle ist dann mit großer Wahrscheinlichkeit positiv, also $Cov(Y,X) > 0$.
 
 \pause
 
-### Negative Relationship
-- Wenn der lineare Zusammenhang zwischen $Y$ und $X$ **negativ** ist (also wenn $X$ sinkt, sinkt auch $Y$), dann befinden sich mehr Datenpunkte im zweiten und vierten Quadranten als im ersten und dritten.
+### Negativer Zusammenhang
+- Wenn der lineare Zusammenhang zwischen $Y$ und $X$ **negativ** ist (z.B. wenn $X$ sinkt, steigt $Y$), dann befinden sich mehr Datenpunkte im zweiten und vierten Quadranten als im ersten und dritten.
 - Die Summe der Elemente in der letzten Spalte der vorherigen Tabelle ist dann mit großer Wahrscheinlichkeit negativ, also $Cov(Y,X) < 0$.
 
 ## Kovarianz
