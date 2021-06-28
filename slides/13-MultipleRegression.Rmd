@@ -47,7 +47,7 @@ $$ Y = \beta_0 + \beta_1X_1 + \beta_2 X_2 + \ldots + \beta_p X_p + \epsilon$$
 \bigskip
 \normalsize
 
-- Die zuvor diskutierte einfache lineare Regression kann als **Spezialfall** der multiple linearen Diskussion aufgefasst werden bei der gilt $p=1$. 
+- Die zuvor diskutierte einfache lineare Regression kann als **Spezialfall** der multiple linearen Regression aufgefasst werden bei der gilt $p=1$. 
 - Wir nehmen weiterhin an, dass *innerhalb des Wertebereichs* der Daten, der wahre Zusammenhang zwischen $Y$ und den Prädiktoren durch ein lineares Modell **approximiert** werden kann.
 - Jeder Regressor geht mit einem eigenen Koeffizienten $\beta_0, \beta_2, \ldots, \beta_p$ in die Gleichung ein. Der Fehlerterm $\epsilon$ enthält zudem keine **systematischen Informationen** zur Erklärung der Streuung von $Y$ die nicht bereits durch die Regressoren abgebildet wurden.
 
@@ -202,7 +202,7 @@ texreg(list(mod_1,mod_2,mod_3))
 - Die Idee dieses simultanen Testens ist zu prüfen, ob mit hoher Wahrscheinlichkeit davon auszugehen ist, dass nicht alle Parameter $\beta_1, \beta_2, \ldots, \beta_p$ gleich 0 sind, also zu prüfen:
 
 $$
-H_0: \beta_1 = \beta_2 = \ldots = \beta_p \quad\text{vs}\quad H_1: \beta_j \neq 0 \;\text{für min. ein}\; j
+H_0: \beta_1 = \beta_2 = \ldots = \beta_p = 0 \quad\text{vs}\quad H_1: \beta_j \neq 0 \;\text{für min. ein}\; j
 $$
 
 ## Hypothesentests
