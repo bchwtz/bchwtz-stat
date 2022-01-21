@@ -17,7 +17,7 @@ jobs:
       - name: Install Sys-Dependencies
         run: sudo apt update; sudo apt install -yq imagemagick
       - name: Install R-Dependencies
-        run: Rscript -e 'install.packages(c("kableExtra"))'
+        run: Rscript -e 'install.packages(c("kableExtra","HistogramTools","ineq"))'
       - name: Render Slides
         run: cd slides; make clean pdf gif clean-cache; cd ..
       - name: Render Book
