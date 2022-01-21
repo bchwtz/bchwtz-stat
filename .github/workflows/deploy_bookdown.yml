@@ -16,6 +16,8 @@ jobs:
         uses: actions/checkout@main
       - name: Install Sys-Dependencies
         run: sudo apt update; sudo apt install -yq imagemagick
+      - name: Set Imagemagick PDF Policy (insecure)
+        run: sudo sed -i -e 's/none/read|write/g' /etc/ImageMagick-6/policy.xml
       - name: Install R-Dependencies
         run: Rscript -e 'install.packages(c("kableExtra","HistogramTools","ineq","fGarch","gtools","vcd","texreg","car"))'
       - name: Install Tex-Dependencies
