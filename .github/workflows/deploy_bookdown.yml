@@ -14,7 +14,9 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@main
-      - name: Install Dependencies
+      - name: Install Sys-Dependencies
+        run: sudo apt update; sudo apt install -yq imagemagick
+      - name: Install R-Dependencies
         run: Rscript -e 'install.packages(c("kableExtra"))'
       - name: Render Book
         run: Rscript -e 'bookdown::render_book("index.Rmd")'
