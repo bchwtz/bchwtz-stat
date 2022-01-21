@@ -22,12 +22,12 @@ jobs:
         run: cp -r slides _book
       - name: Copy Data Directory
         run: cp -r data _book
-     - name: Deploy to GitHub Pages
-       uses: Cecilapp/GitHub-Pages-deploy@v2
-       env:
-          EMAIL: ${{ secrets.EMAIL }}               # must be a verified email
-          GH_TOKEN: ${{ secrets.GH_PAT }} # https://github.com/settings/tokens
-          BUILD_DIR: _book/                     # "_site/" by default
+      - name: Deploy to GitHub Pages
+        uses: Cecilapp/GitHub-Pages-deploy@v2
+        env:
+           EMAIL: ${{ secrets.EMAIL }}               # must be a verified email
+           GH_TOKEN: ${{ secrets.GH_PAT }} # https://github.com/settings/tokens
+           BUILD_DIR: _book/                     # "_site/" by default
      
 
 
