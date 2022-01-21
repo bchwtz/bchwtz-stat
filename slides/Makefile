@@ -14,6 +14,8 @@ GIFTARGETS=$(SOURCES:%.Rmd=%.gif)
 	
 default: $(TARGETS)
 
+pdf: $(TARGETS)
+
 gif: $(GIFTARGETS)
 
 clean:
