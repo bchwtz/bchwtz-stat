@@ -2,7 +2,7 @@
 
 # Evaluation {-}
 
-```{r}
+```{r, eval=F}
 stats_ss2021 <- tribble(
   ~date, ~vg, ~g, ~n, ~b, ~vb, ~total,
   "07.04.2021",45,71,7,0,0,128,
