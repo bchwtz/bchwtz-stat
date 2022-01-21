@@ -11,3 +11,4 @@ packages.bib
 slides/*_cache
 slides/*_files
 slides/*.log
+slides/*.pdf
