@@ -18,6 +18,8 @@ jobs:
         run: sudo apt update; sudo apt install -yq imagemagick
       - name: Install R-Dependencies
         run: Rscript -e 'install.packages(c("kableExtra"))'
+      - name: Render Slides
+        run: cd slides; make clean pdf gif clean-cache; cd ..
       - name: Render Book
         run: Rscript -e 'bookdown::render_book("index.Rmd")'
       - name: Copy Slide Directory
