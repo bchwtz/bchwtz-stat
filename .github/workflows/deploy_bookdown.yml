@@ -5,9 +5,10 @@ on:
 
 name: Render and deploy GitBook
 
+
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04:latest
     container: rocker/verse:latest
     steps:
       - name: Checkout Repository
