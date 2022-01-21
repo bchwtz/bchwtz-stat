@@ -10,6 +10,7 @@ output:
     theme: metropolis
     includes:
       in_header: header.tex
+knit: rmarkdown::render
 ---
 
 ```{r setup, include=FALSE}
