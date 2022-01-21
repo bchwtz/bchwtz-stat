@@ -8,6 +8,7 @@ name: Render and deploy GitBook
 
 jobs:
   build:
+    name: Render-and-Deploy
     runs-on: ubuntu-20.04:latest
     container: rocker/verse:latest
     steps:
