@@ -17,7 +17,7 @@ jobs:
       - name: Install Sys-Dependencies
         run: sudo apt update; sudo apt install -yq imagemagick
       - name: Install R-Dependencies
-        run: Rscript -e 'install.packages(c("kableExtra","HistogramTools","ineq"))'
+        run: Rscript -e 'install.packages(c("kableExtra","HistogramTools","ineq","fGarch"))'
       - name: Install Tex-Dependencies
         run: tlmgr install microtype; tlmgr install multirow
       - name: Render Slides
