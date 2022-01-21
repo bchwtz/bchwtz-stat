@@ -9,7 +9,7 @@ name: Render and deploy GitBook
 jobs:
   bookdown:
     name: Render-and-Deploy
-    runs-on: ubuntu-20.04:latest
+    runs-on: ubuntu-20.04
     container: rocker/verse:latest
     steps:
       - name: Checkout Repository
