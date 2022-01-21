@@ -10,9 +10,11 @@ output:
     theme: metropolis
     includes:
       in_header: header.tex
+knit: rmarkdown::render
 ---
 
 ```{r setup, include=FALSE}
+
 library(knitr)
 library(fGarch)
 knitr::opts_chunk$set(echo = TRUE, cache=TRUE, size="scriptsize", 
