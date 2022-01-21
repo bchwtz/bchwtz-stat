@@ -182,7 +182,7 @@ Interpretieren Sie die Schätzergebnisse ($\alpha=0.05$) und das Gütemaß des R
 
 ## Darstellung und Interpretation
 
-- In wissenschaftlichen Aufsätzen werden Regressionsmodelle häufig schrittweise aufgebaut und in übersichtlich in Tabellen dargestellt.
+- In wissenschaftlichen Aufsätzen werden Regressionsmodelle häufig schrittweise aufgebaut und übersichtlich in Tabellen dargestellt.
 
 \bigskip
 
