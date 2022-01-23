@@ -1,30 +1,40 @@
 ---
 title: "Statistik"
 author: "CH.8 - Wahrscheinlichkeitsverteilungen"
-date: "SS 2021 || Prof. Dr. Buchwitz, Sommer, Henke"
-output:
-  beamer_presentation:
-    fig_width: 8
-    fig_height: 5
-    highlight: tango
-    theme: metropolis
-    includes:
-      in_header: header.tex
+date: "SS 2022 || Prof. Dr. Buchwitz, Sommer, Henke"
+
+toc: true
+tocoverview: false
+tocheader: Inhaltsübersicht
+titlefontsize: 22pt
+
+output: fhswf::presentation
 knit: rmarkdown::render
 ---
 
 ```{r setup, include=FALSE}
 library(knitr)
+options(digits = 4)
+knitr::opts_chunk$set(echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE, 
+                      dev.args=list(pointsize=11), size="scriptsize")
+
+# Packages
+library(car)
 library(fGarch)
-knitr::opts_chunk$set(echo = TRUE, cache=TRUE, size="scriptsize", 
-                      fig.align = "center")
-def.chunk.hook  <- knitr::knit_hooks$get("chunk")
-knitr::knit_hooks$set(chunk = function(x, options) {
-  x <- def.chunk.hook(x, options)
-  ifelse(options$size != "normalsize", paste0("\n \\", options$size,"\n\n", x, "\n\n \\normalsize"), x)
-})
+library(gtools)
+library(HistogramTools)
+library(ineq)
+library(kableExtra)
+library(texreg)
+library(tidyverse)
 library(vcd)
 ```
+
+## Lernziele
+
+- Ziel 1
+- Ziel 2
+- Ziel 3
 
 ## Zufallsvariablen
 
