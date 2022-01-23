@@ -23,8 +23,15 @@ clean:
 	rm -rf *_cache
 	rm -rf *_files
 	rm -rf *.log
+	rm -rf *.sty
+	rm -rf *.tex
+	rm -rf titlepage.pdf
 
 clean-cache:
 	rm -rf *_cache
 	rm -rf *_files
 	rm -rf *.log
+	rm -rf *.sty
+	rm -rf *.tex
+	rm -rf titlepage.pdf
+	

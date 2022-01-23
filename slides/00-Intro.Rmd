@@ -1,30 +1,41 @@
 ---
 title: "Statistik"
 author: "Einführung"
-date: "SS 2021 || Prof. Dr. Buchwitz, Sommer, Henke"
-output:
-  beamer_presentation:
-    fig_width: 8
-    fig_height: 5
-    highlight: tango
-    theme: metropolis
-    includes:
-      in_header: header.tex
+date: "SS 2022 || Prof. Dr. Buchwitz, Sommer, Henke"
+
+toc: true
+tocoverview: false
+tocheader: Inhaltsübersicht
+titlefontsize: 22pt
+
+output: fhswf::presentation
 knit: rmarkdown::render
 ---
 
 ```{r setup, include=FALSE}
 library(knitr)
-library(HistogramTools)
-knitr::opts_chunk$set(echo = TRUE, cache=TRUE, size="scriptsize", 
-                      fig.align = "center")
-def.chunk.hook  <- knitr::knit_hooks$get("chunk")
-knitr::knit_hooks$set(chunk = function(x, options) {
-  x <- def.chunk.hook(x, options)
-  ifelse(options$size != "normalsize", paste0("\n \\", options$size,"\n\n", x, "\n\n \\normalsize"), x)
-})
+options(digits = 4)
+knitr::opts_chunk$set(echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE, 
+                      dev.args=list(pointsize=11), size="scriptsize")
 
+# Packages
+library(car)
+library(fGarch)
+library(gtools)
+library(HistogramTools)
+library(ineq)
+library(kableExtra)
+library(texreg)
+library(tidyverse)
+library(vcd)
 ```
+
+
+## Lernziele
+
+- Ziel 1
+- Ziel 2
+- Ziel 3
 
 ## Nettiquette
 
@@ -54,7 +65,7 @@ Gesicht zeigen & Mitmachen & Professionell sein \\
 
 ## Was ist Statistik?
 
-```{r, echo=F, out.height="80%"}
+```{r, echo=F, out.width="60%"}
 knitr::include_graphics("figs/00-DistrGym.jpg")
 ```
 
@@ -67,7 +78,7 @@ knitr::include_graphics("figs/00-DistrGym.jpg")
 
 ## Inhalte der Vorlesung
 
-```{r, echo=F, out.height="80%"}
+```{r, echo=F, out.width="80%"}
 knitr::include_graphics("figs/00-DesWskInd.png")
 ```
 
@@ -98,7 +109,7 @@ kable(d, booktabs=T, align = "c")
 
 - Bei einer Befragung von 1195 über 14jährigen Deutschen durch das Institut **promit** im Februar 2011 tippten 51,5 % auf Borussia Dortmund, 15,8 % auf Bayern München, 3,7 % auf FC Schalke 04, 1,5 % auf den Hamburger SV und 1,0 % auf Bayer 04 Leverkusen als Deutschen Fußballmeister 2011. 21,6 % machten keine Angaben, der Rest glaubte an einen anderen Verein als Meister. Stellen Sie die Daten graphisch dar.
 
-```{r, echo=F, fig.height=3}
+```{r, echo=F, out.width="80%"}
 p <- c(.515, .158, .037, .015, .010, .216)
 p <- c(p, 1 - sum(p))
 team <- c("Borussia Dortmund", "Bayern München", "FC Schalke", "Hamburger SV", 
