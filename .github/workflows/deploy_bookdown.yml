@@ -21,7 +21,7 @@ jobs:
       - name: Install R-Dependencies
         run: Rscript -e 'install.packages(c("kableExtra","HistogramTools","ineq","fGarch","gtools","vcd","texreg","car","remotes"))'
       - name: Install remote R-Dependencies
-        run: Rscript -e 'remotes::install_github("bchwtz/fhswf")'
+        run: Rscript -e 'remotes::install_github("bchwtz/fhswf", auth_token=NULL)'
       - name: Install Tex-Dependencies
         run: tlmgr install microtype; tlmgr install multirow
       - name: Render Slides
