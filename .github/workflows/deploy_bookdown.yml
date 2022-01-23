@@ -23,7 +23,7 @@ jobs:
       - name: Set Imagemagick PDF Policy (insecure)
         run: sudo sed -i -e 's/none/read|write/g' /etc/ImageMagick-6/policy.xml
       - name: Install Tex-Dependencies
-        run: tlmgr install microtype; tlmgr install multirow
+        run: tlmgr install microtype; tlmgr install multirow; tlmgr install carlito
       - name: Render Slides
         run: cd slides; make clean pdf gif clean-cache; cd ..
       - name: Render Book
