@@ -20,8 +20,10 @@ jobs:
         run: sudo sed -i -e 's/none/read|write/g' /etc/ImageMagick-6/policy.xml
       - name: Install R-Dependencies
         run: Rscript -e 'install.packages(c("kableExtra","HistogramTools","ineq","fGarch","gtools","vcd","texreg","car","remotes"))'
+      - name: Check GITHUB_PAT
+        run: echo $GITHUB_PAT
       - name: Install remote R-Dependencies
-        run: Rscript -e 'remotes::install_github("bchwtz/fhswf", auth_token=NULL)'
+        run: Rscript -e 'remotes::install_github("bchwtz/fhswf")'
       - name: Install Tex-Dependencies
         run: tlmgr install microtype; tlmgr install multirow
       - name: Render Slides
