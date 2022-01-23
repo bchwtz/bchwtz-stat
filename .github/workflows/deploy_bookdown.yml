@@ -20,8 +20,8 @@ jobs:
         run: sudo sed -i -e 's/none/read|write/g' /etc/ImageMagick-6/policy.xml
       - name: Install R-Dependencies
         run: Rscript -e 'install.packages(c("kableExtra","HistogramTools","ineq","fGarch","gtools","vcd","texreg","car","remotes"))'
-      - name: Check GITHUB_PAT
-        run: echo $GITHUB_PAT
+      - name: GITHUB_PAT
+        run: export GITHUB_PAT=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
       - name: Install remote R-Dependencies
         run: Rscript -e 'remotes::install_github("bchwtz/fhswf")'
       - name: Install Tex-Dependencies
