@@ -275,14 +275,14 @@ $$IQR = Q_{0.75} - Q_{0.25}$$
 
 - Zwischen dem oberen und dem unteren Quartil liegen 50% der Beobachtungen.
 - Kann auch sinnvoll für ordinalskalierte Merkmale bestimmt werden.
-- Ist *robust* in dem Sinne, dass die $IQR$ weitgehend unempfindlich gegenüber Ausreißern ist.
+- Ist *robust* in dem Sinne, dass der $IQR$ weitgehend unempfindlich gegenüber Ausreißern ist.
 - **R-Funktion:** `IQR()`
 
 ## Varianz
 
 :::{.block}
 ### Definition: Varianz
-Der **Varianz** ist die mittlere quadrierte Abweichung vom arithmetischen Mittel
+Die **Varianz** ist die mittlere quadrierte Abweichung vom arithmetischen Mittel
 
 $$s^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar x)^2 \quad\text{oder}\quad s^2 = \frac{1}{N}\sum_{i=1}^{N}(x_i - \bar x)^2$$
 :::
@@ -302,7 +302,7 @@ Die **Standardabweichung** ist die Wurzel aus der Varianz.
 $$s = \sqrt{s^2}$$
 :::
 
-- Weißt die gleiche Maßeinheit wie die Daten auf
+- Weist die gleiche Maßeinheit wie die Daten auf
 - Ist i.d.R. einfacher zu interpretieren als die Varianz.
 - **R-Funktion:** `sd()`
 
@@ -451,6 +451,6 @@ mtext(subtitle, line=0.5)
   + **Nominal:** Modus. 
 - Welche Streuungsmaße berücksichtigen nur einzelne Beobachtungswerte der Häufigkeitsverteilung? 
   + **Einzelne Beobachtungswerte:** Spannweite
-  + **Alle Beobachtungswerte:** alle weitern die vorgestellt wurden.
+  + **Alle Beobachtungswerte:** alle weiteren, die vorgestellt wurden.
 - Wie macht sich eine vollkommene Gleichheit in der Einkommensverteilung eines Landes in der Lorenzkurve bemerkbar? Wie groß ist dann der GINI-Koeffizient?
   + Winkelhalbierende, $G=0$
