@@ -12,3 +12,4 @@ slides/*_cache
 slides/*_files
 slides/*.log
 slides/*.pdf
+slides/*.sty
