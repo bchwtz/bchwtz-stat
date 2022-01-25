@@ -171,7 +171,7 @@ Nur so erhalten Sie eine Einladung zu einem kurzen Onlinekurs zur Einführung in
 ## Wieso R
 - R ist eine kostenlose Software-Umgebung für statistische Datenanalyse und Graphiken. Es beruht auf einer Implementation der Sprache S. Anfänglich wurde R von Ross Ihaka und Robert Gentleman (Univ. Auckland) entwickelt und wird seit Mitte der 90er Jahre von einem Entwickler-Kollektiv (R-Core) betreut.
 - Sehen Sie Statistiksoftware als Hilfsmittel, um dem Computer mitzuteilen, wie Sie Ihre Daten analysieren wollen.
-- Für einfache Analysen reichen einfache Programme, aber gerade in Excel Sie irgendwann das letzte Untermenü oder die letzte Formel erreicht und können nicht mehr weiter arbeiten.
+- Für einfache Analysen reichen einfache Programme, aber gerade in Excel haben Sie irgendwann das letzte Untermenü oder die letzte Formel erreicht und können nicht mehr weiter arbeiten.
 - R-Befehle sind Ihre Anweisungen an den Computer.
 
 ## Backup 1
