@@ -43,7 +43,7 @@ library(vcd)
 - **Grundgesamtheit:** statistische Masse, Population
 - **Untersuchungsmerkmal $X_i$:** Eigenschaft der statistischen Einheit
 - **Merkmalsausprägung:** Erscheinungsformen eines Merkmals
-- **Beobachtungswert $x_i$:** Die für das $i$-te Untersuchungsobjekt beobachtete Ausprägung des Untersuchungsmerkmal
+- **Beobachtungswert $x_i$:** Die für das $i$-te Untersuchungsobjekt beobachtete Ausprägung des Untersuchungsmerkmals
 
 ## Beispiel: Grundlegende Begriffe
 

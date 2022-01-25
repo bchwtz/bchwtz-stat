@@ -120,7 +120,7 @@ kable(tab, digits = 4, booktabs=T, align ="c",
                     "Klassenbreite","norm. $H_j$","norm. $h_j$"))
 ```
 
-\tiny Die normierten absoluten und relativen Klassenhäufigkeiten setzten die Klassenhäufigkeiten in Relation zur Klassenbreite, sodass diese Werte einen Vergleich erlauben. Es gilt $\text{norm. } H_j = H_j / \text{Klassenbreite}$ ($\text{norm. } h_j$ analog).
+\tiny Die normierten absoluten und relativen Klassenhäufigkeiten setzen die Klassenhäufigkeiten in Relation zur Klassenbreite, sodass diese Werte einen Vergleich erlauben. Es gilt $\text{norm. } H_j = H_j / \text{Klassenbreite}$ ($\text{norm. } h_j$ analog).
 
 ## Beispiel: Histogramm
 
@@ -137,7 +137,7 @@ Die Fläche der zu den Klassen 5 und 6 gehörenden Rechtecke ist identisch, da g
 
 ### Definition: Empirische Verteilungsfunktion
 
-Die empirische Verteilungsfunktion $S$ eines an $n$ Untersuchungseinheiten beobachteten Merkmals $X$, das $k$ Merkmalsausprägungen $a_1, \ldots, a_k$ besitzt wird durch die Folge der relativen Summenhäufigkeiten bestimmt.
+Die empirische Verteilungsfunktion $S$ eines an $n$ Untersuchungseinheiten beobachteten Merkmals $X$, das $k$ Merkmalsausprägungen $a_1, \ldots, a_k$ besitzt, wird durch die Folge der relativen Summenhäufigkeiten bestimmt.
 
 $$
 S_j = \frac{1}{n} \sum_{i=1}^{j} H_j = \sum_{i=1}^{j} h_j  
@@ -146,7 +146,7 @@ $$
 
 ## Beispiel: Empirische Verteilungsfunktion
 
-* Fortsetzung auf Basis der Befragung zum Urlaubsverhaltens von $n=80$ Personen.
+* Fortsetzung auf Basis der Befragung zum Urlaubsverhalten von $n=80$ Personen.
 
 ```{r, echo=F}
 tab <- data.frame(1:length(K_names), K_names, H, h, cumsum(h))
@@ -182,6 +182,6 @@ plot(ecdf(x), main="Empirische Verteilungsfunktion",
     + In einem Stabdiagramm gibt die Höhe des Stabs die Häufigkeit wieder, in einem Histogramm ist es die Fläche der Balken, die die Häufigkeit wiedergibt.
 
 - Was zeigt die empirische Verteilungsfunktion?
-    + Anhand der empirischen Verteilungsfunktion kann man die relative Häufigkeit ablesen mit der ein Wert höchstens eine bestimmte Größe hat. Die empirische Verteilungsfunktion gibt so die kumulierten relativen Häufigkeiten bis zu einem bestimmten Wert an.
+    + Anhand der empirischen Verteilungsfunktion kann man die relative Häufigkeit ablesen, mit der ein Wert höchstens eine bestimmte Größe hat. Die empirische Verteilungsfunktion gibt so die kumulierten relativen Häufigkeiten bis zu einem bestimmten Wert an.
 
 

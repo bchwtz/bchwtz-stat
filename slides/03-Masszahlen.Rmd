@@ -37,12 +37,12 @@ library(vcd)
 - Ziel 3
 
 ## Maßzahlen
-Ziel der folgenden Maßzahlen ist die Reduktion der Daten auf Kennzahlen, die einen Großteil der *wesentlichen* Infromationen der zugrundeliegenden statistischen Variablen enthalten.
+Ziel der folgenden Maßzahlen ist die Reduktion der Daten auf Kennzahlen, die einen Großteil der *wesentlichen* Informationen der zugrundeliegenden statistischen Variablen enthalten.
 
 \bigskip
 - **Lagemaße:** Beschreiben das Zentrum / die Mitte einer Beobachtungsreihe
 - **Streuungsmaße:** Beschreiben die Abweichung vom Zentrum einer Häufikeitsverteilung.
-- **Konzentrationsmaße:** beschreiben, wie sich die Summe der Merkmalswerte der Beobachtungsreihe auf die Untersuchungseinheiten verteilt.
+- **Konzentrationsmaße:** Beschreiben, wie sich die Summe der Merkmalswerte der Beobachtungsreihe auf die Untersuchungseinheiten verteilt.
 
 # Lagemaße
 ## Beispiel
