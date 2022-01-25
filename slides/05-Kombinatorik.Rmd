@@ -168,7 +168,7 @@ unique(p)
 
 :::{.block}
 ### Definition: Kombination
-Jede Zusammenstellung, aus $k$ Elementen einer Menge mit $n$ Elementen mit $k<n$ heißt Kombination k-ter Ordnung aus den $n$ Elementen.
+Jede Zusammenstellung aus $k$ Elementen einer Menge mit $n$ Elementen mit $k<n$ heißt Kombination k-ter Ordnung aus den $n$ Elementen.
 :::
 
 **Kombinationen können wie folgt unterschieden werden:**

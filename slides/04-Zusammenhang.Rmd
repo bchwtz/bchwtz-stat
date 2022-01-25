@@ -40,7 +40,7 @@ library(vcd)
 
 **Ausgangspunkt:**
 
-- Jede statistische Einehit einer Grundgesamtheit trägt eine Vielzahl von Merkmalen.
+- Jede statistische Einheit einer Grundgesamtheit trägt eine Vielzahl von Merkmalen.
 - In diesem Kapitel werden zwei Merkmale gleichzeitig untersucht.
 - Bei der Darstellung und Analyse von Abhängigkeiten zwischen Variablen muss das Skalenniveau berücksichtigt werden.
 
@@ -91,7 +91,7 @@ $$ s_{XY} = Cov(X,Y) = \frac{1}{n-1} \sum_{i=1}^{n} (y_i - \bar{y})(x_i - \bar{x
 - Die oben stehende Formeln gibt die Kovarianz zwischen $X$ und $Y$ an.
 - Das Vorzeichen der Kovarianz ist ein Indikator für die Richtung eines bestehenden **linearen** Zusammenhanges zwischen $Y$ und $X$.
 - Die Kovarianz erlaubt es nicht Aussagen über die Stärke eines Zusammenhanges zu treffen.
-- Die Größe der Kovarianz ist Abhängig von der zugrundeliegenden Einheit. Einheitenwechsel (z.B. von Euro zu TEuro) führen zu einer Wertveränderung.
+- Die Größe der Kovarianz ist abhängig von der zugrundeliegenden Einheit. Einheitenwechsel (z.B. von Euro zu TEuro) führen zu einer Wertveränderung.
 - **R-Befehl:** `cov()`
 
 ## Korrelationskoeffizient

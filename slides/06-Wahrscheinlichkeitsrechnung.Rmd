@@ -134,7 +134,7 @@ setdiff(M1, M2)   # Differenzmenge
 ## Wahrscheinlichkeiten
 
 ### Definition: Wahrscheinlichkeit (von Mieses)
-Die statistische Wahrscheinlichkeit eines Ereignisses $A$ ist der Grenzwert der relativen Häufigkeit des des Auftretens des Ereignisses, also die relative Häufigkeit bei einer sehr großen Anzahl von Wiederholungen.
+Die statistische Wahrscheinlichkeit eines Ereignisses $A$ ist der Grenzwert der relativen Häufigkeit des Auftretens des Ereignisses, also die relative Häufigkeit bei einer sehr großen Anzahl von Wiederholungen.
 
 $$P(A) = \frac{\text{Anzahl des Eintreffens von A}}{\text{Anzahl der Wiederholungen des Zufallsexperiments}}$$
 
@@ -203,7 +203,7 @@ $$P(\bar A) = 1- P(A)$$
 
 ## Rechenregeln für Wahrscheinlichkeiten
 
-- Für die Vereinigung zweier beliegiber Ergebnisse $A$ und $B$ gilt
+- Für die Vereinigung zweier beliebiger Ergebnisse $A$ und $B$ gilt
 
 $$ P(A \cup B) = P(A) + P(B) - P(A \cap B)$$
 \bigskip
@@ -234,7 +234,7 @@ $$P(A|B)$$
 **Beispiele:**
 
 - Die Wahrscheinlichkeit an einer Krankheit zu erkranken, kann davon abhängig sein, ob man gegen diese Krankheit geimpft ist.
-- Die Wahrscheinlichkeit Deutscher Meister beim Fußball zu werden ist davon abhängig ob man vorher Herbstmeister ist.
+- Die Wahrscheinlichkeit Deutscher Meister beim Fußball zu werden, ist davon abhängig, ob man vorher Herbstmeister ist.
 
 ## Bedingte Wahrscheinlichkeiten
 
