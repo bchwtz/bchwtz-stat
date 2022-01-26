@@ -58,7 +58,7 @@ X(x=\text{Zahl}) & = & X(\text{Zahl})  & = & 1
 $$
 
 \bigskip
-- Bei der gewählten Zuorndung kann man die Zufallsvariable $X$ auch als *Anzahl des Auftretens von Zahl beim Werfen einer Münze* auffassen.
+- Bei der gewählten Zuordnung kann man die Zufallsvariable $X$ auch als *Anzahl des Auftretens von Zahl beim Werfen einer Münze* auffassen.
 
 - Bei einer fairen Münze gilt $P(X=0) = P(X=1) = \frac{1}{2}$.
 
@@ -70,7 +70,7 @@ Eine Zufallsvariable heißt diskret, wenn sie **nur diskrete Werte**, also endli
 :::
 
 - **Beispiel:** Anzahl defekter Glühbirnen in einer Stichprobe von 10 Stück
-- **Beispiel:** Anzhal der Kinder unter 18 Jahre in einem Haushalt
+- **Beispiel:** Anzahl der Kinder unter 18 Jahre in einem Haushalt
 
 :::{.block}
 ### Definition: Stetige Zufallsvariable
@@ -106,7 +106,7 @@ $$F(x) = P(X \leq x)$$
 :::
 
 - **Beispiel:** Als Zufallsexperiment wird eine faire Münze zweimal geworfen. Die Zufallsvariable $X$ beschreibt die Anzahl des Auftretens des Ereignisses „Zahl“.
-Skizzieren Sie die Verteilungsfunktion?
+Skizzieren Sie die Verteilungsfunktion!
 
 ## Verteilungsfunktion
 
@@ -160,10 +160,10 @@ $$ \int_{-\infty}^\infty f(x) dx = 1$$
 
 **Für Verteilungsfunktionen gilt:**
 
-- $F(x)$ is monoton steigend
+- $F(x)$ ist monoton steigend
 - $\lim_{x \to -\infty} F(X) = 0$
 - $\lim_{x \to \infty} F(X) = 1$
-- $F(x)$ is in jedem Punkt (zumindest rechtsseitig) stetig
+- $F(x)$ ist in jedem Punkt (zumindest rechtsseitig) stetig
 
 ## Erwartungswert
 

@@ -38,7 +38,7 @@ library(vcd)
 
 ## Anwendungen der Wahrscheinlichkeitsrechnung
 
-Bei der Anwendung der Wahrscheinlichkeitsrechnung gibt es zahlreiche Sonderfälle und Überraschungen. Wir diskutieren die im Folgenden diese Themen:
+Bei der Anwendung der Wahrscheinlichkeitsrechnung gibt es zahlreiche Sonderfälle und Überraschungen. Wir diskutieren im Folgenden diese Themen:
 
 - Urnenmodell
 - Geburtstagsproblem
@@ -47,9 +47,9 @@ Bei der Anwendung der Wahrscheinlichkeitsrechnung gibt es zahlreiche Sonderfäll
 
 # Urnenmodell
 
-## Urnnemodell: Überblick
+## Urnenmodell: Überblick
 
-Gegeben sei eine Urne mit $N$ Kugeln, davon $W$ weiße und $S$ schwarze ($W+S=N$). Aus der Urne werden $n$ Kugeln ($1 \leq n \leq N$) nacheinander **ohne Zurücklegen** gezogen. Die Wahrscheinlichkeit für das Ereignis A, dass sich unter den $n$ Kugeln genau $w$ weiße und $s$ schwarze befinden lässt sich folgendermaßen berechnen:
+Gegeben sei eine Urne mit $N$ Kugeln, davon $W$ weiße und $S$ schwarze ($W+S=N$). Aus der Urne werden $n$ Kugeln ($1 \leq n \leq N$) nacheinander **ohne Zurücklegen** gezogen. Die Wahrscheinlichkeit für das Ereignis A, dass sich unter den $n$ Kugeln genau $w$ weiße und $s$ schwarze befinden, lässt sich folgendermaßen berechnen:
 
 \Huge
 $$
@@ -62,14 +62,14 @@ $$
 
 :::{.columns}
 :::{.column}
-Aus der Urne werden $n$ Kugeln ($1 \leq n \leq 11$) nacheinander ohne Zurücklegen gezogen. Die Wahrscheinlichkeit für das Ereignis A, dass sich unter den $n$ Kugeln $w$ weiße und $s$ schwarze befinden lässt sich folgendermaßen berechnen:
+Aus der Urne werden $n$ Kugeln ($1 \leq n \leq 11$) nacheinander ohne Zurücklegen gezogen. Die Wahrscheinlichkeit für das Ereignis A, dass sich unter den $n$ Kugeln $w$ weiße und $s$ schwarze befinden, lässt sich folgendermaßen berechnen:
 
 $$
 P(A) = \frac{\binom{W=5}{w} \binom{S=6}{s}}{\binom{N=11}{n}}
 $$
 :::
 :::{.column}
-Noch konkreter: Aus der Urne werden 5 Kugeln ohne Zurücklegen gezogen. Die Wahrscheinlichkeit für das Ereignis A, dass sich unter den 5 Kugeln 2 weiße und 3 schwarze befinden lässt sich folgendermaßen berechnen:
+Noch konkreter: Aus der Urne werden 5 Kugeln ohne Zurücklegen gezogen. Die Wahrscheinlichkeit für das Ereignis A, dass sich unter den 5 Kugeln 2 weiße und 3 schwarze befinden, lässt sich folgendermaßen berechnen:
 
 $$
 P(A) = \frac{\binom{W=5}{w=2} \binom{S=6}{s=3}}{\binom{N=11}{n=5}}
@@ -113,7 +113,7 @@ mean(x)
 
 Ein Unternehmen erhält wiederholt Lieferungen von 800 Flaschen zur Verpackung von flüssigem Waschmittel. Mit dem Lieferanten ist vereinbart, dass Lieferungen mit mehr als 2% fehlerhaften Flaschen zurückgewiesen werden dürfen. Um zu entscheiden, ob es eine Lieferung zurückweist, verfährt das Unternehmen nach folgender Regel: Der Lieferung werden 50 Flaschen zufällig entnommen und geprüft. Die Lieferung wird zurückgewiesen, wenn mehr als eine Flasche nicht dem vereinbarten Qualitätsstandard entspricht. 
 
-- Wie groß ist die Wahrscheinlichkeit, dass eine gerade noch zulässige Lieferung d.h. mit genau 2% fehlerhaften Flaschen, zurückgewiesen wird? 
+- Wie groß ist die Wahrscheinlichkeit, dass eine gerade noch zulässige Lieferung, d.h. mit genau 2% fehlerhaften Flaschen, zurückgewiesen wird? 
 
 ## Urnenmodell: Anwendungsbeispiel
 
@@ -149,21 +149,21 @@ $$
 P(A) = 1 - P(\bar A) = \frac{\text{Anzahl der für }\bar A \text{ günstigen Geburtstagsanordenungen}}{\text{Anzahl der möglichen Geburtstagsanordnungen}}
 $$
 
-Hierbei handelt es sich um Kombinationeen $k$-ter Ordnung von 365 Tage mit Berücksichtigung der Reihenfolge und ohne Wiederholung, sodass die Anzahl der möglichen Anordnungen für $\bar A$ folgt
+Hierbei handelt es sich um Kombinationen $k$-ter Ordnung von 365 Tage mit Berücksichtigung der Reihenfolge und ohne Wiederholung, sodass die Anzahl der möglichen Anordnungen für $\bar A$ folgt
 
 $$
-\text{Anzahl der für }\bar A \text{günstigen Geburtstagsanordenungen} = \frac{365!}{(365-k)!}
+\text{Anzahl der für }\bar A \text{ günstigen Geburtstagsanordnungen} = \frac{365!}{(365-k)!}
 $$
 Bei den möglichen Anordnungen handelt es sich um Kombinationen $k$-ter Ordnung von 365 Tage mit Berücksichtigung der Reihenfolge und mit Wiederholung, sodass
 
 $$
-Anzahl der möglichen Geburtstagsanordnungen = 365^k
+\text{Anzahl der möglichen Geburtstagsanordnungen} = 365^k
 $$
 
 ## Geburtstagsproblem: Lösung
 
 $$
-P(A) = 1 - (\bar A) = \frac{365 \cdot 364 \cdot \ldots \cdot (365-k+1)}{365^k}
+P(A) = 1 - P(\bar A) = \frac{365 \cdot 364 \cdot \ldots \cdot (365-k+1)}{365^k}
 $$
 \bigskip
 
@@ -226,7 +226,7 @@ Bewertung verschiedener Gruppen fällt scheinbar unterschiedlich aus, je nachdem
   + über Investitionen in neue Maschinen etc.
   
 - Was ist dabei zu beachten:
-  + Nicht alle Informationen, die der Entscheider gerne zur Verfügung hätte sind bekannt
+  + Nicht alle Informationen, die der Entscheider gerne zur Verfügung hätte, sind bekannt
   + Das Unternehmen ist darauf angewiesen, Wahrscheinlichkeiten für das Eintreffen der verschiedenen Ereignisse abzuschätzen
   + Basierend auf diesen Wahrscheinlichkeiten, werden Entscheidungen getroffen
   + Während des Entscheidungsprozesses kann es möglich sein, dass das Unternehmen an Zusatzinformationen gelangt

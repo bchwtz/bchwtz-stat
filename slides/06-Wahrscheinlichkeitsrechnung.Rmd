@@ -192,7 +192,7 @@ $$P(A)=\frac{|A|}{|\Omega|}=\frac{\text{Anzahl der für A 'günstigen' Ergebniss
 $$\sum_{i=1}^n P(A_i) = 1$$
 \bigskip
 
-- Für das unmöglichen Ereignisses gilt
+- Für das unmögliche Ereignis gilt
 
 $$P(\varnothing)=0$$
 \bigskip
@@ -251,7 +251,7 @@ Seien A und B zwei Ereignisse. Die Wahrscheinlichkeit des Ereignisses A unter de
 $$P(A|B) = \frac{P(A \cap B)}{P(B)} \quad \text{für}\quad P(B) \neq 0$$
 :::
 
-- $P(A \cap B)$ kann als die Wahrscheinlichkeit, das beide Ereignisse gleichzeitig eintreten interpretiert werden.
+- $P(A \cap B)$ kann als die Wahrscheinlichkeit, dass beide Ereignisse gleichzeitig eintreten, interpretiert werden.
 
 ## Bedingte Wahrscheinlichkeiten
 
