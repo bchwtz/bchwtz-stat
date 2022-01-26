@@ -38,7 +38,7 @@ library(vcd)
 
 ## Spezielle Verteilungen
 
-- Im folgenden werden **stetige** und **diskrete** Verteilungen diskutiert, die vielfach in der Statistik angewandt werden.
+- Im Folgenden werden **stetige** und **diskrete** Verteilungen diskutiert, die vielfach in der Statistik angewandt werden.
 
 
 
