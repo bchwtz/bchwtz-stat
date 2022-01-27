@@ -1,6 +1,6 @@
 ---
 title: "Statistik"
-author: "CH.12 - Multiple Regression"
+author: "CH.13 - Multiple Regression"
 date: "SS 2022 || Prof. Dr. Buchwitz, Sommer, Henke"
 
 toc: true
@@ -46,7 +46,7 @@ $$ Y = f(X_1,X_2,\ldots,X_p) + \epsilon$$
 \normalsize
 
 - Mit Hilfe der **einfachen linearen Regression** kann derZusammenhang einer abhängigen Variablen $Y$ mit **einer** unabhängigen Variablen $X$ modelliert werden.
-- Die **multiple lineare Regression** erlaubt das modellieren Zusammenhangs einer abhängigen Variablen $Y$ mit **mehreren** unabhängigen Variablen $X_1,X_2,\ldots, X_p$.
+- Die **multiple lineare Regression** erlaubt das Modellieren des Zusammenhangs einer abhängigen Variablen $Y$ mit **mehreren** unabhängigen Variablen $X_1,X_2,\ldots, X_p$.
 
 ## Multiple Lineare Regression
 
@@ -56,8 +56,8 @@ $$ Y = \beta_0 + \beta_1X_1 + \beta_2 X_2 + \ldots + \beta_p X_p + \epsilon$$
 \normalsize
 
 - Die zuvor diskutierte einfache lineare Regression kann als **Spezialfall** der multiple linearen Regression aufgefasst werden bei der gilt $p=1$. 
-- Wir nehmen weiterhin an, dass *innerhalb des Wertebereichs* der Daten, der wahre Zusammenhang zwischen $Y$ und den Prädiktoren durch ein lineares Modell **approximiert** werden kann.
-- Jeder Regressor geht mit einem eigenen Koeffizienten $\beta_0, \beta_2, \ldots, \beta_p$ in die Gleichung ein. Der Fehlerterm $\epsilon$ enthält zudem keine **systematischen Informationen** zur Erklärung der Streuung von $Y$ die nicht bereits durch die Regressoren abgebildet wurden.
+- Wir nehmen weiterhin an, dass *innerhalb des Wertebereichs* der Daten der wahre Zusammenhang zwischen $Y$ und den Prädiktoren durch ein lineares Modell **approximiert** werden kann.
+- Jeder Regressor geht mit einem eigenen Koeffizienten $\beta_0, \beta_1,  \beta_2, \ldots, \beta_p$ in die Gleichung ein. Der Fehlerterm $\epsilon$ enthält zudem keine **systematischen Informationen** zur Erklärung der Streuung von $Y$, die nicht bereits durch die Regressoren abgebildet wurden.
 
 ## Multiple Lineare Regression
 
@@ -173,7 +173,7 @@ Schreiben Sie die zugehörige Regressionsgleichung auf.
 - Einfache Regressionsmodelle (nur $X_1$) können als Gerade dargestellt werden. Multiple Regressionsmodelle ($X_1$ und $X_2$) können mit einer Ebene oder als Hyperebene (mehr als zwei Prädiktoren) dargestellt werden. Diese Darstellung wird sehr schnell unübersichtlich.
 - $\beta_0$ ist der Achsenabschnitt und der abgebildete Wert von $Y$, wenn $X_1 = X_2 = \ldots = X_p = 0$.
 - Die Steigungskoeffizienten $\beta_j$ haben mehrere Interpretationen:
-  + $\beta_j$ ist die **Veränderung** in $Y$ wenn sich $X_j$ um eine Einheit erhöht und alle anderen Prädiktoren konstant gehalten werden (ceteris paribus).
+  + $\beta_j$ ist die **Veränderung** in $Y$, wenn sich $X_j$ um eine Einheit erhöht und alle anderen Prädiktoren konstant gehalten werden (ceteris paribus).
   + $\beta_j$ wird also als **Partialeffekt** bezeichnet, weil er den Effekt von $X_j$ auf $Y$ abbildet, nachdem die Zielvariable um die Effekte der anderen Variablen adjustiert wurde.
 
 ## Darstellung und Interpretation
@@ -206,8 +206,8 @@ texreg(list(mod_1,mod_2,mod_3))
 
 ## Hypothesentests
 
-- Ergänzend zum t-Test für die einzelnen Koeffizienten ($H_0: \beta_j = 0$ vs. $H_1: \beta_j \neq 0$) gibt es auch die Möglichkeit **alle Koeffizienten auf einmal** einem Hypothesentest zu unterziehen.
-- Das Szenario ob alle Regressoren zusammen genommen einen Effekt auf die abhängige Variable $Y$ haben kann mit Hilfe des **F-Tests** untersucht werden.
+- Ergänzend zum t-Test für die einzelnen Koeffizienten ($H_0: \beta_j = 0$ vs. $H_1: \beta_j \neq 0$) gibt es auch die Möglichkeit, **alle Koeffizienten auf einmal** einem Hypothesentest zu unterziehen.
+- Das Szenario, ob alle Regressoren zusammen genommen einen Effekt auf die abhängige Variable $Y$ haben, kann mit Hilfe des **F-Tests** untersucht werden.
 - Die Idee dieses simultanen Testens ist zu prüfen, ob mit hoher Wahrscheinlichkeit davon auszugehen ist, dass nicht alle Parameter $\beta_1, \beta_2, \ldots, \beta_p$ gleich 0 sind, also zu prüfen:
 
 $$
@@ -236,7 +236,7 @@ $$ F = \frac{[SSE(RM) - SSE(FM)]/(p+1-k)}{SSE(FM)/(n-p-1)}$$
 \bigskip
 - Die Differenz $SSE(RM) - SSE(FM)$ gibt die Erhöhung der Residualstreuung durch Rückgriff auf das reduzierte Model an. Wenn diese Differenz groß ist, ist das RM mit $k$ Parametern **nicht adäquat**.
 - Wenn der beobachtete F-Wert größer ist als der kritische Wert, ist der F-Test signifikant zum Level  $\alpha$.
-- Das beudetet, dass das reduzierte Modell (RM) nicht zufriedenstellend ist und die Nullhypothese (und die entsprechenden Werte für die $\beta$'s) verworfen werden kann.
+- Das bedeutet, dass das reduzierte Modell (RM) nicht zufriedenstellend ist und die Nullhypothese (und die entsprechenden Werte für die $\beta$'s) verworfen werden kann.
 - Verwerfe $H_0$ wenn gilt:
 $$F \geq F_{(p+1-k, \; n-p-1 \;;1-\alpha)} \quad\text{oder}\quad p(F)\leq\alpha$$
 
@@ -252,8 +252,8 @@ summary(mod)
 ## Residualdiagnostik
 
 - Modellierungsprobelme, wie inkorrekt spezifizierte Modelle, fehlende und vergessene Variablen **äußern sich häufig in einer Verletzung der Annahmen der Residuen**.
-- Um zu überprüfen ob das ausgewählte Regressionsmodelle den theoretischen Anfroderungen genügt, müssen daher die Residuen inspiziert werden. Dieses Prozess nennt man Resdidualdiagnostik.
-- Residuen sollten (annähernd) Normalverteilt sein, keine Zusammenhangsstrutkur aufweisen (i.i.d.) und frei von Ausreißern sein. Diese Eigenschaften werden häufig in **grafischen Darstellungen** der Residuen sichtbar.
+- Um zu überprüfen, ob das ausgewählte Regressionsmodell den theoretischen Anforderungen genügt, müssen daher die Residuen inspiziert werden. Dieses Prozess nennt man Resdiualdiagnostik.
+- Residuen sollten (annähernd) normalverteilt sein, keine Zusammenhangsstrutkur aufweisen (i.i.d.) und frei von Ausreißern sein. Diese Eigenschaften werden häufig in **grafischen Darstellungen** der Residuen sichtbar.
 - **R-Funktion:** `residuals()` erlaubt das Extrahieren von Residuen aus der Rückgabe der `lm()` Funktion.
 
 ## Residualdiagnostik
@@ -275,7 +275,7 @@ hist(res, main="Histogramm der Residuen", xlab="")
 
 ## Multikollinearität
 
-- Die Interpretation der Koeffizienten eines multiplen Regressionsmodells setzt vorraus, dass die Prädiktoren keinen ausgeprägten Zusammenhang untereinander haben, da die (ceteris paribus) Interpretation der Koeffizienten dann nicht mehr greift.
+- Die Interpretation der Koeffizienten eines multiplen Regressionsmodells setzt voraus, dass die Prädiktoren keinen ausgeprägten Zusammenhang untereinander haben, da die (ceteris paribus) Interpretation der Koeffizienten dann nicht mehr greift.
 - Wenn eine starke Abhängigkeitsstruktur zwischen den Prädiktoren vorhanden ist, dann bezeichnet man dieses Problem als **Multikollinearität**. Multikollinearität ist ein Problem in den Daten und kein Problem der Modellierung.
 - Multikollinearität führt zu unplausiblen Werten der Koeffizientenschätzer und wird durch spezielle Maßzahlen, wie Varianzinflationsfaktoren (VIF), messbar.
 

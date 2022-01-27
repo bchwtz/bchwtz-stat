@@ -150,7 +150,7 @@ kbl(m, digits=4, booktabs=T, format = "latex", linesep="") %>%
 
 $$H_0: F_1 = F_2 = \ldots = F_k$$
 
-- **Folge:** Wenn $H_0$ verworfen werden muss, dann kann man davon ausgehen, dass die Stichproben nicht die selbe Verteilungsfunktion aufweisen und infolgedessen nicht aus der gleichen Grundgesamtheit stammen.
+- **Folge:** Wenn $H_0$ verworfen werden muss, dann kann man davon ausgehen, dass die Stichproben nicht dieselbe Verteilungsfunktion aufweisen und infolgedessen nicht aus der gleichen Grundgesamtheit stammen.
 
 ## Beispiel
 
@@ -179,14 +179,14 @@ Unterscheidet sich das Verhalten von männlichen und weiblichen Studierenden sig
 
 $$\mathcal{X}^2 = \sum_{\text{alle Zellen}} \frac{(f_o - f_e)^2}{f_e}$$
 
-- Die $\mathcal{X}^2$ Teststatistik folg einer $\mathcal{X}^2$ Verteilung mit $(r-1)\cdot(s-1)$
+- Die $\mathcal{X}^2$ Teststatistik folgt einer $\mathcal{X}^2$ Verteilung mit $(r-1)\cdot(s-1)$
 
 ## Chi-Quadrat Test
 
 - Die **erwarteten** Häufigkeiten ergeben sich als:
 
 $$
-\frac{\sum \text{Saplte} \cdot \sum \text{Zeile}}{\text{Gesamtanzahl}}
+\frac{\sum \text{Spalte} \cdot \sum \text{Zeile}}{\text{Gesamtanzahl}}
 $$
 
 - Die Nullhypothese lautet stets:
@@ -223,7 +223,7 @@ kbl(m, digits = 4, booktabs=T, linesep="",col.names = c("$n \\setminus \\gamma$"
 
 ## Unabhängigkeitstest
 
-- $\mathcal{X}^2$ Tests können auch verwendet werden um die Fragen zu beantworten, ob **zwei Merkmale unabhängig voneinander sind**.
+- $\mathcal{X}^2$ Tests können auch verwendet werden, um die Fragen zu beantworten, ob **zwei Merkmale unabhängig voneinander sind**.
 - Im **Beispiel:** Ist die Annahme von Ferienjobs abhängig vom Geschlecht der Studierenden?
 - Hypothesen: 
   + $H_0:$ Annahme von Ferienjobs und Geschlecht sind voneinander **unabhängig**.
@@ -232,6 +232,6 @@ kbl(m, digits = 4, booktabs=T, linesep="",col.names = c("$n \\setminus \\gamma$"
 ## Verständnisfragen
 
 1. Wozu können $\mathcal{X}^2$ Tests verwendet werden?
-2. wie müssen Null- und Alternativhypothese beim $\mathcal{X}^2$ Test ausgestaltet werden?
+2. Wie müssen Null- und Alternativhypothese beim $\mathcal{X}^2$ Test ausgestaltet werden?
 3. Welches Sklaenniveau müssen die Merkmale aufweisen um im $\mathcal{X}^2$ Test verwendet werden zu können?
 
