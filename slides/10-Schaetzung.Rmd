@@ -49,8 +49,8 @@ http://evasys.fh-swf.de/evasys/online.php?pswd=64D4W
 
 ## Von der Stichprobe zur Grundgesamtheit
 
-- Bei statistischen Untersuchungen ist es häufig nicht möglich (oder zu aufwändig und teuer) Informationen über alle Elemente der Grundgesamtheit zu erheben.
-- Daher wwerden die gewünschten Informationen bei einer Teilmenge der Grundgesamtheit, einer **Stichprobe** erholeb. 
+- Bei statistischen Untersuchungen ist es häufig nicht möglich (oder zu aufwändig und teuer), Informationen über alle Elemente der Grundgesamtheit zu erheben.
+- Daher werden die gewünschten Informationen bei einer Teilmenge der Grundgesamtheit, einer **Stichprobe**, erhoben. 
 - **Ziel** ist es dann, mit Hilfe der statistischen Parameter der *Stichprobe* (Mittelwert, Varianz,  Verteilung) auf die statistischen Parameter der Grundgesamtheit zu **schließen**.
 - Parameter der Grundgesamtheit: $\mu$,$\sigma$,$\pi$
 - Parameter der Stichprobe: $\bar x$, $s^2$, $p$
@@ -75,7 +75,7 @@ $$s^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar x)^2 \quad\text{oder}\quad \sigma
 - Die korrekte Auswahl einer Stichprobe ist Gegenstand der **Stichprobentheorie**. 
 - Eine reine Zufallsauswahl liefert eine **repräsentative** Stichprobe.
 - **Representativität** kann mit **Strukturgleichheit** übersetzt werden.
-- Sofern eine echte Zufallsstichprobe nicht möglich ist wird häufig auf einen Stichprobenplan und eine damit verbundene Quotenauswahl zurückgegegriffen.
+- Sofern eine echte Zufallsstichprobe nicht möglich ist, wird häufig auf einen Stichprobenplan und eine damit verbundene Quotenauswahl zurückgegegriffen.
 
 ## Punkt- und Intervallschätzung
 
@@ -98,8 +98,8 @@ polygon(c(-1.96, min(x), x[x<=-1.96]), c(0, 0, y[x<=-1.96]), col="red")
 
 ## Intervallschätzer
 
-- Intervallschätzer geben einen Bereich an in dem der wahre aber unbekannte (und damit zu schätzende) Parameter mit einer bestimmten Wahrscheinlichkeit liegt.
-- Die Wahrscheinlichkeit, dass der wahre aber unbekannte Parameter zwischen Untergrenze $U$ und Obergrenze $O$ liegt bezeichnen wir als $\alpha$, also: $P(U\leq x \leq O) = 1 - \alpha$
+- Intervallschätzer geben einen Bereich an, in dem der wahre aber unbekannte (und damit zu schätzende) Parameter mit einer bestimmten Wahrscheinlichkeit liegt.
+- Die Wahrscheinlichkeit, dass der wahre aber unbekannte Parameter zwischen Untergrenze $U$ und Obergrenze $O$ liegt, bezeichnen wir als $\alpha$, also: $P(U\leq x \leq O) = 1 - \alpha$
 - Am rechten und linken Rand der Verteilung (eingezeichneter Bereich) liegt jeweils $\alpha/2$ der Wahrscheinlichkeitsmasse, also $P(X\leq U) = \alpha/2$ und $P(X>O)=\alpha/2$.
 
 \medskip
@@ -178,7 +178,7 @@ $$
 :::{.column}
 \small
 **Aufgabe:**
-Nehmen Sie an, dass die Varianz der wöchtenlichen Aufenthaltszeit in der Ganztags der vorherigen Studie ($n=100, \bar x=52$) auf Basis der Stichprobe mit 144 $(h/Woche)^2$ geschätzt wurde.
+Nehmen Sie an, dass die Varianz der wöchtenlichen Aufenthaltszeit der Ganztagsschüler*innen der vorherigen Studie ($n=100, \bar x=52$) auf Basis der Stichprobe mit 144 $(h/Woche)^2$ geschätzt wurde.
 
 - Geben Sie ein 95% Konfidenzintervall für die durchschnittliche wöchentliche Aufenthaltszeit in der Ganztagsschule an.
 - **Hinweis:** Eine Verteilungstabelle befindet sich auf der nächsten Seite.
@@ -236,7 +236,7 @@ Wie prüft man das?
 Überlegungen zu Ergebnissen aus einer Stichprobe:
 
 - $\bar x \geq 100 000 km \rightarrow$ Der Werbung kann man glauben.
-- $\bar x    =  99 500 km \rightarrow$ Nah genug um der Werbung noch zu glauben.
+- $\bar x    =  99 500 km \rightarrow$ Nah genug, um der Werbung noch zu glauben.
 - $\bar x    =  60 000 km \rightarrow$ Zweifel an der Aussage.
 
 ###
@@ -289,7 +289,7 @@ schuldig     $P=\beta$                $P(1-\beta)$
 3) Wählen Sie die passende Teststatistik.
 4) Bestimmen Sie den Wert der Teststatistik, ab dem die Nullhypothese verworfen werden muss.
 5) Bestimmen Sie den Vergleichswert aus den Stichprobendaten.
-6) Entscheiden Sie durch Vergleich der Werte aus (iv) und (v), ob Sie die Nullhypothese verwerfen können.
+6) Entscheiden Sie durch Vergleich der Werte aus (4) und (5), ob Sie die Nullhypothese verwerfen können.
 
 
 ## Beispiel
@@ -328,5 +328,5 @@ $$
 ## Verständnisfragen
 
 1. Beschreiben Sie den Unterschied zwischen Stichprobe und Grundgesamtheit? Wozu dienen Stichproben?
-2. Erläutern Sie in eigenen Worten was ein Konfidenzintervall ist und wie diese interpretiert werden können.
+2. Erläutern Sie in eigenen Worten, was ein Konfidenzintervall ist und wie diese interpretiert werden können.
 3. Wovon ist die Breite eines Konfidenzintervalls abhängig?

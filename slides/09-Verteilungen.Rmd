@@ -228,7 +228,7 @@ rnorm(n=1, mean=0, sd=1)
 
 ## Beispiel: Normalverteilung
 
-Die Gleichspannung von Batterien, die zum Betrieb eines Sensors verwendet werden lässt sich als normalverteilte Zufallsgröße mit $\mu=12V$ und $\sigma=0.6V$ modellieren. Für den Betrieb des Sensors sind mehr als 11.3V notwendig.
+Die Gleichspannung von Batterien, die zum Betrieb eines Sensors verwendet werden, lässt sich als normalverteilte Zufallsgröße mit $\mu=12V$ und $\sigma=0.6V$ modellieren. Für den Betrieb des Sensors sind mehr als 11.3V notwendig.
 
 - Wie groß ist die Wahrscheinlichkeit, dass eine zufällig ausgewählte Batterie eine Spannung von mehr als 12V liefert?
 - Wie groß ist die Wahrscheinlichkeit, dass ein Sensor mit einer zufällig ausgewählten Batterie nicht betrieben werden kann?
@@ -324,7 +324,7 @@ barplot(probs, main="Hypergeometrische Verteilung \n Ziehung von 10 Kugeln aus e
 **Experiment:** Modellierung der Zeit zwischen dem Auftreten zwei aufeinander folgender poisson-verteilter Ereignisse. 
 
 \bigskip
-- **dichtefunktion:** 
+- **Dichtefunktion:** 
 $f(x)= \begin{cases}
         0, & \text{für } x < 0\\
         \lambda \cdot e^{-\lambda x}, & \text{für } x\geq 0
@@ -362,6 +362,6 @@ plot(x,y,type="l", col="blue", main="Exponentialverteilung mit Lambda=1.5", ylab
   
 ## Verständnisfragen
 
-1. Wieso ist es nützlich die Standardnormalverteilung zu kennen?
+1. Wieso ist es nützlich, die Standardnormalverteilung zu kennen?
 2. Wie unterscheiden sich die Dichten $N(0,5)$, $N(0,0.5)$ und $N(5,1)$ von der Gestalt der Standardnormalverteilung?
 3. Wie kann eine normalverteilte Zufallsvariable in eine standardnormalverteilte Zufallsvariable überführt werden?

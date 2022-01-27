@@ -1,6 +1,6 @@
 ---
 title: "Statistik"
-author: "CH.11 - Regression"
+author: "CH.12 - Regression"
 date: "SS 2022 || Prof. Dr. Buchwitz, Sommer, Henke"
 
 toc: true
@@ -39,7 +39,7 @@ library(vcd)
 
 ## Lineare Regression
 
-- **Ziel:** Erkennen von Abhängigkeiten und Zusammenhängen zwischen mehrere Merkmalen und Modellierung der Effektgrößen der Zusammenhänge.
+- **Ziel:** Erkennen von Abhängigkeiten und Zusammenhängen zwischen mehreren Merkmalen und Modellierung der Effektgrößen der Zusammenhänge.
 
 - **Beispiele:**
   + Umsatz und Werbeetat einer Supermarktkette: *Hängt der Umsatz von den eingesetzten Werbemitteln ab?*
@@ -108,7 +108,7 @@ axis(2,at=mean(salary), labels=expression(bar(y)), col="red", col.axis="red")
 ```{r, echo=F}
 quandrant <- c("1 (top right)","2 (top left)","3 (bottom left)", "4 (bottom right)")
 df <- data.frame(quandrant, x="", y="", z="")
-cnames <- c("Quadrant","$y_i - \\bar{y}$","$x_i - \\bar{x}$","$(y_i - \\bar{y})(x_i - \\bar{x})$")
+cnames <- c("Quadrant","$y_i -\\bar{y}$","$x_i - \\bar{x}$","$(y_i - \\bar{y})(x_i - \\bar{x})$")
 knitr::kable(df, booktabs=T, col.names = cnames, align = c("l","c","c","c"))
 ```
 
@@ -145,7 +145,7 @@ $$ Cor(Y,X) = \frac{1}{n-1}\sum_{i=1}^{n} (\frac{y_i - \bar{y}}{s_y})(\frac{x_i 
 - $Cor(Y,X)$ kann auf zwei Arten interpretiert werden:
   + als Kovarianz der $z$-Standardisierten Variablen $X$ und $Y$.
   + als Verhältnis von Kovarianz zum Produkt der Standardweichungen der Variablen.
-- Im Gegensatz zur Kovarianz ist $Cor(Y,X)$ skaleninvariant mit einem WErtebereich von  $-1 \geq Cor(Y,X) \leq 1$ und erlaubt daher die Beurteilung von **Richtung** und **Stärke** des Zusammenhangs.
+- Im Gegensatz zur Kovarianz ist $Cor(Y,X)$ skaleninvariant mit einem Wertebereich von  $-1 \geq Cor(Y,X) \leq 1$ und erlaubt daher die Beurteilung von **Richtung** und **Stärke** des Zusammenhangs.
 
 ## Kovarianz und Korrelation
 
@@ -165,7 +165,7 @@ $$ Y = \beta_0 + \beta_1 X + \epsilon$$
 \normalsize
 
 - Regressionsanalyse ist eine Erweiterung der Korrelationsanalyse und erlaubt es den Zusammehang zwischen abhängiger und unabhängigen Variablen numerisch zu beschreiben.
-- $\beta_0$ und $\beta_1$ sind konstanten die als **Regressionskoeffizienten** bezeichnet werden, $\epsilon$ ist der Fehlerterm
+- $\beta_0$ und $\beta_1$ sind Konstanten, die als **Regressionskoeffizienten** bezeichnet werden, $\epsilon$ ist der Fehlerterm
   + $\beta_0$ ist der Achsenabschnitt und ist der vorhergesagte Wert, wenn $X=0$.
   + $\beta_1$ ist die Steigung und kann interpretiert werden als Änderung in $Y$, wenn $X$ sich um eine Einheit erhöht.
 
@@ -255,7 +255,7 @@ $$\hat\beta_1 = b_1 =  \frac{\sum(y_i - \bar y)(x_i - \bar x)}{\sum (x_i - \bar 
 **Herleitung der Formeln:**
 
 - Minimierung der quadratischen Funktion $S(\beta_0,\beta_1)$ mit Hilfe der Differentialrechnung
-- Bildung der pratiellen Ableitungen nach $b_0$ and $b_1$
+- Bildung der partiellen Ableitungen nach $b_0$ and $b_1$
 - Setzen der Ableitungen $= 0$
 - Lösen des resultierenden Gelichungssystems
 - Die gezeigten Fomeln sind die erhaltene Lösung
@@ -271,7 +271,7 @@ lm(y ~ 1 + x)
 
 ## Hypothesentests
 
-- Die bestimmte Gerade beschreibt die Daten der **Stichprobe**. Interessant ist jedoch die Frage ob der Zusammenhang auch verallgemeinert werden und für die Grundgesamtheit angenommen werden kann.
+- Die bestimmte Gerade beschreibt die Daten der **Stichprobe**. Interessant ist jedoch die Frage, ob der Zusammenhang auch verallgemeinert werden und für die Grundgesamtheit angenommen werden kann.
 - Prüfen der Hypothese $\beta_1 = 0$ is equivalent zur Aussage, dass **kein linearer Zusammenhang** vorhanden ist.
 - Sollte $\beta_1 > 0$ oder $\beta_1 < 0$ gelten (Annahme der entsprechenden Alternativhypothese) liefert **Evidenz** (keinen Beweis) für die Existenz eines linearen Zusammenhangs.
 
@@ -284,13 +284,13 @@ $$
 $$
 
 \bigskip
-- Mit Hilfe der geschätzten Residualvarianz $\hat\sigma^2$ kann der Standardfehler (s.e.) der Regressionsparamter geschätzt werden.
+- Mit Hilfe der geschätzten Residualvarianz $\hat\sigma^2$ kann der Standardfehler (s.e.) der Regressionsparameter geschätzt werden.
 
-$$s.e.(\hat\beta_0) = \hat\sigma^2 \sqrt{\frac{1}{n} + \frac{\bar x^2}{\sum(x_i - \bar x)^2}} \quad\text{and}\quad s.e.(\hat\beta_1) = \frac{\hat\sigma^2}{\sqrt{\sum(x_i - \bar x)^2}}$$
+$$s.e.(\hat\beta_0) = \hat\sigma^2 \sqrt{\frac{1}{n} + \frac{\bar x^2}{\sum(x_i - \bar x)^2}} \quad\text{und}\quad s.e.(\hat\beta_1) = \frac{\hat\sigma^2}{\sqrt{\sum(x_i - \bar x)^2}}$$
 
 ## Hypothesentests
 
-- Unter der Annahme der Normalverteilung kann der $t$-Tests für die Regressionskoeffizienten durchgeführt werden:
+- Unter der Annahme der Normalverteilung kann der $t$-Test für die Regressionskoeffizienten durchgeführt werden:
 
 $$H_0: \beta_1 = 0 \quad\text{versus}\quad H_1: \beta_1 \neq 0$$
 
@@ -348,7 +348,7 @@ $$ SST = \sum(y_i - \bar y)^2 \qquad SSR = \sum(\hat y_i - \bar y)^2 \qquad SSE 
 
 - **SSR**, misst die Qualität von $X$ als Prädiktor für $Y$
 - **SSE**, misst den Fehler in dieser Prädiktion
-- Das Verhältnis $R^2 = SSR/SST$ ist der Anteil der durch $X$ erklärten Varianz and der totalen Varianz. Zur Beurteilung der Anpassungsgüte einer Regressionsgerade kann entsprechend das Bestimmtheitsmaß $R^2$ herangezogen werden.
+- Das Verhältnis $R^2 = SSR/SST$ ist der Anteil der durch $X$ erklärten Varianz an der totalen Varianz. Zur Beurteilung der Anpassungsgüte einer Regressionsgerade kann entsprechend das Bestimmtheitsmaß $R^2$ herangezogen werden.
 
 $$R^2 = \frac{SSR}{SST} = 1 - \frac{SSE}{SST} = [Cor(Y,\hat Y)]^2$$
 
@@ -367,5 +367,5 @@ summary(lm(y ~ 1 + x))
 ## Verständnisfragen
 
 - Wozu wird die Methoden der linearen Regression verwendet?
-- Was ist die zugrundeliegende Methodik zu bestimmung der Parameter der Regressionsgerade?
-- Wozu dient das Bestimmtheitsmaß $R^2$.
+- Was ist die zugrundeliegende Methodik zur Bestimmung der Parameter der Regressionsgeraden?
+- Wozu dient das Bestimmtheitsmaß $R^2$?
