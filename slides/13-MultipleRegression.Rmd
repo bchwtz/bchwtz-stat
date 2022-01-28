@@ -287,10 +287,10 @@ cor(d)
 
 ## Varianzinflationsfaktoren
 
-- Um Multikollinearitätprobleme zu diagnostizieren, müssen die Zusammenhangsstrukturen zwischen den Prädiktoren untersucht werden. Das beinhaltet die Analyse des $R^2$, dass aus der Regression jedes Prädiktors auf alle verbleibenden Prädiktoren resultiert.
+- Um Multikollinearitätprobleme zu diagnostizieren, müssen die Zusammenhangsstrukturen zwischen den Prädiktoren untersucht werden. Das beinhaltet die Analyse des $R^2$, das aus der Regression jedes Prädiktors auf alle verbleibenden Prädiktoren resultiert.
 
 $$
-\text{VIF}_j = \frac{1}{1-R^2_j} \quad\text{with}\quad j=1,\ldots,p
+\text{VIF}_j = \frac{1}{1-R^2_j} \quad\text{mit}\quad j=1,\ldots,p
 $$
 
 - $R^2_j$ bezeichnet das Bestimmtheitsmaß bei der Erklärung von $X_j$ durch alle verbleibenden $p-1$ Prädiktoren. Wenn $X_j$ gut durch die anderen Variablen erklärt werden kann, wird das $R^2_j$ nah bei 1 sein und in einem großen Wert des VIF$_j$ resultieren.
@@ -320,7 +320,7 @@ $$ Y = \beta_0 + \beta_1X_1 + \beta_2 X_1^2 + \epsilon$$
 \normalsize
 
 - Die lineare Regression ist linear im Bezug auf die Tatsache, dass die Paramter $\beta_0, \beta_1, \ldots, \beta_p$ **linear** in das Modell eingehen. 
-- Mit der linearen Regression können dennoch **nicht-lineare** Zusammenhänge modelliert werden indem **nicht-lineare Transformationen** als zusätzliche unabhängige Variablen in das Modell integriert werden.
+- Mit der linearen Regression können dennoch **nicht-lineare** Zusammenhänge modelliert werden, indem **nicht-lineare Transformationen** als zusätzliche unabhängige Variablen in das Modell integriert werden.
 
 ## Nichtlinearität
 
