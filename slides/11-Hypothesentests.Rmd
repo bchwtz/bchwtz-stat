@@ -168,7 +168,7 @@ knitr::kable(addmargins(m), booktabs=T) %>%
 ```
 
 ###
-Unterscheidet sich das Verhalten von männlichen und weiblichen Studierenden signifikant ($\alpha = 5%$)?
+Unterscheidet sich das Verhalten von männlichen und weiblichen Studierenden signifikant ($\alpha = 5 \%$)?
 
 
 ## Chi-Quadrat Test
