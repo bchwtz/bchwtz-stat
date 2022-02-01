@@ -47,9 +47,9 @@ library(vcd)
 
 ## Beispiel: Grundlegende Begriffe
 
-Im Rahmen einer Vollerhebung sollen verschiedene Eigenschaften von allen Mescheder Studenten dieser Vorlesung in diesem Raum untersucht werden.
+Im Rahmen einer Vollerhebung sollen verschiedene Eigenschaften von allen Mescheder Studierenden dieser Vorlesung in diesem Raum untersucht werden.
 
-- **Grundgesamtheit:** Alle Mescheder Studenten (räumliche Identifikation) dieser Vorlesung (sachliche Identifikation), die heute (zeitliche Identifikation) anwesend sind
+- **Grundgesamtheit:** Alle Mescheder Studierende (räumliche Identifikation) dieser Vorlesung (sachliche Identifikation), die heute (zeitliche Identifikation) anwesend sind
 - **Merkmalsträger:** Jede/r Studierende
 - **Merkmale:** Alter, Geschlecht, Wohnort, Note in Mathe
 
@@ -61,7 +61,7 @@ d <- data.frame(
   Geschlecht = c("m","f","f","m"), 
   Wohnort = c("Meschede","Meschede","Brilon","Winterberg"), 
   Note = c("2,3", "1,3", "4,0", "3,0"))
-row.names(d) <- paste("Student",letters[1:nrow(d)])
+row.names(d) <- paste("Student:in",letters[1:nrow(d)])
 kable(d, booktabs=T, align = "c")
 ```
 
@@ -85,7 +85,7 @@ kable(d, booktabs=T, align = "c")
 
 - **Diskrete Merkmale:** können nur bestimmte Werte (z.B. nur ganzzahlige )
 annehmen
-    + z.B. Anzahl der Studenten an einer Hochschule, Anzahl der Einwohner eines Landes
+    + z.B. Anzahl der Studierenden an einer Hochschule, Anzahl der Einwohner eines Landes
 - **Stetige Merkmale:** können in einem bestimmten Intervall jeden beliebigen Wert annehmen
     + z.B. Längen, Breiten, Gewichte
     
