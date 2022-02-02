@@ -30,6 +30,26 @@ library(tidyverse)
 library(vcd)
 ```
 
+## Übersicht - Allgemein
+
+- ToDO: Prüfungsleistung, weitere Infos/Organisatorisches (Gruppenfindung etc.)
+
+## Übersicht - Inhalt
+
+- 1. VL: Intro, Begriffe, Häufigkeit
+- 2. VL: Maßzahlen
+- 3. VL: Zusammenhang
+- 4. VL: Kombinatorik
+- 5. VL: Wahrscheinlichkeitsrechnung
+- 6. VL: Anwendungen Wahrscheinlichkeitsrechnung
+- 7. VL: Wahrscheinlichkeitsverteilungen
+- 8. VL: Spezielle Verteilungen
+- 9. VL: Schätzung
+- 10. VL: Hypothesentests
+- 11. VL: Regression
+- 12. VL: Multiple Regression
+- 13. VL:
+
 
 ## Lernziele
 

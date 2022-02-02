@@ -224,6 +224,8 @@ Zwei Ereignisse $A$ und $B$ heißen **unabhängig**, wenn das Eintreten des eine
 
 $$P(A \cap B) = P(A) \cdot P(B)$$
 
+- $P(A \cap B)$ kann als die Wahrscheinlichkeit, dass beide Ereignisse gleichzeitig eintreten, interpretiert werden.
+
 ## Bedingte Wahrscheinlichkeiten
 
 - Die Wahrscheinlichkeit eines Ereignisses $A$ kann davon abhängig sein, ob ein anderes Ereignis $B$ bereits eingetreten ist.

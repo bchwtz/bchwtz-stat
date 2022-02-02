@@ -400,6 +400,9 @@ C <- c(1000, 2000, 5000, 8000)
 ```
 
 ## Beispiel
+
+- TODO: Tabelle
+
 ```{r, echo=F}
 # Lorenzkurve für A [ohne Punkt (0,0) ]
 A <- sort(A)

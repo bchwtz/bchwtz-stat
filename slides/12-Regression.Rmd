@@ -249,7 +249,7 @@ $$
 
 - Für die Lösung des Minimierungsproblems gibt es eine analytische Lösung:
 
-$$\hat\beta_1 = b_1 =  \frac{\sum(y_i - \bar y)(x_i - \bar x)}{\sum (x_i - \bar x)} \quad\text{und}\quad \hat\beta_0 = b_0 = \bar y - \hat\beta_1 \bar x$$
+$$\hat\beta_1 = b_1 =  \frac{\sum(y_i - \bar y)(x_i - \bar x)}{\sum (x_i - \bar x)^2} \quad\text{und}\quad \hat\beta_0 = b_0 = \bar y - \hat\beta_1 \bar x$$
 
 \bigskip
 **Herleitung der Formeln:**

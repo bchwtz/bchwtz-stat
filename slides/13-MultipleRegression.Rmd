@@ -57,7 +57,7 @@ $$ Y = \beta_0 + \beta_1X_1 + \beta_2 X_2 + \ldots + \beta_p X_p + \epsilon$$
 
 - Die zuvor diskutierte einfache lineare Regression kann als **Spezialfall** der multiple linearen Regression aufgefasst werden bei der gilt $p=1$. 
 - Wir nehmen weiterhin an, dass *innerhalb des Wertebereichs* der Daten der wahre Zusammenhang zwischen $Y$ und den Prädiktoren durch ein lineares Modell **approximiert** werden kann.
-- Jeder Regressor geht mit einem eigenen Koeffizienten $\beta_0, \beta_1,  \beta_2, \ldots, \beta_p$ in die Gleichung ein. Der Fehlerterm $\epsilon$ enthält zudem keine **systematischen Informationen** zur Erklärung der Streuung von $Y$, die nicht bereits durch die Regressoren abgebildet wurden.
+- Jeder Regressor geht mit einem eigenen Koeffizienten $\beta_1,  \beta_2, \ldots, \beta_p$ in die Gleichung ein. Der Fehlerterm $\epsilon$ enthält zudem keine **systematischen Informationen** zur Erklärung der Streuung von $Y$, die nicht bereits durch die Regressoren abgebildet wurden.
 
 ## Multiple Lineare Regression
 
