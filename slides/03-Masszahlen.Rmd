@@ -140,6 +140,10 @@ $$S(Q_\alpha) = \alpha$$
   + Percentile: $Q_{0.01}, Q_{0.02}, Q_{0.03}, Q_{0.04}, \ldots$
 - **R-Funktion:** `quantile()`
 
+## Boxplot
+
+- TODO
+
 ## Aritmetisches Mittel 
 
 :::{.block}
@@ -401,8 +405,6 @@ C <- c(1000, 2000, 5000, 8000)
 
 ## Beispiel
 
-- TODO: Tabelle
-
 ```{r, echo=F}
 # Lorenzkurve für A [ohne Punkt (0,0) ]
 A <- sort(A)
@@ -416,7 +418,9 @@ l <- cumsum(H * unique(A)) / sum(A)
 ```{r, echo=F}
 df <- data.frame(j=1:4, a=sort(unique(A)), k, l)
 df <- rbind(c(0,"",0,0),df) # Ergänzen der 0
-kable(df, booktabs=T, row.names = F, col.names=c("j","$a_j$","$k_j$","$l_j$"))
+kable(df, booktabs=T, escape=F, linesep="", align ="r",
+      col.names=c("j","$a_j$","$k_j$", "$l_j$")) %>%
+  kable_styling(position = "center")
 ```
 
 ## Gini Koeffizient
