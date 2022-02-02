@@ -56,6 +56,13 @@ $$
 P(A) = \frac{\binom{W}{w} \binom{S}{s}}{\binom{N}{n}}
 $$
 
+\normalsize
+
+### Hypergeometrische Verteilung
+
+ohne Zurücklegen
+
+
 ## Urnenmodell: Beispiel
 
 - Gegeben sei eine Urne mit $N=11$ Kugeln, davon $W=5$ weiße und $S=6$ schwarze ($5+6=11$).

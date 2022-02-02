@@ -52,12 +52,12 @@ http://evasys.fh-swf.de/evasys/online.php?pswd=64D4W
 - Bei statistischen Untersuchungen ist es häufig nicht möglich (oder zu aufwändig und teuer), Informationen über alle Elemente der Grundgesamtheit zu erheben.
 - Daher werden die gewünschten Informationen bei einer Teilmenge der Grundgesamtheit, einer **Stichprobe**, erhoben. 
 - **Ziel** ist es dann, mit Hilfe der statistischen Parameter der *Stichprobe* (Mittelwert, Varianz,  Verteilung) auf die statistischen Parameter der Grundgesamtheit zu **schließen**.
-- Parameter der Grundgesamtheit: $\mu$,$\sigma$,$\pi$
-- Parameter der Stichprobe: $\bar x$, $s^2$, $p$
+- Parameter der Grundgesamtheit: $\mu$,$\sigma^2$,$\pi$, $N$
+- Parameter der Stichprobe: $\bar x$, $s^2$, $p$, $n$
 
 ## Von der Stichprobe zur Grundgesamtheit
 
-**GG:** $\mu$,$\sigma$,$\pi$, $N$ $\qquad$ **SP:** $\bar x$, $s^2$, $p$, $n$
+**GG:** $\mu$,$\sigma^2$,$\pi$, $N$ $\qquad$ **SP:** $\bar x$, $s^2$, $p$, $n$
 
 \kariert{18}
 
@@ -70,6 +70,10 @@ $$\bar x = \frac{1}{n}\sum_{i=1}^{n}x_i \quad\text{oder}\quad \mu = \frac{1}{N}\
 ### Varianz
 $$s^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar x)^2 \quad\text{oder}\quad \sigma^2 = \frac{1}{N}\sum_{i=1}^{N}(x_i - \bar x)^2$$
 
+## Freiheitsgrade
+
+TODO: Definition Freiheitsgrade und Beispiel 
+
 ## Stichprobenauswahl
 
 - Die korrekte Auswahl einer Stichprobe ist Gegenstand der **Stichprobentheorie**. 
@@ -79,7 +83,8 @@ $$s^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar x)^2 \quad\text{oder}\quad \sigma
 
 ## Punkt- und Intervallschätzung
 
-- Bei Schätzungen wird zwischen Pukt- und Intervallschätzungen unterschieden. **Punktschätzer** sind ein spezifischer Wert
+- TODO: Definition eines Schätzers
+- Bei Schätzungen wird zwischen Punkt- und Intervallschätzungen unterschieden. **Punktschätzer** sind ein spezifischer Wert
   + Als Punktschätzer für den Mittelwert der Grundgesamtheit $\mu$ wird der Mittelwert der Stichprobe $\bar x$ verwendet.
   + Als Punktschätzer für die Varianz der Grundgesamtheit $\sigma^2$ wird $s^2$ der Stichprobe verwendet.
   + Als Punktschätzer für einen Anteilswert $\pi$ der Grundgesamtheit wird der prozentuale Anteil $p$ in der Stichprobe verwendet.
@@ -99,13 +104,17 @@ polygon(c(-1.96, min(x), x[x<=-1.96]), c(0, 0, y[x<=-1.96]), col="red")
 ## Intervallschätzer
 
 - Intervallschätzer geben einen Bereich an, in dem der wahre aber unbekannte (und damit zu schätzende) Parameter mit einer bestimmten Wahrscheinlichkeit liegt.
-- Die Wahrscheinlichkeit, dass der wahre aber unbekannte Parameter zwischen Untergrenze $U$ und Obergrenze $O$ liegt, bezeichnen wir als $\alpha$, also: $P(U\leq x \leq O) = 1 - \alpha$
+- Die Wahrscheinlichkeit, dass der wahre aber unbekannte Parameter zwischen Untergrenze $U$ und Obergrenze $O$ liegt, bezeichnen wir als $1-\alpha$, also: $P(U\leq x \leq O) = 1 - \alpha$
 - Am rechten und linken Rand der Verteilung (eingezeichneter Bereich) liegt jeweils $\alpha/2$ der Wahrscheinlichkeitsmasse, also $P(X\leq U) = \alpha/2$ und $P(X>O)=\alpha/2$.
 
 \medskip
 \begin{alertblock}{}\Large
 Intervallschätzer werden (fast) immer symmetrisch um Punktschätzer konstruiert.
 \end{alertblock}
+
+## Irrtumswahrscheinlichkeit
+
+- TODO: Definition $\alpha$: Erläuterung und Beispiel
 
 ## Konfidenzintervalle
 
@@ -265,7 +274,7 @@ d) $H_0:$ Medikament wirkt gegen Krankheit vs. $H_1:$ Medikament wird nicht gege
 $H_0$ wahr korrekt           Fehler 1. Art
            $P=1-\alpha$      $P=\alpha$
 $H_A$ wahr Fehler 2. Art     korrekt
-           $P=\beta$         $P(1-\beta)$
+           $P=\beta$         $P=1-\beta$
 ---------- ----------------- -----------------
 
 ## Zusammenhang Fehlerarten
@@ -275,7 +284,7 @@ $H_A$ wahr Fehler 2. Art     korrekt
 Angeklagter  korrekt                  Fehler 1. Art
 unschuldig   $P=1-\alpha$             $P=\alpha$
 Angeklagter  Fehler 2. Art            korrekt
-schuldig     $P=\beta$                $P(1-\beta)$
+schuldig     $P=\beta$                $P=1-\beta$
 ---------------------- ------------------------ -------------
 
 ###

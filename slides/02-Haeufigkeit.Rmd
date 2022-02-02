@@ -148,6 +148,8 @@ $$
 
 * Fortsetzung auf Basis der Befragung zum Urlaubsverhalten von $n=80$ Personen.
 
+- TODO: Tabelle
+
 ```{r, echo=F}
 tab <- data.frame(1:length(K_names), K_names, H, h, cumsum(h))
 kable(tab, digits = 4, booktabs=T, align ="c",

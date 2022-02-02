@@ -44,6 +44,7 @@ Unter einer Zufallsvariablen $X$ versteht man eine Funktion, die aufgrund eines 
 :::
 
 - Kennzeichnend sind die Merkmalsausprägungen $x_i$ und die damit assoziierten Wahrscheinlichkeiten $P(X=x_i)$.
+- TODO: Wahrscheinlichkeiten
 - Zufallsvariablen werden in der Regel mit Großbuchstaben ($X$,$Y$,$X_i$) bezeichnet.
 
 ## Beispiel: Zufallsvariablen
@@ -112,6 +113,16 @@ Skizzieren Sie die Verteilungsfunktion!
 
 \kariert{20}
 
+## Eigenschaften Verteilungsfunktion
+
+**Für Verteilungsfunktionen gilt:**
+
+- $F(x)$ ist monoton steigend
+- $\lim_{x \to -\infty} F(X) = 0$
+- $\lim_{x \to \infty} F(X) = 1$
+- $F(x)$ ist in jedem Punkt (zumindest rechtsseitig) stetig
+
+
 ## Dichtefunktion
 
 :::{.columns}
@@ -137,6 +148,7 @@ $$
 :::{.block}
 ### Definition: Wahrscheinlichkeitsdichte bzw. Dichtefunktion.
 Die Funktion $f(x)$ heißt bei **stetigen** Zufallsvariablen Wahrscheinlichkeitsdichte bzw. Dichtefunktion.
+TODO: Beziehung zur Verteilungsfunktion
 :::
 
 \medskip
@@ -155,15 +167,6 @@ $$\sum_{\text{alle }x_i} f(x_i) = 1$$
 - Für stetige Verteilungen mit Dichtefunktion gilt
 
 $$ \int_{-\infty}^\infty f(x) dx = 1$$
-
-## Eigenschaften Verteilungsfunktion
-
-**Für Verteilungsfunktionen gilt:**
-
-- $F(x)$ ist monoton steigend
-- $\lim_{x \to -\infty} F(X) = 0$
-- $\lim_{x \to \infty} F(X) = 1$
-- $F(x)$ ist in jedem Punkt (zumindest rechtsseitig) stetig
 
 ## Erwartungswert
 
