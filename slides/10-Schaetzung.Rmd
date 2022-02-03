@@ -72,7 +72,7 @@ $$s^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar x)^2 \quad\text{oder}\quad \sigma
 
 ## Freiheitsgrade
 
-TODO: Definition Freiheitsgrade und Beispiel 
+TODO: Definition Freiheitsgrade und Beispiel
 
 ## Stichprobenauswahl
 
