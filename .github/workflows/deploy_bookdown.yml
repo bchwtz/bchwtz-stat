@@ -5,7 +5,9 @@ on:
 
 name: Render and deploy GitBook
 
-
+env:
+      GITHUB_PAT: ${{ secrets.GH_PAT }}
+      
 jobs:
   bookdown:
     name: Render-and-Deploy
