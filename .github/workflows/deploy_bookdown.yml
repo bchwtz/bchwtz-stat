@@ -17,7 +17,7 @@ jobs:
       - name: Install R-Dependencies
         run: Rscript -e 'install.packages(c("kableExtra","HistogramTools","ineq","fGarch","gtools","vcd","texreg","car","remotes"))'
       - name: Install remote R-Dependencies
-        run: Rscript -e 'remotes::install_github("bchwtz/fhswf", auth_token="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")'
+        run: Rscript -e 'remotes::install_github("bchwtz/fhswf", upgrade = "never")'
       - name: Install Sys-Dependencies
         run: sudo apt update; sudo apt install -yq imagemagick
       - name: Set Imagemagick PDF Policy (insecure)
