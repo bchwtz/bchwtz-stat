@@ -48,7 +48,7 @@ Ziel der folgenden Maßzahlen ist die Reduktion der Daten auf Kennzahlen, die ei
 ## Beispiel
 
 Die folgenden Daten bilden das Gewicht (*in kg*) von zufällig ausgewählten Kugeln aus der Produktion einer Fabrik für Bowlingkugeln ab.
-
+ 
 - Handelt es sich bei den vorliegenden Daten um eine Stichprobe oder um eine Grundgesamtheit?
 - Welches Skalenniveau weisen die gezeigten Daten auf?
 - Wie könnte man die Daten beschreiben?
