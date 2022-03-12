@@ -1,6 +1,6 @@
 ---
 title: "Statistik"
-author: "CH.1 - Grundlegende Begriff"
+author: "CH.1 - Grundlegende Begriffe"
 date: "SS 2022 || Prof. Dr. Buchwitz, Sommer, Henke"
 
 toc: true
@@ -78,12 +78,12 @@ kable(d, booktabs=T, align = "c")
     + z.B. Studiengang, Religionszugehörigkeit, Geschlecht
 - **Ordinalskala:** für Merkmale mit einer natürlichen Reihenfolge. Die Abstände zwischen den Ausprägungen sind nicht quantifizierbar.
     + z.B. Schulnoten, Bildungsabschlüsse
-- **Metrische Skala:** für Merkmale bei denen sowohl die Reihenfolge als auch die Abstände zwischen den Ausprägungen sinnvoll definiert sind.
+- **Metrische Skala:** für Merkmale, bei denen sowohl die Reihenfolge als auch die Abstände zwischen den Ausprägungen sinnvoll definiert sind.
     + z.B. Umsatz, Alter, Temperatur in °C
     
-## Klassifikation von Merkmalen (Stetig und Diskret)
+## Klassifikation von Merkmalen (stetig und diskret)
 
-- **Diskrete Merkmale:** können nur bestimmte Werte (z.B. nur ganzzahlige )
+- **Diskrete Merkmale:** können nur bestimmte Werte (z.B. nur ganzzahlige)
 annehmen
     + z.B. Anzahl der Studierenden an einer Hochschule, Anzahl der Einwohner eines Landes
 - **Stetige Merkmale:** können in einem bestimmten Intervall jeden beliebigen Wert annehmen
