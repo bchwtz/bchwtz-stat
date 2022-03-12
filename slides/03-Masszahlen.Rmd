@@ -41,7 +41,7 @@ Ziel der folgenden Maßzahlen ist die Reduktion der Daten auf Kennzahlen, die ei
 
 \bigskip
 - **Lagemaße:** Beschreiben das Zentrum / die Mitte einer Beobachtungsreihe
-- **Streuungsmaße:** Beschreiben die Abweichung vom Zentrum einer Häufikeitsverteilung.
+- **Streuungsmaße:** Beschreiben die Abweichung vom Zentrum einer Häufikeitsverteilung. 
 - **Konzentrationsmaße:** Beschreiben, wie sich die Summe der Merkmalswerte der Beobachtungsreihe auf die Untersuchungseinheiten verteilt.
 
 # Lagemaße
