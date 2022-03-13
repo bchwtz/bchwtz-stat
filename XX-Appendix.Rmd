@@ -1,5 +1,13 @@
 # (PART\*) Appendix {-} 
 
+# Bewertung Gruppenarbeiten {-}
+
+Die Bewertung der Gruppenarbeiten erfolgt mit dem folgenden Formular:
+
+[Download Beispielbogen](data/2022 - Statistik - Gruppensprecher - Gruppenname.pdf)
+[Download Bewertungsformular](data/2022- Statistik - Gruppenarbeiten.xlsm)
+
+
 # Evaluation {-}
 
 ```{r, eval=F}
