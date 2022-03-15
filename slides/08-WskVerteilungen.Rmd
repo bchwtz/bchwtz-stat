@@ -91,7 +91,7 @@ $$f(x) = P(X=x)$$
 :::
 
 - **Beispiel:** Als Zufallsexperiment wird eine faire Münze zweimal geworfen. Die Zufallsvariable $X$ beschreibt die Anzahl des Auftretens des Ereignisses „Zahl“.
-Definieren Sie die Zufallsvariable und skizzieren Sie die Wahrscheinlichkeitsfunktion?
+Definieren Sie die Zufallsvariable und skizzieren Sie die Wahrscheinlichkeitsfunktion!
 
 ## Wahrscheinlichkeitsfunktion
 
@@ -146,7 +146,7 @@ $$
 ## Dichtefunktion
 
 :::{.block}
-### Definition: Wahrscheinlichkeitsdichte bzw. Dichtefunktion.
+### Definition: Wahrscheinlichkeitsdichte bzw. Dichtefunktion
 Die Funktion $f(x)$ heißt bei **stetigen** Zufallsvariablen Wahrscheinlichkeitsdichte bzw. Dichtefunktion.
 TODO: Beziehung zur Verteilungsfunktion
 :::
@@ -183,7 +183,7 @@ E(X) =
 $$
 :::
 
-- **Beispiel:** Definieren Sie die Zufallsvariable $X$ für das Werfen eines Würfels und berechnen Sie deren Erwartungswert.
+- **Beispiel:** Definieren Sie die Zufallsvariable $X$ für das Werfen eines Würfels und berechnen Sie dessen Erwartungswert.
 
 ## Erwartungswert
 
@@ -204,7 +204,7 @@ Var(X) =
 $$
 :::
 
-- **Beispiel:** Definieren Sie die Zufallsvariable $X$ für das Werfen eines Würfels und berechnen Sie deren Varianz.
+- **Beispiel:** Definieren Sie die Zufallsvariable $X$ für das Werfen eines Würfels und berechnen Sie dessen Varianz.
 
 ## Varianz
 
@@ -214,7 +214,7 @@ $$
 
 1. Geben Sie jeweils ein Beispiel für eine diskrete und eine stetige Zufallsvariable.
 
-2. Erläutern Sie was man unter einer Verteilungsfunktion versteht.
+2. Erläutern Sie, was man unter einer Verteilungsfunktion versteht.
 
 3. Welches ist der maximale Wert, den eine Verteilungsfunktion annehmen kann?
 
