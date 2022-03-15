@@ -41,7 +41,7 @@ Ziel der folgenden Maßzahlen ist die Reduktion der Daten auf Kennzahlen, die ei
 
 \bigskip
 - **Lagemaße:** Beschreiben das Zentrum / die Mitte einer Beobachtungsreihe
-- **Streuungsmaße:** Beschreiben die Abweichung vom Zentrum einer Häufikeitsverteilung. 
+- **Streuungsmaße:** Beschreiben die Abweichung vom Zentrum einer Häufigkeitsverteilung. 
 - **Konzentrationsmaße:** Beschreiben, wie sich die Summe der Merkmalswerte der Beobachtungsreihe auf die Untersuchungseinheiten verteilt.
 
 # Lagemaße
@@ -120,8 +120,8 @@ x_{\frac{n+1}{2}} & \text{falls } n \text{ ungerade} \\
 :::
 
 - Der Median wird auch als Zentralwert bezeichnet.
-- Der Median teilt die Daten in zwei gleich Große Hälften.
-- Kann für metrische- und ordinalskalierte Merkmale verwendet werden.
+- Der Median teilt die Daten in zwei gleich große Hälften.
+- Kann für metrisch und ordinal skalierte Merkmale verwendet werden.
 - Ist *robust* gegenüber Ausreißern.
 - **R-Funktion:** `median()`
 
@@ -154,7 +154,7 @@ $$\bar x = \frac{1}{n}\sum_{i=1}^{n}x_i$$
 :::
 
 - Das arithmetische Mittel ist nur für metrisch skalierte Daten definiert!
-- Ist eine Maßzahl die empfindlich gegenüber Ausreißern ist.
+- Ist eine Maßzahl, die empfindlich gegenüber Ausreißern ist.
 - Das gewichtete arithmetische Mittel erlaubt die Bestimmung des arithmetischen Mittels für klassierte Daten.
 - **R-Funktion:** `mean()`
 
@@ -187,7 +187,7 @@ summary(red)
 
 ## Geometrisches und Harmonisches Mittel
 
-- Es gibt zahlreiche spezialisierte Mittelwerte, wie das **geometrische Mittel** $\bar x_{geo}$ und das **harmonische Mittel** $\bar x_{harm}$. Welcher Mittelwert genutzt werden muss, hängt von den zugrundeliegenden Daten ab. 
+- Es gibt zahlreiche spezialisierte Mittelwerte wie das **geometrische Mittel** $\bar x_{geo}$ und das **harmonische Mittel** $\bar x_{harm}$. Welcher Mittelwert genutzt werden muss, hängt von den zugrundeliegenden Daten ab. 
 - Ziel der Mittelwertbildung ist, die durchschnittliche *Gesamtwirkung* von $n$ meist unterschiedlichen Werten mit einem einzigen Wert zu beschreiben.
 
 **Geometrisches Mittel:**        $\quad \bar x_{geo} = \sqrt[n]{x_1 \cdot x_2 \cdot \ldots \cdot x_n} = \sqrt[n]{\prod_{i=1}^{n} x_i}$
@@ -286,15 +286,15 @@ $$IQR = Q_{0.75} - Q_{0.25}$$
 
 :::{.block}
 ### Definition: Varianz
-Die **Varianz** ist die mittlere quadrierte Abweichung vom arithmetischen Mittel
+Die **Varianz** ist die mittlere quadrierte Abweichung vom arithmetischen Mittel.
 
 $$s^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar x)^2 \quad\text{oder}\quad s^2 = \frac{1}{N}\sum_{i=1}^{N}(x_i - \bar x)^2$$
 :::
 
 - Es gilt immer $s^2 \geq 0$
-- Wird unterschiedlich für die Stichprobe und für die Grundgesamtheit (Population) berechnet.
+- Wird unterschiedlich für die Stichprobe und die Grundgesamtheit (Population) berechnet.
 - Grundidee: Einbezug aller Abweichungen vom Mittelwert
-- Beobachtungen die weit von $\bar x$ entfernt liegen werden überproportional stark gewichtet.
+- Beobachtungen, die weit von $\bar x$ entfernt liegen, werden überproportional stark gewichtet.
 - **R-Funktion:** `var()`
 
 ## Standardabweichung
@@ -377,7 +377,7 @@ Man spricht von Konzentration oder Ungleichheit, falls zu einem bestimmten Zeitp
 :::
 
 - Konzentration bzw. Ungleichheitsdiskussionen findet man häufig im Kontext von Einkommen oder Vermögen.
-- Beispiele: In Deutschland besitzen 10% der Bevölkerung des 90% Vermögens.
+- Beispiel: In Deutschland besitzen 10% der Bevölkerung 90% des Vermögens.
 
 ## Lorenzkurve
 
@@ -432,7 +432,7 @@ Das Doppelte der Fläche zwischen der Lorenzkurve und der Winkelhalbierenden hei
 $$ G = \sum_{i=1}^{n} (k_i+k_{i-1}) (l_i-l_{i-1})-1$$
 :::
 
-- Um den Gini-Koeffizienten zu berechnen sind alle Stützpunkte der Lorenzkurve erforderlich. Es gilt $0 \leq G \leq \frac{n-1}{n}<1$.
+- Um den Gini-Koeffizienten zu berechnen, sind alle Stützpunkte der Lorenzkurve erforderlich. Es gilt $0 \leq G \leq \frac{n-1}{n}<1$.
 - Wenn die Lorenzkurve winkelhalbierend ist, gilt $G=0$. In diesem Fall gibt es keine Einkommensunterschiede.
 - Werden *alle* Ausgangswerte $x_i$ mit einem Faktor $a$ multipliziert, sodass $y_i = a \cdot x_i$, dann gilt $G_y = G_x$.
 - **R-Funktion:** `Gini()` aus dem Zusatzpaket `ineq`
