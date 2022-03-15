@@ -78,13 +78,13 @@ TODO: Definition Freiheitsgrade und Beispiel
 
 - Die korrekte Auswahl einer Stichprobe ist Gegenstand der **Stichprobentheorie**. 
 - Eine reine Zufallsauswahl liefert eine **repräsentative** Stichprobe.
-- **Representativität** kann mit **Strukturgleichheit** übersetzt werden.
-- Sofern eine echte Zufallsstichprobe nicht möglich ist, wird häufig auf einen Stichprobenplan und eine damit verbundene Quotenauswahl zurückgegegriffen.
+- **Repräsentativität** kann mit **Strukturgleichheit** übersetzt werden.
+- Sofern eine echte Zufallsstichprobe nicht möglich ist, wird häufig auf einen Stichprobenplan und eine damit verbundene Quotenauswahl zurückgegriffen.
 
 ## Punkt- und Intervallschätzung
 
 - TODO: Definition eines Schätzers
-- Bei Schätzungen wird zwischen Punkt- und Intervallschätzungen unterschieden. **Punktschätzer** sind ein spezifischer Wert
+- Bei Schätzungen wird zwischen Punkt- und Intervallschätzungen unterschieden. **Punktschätzer** sind ein spezifischer Wert.
   + Als Punktschätzer für den Mittelwert der Grundgesamtheit $\mu$ wird der Mittelwert der Stichprobe $\bar x$ verwendet.
   + Als Punktschätzer für die Varianz der Grundgesamtheit $\sigma^2$ wird $s^2$ der Stichprobe verwendet.
   + Als Punktschätzer für einen Anteilswert $\pi$ der Grundgesamtheit wird der prozentuale Anteil $p$ in der Stichprobe verwendet.
@@ -103,8 +103,8 @@ polygon(c(-1.96, min(x), x[x<=-1.96]), c(0, 0, y[x<=-1.96]), col="red")
 
 ## Intervallschätzer
 
-- Intervallschätzer geben einen Bereich an, in dem der wahre aber unbekannte (und damit zu schätzende) Parameter mit einer bestimmten Wahrscheinlichkeit liegt.
-- Die Wahrscheinlichkeit, dass der wahre aber unbekannte Parameter zwischen Untergrenze $U$ und Obergrenze $O$ liegt, bezeichnen wir als $1-\alpha$, also: $P(U\leq x \leq O) = 1 - \alpha$
+- Intervallschätzer geben einen Bereich an, in dem der wahre, aber unbekannte (und damit zu schätzende) Parameter mit einer bestimmten Wahrscheinlichkeit liegt.
+- Die Wahrscheinlichkeit, dass der wahre, aber unbekannte Parameter zwischen Untergrenze $U$ und Obergrenze $O$ liegt, bezeichnen wir als $1-\alpha$, also: $P(U\leq x \leq O) = 1 - \alpha$
 - Am rechten und linken Rand der Verteilung (eingezeichneter Bereich) liegt jeweils $\alpha/2$ der Wahrscheinlichkeitsmasse, also $P(X\leq U) = \alpha/2$ und $P(X>O)=\alpha/2$.
 
 \medskip
@@ -134,7 +134,7 @@ Im weiteren Verlauf diskutieren wir die folgenden Konfidenzintervalle, die hinsi
 
 ## Konfidenzintervalle für den Mittelwert bei bekannter Varianz
 
-- **Voraussetzung:** Normalverteilte Grundgesamtheit oder große Stichprobe ($n>30$).
+- **Voraussetzung:** Normalverteilte Grundgesamtheit oder große Stichprobe ($n\geq 30$).
 - **Fall:** Varianz der Grundgesamtheit $\sigma^2$ bekannt.
 - Das zweiseitige, symmetrische Konfidenzintervall $[\underline \mu, \overline \mu]$ zum Konfidenzniveau $1-\alpha$ ist gegeben durch:
 
@@ -148,9 +148,9 @@ $$
 :::{.column}
 \small
 **Aufgabe:**
-Das Ergebnis einer Studie mit 100 Ganztagsschülern besagt, dass diese durchschnittlich 52 h/Woche in der Schule verbringen. Aus früheren Untersuchungen ist bekannt, dass die Standardabweichung der wöchentlichen Aufenthaltszeit in der Schule 12 Stunden beträgt.
+Das Ergebnis einer Studie mit 100 Ganztagsschüler*innen besagt, dass diese durchschnittlich 52 h/Woche in der Schule verbringen. Aus früheren Untersuchungen ist bekannt, dass die Standardabweichung der wöchentlichen Aufenthaltszeit in der Schule 12 Stunden beträgt.
 
-- Geben Sie ein 95% Konfidenzintervall für die durchschnittliche wöchentliche Aufenthaltszeit in der Ganztagsschule an.
+- Geben Sie ein 95%-Konfidenzintervall für die durchschnittliche wöchentliche Aufenthaltszeit in der Ganztagsschule an.
 - **Hinweis:** Eine Verteilungstabelle befindet sich auf der nächsten Seite.
 :::
 :::{.column}
@@ -174,7 +174,7 @@ kbl(m, digits=4, booktabs=T, format = "latex", linesep="") %>%
 
 ## Konfidenzintervalle für den Mittelwert bei unbekannter Varianz
 
-- **Voraussetzung:** Normalverteilte Grundgesamtheit oder große Stichprobe ($n>30$).
+- **Voraussetzung:** Normalverteilte Grundgesamtheit oder große Stichprobe ($n\geq 30$).
 - **Fall:** Varianz der Grundgesamtheit unbekannt.
 - Das zweiseitige, symmetrische Konfidenzintervall $[\underline \mu, \overline \mu]$ zum Konfidenzniveau $1-\alpha$ ist gegeben durch:
 
@@ -187,9 +187,9 @@ $$
 :::{.column}
 \small
 **Aufgabe:**
-Nehmen Sie an, dass die Varianz der wöchtenlichen Aufenthaltszeit der Ganztagsschüler*innen der vorherigen Studie ($n=100, \bar x=52$) auf Basis der Stichprobe mit 144 $(h/Woche)^2$ geschätzt wurde.
+Nehmen Sie an, dass die Varianz der wöchentlichen Aufenthaltszeit der Ganztagsschüler*innen der vorherigen Studie ($n=100, \bar x=52$) auf Basis der Stichprobe mit 144 $(h/Woche)^2$ geschätzt wurde.
 
-- Geben Sie ein 95% Konfidenzintervall für die durchschnittliche wöchentliche Aufenthaltszeit in der Ganztagsschule an.
+- Geben Sie ein 95%-Konfidenzintervall für die durchschnittliche wöchentliche Aufenthaltszeit in der Ganztagsschule an.
 - **Hinweis:** Eine Verteilungstabelle befindet sich auf der nächsten Seite.
 :::
 :::{.column}
@@ -224,7 +224,7 @@ $$
 
 ## Interpretation von Konfidenzintervallen
 
-- Konfidenzintervalle geben die Überdeckungswahrscheinlichkeit mit dem wahren aber unbekannten Parameter der Grundgesamtheit an. 
+- Konfidenzintervalle geben die Überdeckungswahrscheinlichkeit mit dem wahren, aber unbekannten Parameter der Grundgesamtheit an. 
 
 \bigskip
 \kariert{16}
@@ -251,12 +251,12 @@ Wie prüft man das?
 ###
 Das Testen von Hypothesen ist eine Systematisierung des diskutierten Vorgehens.
 
-## Aufabu von Hypothesentests
+## Aufbau von Hypothesentests
 
 Beim Testen von Hypothesen werden **zwei** Hypothesen aufgestellt. Hypothesentests sind fast immer *konservativ* aufgebaut:
 
-- Die **Nullhypothese** $H_0$, ist die Hypothese die man (üblicherweise) verwerfen möchte.
-- Die **Alternativhypothese** $H_A$ (oder $H_1$), bildet das Gegenteil der Nullhypothese ab und beinhaltet die Aussage, die man zeigen möchte. 
+- Die **Nullhypothese** $H_0$ ist die Hypothese, die man (üblicherweise) verwerfen möchte.
+- Die **Alternativhypothese** $H_A$ (oder $H_1$) bildet das Gegenteil der Nullhypothese ab und beinhaltet die Aussage, die man zeigen möchte. 
 
 **Beispiele:**
 
