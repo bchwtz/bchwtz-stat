@@ -46,7 +46,7 @@ library(vcd)
   + Körpergröße und Gewicht von Personen: *Ist das Gewicht einer Person von dessen Körpergröße abhängig?*
   + Benzinpreis und Mineralölpreis: *Ist der deutsche Benzinpreis eine Funktion des globalen Mineralölpreises?*
 
-## Sind die beiden gezeigten Größen voneinander Abhängig?
+## Sind die beiden gezeigten Größen voneinander abhängig?
 
 ```{r, echo=F}
 set.seed(1)
@@ -63,7 +63,7 @@ cbind(x,y)
 \end{textblock}
 
 
-## Sind die beiden gezeigten Größen voneinander Abhängig?
+## Sind die beiden gezeigten Größen voneinander abhängig?
 
 ```{r, echo=F}
 
@@ -80,7 +80,7 @@ $$ Y = f(X) + \epsilon$$
 
 - Wir betrachten zunächst den einfachen Fall, bei dem die abhängige Variable $Y$ durch **eine** unabhängige Variable $X$ erklärt wird. Unabhängige Variablen bezeichnet man auch als Regressoren oder Prädiktoren.
 - $\epsilon$ bezeichnet den Anpassungsfehler und wird Fehlerterm oder Residuum genannt.
-- Wir verzichten auf die vollständige Herleitung der gezeigten Formeln und fokussieren auf die zugrundeliegenden Mechanismen und die zugehörige Intuition.
+- Wir verzichten auf die vollständige Herleitung der gezeigten Formeln und fokussieren uns auf die zugrundeliegenden Mechanismen und die zugehörige Intuition.
 
 ## Kovarianz
 
@@ -143,7 +143,7 @@ $$ Cor(Y,X) = \frac{1}{n-1}\sum_{i=1}^{n} (\frac{y_i - \bar{y}}{s_y})(\frac{x_i 
 
 \bigskip
 - $Cor(Y,X)$ kann auf zwei Arten interpretiert werden:
-  + als Kovarianz der $z$-Standardisierten Variablen $X$ und $Y$.
+  + als Kovarianz der $z$-standardisierten Variablen $X$ und $Y$.
   + als Verhältnis von Kovarianz zum Produkt der Standardweichungen der Variablen.
 - Im Gegensatz zur Kovarianz ist $Cor(Y,X)$ skaleninvariant mit einem Wertebereich von  $-1 \geq Cor(Y,X) \leq 1$ und erlaubt daher die Beurteilung von **Richtung** und **Stärke** des Zusammenhangs.
 
@@ -164,7 +164,7 @@ $$ Y = \beta_0 + \beta_1 X + \epsilon$$
 \bigskip
 \normalsize
 
-- Regressionsanalyse ist eine Erweiterung der Korrelationsanalyse und erlaubt es den Zusammehang zwischen abhängiger und unabhängigen Variablen numerisch zu beschreiben.
+- Regressionsanalyse ist eine Erweiterung der Korrelationsanalyse und erlaubt es, den Zusammehang zwischen abhängiger und unabhängigen Variablen numerisch zu beschreiben.
 - $\beta_0$ und $\beta_1$ sind Konstanten, die als **Regressionskoeffizienten** bezeichnet werden, $\epsilon$ ist der Fehlerterm
   + $\beta_0$ ist der Achsenabschnitt und ist der vorhergesagte Wert, wenn $X=0$.
   + $\beta_1$ ist die Steigung und kann interpretiert werden als Änderung in $Y$, wenn $X$ sich um eine Einheit erhöht.
@@ -183,7 +183,7 @@ mod <- lm(salary ~ 1 + experience)
 abline(mod, col="red")
 ```
 
-## Paramterschätzung
+## Parameterschätzung
 
 ```{r, echo=F}
 coef <- coefficients(mod)
@@ -198,7 +198,7 @@ invisible(mapply(FUN = function(a,b){abline(a=a, b=b, col="lightgrey")},
 abline(mod, col="red")
 ```
 
-## Residuen: Wieso ist die eingezeichnete Gereade optimal?
+## Residuen: Wieso ist die eingezeichnete Gerade optimal?
 
 ```{r, echo=F, fig.height=4}
 plot(experience, salary, xlab="Experience (Years)", ylab="Salary (Euro)",
@@ -257,8 +257,8 @@ $$\hat\beta_1 = b_1 =  \frac{\sum(y_i - \bar y)(x_i - \bar x)}{\sum (x_i - \bar 
 - Minimierung der quadratischen Funktion $S(\beta_0,\beta_1)$ mit Hilfe der Differentialrechnung
 - Bildung der partiellen Ableitungen nach $b_0$ and $b_1$
 - Setzen der Ableitungen $= 0$
-- Lösen des resultierenden Gelichungssystems
-- Die gezeigten Fomeln sind die erhaltene Lösung
+- Lösen des resultierenden Gleichungssystems
+- Die gezeigten Formeln sind die erhaltene Lösung
 
 ## Lineare Regression
 
@@ -272,8 +272,8 @@ lm(y ~ 1 + x)
 ## Hypothesentests
 
 - Die bestimmte Gerade beschreibt die Daten der **Stichprobe**. Interessant ist jedoch die Frage, ob der Zusammenhang auch verallgemeinert werden und für die Grundgesamtheit angenommen werden kann.
-- Prüfen der Hypothese $\beta_1 = 0$ is equivalent zur Aussage, dass **kein linearer Zusammenhang** vorhanden ist.
-- Sollte $\beta_1 > 0$ oder $\beta_1 < 0$ gelten (Annahme der entsprechenden Alternativhypothese) liefert **Evidenz** (keinen Beweis) für die Existenz eines linearen Zusammenhangs.
+- Prüfen der Hypothese $\beta_1 = 0$ ist äquivalent zur Aussage, dass **kein linearer Zusammenhang** vorhanden ist.
+- Sollte $\beta_1 > 0$ oder $\beta_1 < 0$ gelten (Annahme der entsprechenden Alternativhypothese), liefert **Evidenz** (keinen Beweis) für die Existenz eines linearen Zusammenhangs.
 
 ## Hypothesentests
 
@@ -341,13 +341,13 @@ $$ SST = \sum(y_i - \bar y)^2 \qquad SSR = \sum(\hat y_i - \bar y)^2 \qquad SSE 
 
 \bigskip
 - Sum of Squares Total (SST) ist die gesamte Abweichung von $Y$ vom zugehörigen arithmetischem Mittel $\bar y$.
-- Sum of Squares Regression (SSR) ist die erklärte Variation, die durch die Regressionsgerade abgebildet werden kann
+- Sum of Squares Regression (SSR) ist die erklärte Variation, die durch die Regressionsgerade abgebildet werden kann.
 - Sum of Squares Error (SSE) ist die unerklärte Streuung und die Varianz der Residuen.
 
 ## Bestimmtheitsmaß
 
-- **SSR**, misst die Qualität von $X$ als Prädiktor für $Y$
-- **SSE**, misst den Fehler in dieser Prädiktion
+- **SSR** misst die Qualität von $X$ als Prädiktor für $Y$
+- **SSE** misst den Fehler in dieser Prädiktion
 - Das Verhältnis $R^2 = SSR/SST$ ist der Anteil der durch $X$ erklärten Varianz an der totalen Varianz. Zur Beurteilung der Anpassungsgüte einer Regressionsgerade kann entsprechend das Bestimmtheitsmaß $R^2$ herangezogen werden.
 
 $$R^2 = \frac{SSR}{SST} = 1 - \frac{SSE}{SST} = [Cor(Y,\hat Y)]^2$$
@@ -366,6 +366,6 @@ summary(lm(y ~ 1 + x))
 
 ## Verständnisfragen
 
-- Wozu wird die Methoden der linearen Regression verwendet?
+- Wozu wird die Methode der linearen Regression verwendet?
 - Was ist die zugrundeliegende Methodik zur Bestimmung der Parameter der Regressionsgeraden?
 - Wozu dient das Bestimmtheitsmaß $R^2$?
