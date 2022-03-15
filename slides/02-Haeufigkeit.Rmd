@@ -40,7 +40,7 @@ library(vcd)
 
 ### Definition: Absolute Häufigkeit
 
-Beobachtet man an $n$ statistischen Einheiten ein Merkmal $X$ mit $k$ Merkmalsausprägungen so gilt für die **absolute Häufigkeit** $H_j$ der $j$-ten Merkmalsausprägung.
+Beobachtet man an $n$ statistischen Einheiten ein Merkmal $X$ mit $k$ Merkmalsausprägungen, so gilt für die **absolute Häufigkeit** $H_j$ der $j$-ten Merkmalsausprägung.
 
 $$
 \begin{aligned}
@@ -51,7 +51,7 @@ $$
 
 ### Definition: Relative Häufigkeit
 
-Die **relative Häufigkeit** $h_j$ gibt den prozentualen Anteil der statistischen Einheiten, die die $j$-te Merkmalsausprägung tragen an.
+Die **relative Häufigkeit** $h_j$ gibt den prozentualen Anteil der statistischen Einheiten, die die $j$-te Merkmalsausprägung tragen, an.
 
 $$
 h_j = \frac{1}{n} \cdot H_j \quad \text{für} \quad j=1, \ldots, k
