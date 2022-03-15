@@ -116,7 +116,7 @@ Linksseitig  & $\pi \geq \pi_0$ & $\pi < \pi_0$    &                            
 :::{.column}
 \small
 **Aufgabe:**
-Ein Schraubenproduzent behauptet, dass seine Lieferung eines speziellen Schraubentyps einen Ausschussanteil von höchstens 1% enthält. Der Empfänger der Lieferung ist jedoch der Meinung,dass der Anteil höher ist. Er nimmt eine Stichprobe von 1000 Schrauben und findet in dieser 15 nicht den Anforderungen entsprechende Schrauben.
+Ein Schraubenproduzent behauptet, dass seine Lieferung eines speziellen Schraubentyps einen Ausschussanteil von höchstens 1% enthält. Der Empfänger der Lieferung ist jedoch der Meinung,dass der Anteil höher ist. Er nimmt eine Stichprobe von 1000 Schrauben und findet in dieser 15 nicht den Anforderungen entsprechenden Schrauben.
 
 - Kann die Behauptung des Lieferanten mit dieser Stichprobe bei einem Signifikanzniveau von $\alpha = 0.05$ widerlegt werden?
 - **Hinweis:** Verteilungstabelle siehe nächste Seite.
@@ -144,7 +144,7 @@ kbl(m, digits=4, booktabs=T, format = "latex", linesep="") %>%
 
 ## Verteilungstest
 
-- **Ausgangssituation:** Es liegen Daten von zwei oder mehr **unabhägngig** gewonnenen Stichproben vor.
+- **Ausgangssituation:** Es liegen Daten von zwei oder mehr **unabhängig** gewonnenen Stichproben vor.
 - **Ziel:** Zwei (oder mehrere) Grundgesamtheiten sollen hinsichtlich ihrer *Verteilung* verglichen werden.
 - **Analytische Fragestellung:** Weichen die beiden *empirischen Verteilungen* so sehr voneinander ab, dass die Nullhypothese verworfen werden muss?
 
@@ -173,15 +173,15 @@ Unterscheidet sich das Verhalten von männlichen und weiblichen Studierenden sig
 
 ## Chi-Quadrat Test
 
-- **Voraussetzung:** Jede Zelle muss mindestens 5 Beobachten enthalten.
+- **Voraussetzung:** Jede Zelle muss mindestens 5 Beobachtungen enthalten.
 - **Vorgehensweise:** 6-Schritte Schema für das Testen von Hypothesen
-- **Teststatistik:** Die $\mathcal{X}^2$ Teststatistik setzt die Abweichungen von beobachteten ($f_o$) und erwarteten $f_e$ Häufigkeiten in Relation zu den erwarteten Häufigkeiten:
+- **Teststatistik:** Die $\mathcal{X}^2$-Teststatistik setzt die Abweichungen von beobachteten ($f_o$) und erwarteten $f_e$ Häufigkeiten in Relation zu den erwarteten Häufigkeiten:
 
 $$\mathcal{X}^2 = \sum_{\text{alle Zellen}} \frac{(f_o - f_e)^2}{f_e}$$
 
-- Die $\mathcal{X}^2$ Teststatistik folgt einer $\mathcal{X}^2$ Verteilung mit $(r-1)\cdot(s-1)$
+- Die $\mathcal{X}^2$-Teststatistik folgt einer $\mathcal{X}^2$-Verteilung mit $(r-1)\cdot(s-1)$
 
-## Chi-Quadrat Test
+## Chi-Quadrat-Test
 
 - Die **erwarteten** Häufigkeiten ergeben sich als:
 
@@ -195,7 +195,7 @@ $$H_0: F_1 = F_2 = \ldots = F_k$$
 
 - Es handelt sich hier immer um einen **rechtsseitigen Test**.
 
-## $\mathcal{X}^2$ Verteilung
+## $\mathcal{X}^2$-Verteilung
 
 ```{r, echo=F}
 x <- seq(0,25,0.01)
@@ -203,7 +203,7 @@ plot(y=dchisq(x, df =10), x=x, type="l", col="red", main="Chi-Quadrat-Verteilung
 ```
 
 
-## Quantile der $\mathcal{X}^2_{n;\,\gamma}$ Verteilung
+## Quantile der $\mathcal{X}^2_{n;\,\gamma}$-Verteilung
 
 ```{r, echo=F, size="tiny"}
 n <- c(1:29,seq(30,100,10),150,200,250,300,400,600,800,1000)
@@ -223,15 +223,15 @@ kbl(m, digits = 4, booktabs=T, linesep="",col.names = c("$n \\setminus \\gamma$"
 
 ## Unabhängigkeitstest
 
-- $\mathcal{X}^2$ Tests können auch verwendet werden, um die Fragen zu beantworten, ob **zwei Merkmale unabhängig voneinander sind**.
+- $\mathcal{X}^2$-Tests können auch verwendet werden, um die Frage zu beantworten, ob **zwei Merkmale unabhängig voneinander sind**.
 - Im **Beispiel:** Ist die Annahme von Ferienjobs abhängig vom Geschlecht der Studierenden?
 - Hypothesen: 
   + $H_0:$ Annahme von Ferienjobs und Geschlecht sind voneinander **unabhängig**.
-  + $H_1:$ Annahme von Ferienjobs und Geschlecht sind voneinandern **ab**hängig.
+  + $H_1:$ Annahme von Ferienjobs und Geschlecht sind voneinander **ab**hängig.
 
 ## Verständnisfragen
 
-1. Wozu können $\mathcal{X}^2$ Tests verwendet werden?
-2. Wie müssen Null- und Alternativhypothese beim $\mathcal{X}^2$ Test ausgestaltet werden?
-3. Welches Sklaenniveau müssen die Merkmale aufweisen um im $\mathcal{X}^2$ Test verwendet werden zu können?
+1. Wozu können $\mathcal{X}^2$-Tests verwendet werden?
+2. Wie müssen Null- und Alternativhypothese beim $\mathcal{X}^2$-Test ausgestaltet werden?
+3. Welches Skalenniveau müssen die Merkmale aufweisen, um im $\mathcal{X}^2$-Test verwendet werden zu können?
 
