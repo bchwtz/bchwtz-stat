@@ -95,7 +95,7 @@ $$
 ## Normalverteilung 
 
 - Parameter der Normalverteilung sind Erwartungswert $\mu$ und Standardabweichung $\sigma$.
-- Die Kurzschreibweise für eine normalverteilte Zufallvariale $X$ mit Erwartungswert $\mu$ und Varianz $\sigma^2$ lautet: $X \sim N(\mu=0,\sigma^2=1)$.
+- Die Kurzschreibweise für eine normalverteilte Zufallsvariable $X$ mit Erwartungswert $\mu$ und Varianz $\sigma^2$ lautet: $X \sim N(\mu=0,\sigma^2=1)$.
 - Der Graph der Dichtefunktion der Normalverteilung ist **symmetrisch** an der Stelle $\mu$ und besitzt an dieser Stelle ein Maximum.
 - Der Wert an der Stelle $\mu$ ist **umso größer** (die Dichtefunktion also umso höher und steiler), **je kleiner** der Wert der Standardabweichung ist. 
 
@@ -194,7 +194,7 @@ $$
 
 ###
 \center
-**Die Tabellen befinden sich im Studienbuch auf S. 352 ff**
+**Die Tabellen befinden sich im Studienbuch auf S. 352 ff.**
 
 ## Verteilungsfunktion $F(z)$ für $z \sim N(\mu=0,\sigma^2=1)$
 
