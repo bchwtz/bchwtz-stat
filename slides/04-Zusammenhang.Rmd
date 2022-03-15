@@ -89,8 +89,8 @@ plot(x=height, y=weight, pch=19, main="Zusammenhang zwischen \n Größe und Gewi
 $$ s_{XY} = Cov(X,Y) = \frac{1}{n-1} \sum_{i=1}^{n} (y_i - \bar{y})(x_i - \bar{x})$$
 
 - Die oben stehende Formeln gibt die Kovarianz zwischen $X$ und $Y$ an.
-- Das Vorzeichen der Kovarianz ist ein Indikator für die Richtung eines bestehenden **linearen** Zusammenhanges zwischen $Y$ und $X$.
-- Die Kovarianz erlaubt es nicht Aussagen über die Stärke eines Zusammenhanges zu treffen.
+- Das Vorzeichen der Kovarianz ist ein Indikator für die Richtung eines bestehenden **linearen** Zusammenhangs zwischen $Y$ und $X$.
+- Die Kovarianz erlaubt es nicht, Aussagen über die Stärke eines Zusammenhangs zu treffen.
 - Die Größe der Kovarianz ist abhängig von der zugrundeliegenden Einheit. Einheitenwechsel (z.B. von Euro zu TEuro) führen zu einer Wertveränderung.
 - **R-Befehl:** `cov()`
 
@@ -98,8 +98,8 @@ $$ s_{XY} = Cov(X,Y) = \frac{1}{n-1} \sum_{i=1}^{n} (y_i - \bar{y})(x_i - \bar{x
 
 $$ Cor(Y,X) = \frac{1}{n-1}\sum_{i=1}^{n} (\frac{y_i - \bar{y}}{s_y})(\frac{x_i - \bar{x}}{s_x}) = \frac{Cov(Y,X)}{s_ys_x} = \frac{s_{XY}}{s_x \cdot s_y}$$
 
-- Der Korrelationskoeffizient ist ein Maß für die Stärke des linearen Zusammenhanges.
-- Im Unterschied zur Kovarianz, ist $Cor(Y,X)$ nicht skalenabhängig und erlaubt die Einschätzung von Stärke und Richtung eines linearen Zusammenhangs. 
+- Der Korrelationskoeffizient ist ein Maß für die Stärke des linearen Zusammenhangs.
+- Im Unterschied zur Kovarianz ist $Cor(Y,X)$ nicht skalenabhängig und erlaubt die Einschätzung von Stärke und Richtung eines linearen Zusammenhangs. 
 - **R-Befehl:** `cor()`
 
 \begin{alertblock}{}\Large
