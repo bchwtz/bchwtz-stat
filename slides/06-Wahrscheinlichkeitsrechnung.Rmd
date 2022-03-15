@@ -51,7 +51,7 @@ library(vcd)
   + Alle *möglichen* Ausgänge sind vor der Durchführung bekannt.
 :::
 
-- Die Menge aller möglichen Ergebnisses eines Zufallsexperiments nennt man **Ereignisraum** $\Omega$.
+- Die Menge aller möglichen Ergebnisse eines Zufallsexperiments nennt man **Ereignisraum** $\Omega$.
 - Teilmengen des Ereignisraumes $\Omega$ nennt man (*zufällige*) Ereignisse. Diese werden mit lateinischen Buchstaben ($A,B,C,..$) bezeichnet.
 - Ereignisse, die sich nicht weiter zerlegen lassen, heißen Elementarereignisse.
 
@@ -182,7 +182,7 @@ $$P(A)=\frac{|A|}{|\Omega|}=\frac{\text{Anzahl der für A 'günstigen' Ergebniss
 
 - **Normiertheit:** $P(\Omega)=1$
 
-- **Additivität:** $P(A \cup B)=P(A) + P(B) \quad\text{falls}\quad A \cap B = \varnothing$
+- **Additivität:** $P(A \cup B)=P(A) + P(B), \quad\text{falls}\quad A \cap B = \varnothing$
 
 
 ## Rechenregeln für Wahrscheinlichkeiten
@@ -236,7 +236,7 @@ $$P(A|B)$$
 **Beispiele:**
 
 - Die Wahrscheinlichkeit an einer Krankheit zu erkranken, kann davon abhängig sein, ob man gegen diese Krankheit geimpft ist.
-- Die Wahrscheinlichkeit Deutscher Meister beim Fußball zu werden, ist davon abhängig, ob man vorher Herbstmeister ist.
+- Die Wahrscheinlichkeit, Deutscher Meister beim Fußball zu werden, ist davon abhängig, ob man vorher Herbstmeister ist.
 
 ## Bedingte Wahrscheinlichkeiten
 
@@ -257,7 +257,7 @@ $$P(A|B) = \frac{P(A \cap B)}{P(B)} \quad \text{für}\quad P(B) \neq 0$$
 
 ## Bedingte Wahrscheinlichkeiten
 
-Durch Umformung der Defintion der bedingten Wahrscheinlichkeit erhält man den **Multiplikationssatz** der Wahrscheinlichkeitsrechnung:
+Durch Umformung der Definition der bedingten Wahrscheinlichkeit erhält man den **Multiplikationssatz** der Wahrscheinlichkeitsrechnung:
 
 $$P(A \cap B) = P(A) \cdot P(B|A) \quad\text{sowie}\quad P(B \cap A) = P(B) \cdot P(A|B)$$  
 Es gilt zudem:
@@ -268,7 +268,7 @@ $$P(\bar A| B) = 1- P(A|B)$$
 ## Satz der totalen Wahrscheinlichkeit
 
 ### Definition: Satz der totalen Wahrscheinlichkeit
-Sei $A_1, A_2, \ldots, A_k$ eine disjunkte Zerlegung des Ereignisraumes $\Omega$. Wenn $B \subset \Omega$ dann gilt
+Sei $A_1, A_2, \ldots, A_k$ eine disjunkte Zerlegung des Ereignisraumes $\Omega$. Wenn $B \subset \Omega,$ dann gilt
 
 $$P(B) = \sum_{i=1}^k P(A_i) \cdot P(B|A_i)$$
 
