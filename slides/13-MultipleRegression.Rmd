@@ -45,7 +45,7 @@ $$ Y = f(X_1,X_2,\ldots,X_p) + \epsilon$$
 \bigskip
 \normalsize
 
-- Mit Hilfe der **einfachen linearen Regression** kann derZusammenhang einer abhängigen Variablen $Y$ mit **einer** unabhängigen Variablen $X$ modelliert werden.
+- Mit Hilfe der **einfachen linearen Regression** kann der Zusammenhang einer abhängigen Variablen $Y$ mit **einer** unabhängigen Variablen $X$ modelliert werden.
 - Die **multiple lineare Regression** erlaubt das Modellieren des Zusammenhangs einer abhängigen Variablen $Y$ mit **mehreren** unabhängigen Variablen $X_1,X_2,\ldots, X_p$.
 
 ## Multiple Lineare Regression
@@ -55,7 +55,7 @@ $$ Y = \beta_0 + \beta_1X_1 + \beta_2 X_2 + \ldots + \beta_p X_p + \epsilon$$
 \bigskip
 \normalsize
 
-- Die zuvor diskutierte einfache lineare Regression kann als **Spezialfall** der multiple linearen Regression aufgefasst werden bei der gilt $p=1$. 
+- Die zuvor diskutierte einfache lineare Regression kann als **Spezialfall** der multiplen linearen Regression aufgefasst werden, bei der gilt $p=1$. 
 - Wir nehmen weiterhin an, dass *innerhalb des Wertebereichs* der Daten der wahre Zusammenhang zwischen $Y$ und den Prädiktoren durch ein lineares Modell **approximiert** werden kann.
 - Jeder Regressor geht mit einem eigenen Koeffizienten $\beta_1,  \beta_2, \ldots, \beta_p$ in die Gleichung ein. Der Fehlerterm $\epsilon$ enthält zudem keine **systematischen Informationen** zur Erklärung der Streuung von $Y$, die nicht bereits durch die Regressoren abgebildet wurden.
 
@@ -68,7 +68,7 @@ $$ y_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \ldots + \beta_p x_{ip} + \
 $$ i=1,2,\ldots,n$$
 
 \bigskip
-- Aus der Modellgleichung folgt die obige Darstellung für jede Beobachtung. Dabei repräsentiert $y_i$ die $i$-te Beobachtung der abhängigen Variablen $Y$. Die Werte $x_{i1},x_{i2},\ldots,x_{ip}$ sind die Werte der zugehörigen Regressoren, für die $i$-te Beobachtung in der Stichprobe (üblicherweise $i$-te Zeile im Datensatz).
+- Aus der Modellgleichung folgt die obige Darstellung für jede Beobachtung. Dabei repräsentiert $y_i$ die $i$-te Beobachtung der abhängigen Variablen $Y$. Die Werte $x_{i1},x_{i2},\ldots,x_{ip}$ sind die Werte der zugehörigen Regressoren für die $i$-te Beobachtung in der Stichprobe (üblicherweise $i$-te Zeile im Datensatz).
 - Der Wert $\epsilon_i$ ist der Anpassungsfehler (Fehlerterm) der linearen Approximation für die $i$-te Beobachtungseinheit.
 
 ## Beispiel: Autodaten
@@ -208,7 +208,7 @@ texreg(list(mod_1,mod_2,mod_3))
 
 - Ergänzend zum t-Test für die einzelnen Koeffizienten ($H_0: \beta_j = 0$ vs. $H_1: \beta_j \neq 0$) gibt es auch die Möglichkeit, **alle Koeffizienten auf einmal** einem Hypothesentest zu unterziehen.
 - Das Szenario, ob alle Regressoren zusammen genommen einen Effekt auf die abhängige Variable $Y$ haben, kann mit Hilfe des **F-Tests** untersucht werden.
-- Die Idee dieses simultanen Testens ist zu prüfen, ob mit hoher Wahrscheinlichkeit davon auszugehen ist, dass nicht alle Parameter $\beta_1, \beta_2, \ldots, \beta_p$ gleich 0 sind, also zu prüfen:
+- Die Idee dieses simultanen Testens ist, zu prüfen, ob mit hoher Wahrscheinlichkeit davon auszugehen ist, dass nicht alle Parameter $\beta_1, \beta_2, \ldots, \beta_p$ gleich 0 sind, also zu prüfen:
 
 $$
 H_0: \beta_1 = \beta_2 = \ldots = \beta_p = 0 \quad\text{vs}\quad H_1: \beta_j \neq 0 \;\text{für min. ein}\; j
@@ -225,7 +225,7 @@ $$
 
 \bigskip
 - Die Nullhypothese ist gleichbedeutend mit der Tatsache, dass auch ein **reduziertes Modell** (RM) ohne Regressoren den gleichen Erklärungsgehalt liefert wie das volle Modell (FM) mit allen $p$ Regressoren.
-- Dieser fehlende **Fit** kann mit Hilfe der Fehlerquadratsumme (SSE), für die beiden Modelle messbar gemacht werden. 
+- Dieser fehlende **Fit** kann mit Hilfe der Fehlerquadratsumme (SSE) für die beiden Modelle messbar gemacht werden. 
 
 $$SSE(FM) = \sum(y_i - \hat y_i)^2 \quad\quad SSE(RM) = \sum(y_i - \hat y_i^*)^2$$
 
@@ -237,7 +237,7 @@ $$ F = \frac{[SSE(RM) - SSE(FM)]/(p+1-k)}{SSE(FM)/(n-p-1)}$$
 - Die Differenz $SSE(RM) - SSE(FM)$ gibt die Erhöhung der Residualstreuung durch Rückgriff auf das reduzierte Model an. Wenn diese Differenz groß ist, ist das RM mit $k$ Parametern **nicht adäquat**.
 - Wenn der beobachtete F-Wert größer ist als der kritische Wert, ist der F-Test signifikant zum Level  $\alpha$.
 - Das bedeutet, dass das reduzierte Modell (RM) nicht zufriedenstellend ist und die Nullhypothese (und die entsprechenden Werte für die $\beta$'s) verworfen werden kann.
-- Verwerfe $H_0$ wenn gilt:
+- Verwerfe $H_0$, wenn gilt:
 $$F \geq F_{(p+1-k, \; n-p-1 \;;1-\alpha)} \quad\text{oder}\quad p(F)\leq\alpha$$
 
 ## Hypothesentests
@@ -251,7 +251,7 @@ summary(mod)
 
 ## Residualdiagnostik
 
-- Modellierungsprobelme, wie inkorrekt spezifizierte Modelle, fehlende und vergessene Variablen **äußern sich häufig in einer Verletzung der Annahmen der Residuen**.
+- Modellierungsprobelme wie inkorrekt spezifizierte Modelle, fehlende und vergessene Variablen **äußern sich häufig in einer Verletzung der Annahmen der Residuen**.
 - Um zu überprüfen, ob das ausgewählte Regressionsmodell den theoretischen Anforderungen genügt, müssen daher die Residuen inspiziert werden. Diesen Prozess nennt man Residualdiagnostik.
 - Residuen sollten (annähernd) normalverteilt sein, keine Zusammenhangsstrutkur aufweisen (i.i.d.) und frei von Ausreißern sein. Diese Eigenschaften werden häufig in **grafischen Darstellungen** der Residuen sichtbar.
 - **R-Funktion:** `residuals()` erlaubt das Extrahieren von Residuen aus der Rückgabe der `lm()` Funktion.
@@ -277,7 +277,7 @@ hist(res, main="Histogramm der Residuen", xlab="")
 
 - Die Interpretation der Koeffizienten eines multiplen Regressionsmodells setzt voraus, dass die Prädiktoren keinen ausgeprägten Zusammenhang untereinander haben, da die (ceteris paribus) Interpretation der Koeffizienten dann nicht mehr greift.
 - Wenn eine starke Abhängigkeitsstruktur zwischen den Prädiktoren vorhanden ist, dann bezeichnet man dieses Problem als **Multikollinearität**. Multikollinearität ist ein Problem in den Daten und kein Problem der Modellierung.
-- Multikollinearität führt zu unplausiblen Werten der Koeffizientenschätzer und wird durch spezielle Maßzahlen, wie Varianzinflationsfaktoren (VIF), messbar.
+- Multikollinearität führt zu unplausiblen Werten der Koeffizientenschätzer und wird durch spezielle Maßzahlen wie Varianzinflationsfaktoren (VIF) messbar.
 
 ## Multikollinearität
 
@@ -287,7 +287,7 @@ cor(d)
 
 ## Varianzinflationsfaktoren
 
-- Um Multikollinearitätprobleme zu diagnostizieren, müssen die Zusammenhangsstrukturen zwischen den Prädiktoren untersucht werden. Das beinhaltet die Analyse des $R^2$, das aus der Regression jedes Prädiktors auf alle verbleibenden Prädiktoren resultiert.
+- Um Multikollinearitätsprobleme zu diagnostizieren, müssen die Zusammenhangsstrukturen zwischen den Prädiktoren untersucht werden. Das beinhaltet die Analyse des $R^2$, das aus der Regression jedes Prädiktors auf alle verbleibenden Prädiktoren resultiert.
 
 $$
 \text{VIF}_j = \frac{1}{1-R^2_j} \quad\text{mit}\quad j=1,\ldots,p
@@ -319,7 +319,7 @@ $$ Y = \beta_0 + \beta_1X_1 + \beta_2 X_1^2 + \epsilon$$
 \bigskip
 \normalsize
 
-- Die lineare Regression ist linear im Bezug auf die Tatsache, dass die Paramter $\beta_0, \beta_1, \ldots, \beta_p$ **linear** in das Modell eingehen. 
+- Die lineare Regression ist linear in Bezug auf die Tatsache, dass die Parameter $\beta_0, \beta_1, \ldots, \beta_p$ **linear** in das Modell eingehen. 
 - Mit der linearen Regression können dennoch **nicht-lineare** Zusammenhänge modelliert werden, indem **nicht-lineare Transformationen** als zusätzliche unabhängige Variablen in das Modell integriert werden.
 
 ## Nichtlinearität
