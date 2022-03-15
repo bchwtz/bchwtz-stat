@@ -81,7 +81,7 @@ $$ \binom{n}{k} = \frac{n!}{k!\cdot(n-k)!} = \frac{n\cdot(n-1)\cdot (n-2) \cdot 
 :::
 
 - Der Binomialkoeffizient gibt an, auf wie viele verschiedene Arten man $k$ Elemente aus einer begrenzten Menge von $n$ Elementen auswählen kann.
-- Der Binomiakoeffizient ist symmetrisch, es gilt $\binom{n}{k} = \binom{n}{n-k}$.
+- Der Binomialkoeffizient ist symmetrisch, es gilt $\binom{n}{k} = \binom{n}{n-k}$.
 - **R-Funktion:** `choose()`
 
 ## Binomialkoeffizient
@@ -126,22 +126,22 @@ Jede Zusammenstellung aus einer Menge mit $n$ Elementen, die dadurch entsteht, d
 :::{.columns}
 :::{.column}
 **Beispiel 1:**
-Wie viele Möglichkeiten gibt es drei verschiedenfarbige Kugeln anzuordnen?
+Wie viele Möglichkeiten gibt es, drei verschiedenfarbige Kugeln anzuordnen?
 \kariert{15}
 :::
 :::{.column}
 **Beispiel 2:**
-Wie viele Möglichkeiten gibt es zwei gelbe und eine rote Kugel anzuordnen?
+Wie viele Möglichkeiten gibt es, zwei gelbe und eine rote Kugel anzuordnen?
 \kariert{15}
 :::
 :::
 
-## Permutations
+## Permutationen
 
 :::{.columns}
 :::{.column}
 **Beispiel 1:**
-Wie viele Möglichkeiten gibt es drei verschiedenfarbige Kugeln anzuordnen?
+Wie viele Möglichkeiten gibt es, drei verschiedenfarbige Kugeln anzuordnen?
 ```{r}
 library(gtools)
 balls <- c("red", "blue", "green")
@@ -152,7 +152,7 @@ p
 :::
 :::{.column}
 **Beispiel 2:**
-Wie viele Möglichkeiten gibt es zwei gelbe und eine rote Kugel anzuordnen?
+Wie viele Möglichkeiten gibt es, zwei gelbe und eine rote Kugel anzuordnen?
 ```{r}
 library(gtools)
 balls <- c("red", "yellow", "yellow")
@@ -173,8 +173,8 @@ Jede Zusammenstellung aus $k$ Elementen einer Menge mit $n$ Elementen mit $k<n$ 
 
 **Kombinationen können wie folgt unterschieden werden:**
 
-- **Reihenfolge:** Gelten zwei Kombinationen mit genau denselben $k$ Elementen aber in verschiedener Reihenfolge als verschiedenen so spricht man von *Variationen* (Kombinationen mit Berücksichtigung der Reihenfolge). 
-- **Wiederholung:** Dürfen die $k$ Elemente nur einmal vorkommen (keine Mehrfachauswahl des gleichen Elementes) spricht man von *Kombinationen ohne Wiederholung* (ohne zurücklegen).
+- **Reihenfolge:** Gelten zwei Kombinationen mit genau denselben $k$ Elementen, aber in verschiedener Reihenfolge als verschiedenen, so spricht man von *Variationen* (Kombinationen mit Berücksichtigung der Reihenfolge). 
+- **Wiederholung:** Dürfen die $k$ Elemente nur einmal vorkommen (keine Mehrfachauswahl des gleichen Elements), so spricht man von *Kombinationen ohne Wiederholung* (ohne Zurücklegen).
 - **R-Funktion:** `combinations()` aus dem Zusatzpaket `gtools` und `expand.grid()`
 
 ## Kombinationen
