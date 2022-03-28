@@ -1,6 +1,6 @@
-# Grundlegende Begriffe 
+# Grundlagen 
  
-```{r, echo = F, out.width="80%", fig.cap="[Download Slides](slides/01-Begriffe.pdf)"}
-knitr::include_graphics("slides/gifs/01-Begriffe.gif")
+```{r, echo = F, out.width="80%", fig.cap="[Download Slides](slides/01-Grundlagen.pdf)"}
+knitr::include_graphics("slides/gifs/01-Grundlagen.gif")
 ```
 

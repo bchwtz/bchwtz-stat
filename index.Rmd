@@ -29,8 +29,11 @@ library("kableExtra")
 knitr::opts_chunk$set(echo = TRUE, fig.align = "center")
 ```
 
+Herzlich Willkommen zum Kurs Statistik
 
-```{r, echo = F, out.width="80%", fig.cap="[Download Slides](slides/00-Intro.pdf)"}
-knitr::include_graphics("slides/gifs/00-Intro.gif")
-```
+| Woche| Thema             | Vorlesung    |
+| ---: | :--------         | :---:        |
+| 1    | Grundlagen        | [PDF](slides/01-Grundlagen.pdf)    |
+|      | Häufigkeit        | [PDF](slides/02-Haeufigkeit.pdf)   |
+| 2    | Maßzahlen         | [PDF](slides/03-Maßzahlen.pdf)     |
 
