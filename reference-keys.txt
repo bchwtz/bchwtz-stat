@@ -27,6 +27,11 @@ lineare-regression
 multiple-regression
 zeitreihenanalyse
 daten
+section
+autos
+nyc-airbnb
+who-life-expectancy
+section-1
 taxi-trips
 vorbereitungen
 datenbeschreibung
