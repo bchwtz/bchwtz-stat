@@ -1,11 +1,17 @@
 # (PART\*) Appendix {-} 
 
-# Bewertung Gruppenarbeiten {-}
+# Datacamp {-}
+
+Die Anmeldung bei [DataCamp](https://www.datacamp.com/groups/shared_links/6c29db40d79200c5c48aca9ec64682de22a5e604bf61b174ef9535f3173f9518) muss mit einer `@fh-swf.de`-Emailadresse erfolgen. 
+
+[DataCamp Zugang](https://www.datacamp.com/groups/shared_links/6c29db40d79200c5c48aca9ec64682de22a5e604bf61b174ef9535f3173f9518)
+
+# Gruppenarbeit {-}
 
 Die Bewertung der Gruppenarbeiten erfolgt mit dem folgenden Formular:
 
-[Download Beispielbogen](data/2022 - Statistik - Gruppensprecher - Gruppenname.pdf)
-[Download Bewertungsformular](data/2022- Statistik - Gruppenarbeiten.xlsm)
+- [Download Beispielbogen](data/2022 - Statistik - Gruppensprecher - Gruppenname.pdf)
+- [Download Bewertungsformular](data/2022- Statistik - Gruppenarbeiten.xlsm)
 
 
 # Evaluation {-}
