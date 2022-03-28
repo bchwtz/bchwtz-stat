@@ -32,9 +32,13 @@ library(vcd)
 
 ## Lernziele
 
-- Ziel 1
-- Ziel 2
-- Ziel 3
+- Kennenlernen der zentralen Grundbegriffe bei statistischen Untersuchungen.
+- Definition und Einordnung von Beobachtungsgrößen anhand des Skalenniveaus.
+- Diskussion und Definition absoluter und relativer Häufigkeiten.
+- Einführung in elementare grafische Darstellungen.
+- Schaffen von Verständnis für die empirische Verteilungsfunktion.
+
+# Grundbegriffe
 
 ## Grundlegende Begriffe
 
