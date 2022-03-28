@@ -30,39 +30,6 @@ library(tidyverse)
 library(vcd)
 ```
 
-## Übersicht - Allgemein
-
-- ToDO: Prüfungsleistung, weitere Infos/Organisatorisches (Gruppenfindung etc.)
-
-## Übersicht - Inhalt
-
-- 1. VL: Intro, Begriffe, Häufigkeit
-- 2. VL: Maßzahlen
-- 3. VL: Zusammenhang
-- 4. VL: Kombinatorik
-- 5. VL: Wahrscheinlichkeitsrechnung
-- 6. VL: Anwendungen Wahrscheinlichkeitsrechnung
-- 7. VL: Wahrscheinlichkeitsverteilungen
-- 8. VL: Spezielle Verteilungen
-- 9. VL: Schätzung
-- 10. VL: Hypothesentests
-- 11. VL: Regression
-- 12. VL: Multiple Regression
-- 13. VL:
-
-
-<!-- ## Nettiquette -->
-
-<!-- ```{r, echo=F, out.width="100%"} -->
-<!-- knitr::include_graphics("figs/00-Regeln.png") -->
-<!-- ``` -->
-
-<!-- \begin{center} -->
-<!-- \begin{tabular}{ p{0.3\textwidth}p{0.3\textwidth}p{0.3\textwidth}}  -->
-<!-- Gesicht zeigen & Mitmachen & Professionell sein \\  -->
-<!-- \end{tabular} -->
-<!-- \end{center} -->
-
 ## Vorstellung und Kontaktdetails 
 
 **Benjamin Buchwitz**
@@ -77,11 +44,22 @@ library(vcd)
 - Raum 2.3.14, Lindenstr. 53, Meschede
 - **Email:** buchwitz.benjamin@fh-swf.de
 
+## Formalia
+
+- **Prüfung:** Zusätzlich zur Klausur wird eine semesterbegleitende Gruppenarbeit erstellt. Die Note in dem Modul Statistik setzt sich aus der Gruppenarbeit (25%) und der Klausur (75%) zusammen. 
+- **Prüfungsvorleistung:** Bedingung der PVL sind das Erreichen von mindestens 5 Punkte in der Gruppenarbeit zum Stand der Zwischenabgabe sowie das vorlegen von 3 vorgegebenen Datacamp-Zertifikaten. 
+- **Bestehen:** Das Modul *Statistik* gilt als bestanden, wenn Sie mindestens 50 Punkte aus der Gruppenarbeit (max. 25 Punkte) und der Klausur (max. 75 Punkte) erreichen.
+
+## Deadlines
+
+* Gruppenanmeldung: **Fr. 08.04.2022: 12:00 Uhr**
+* Abgabe Exposé: **Fr. 22.04.2022: 12:00 Uhr**
+* Abgabe Zwischenabgabe: **Fr. 27.05.2022: 12:00 Uhr**
+* Endabgabe: **Fr. 29.07.2022: 12:00 Uhr**
+
 ## Was ist Statistik?
 
-```{r, echo=F, out.width="60%"}
-knitr::include_graphics("figs/00-DistrGym.jpg")
-```
+\kariert{16}
 
 ## Inhalte der Vorlesung
 
@@ -89,12 +67,6 @@ knitr::include_graphics("figs/00-DistrGym.jpg")
 1. Deskriptive Statistik
 2. Wahrscheinlichkeitsrechnung
 3. Induktive/Analytische Statistik
-
-## Inhalte der Vorlesung
-
-```{r, echo=F, out.width="80%"}
-knitr::include_graphics("figs/00-DesWskInd.png")
-```
 
 ## Teil 1: Deskriptive Statistik
 
@@ -162,6 +134,24 @@ Wie groß ist die Wahrscheinlichkeit, dass eine gerade noch zulässige Lieferung
 
 - Für ein Konzert in Meschede wurden die Karten im Radio verlost. Sie befragen alle 400 Besucher des Konzertes nach ihrem Schokoladenkonsum zu Weihnachten (Dezember `r as.numeric(format(Sys.time(), format = "%Y")) - 1`). Dabei ermitteln Sie einen durchschnittlichen Schokoladenkonsum von 455g bei einer Standardabweichung von 130g.
 Mit diesen Daten möchten Sie auf den Schokoladenkonsum der Bevölkerung im Hochsauerlandkreis schließen. Geben Sie an, in welchem Bereich der durchschnittlich Schokoladenkonsum eines HSK-Bürgers mit 90%iger Sicherheit lag.
+
+## Vorlesungsinhalte
+
+1. VL: Intro, Begriffe, Häufigkeit
+2. VL: Maßzahlen
+3. VL: Zusammenhang
+4. VL: Kombinatorik
+5. VL: Wahrscheinlichkeitsrechnung
+6. VL: Anwendungen Wahrscheinlichkeitsrechnung
+7. VL: Wahrscheinlichkeitsverteilungen
+8. VL: Spezielle Verteilungen
+9. VL: Schätzung
+10. VL: Hypothesentests
+11. VL: Regression
+12. VL: Multiple Regression
+
+### Alle Unterlagen finden Sie hier:
+https://bchwtz.github.io/bchwtz-stat/
 
 ## R und RStudio
 

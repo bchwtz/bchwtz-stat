@@ -24,7 +24,6 @@ von-der-stichprobe-zur-grundgesamtheit
 hypothesentests
 lineare-regression
 multiple-regression
-zeitreihenanalyse
 daten
 section
 autos
