@@ -1,6 +1,6 @@
 # (PART\*) Appendix {-} 
 
-# FHSWF Package Installation
+# FHSWF Package
 
 Für die Bearbeitung im Rahmen des Kurses steht Ihnen das `fhswf` Package zur Verfügung. Dieses ergänzt R um einige spezielle Funktionen, stellt weitere Datensätze bereit und installiert Vorlagen (Templates) für Seminar-, Gruppen- und Abschlussarbeiten sowie für Präsentationenen. 
 
@@ -16,20 +16,32 @@ remotes::install_github("bchwtz/fhswf")  # Neueste Paketversion installieren
 ## NYC Airbnb
 
 ```{r, eval = FALSE}
-library(fhswf) # Laden des fhswf-Packages
-nycairbnb      # Anzeigen der Daten
-?nycairbnb     # Anzeigen der Datenbeschreibung
+library(fhswf)       # Laden des fhswf-Packages
+View(nycairbnb)      # Anzeigen der Daten
+nycairbnb            # Anzeigen der Daten auf der Konsole
+?nycairbnb           # Anzeigen der Datenbeschreibung
 ```
 
 ### Beispiel
 
 ```{r}
-summary(nycairbnb$price) # Deskriptive Statistik der Variable Preis
+summary(nycairbnb$price) # Deskriptive Statistik des Preises pro Übernachtung
 ```
 
+## Autopreise
 
+```{r, eval = FALSE}
+library(fhswf)       # Laden des fhswf-Packages
+View(carprices)      # Anzeigen der Daten
+carprices            # Anzeigen der Daten auf der Konsole
+?carprices           # Anzeigen der Datenbeschreibung
+```
 
+### Beispiel
 
+```{r}
+summary(carprices$price) # Deskriptive Statistik des Kaufpreises
+```
 
 
 ## 2022
