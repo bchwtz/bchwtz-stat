@@ -24,10 +24,12 @@ von-der-stichprobe-zur-grundgesamtheit
 hypothesentests
 lineare-regression
 multiple-regression
-fhswf-package-installation
+fhswf-package
 daten-2022
 nyc-airbnb
 beispiel
+autopreise
+beispiel-1
 section
 autos
 nyc-airbnb-1
