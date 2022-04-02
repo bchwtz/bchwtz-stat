@@ -30,11 +30,9 @@ nyc-airbnb
 beispiel
 autopreise
 beispiel-1
-section
-autos
-nyc-airbnb-1
-who-life-expectancy
-section-1
+who-data
+beispiel-2
+daten-2021
 taxi-trips
 vorbereitungen
 datenbeschreibung
