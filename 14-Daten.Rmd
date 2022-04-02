@@ -2,7 +2,7 @@
 
 # FHSWF Package
 
-Für die Bearbeitung im Rahmen des Kurses steht Ihnen das `fhswf` Package zur Verfügung. Dieses ergänzt R um einige spezielle Funktionen, stellt weitere Datensätze bereit und installiert Vorlagen (Templates) für Seminar-, Gruppen- und Abschlussarbeiten sowie für Präsentationenen. 
+Für die Bearbeitung im Rahmen des Kurses steht Ihnen das `fhswf` Package zur Verfügung. Dieses ergänzt R um einige spezielle Funktionen, stellt weitere Datensätze bereit und installiert Vorlagen (Templates) für Seminar-, Gruppen- und Abschlussarbeiten sowie für Präsentationen. 
 
 Das `fhswf` Package befindet sich aktuell noch in der Entwicklung und ist daher noch nicht im zentralen offiziellen Package Archiv (CRAN) gelistet. Für die Installation benötigen Sie eine Funktion aus dem Paket `remotes`, dass einmalig installiert werden muss. Die jeweils neuste `fhswf`-Paketversion erhalten Sie mit dem folgenden Programmcode.
 
@@ -46,7 +46,7 @@ summary(carprices$price) # Deskriptive Statistik des Kaufpreises
 ## WHO Data
 
 ```{r, eval = FALSE}
-library(fhswf)       # Laden des fhswf-Packages
+library(fhswf)     # Laden des fhswf-Packages
 View(whodata)      # Anzeigen der Daten
 whodata            # Anzeigen der Daten auf der Konsole
 ?whodata           # Anzeigen der Datenbeschreibung
