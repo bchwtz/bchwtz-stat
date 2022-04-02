@@ -24,10 +24,13 @@ von-der-stichprobe-zur-grundgesamtheit
 hypothesentests
 lineare-regression
 multiple-regression
-daten
+fhswf-package-installation
+daten-2022
+nyc-airbnb
+beispiel
 section
 autos
-nyc-airbnb
+nyc-airbnb-1
 who-life-expectancy
 section-1
 taxi-trips
