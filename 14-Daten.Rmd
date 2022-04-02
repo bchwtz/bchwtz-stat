@@ -1,4 +1,36 @@
-# Daten
+# (PART\*) Appendix {-} 
+
+# FHSWF Package Installation
+
+Für die Bearbeitung im Rahmen des Kurses steht Ihnen das `fhswf` Package zur Verfügung. Dieses ergänzt R um einige spezielle Funktionen, stellt weitere Datensätze bereit und installiert Vorlagen (Templates) für Seminar-, Gruppen- und Abschlussarbeiten sowie für Präsentationenen. 
+
+Das `fhswf` Package befindet sich aktuell noch in der Entwicklung und ist daher noch nicht im zentralen offiziellen Package Archiv (CRAN) gelistet. Für die Installation benötigen Sie eine Funktion aus dem Paket `remotes`, dass einmalig installiert werden muss. Die jeweils neuste `fhswf`-Paketversion erhalten Sie mit dem folgenden Programmcode.
+
+```{r, eval = FALSE}
+install.packages("remotes")              # Muss nur einmalig ausgeführt werden
+remotes::install_github("bchwtz/fhswf")  # Neueste Paketversion installieren 
+```
+
+# Daten 2022
+
+## NYC Airbnb
+
+```{r, eval = FALSE}
+library(fhswf) # Laden des fhswf-Packages
+nycairbnb      # Anzeigen der Daten
+?nycairbnb     # Anzeigen der Datenbeschreibung
+```
+
+### Beispiel
+
+```{r}
+summary(nycairbnb$price) # Deskriptive Statistik der Variable Preis
+```
+
+
+
+
+
 
 ## 2022
 
