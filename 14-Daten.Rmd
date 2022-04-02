@@ -43,32 +43,38 @@ carprices            # Anzeigen der Daten auf der Konsole
 summary(carprices$price) # Deskriptive Statistik des Kaufpreises
 ```
 
+## WHO Data
 
-## 2022
+```{r, eval = FALSE}
+library(fhswf)       # Laden des fhswf-Packages
+View(whodata)      # Anzeigen der Daten
+whodata            # Anzeigen der Daten auf der Konsole
+?whodata           # Anzeigen der Datenbeschreibung
+```
 
-### Autos
+### Beispiel
 
-https://www.kaggle.com/code/dronax/car-prices-dataset/data
+```{r}
+# Human Development Index von Deutschland im Jahr 2015
+whodata[whodata$country_code == "DEU" & whodata$year == 2015, ]$hdi
 
-### NYC Airbnb
+# Mittlerer Human Development Index über alle (verfügbaren) Länder in 2017
+median(whodata[whodata$year == 2017, ]$hdi, na.rm = TRUE)
+```
 
-https://www.kaggle.com/datasets/dgomonov/new-york-city-airbnb-open-data
 
-### WHO Life Expectancy
 
-https://www.kaggle.com/datasets/kumarajarshi/life-expectancy-who
+# Daten 2021
 
-## 2021
+## Taxi Trips
 
-### Taxi Trips
-
-#### Vorbereitungen
+### Vorbereitungen
 
 ```{r, eval = FALSE, code=xfun::read_utf8("data/2021_fhswf_stat_taxi.R")}
 
 ```
 
-#### Datenbeschreibung
+### Datenbeschreibung
 
 **Variablen**
 
@@ -91,14 +97,14 @@ https://www.kaggle.com/datasets/kumarajarshi/life-expectancy-who
 -   `geodesic_distance`: the geodesic distance in meters between the pickup and dropoff coordinates calculated using the method of Karney (2013)
 -   `weekday:` the day of the week when the trip was started
 
-#### Daten laden
+### Daten laden
 
 ```{r}
 # load the data
 x <- read.csv("https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_taxi.csv")
 ```
 
-#### Tips & Tricks
+### Tips & Tricks
 
 ```{r}
 # working with dates and times
@@ -108,20 +114,20 @@ weekdays(x$pickup_datetime[1])
 months(x$pickup_datetime[1])
 ```
 
-#### Quellen
+### Quellen
 
 -   <https://www.kaggle.com/c/nyc-taxi-trip-duration/>
 -   <https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page>
 
-### Hauspreise
+## Hauspreise
 
-#### Vorbereitungen
+### Vorbereitungen
 
 ```{r, eval = FALSE, code=xfun::read_utf8("data/2021_fhswf_stat_housing.R")}
 
 ```
 
-#### Datenbeschreibung
+### Datenbeschreibung
 
 -   `id`: a unique identifier for each offer
 -   `price`: the requested price in Euro to buy the building
@@ -149,26 +155,26 @@ months(x$pickup_datetime[1])
 -   `parking_lot`: the amount of registered parking lots that belong to the building
 -   `parking_lot_type`: the type of the available parking lots
 
-#### Daten laden
+### Daten laden
 
 ```{r, eval=FALSE}
 # load the data
 x <- read.csv("https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_housing.csv")
 ```
 
-#### Quellen
+### Quellen
 
 -   <https://www.kaggle.com/scriptsultan/german-house-prices>
 
-### Human Ressources
+## Human Ressources
 
-#### Vorbereitungen
+### Vorbereitungen
 
 ```{r, eval = FALSE, code=xfun::read_utf8("data/2021_fhswf_stat_hr.R")}
 
 ```
 
-#### Datenbeschreibung
+### Datenbeschreibung
 
 -   `EmployeeName`: Employee's full name d
 -   `EmpID`: Employee ID is unique to each employee\
@@ -206,14 +212,14 @@ x <- read.csv("https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_housing
 -   `DaysLateLast30`: The number of times that the employee was late to work during the last 30 days\
 -   `Absences`: The number of times the employee was absent from work
 
-#### Daten laden
+### Daten laden
 
 ```{r,}
 # load the data
 x <- read.csv("https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_hr.csv")
 ```
 
-#### Tips & Tricks
+### Tips & Tricks
 
 ```{r}
 # working with dates and times
@@ -224,7 +230,7 @@ x$Date_Termination <- as.Date(x$DateofTermination,format='%m/%d/%Y')
 difftime(x$Date_Termination[2],x$Date_Hiring[2], units = "days")
 ```
 
-#### Quellen
+### Quellen
 
 -   <https://www.kaggle.com/rhuebner/human-resources-data-set>
 -   <https://rpubs.com/rhuebner/hr_codebook_v14>
