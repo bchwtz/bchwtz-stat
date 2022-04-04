@@ -32,9 +32,9 @@ library(vcd)
 
 ## Lernziele
 
-- Ziel 1
-- Ziel 2
-- Ziel 3
+- Erlernen der Grundfähgikeiten zum Beschreiben von Datenmengen mit Hilfe statistischer Maßzahlen.
+- Einteilung statistischer Maßzahlen in Lage-, Streuungs- und Konzentrationsmaße. 
+- Verdeutlichen der Anwendung mit Hilfe von R. 
 
 ## Maßzahlen
 Ziel der folgenden Maßzahlen ist die Reduktion der Daten auf Kennzahlen, die einen Großteil der *wesentlichen* Informationen der zugrundeliegenden statistischen Variablen enthalten.
@@ -101,7 +101,7 @@ Der **Modus** oder **Modalwert** ist die häufigste Ausprägung einer Verteilung
 
 - Der Modus *kann* für beliebig skalierte Variablen bestimmt werden.
 - Bei klassierten Daten wird die am häufigsten auftretende Klasse als Modalklasse bezeichnet.
-- Der Modus hat keine eigene **R-Funktion**, kann aber mittels absoluten oder relativen Häufigkeiten bestimmt werden.
+- Der Modus kann mit Hilfe der **R-Funktion** `modal()` aus dem `fhswf` Paket berechnet werden.
 
 ## Median
 
@@ -142,7 +142,11 @@ $$S(Q_\alpha) = \alpha$$
 
 ## Boxplot
 
-- TODO
+Der Boxplot oder Box-Whisker-Plot ist eine grafische Darstellung von Minimum, 1. Quartil, Median, 3. Quartil und Maximum. 
+
+```{r, }
+boxplot(list(Rot=red,Blau=blue), main = "Boxplot für die roten und blauen Kugeln")
+```
 
 ## Aritmetisches Mittel 
 
