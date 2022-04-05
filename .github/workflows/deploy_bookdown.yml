@@ -12,7 +12,7 @@ jobs:
   bookdown:
     name: Render-and-Deploy
     runs-on: ubuntu-20.04
-    container: rocker/verse:latest
+    container: rocker/verse:devel
     steps:
       - name: Checkout Repository
         uses: actions/checkout@main
