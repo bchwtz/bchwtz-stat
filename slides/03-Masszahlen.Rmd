@@ -72,8 +72,10 @@ knitr::kable(t(data.frame(red, blue)),booktabs=T, digits = 4,
 plot(NA, ylim=c(0,2), xlim=c(min(0,min(c(red,blue))), max(c(red,blue))+1), 
      main=paste("Gewicht von", n, "roten und",n,"blauen Kugeln"), yaxt='n', ylab="", xlab="")
 
-points(x=red,y=rep(0.9,length(red)), pch=19, col="red")
-points(x=blue,y=rep(1.1,length(blue)), pch=19, col="blue")
+points(x=red,y=rep(0.9,length(red)), pch=19, 
+       col=rgb(1,0,0, alpha=0.35),cex=2) #red
+points(x=blue,y=rep(1.1,length(blue)), pch=19, 
+       col=rgb(0,0,1, alpha=0.35), cex=2) #blue
 ```
 
 
@@ -144,8 +146,11 @@ $$S(Q_\alpha) = \alpha$$
 
 Der Boxplot oder Box-Whisker-Plot ist eine grafische Darstellung von Minimum, 1. Quartil, Median, 3. Quartil und Maximum. 
 
-```{r, }
-boxplot(list(Rot=red,Blau=blue), main = "Boxplot für die roten und blauen Kugeln")
+```{r, echo = FALSE}
+boxplot(list(Rot=red,Blau=blue), 
+        main = "Boxplot für die roten und blauen Kugeln",
+        col=c(rgb(1,0,0, alpha=0.35),
+              rgb(0,0,1, alpha=0.35)))
 ```
 
 ## Aritmetisches Mittel 
@@ -170,8 +175,10 @@ knitr::kable(t(data.frame(red, blue)),booktabs=T, digits = 4,
 plot(NA, ylim=c(0,2), xlim=c(min(0,min(c(red,blue))), max(c(red,blue))+1), 
      main=paste("Gewicht von", n, "roten und",n,"blauen Kugeln"), yaxt='n', ylab="", xlab="")
 
-points(x=red,y=rep(0.9,length(red)), pch=19, col="red")
-points(x=blue,y=rep(1.1,length(blue)), pch=19, col="blue")
+points(x=red,y=rep(0.9,length(red)), pch=19, 
+       col=rgb(1,0,0, alpha=0.35),cex=2) #red
+points(x=blue,y=rep(1.1,length(blue)), pch=19, 
+       col=rgb(0,0,1, alpha=0.35), cex=2) #blue
 ```
 
 ## Beispiel: Median und arithmetisches Mittel für die roten Kugeln
