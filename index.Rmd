@@ -36,5 +36,5 @@ Herzlich Willkommen zum Kurs Statistik
 | ---: | :--------         | :---:        |
 | 1    | Grundlagen        | [PDF](slides/01-Grundlagen.pdf)    |
 |      | Häufigkeit        | [PDF](slides/02-Haeufigkeit.pdf)   |
-| 2    | Maßzahlen         | [PDF](slides/03-Maßzahlen.pdf)     |
-
+| 2    | Maßzahlen         | [PDF](slides/03-Masszahlen.pdf)     |
+| 3    | Zusammenhang      | [PDF](slides/04-Zusammenhang.pdf)     |
