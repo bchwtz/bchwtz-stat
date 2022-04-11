@@ -32,9 +32,15 @@ library(vcd)
 
 ## Lernziele
 
-- Ziel 1
-- Ziel 2
-- Ziel 3
+- Erweiterung der Streuungsbetrachtung von einem auf zwei Merkmale
+- Erkennen des Zusammenhangs von Streuung mehrerer Variablen und (linearem) Zusammenhang
+- Diskussion und Betrachtung relevanter MAßzahlen zur Messung von Zusammenhängen
+
+# Streuung und Streudiagramme
+
+## Rekapitulation: Streuung
+
+\kariert{18}
 
 ## Zweidimensionale Verteilungen
 
@@ -44,7 +50,6 @@ library(vcd)
 - In diesem Kapitel werden zwei Merkmale gleichzeitig untersucht.
 - Bei der Darstellung und Analyse von Abhängigkeiten zwischen Variablen muss das Skalenniveau berücksichtigt werden.
 
-
 **Beispiel:**
 
 - Studierende
@@ -53,8 +58,6 @@ library(vcd)
 - Kraftfahrzeuge
   + Beispiel: Höchstgeschwindigkeit und Motorleistung
   + Beispiel: Kraftstoffverbrauch und Getriebeart (Manuell/Automatik)
-
-# Streudiagramme
 
 ## Beispiel: Streudiagramm
 
@@ -80,11 +83,54 @@ plot(x=height, y=weight, pch=19, main="Zusammenhang zwischen \n Größe und Gewi
 :::
 
 
-
-# Kovarianz und Korrelation
+# Kovarianz 
 
 ## Kovarianz
 
+```{r, echo=F}
+set.seed(1)
+
+
+height <- runif(35,150,200) # Experience
+weight <- 25 + 1.5* height + rnorm(length(height), sd=4)
+plot(weight, height, xlab="Gewicht in kg (X)", ylab="Körpergröße in cm (Y)",
+     main="Gewicht (kg) vs. Körpergröße (cm)", xaxt="n", yaxt="n")
+abline(h = mean(height), col="red")
+abline(v = mean(weight), col="red")
+axis(1,at=mean(weight), labels=expression(bar(x)), col="red", col.axis="red")
+axis(2,at=mean(height), labels=expression(bar(y)), col="red", col.axis="red")
+```
+
+## Kovarianz
+
+**Aufgabe: Bestimmen des Vorzeichens**
+
+- $y_i - \bar{y}$ ist die Differenz jeder Beobachtung $y_i$ vom arithmetischen Mittel der abhängigen Variablen
+- $x_i - \bar{x}$ ist die Abweichung $x_i$ vom arithmetischen Mittel des Prädiktors
+- $(y_i - \bar{y})(x_i - \bar{x})$ ist das Produkt der vorherigen beiden Größen
+
+```{r, echo=F}
+quandrant <- c("1 (oben rechts)","2 (oben links)","3 (unten links)", "4 (unten rechts)")
+df <- data.frame(quandrant, x="", y="", z="")
+cnames <- c("Quadrant","$y_i -\\bar{y}$","$x_i - \\bar{x}$","$(y_i - \\bar{y})(x_i - \\bar{x})$")
+knitr::kable(df, booktabs=T, col.names = cnames, align = c("l","c","c","c"), escape=F) %>%
+  kable_styling(position = "center")
+```
+
+
+## Kovarianz
+
+### Positiver Zusammenhang
+- Wenn der Zusammenhang zwischen $Y$ und $X$ **positiv** ist (also wenn $X$ größer wird, dann wird auch $Y$ größer), dann sind mehr Datenpunkte im ersten und dritten Quadranten als im zweiten und vierten.
+- Die Summe der Elemente in der letzten Spalte der vorherigen Tabelle ist dann mit großer Wahrscheinlichkeit positiv, also $Cov(Y,X) > 0$.
+
+\pause
+
+### Negativer Zusammenhang
+- Wenn der lineare Zusammenhang zwischen $Y$ und $X$ **negativ** ist (z.B. wenn $X$ sinkt, steigt $Y$), dann befinden sich mehr Datenpunkte im zweiten und vierten Quadranten als im ersten und dritten.
+- Die Summe der Elemente in der letzten Spalte der vorherigen Tabelle ist dann mit großer Wahrscheinlichkeit negativ, also $Cov(Y,X) < 0$.
+
+## Kovarianz
 
 $$ s_{XY} = Cov(X,Y) = \frac{1}{n-1} \sum_{i=1}^{n} (y_i - \bar{y})(x_i - \bar{x})$$
 
@@ -93,6 +139,8 @@ $$ s_{XY} = Cov(X,Y) = \frac{1}{n-1} \sum_{i=1}^{n} (y_i - \bar{y})(x_i - \bar{x
 - Die Kovarianz erlaubt es nicht, Aussagen über die Stärke eines Zusammenhangs zu treffen.
 - Die Größe der Kovarianz ist abhängig von der zugrundeliegenden Einheit. Einheitenwechsel (z.B. von Euro zu TEuro) führen zu einer Wertveränderung.
 - **R-Befehl:** `cov()`
+
+# Korrelation
 
 ## Korrelationskoeffizient
 
