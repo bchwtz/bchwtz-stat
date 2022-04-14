@@ -23,7 +23,7 @@
 <meta name="author" content="Benjamin Buchwitz" />
 
 
-<meta name="date" content="2022-04-11" />
+<meta name="date" content="2022-04-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -151,7 +151,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12" data-path="lineare-regression.html"><a href="lineare-regression.html"><i class="fa fa-check"></i><b>12</b> Lineare Regression<span></span></a></li>
 <li class="chapter" data-level="13" data-path="multiple-regression.html"><a href="multiple-regression.html"><i class="fa fa-check"></i><b>13</b> Multiple Regression<span></span></a></li>
 <li class="part"><span><b>Appendix<span></span></b></span></li>
-<li class="chapter" data-level="14" data-path="fhswf-package.html"><a href="fhswf-package.html"><i class="fa fa-check"></i><b>14</b> FHSWF Package<span></span></a></li>
+<li class="chapter" data-level="14" data-path="fhswf-package.html"><a href="fhswf-package.html"><i class="fa fa-check"></i><b>14</b> FHSWF Package<span></span></a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="fhswf-package.html"><a href="fhswf-package.html#installation"><i class="fa fa-check"></i><b>14.1</b> Installation<span></span></a></li>
+<li class="chapter" data-level="14.2" data-path="fhswf-package.html"><a href="fhswf-package.html#template"><i class="fa fa-check"></i><b>14.2</b> Template<span></span></a></li>
+</ul></li>
 <li class="chapter" data-level="15" data-path="daten-2022.html"><a href="daten-2022.html"><i class="fa fa-check"></i><b>15</b> Daten 2022<span></span></a>
 <ul>
 <li class="chapter" data-level="15.1" data-path="daten-2022.html"><a href="daten-2022.html#nyc-airbnb"><i class="fa fa-check"></i><b>15.1</b> NYC Airbnb<span></span></a>
@@ -219,10 +223,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="system-info" class="section level1 unnumbered hasAnchor">
 <h1>System Info<a href="system-info.html#system-info" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="system-info.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span></code></pre></div>
-<pre><code>## [1] &quot;2022-04-11 10:06:33 UTC&quot;</code></pre>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="system-info.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
-<pre><code>## R Under development (unstable) (2022-04-08 r82134)
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="system-info.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span></code></pre></div>
+<pre><code>## [1] &quot;2022-04-14 19:51:01 UTC&quot;</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="system-info.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
+<pre><code>## R Under development (unstable) (2022-04-13 r82166)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## Running under: Ubuntu 20.04.4 LTS
 ## 
@@ -252,14 +256,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  [9] reprex_2.0.1      evaluate_0.15     highr_0.9         httr_1.4.2       
 ## [13] pillar_1.7.0      rlang_1.0.2       readxl_1.4.0      rstudioapi_0.13  
 ## [17] jquerylib_0.1.4   rmarkdown_2.13    webshot_0.5.2     munsell_0.5.0    
-## [21] broom_0.7.12      compiler_4.3.0    modelr_0.1.8      xfun_0.30        
+## [21] broom_0.8.0       compiler_4.3.0    modelr_0.1.8      xfun_0.30        
 ## [25] pkgconfig_2.0.3   systemfonts_1.0.4 htmltools_0.5.2   tidyselect_1.1.2 
 ## [29] bookdown_0.25     fansi_1.0.3       viridisLite_0.4.0 crayon_1.5.1     
 ## [33] tzdb_0.3.0        dbplyr_2.1.1      withr_2.5.0       grid_4.3.0       
 ## [37] jsonlite_1.8.0    gtable_0.3.0      lifecycle_1.0.1   DBI_1.1.2        
-## [41] magrittr_2.0.3    scales_1.1.1      cli_3.2.0         stringi_1.7.6    
+## [41] magrittr_2.0.3    scales_1.2.0      cli_3.2.0         stringi_1.7.6    
 ## [45] fs_1.5.2          xml2_1.3.3        bslib_0.3.1       ellipsis_0.3.2   
-## [49] generics_0.1.2    vctrs_0.4.0       tools_4.3.0       glue_1.6.2       
+## [49] generics_0.1.2    vctrs_0.4.1       tools_4.3.0       glue_1.6.2       
 ## [53] hms_1.1.1         fastmap_1.1.0     yaml_2.3.5        colorspace_2.0-3 
 ## [57] rvest_1.0.2       haven_2.4.3       sass_0.4.1</code></pre>
 

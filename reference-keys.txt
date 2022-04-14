@@ -25,6 +25,8 @@ hypothesentests
 lineare-regression
 multiple-regression
 fhswf-package
+installation
+template
 daten-2022
 nyc-airbnb
 beispiel

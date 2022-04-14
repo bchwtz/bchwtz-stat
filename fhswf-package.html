@@ -23,7 +23,7 @@
 <meta name="author" content="Benjamin Buchwitz" />
 
 
-<meta name="date" content="2022-04-11" />
+<meta name="date" content="2022-04-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -151,7 +151,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12" data-path="lineare-regression.html"><a href="lineare-regression.html"><i class="fa fa-check"></i><b>12</b> Lineare Regression<span></span></a></li>
 <li class="chapter" data-level="13" data-path="multiple-regression.html"><a href="multiple-regression.html"><i class="fa fa-check"></i><b>13</b> Multiple Regression<span></span></a></li>
 <li class="part"><span><b>Appendix<span></span></b></span></li>
-<li class="chapter" data-level="14" data-path="fhswf-package.html"><a href="fhswf-package.html"><i class="fa fa-check"></i><b>14</b> FHSWF Package<span></span></a></li>
+<li class="chapter" data-level="14" data-path="fhswf-package.html"><a href="fhswf-package.html"><i class="fa fa-check"></i><b>14</b> FHSWF Package<span></span></a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="fhswf-package.html"><a href="fhswf-package.html#installation"><i class="fa fa-check"></i><b>14.1</b> Installation<span></span></a></li>
+<li class="chapter" data-level="14.2" data-path="fhswf-package.html"><a href="fhswf-package.html#template"><i class="fa fa-check"></i><b>14.2</b> Template<span></span></a></li>
+</ul></li>
 <li class="chapter" data-level="15" data-path="daten-2022.html"><a href="daten-2022.html"><i class="fa fa-check"></i><b>15</b> Daten 2022<span></span></a>
 <ul>
 <li class="chapter" data-level="15.1" data-path="daten-2022.html"><a href="daten-2022.html#nyc-airbnb"><i class="fa fa-check"></i><b>15.1</b> NYC Airbnb<span></span></a>
@@ -220,9 +224,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="fhswf-package" class="section level1 hasAnchor" number="14">
 <h1><span class="header-section-number">Kapitel 14</span> FHSWF Package<a href="fhswf-package.html#fhswf-package" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Für die Bearbeitung im Rahmen des Kurses steht Ihnen das <code>fhswf</code> Package zur Verfügung. Dieses ergänzt R um einige spezielle Funktionen, stellt weitere Datensätze bereit und installiert Vorlagen (Templates) für Seminar-, Gruppen- und Abschlussarbeiten sowie für Präsentationen.</p>
+<div id="installation" class="section level2 hasAnchor" number="14.1">
+<h2><span class="header-section-number">14.1</span> Installation<a href="fhswf-package.html#installation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Das <code>fhswf</code> Package befindet sich aktuell noch in der Entwicklung und ist daher noch nicht im zentralen offiziellen Package Archiv (CRAN) gelistet. Für die Installation benötigen Sie eine Funktion aus dem Paket <code>remotes</code>, dass einmalig installiert werden muss. Die jeweils neuste <code>fhswf</code>-Paketversion erhalten Sie mit dem folgenden Programmcode.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="fhswf-package.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;remotes&quot;</span>)              <span class="co"># Muss nur einmalig ausgeführt werden</span></span>
 <span id="cb1-2"><a href="fhswf-package.html#cb1-2" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;bchwtz/fhswf&quot;</span>)  <span class="co"># Neueste Paketversion installieren </span></span></code></pre></div>
+</div>
+<div id="template" class="section level2 hasAnchor" number="14.2">
+<h2><span class="header-section-number">14.2</span> Template<a href="fhswf-package.html#template" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Nach der Installation des <code>fhswf</code> Packages, müssen Sie die erforderlichen Werkzeuge für die Nutzung des Rmarkdown Templates installieren und initialisieren. Dafür müssen die folgenden Befehle ausgeführt werden.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="fhswf-package.html#cb2-1" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()               <span class="co"># LaTeX installieren</span></span>
+<span id="cb2-2"><a href="fhswf-package.html#cb2-2" aria-hidden="true" tabindex="-1"></a>fhswf<span class="sc">::</span><span class="fu">install_fhswf</span>()                   <span class="co"># Fehlende LaTeX Pakete installieren</span></span></code></pre></div>
+<p>Der Installationsprozess installiert eine Vielzahl von LaTeX Komponenten und dauert je nach Leistung und Auslastung des benutzten Computers <strong>etwa 30 Minuten</strong>.</p>
+<!-- Das folgende Video zeigt den vollständigen Installationsprozess und das erstellen eines PDFs mit Hilfe des Templates. -->
+</div>
 </div>
             </section>
 
