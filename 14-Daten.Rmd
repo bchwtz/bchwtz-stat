@@ -24,7 +24,7 @@ fhswf::install_fhswf()                   # Fehlende LaTeX Pakete installieren
 Der Installationsprozess installiert eine Vielzahl von LaTeX Komponenten und dauert je nach Leistung und Auslastung des benutzten Computers **etwa 30 Minuten**. 
 
 <!-- Das folgende Video zeigt den vollständigen Installationsprozess und das erstellen eines PDFs mit Hilfe des Templates. -->
-
+ 
 
 # Daten 2022
 
