@@ -5,6 +5,11 @@ Die Anmeldung bei [DataCamp](https://www.datacamp.com/groups/shared_links/6c29db
 
 [DataCamp Zugang](https://www.datacamp.com/groups/shared_links/6c29db40d79200c5c48aca9ec64682de22a5e604bf61b174ef9535f3173f9518)
 
+
+Komfortables Einbetten der Datacamp Zertifikate in das erzeugte PDF erlaubt die Funktion `fhswf::include_datacamp()`. Dazu müssen die PDF Dokumente in einem Unterorder des Seminararbeits-Projektes abgelegt werden. In der Standardeinstellung nutzt die Funktion `fhswf::include_datacamp()` einen Ordner mit dem Namen `datacamp`. Der nachfolgende Screenshot zeigt den notwendigen Programmcode für die Einbettung der Zertifikate und das daraus resultierende Ergebnis. Dabei werden die PDF Dokumente bewusst in der geringen Größe eingebettet - diese sind detailreich, hereinzoombar und daher für die relevante Zielgruppe gut prüfbar.
+
+![](./data/rstudio-datacampcertificates.png)
+
 # Gruppenarbeit {-}
 
 Die Bewertung der Gruppenarbeiten erfolgt mit dem folgenden Formular:
