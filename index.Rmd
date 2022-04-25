@@ -39,3 +39,4 @@ Herzlich Willkommen zum Kurs Statistik
 | 2    | Maßzahlen         | [PDF](slides/03-Masszahlen.pdf)     |
 | 3    | Zusammenhang      | [PDF](slides/04-Zusammenhang.pdf)     |
 | 4    | Kombinatorik      | [PDF](slides/05-Kombinatorik.pdf)     |
+| 5    | Wahrscheinlichkeitsrechnung      | [PDF](slides/06-Wahrscheinlichkeitsrechnung.pdf)     |

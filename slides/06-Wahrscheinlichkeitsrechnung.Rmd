@@ -32,13 +32,10 @@ library(vcd)
 
 ## Lernziele
 
-- Ziel 1
-- Ziel 2
-- Ziel 3
+- Erkennen von Unterschieden und Gemeinsamkeiten von relativen Häufigkeiten und Wahrscheinlichkeiten.
+- Verinnerlichen der Tatsache, dass Zufallsexperimente der Ausgangspunkt der Wahrscheinlichkeitsrechnung sind.
+- Verstehen der Rechenregel für Wahrscheinlichkeiten und bedingte Wahrscheinlichkeiten.
 
-## Wahrscheinlichkeitsrechnung
-
-- Zufallsexperimente sind der Ausgangspunkt der Wahrscheinlichkeitsrechnung.
 
 ## Zufallsexperiment
 
