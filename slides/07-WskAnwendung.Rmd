@@ -32,9 +32,9 @@ library(vcd)
 
 ## Lernziele
 
-- Ziel 1
-- Ziel 2
-- Ziel 3
+- Verinnerlichen der Wahrscheinlichkeitsrechnung.
+- Verknüpfen der Wahrscheinlichkeitsrechnung mit Kombinatorik.
+- Verstehen, dass das Rechnen mit Wahrscheinlichkeiten zu präzisieren Aussagen führt als sich auf die eigenen Intuition zu verlassen.
 
 ## Anwendungen der Wahrscheinlichkeitsrechnung
 
@@ -153,7 +153,7 @@ p_1 <- (choose(16,1)*choose(784,49))/choose(800,50)
 ## Geburtstagsproblem: Lösung
 
 $$
-P(A) = 1 - P(\bar A) = \frac{\text{Anzahl der für }\bar A \text{ günstigen Geburtstagsanordenungen}}{\text{Anzahl der möglichen Geburtstagsanordnungen}}
+P(A) = 1 - P(\bar A) = 1- \frac{\text{Anzahl der für }\bar A \text{ günstigen Geburtstagsanordenungen}}{\text{Anzahl der möglichen Geburtstagsanordnungen}}
 $$
 
 Hierbei handelt es sich um Kombinationen $k$-ter Ordnung von 365 Tage mit Berücksichtigung der Reihenfolge und ohne Wiederholung, sodass die Anzahl der möglichen Anordnungen für $\bar A$ folgt
@@ -170,7 +170,7 @@ $$
 ## Geburtstagsproblem: Lösung
 
 $$
-P(A) = 1 - P(\bar A) = \frac{365 \cdot 364 \cdot \ldots \cdot (365-k+1)}{365^k}
+P(A) = 1 - P(\bar A) = 1 - \frac{365 \cdot 364 \cdot \ldots \cdot (365-k+1)}{365^k}
 $$
 \bigskip
 
