@@ -40,3 +40,4 @@ Herzlich Willkommen zum Kurs Statistik
 | 3    | Zusammenhang      | [PDF](slides/04-Zusammenhang.pdf)     |
 | 4    | Kombinatorik      | [PDF](slides/05-Kombinatorik.pdf)     |
 | 5    | Wahrscheinlichkeitsrechnung      | [PDF](slides/06-Wahrscheinlichkeitsrechnung.pdf)     |
+| 6    | Anwendung der Wsk.Rechnung      | [PDF](slides/07-WskAnwendung.pdf)     |
