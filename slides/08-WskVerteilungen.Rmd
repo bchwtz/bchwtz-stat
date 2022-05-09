@@ -44,7 +44,6 @@ Unter einer Zufallsvariablen $X$ versteht man eine Funktion, die aufgrund eines 
 :::
 
 - Kennzeichnend sind die Merkmalsausprägungen $x_i$ und die damit assoziierten Wahrscheinlichkeiten $P(X=x_i)$.
-- TODO: Wahrscheinlichkeiten
 - Zufallsvariablen werden in der Regel mit Großbuchstaben ($X$,$Y$,$X_i$) bezeichnet.
 
 ## Beispiel: Zufallsvariablen
