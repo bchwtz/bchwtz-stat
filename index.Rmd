@@ -39,5 +39,6 @@ Herzlich Willkommen zum Kurs Statistik
 | 2    | Maßzahlen         | [PDF](slides/03-Masszahlen.pdf)     |
 | 3    | Zusammenhang      | [PDF](slides/04-Zusammenhang.pdf)     |
 | 4    | Kombinatorik      | [PDF](slides/05-Kombinatorik.pdf)     |
-| 5    | Wahrscheinlichkeitsrechnung      | [PDF](slides/06-Wahrscheinlichkeitsrechnung.pdf)     |
-| 6    | Anwendung der Wsk.Rechnung      | [PDF](slides/07-WskAnwendung.pdf)     |
+| 5    | Wahrscheinlichkeitsrechnung| [PDF](slides/06-Wahrscheinlichkeitsrechnung.pdf)|
+| 6    | Anwendung der Wsk.Rechnung | [PDF](slides/07-WskAnwendung.pdf)|
+| 7    | Verteilungen | [PDF](slides/08-WskVerteilungen.pdf)|

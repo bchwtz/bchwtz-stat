@@ -32,9 +32,9 @@ library(vcd)
 
 ## Lernziele
 
-- Ziel 1
-- Ziel 2
-- Ziel 3
+- Verstehen des Konzeptes der Verteilung von Zufallsvariablen.
+- Unterscheidung von diskreten und stetigen Dichten
+- Zusammenhang von Dichte- und Verteilungsfunktion
 
 ## Zufallsvariablen
 
