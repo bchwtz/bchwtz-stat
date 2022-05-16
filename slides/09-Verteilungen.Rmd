@@ -68,7 +68,7 @@ y1 <- dnorm(x)
 y2 <- dnorm(x, mean=5, sd=1)
 y3 <- dnorm(x, mean=-5, sd=2)
 
-plot(NA,NA,type="l",xlim=range(x), ylim = range(c(y1,y2,y3)), ylab="f(x)", col="red", main="Dichten von Normalverteilungen")
+plot(NA,NA,type="l",xlim=range(x), ylim = range(c(y1,y2,y3)), ylab="f(x)", xlab="X",col="red", main="Dichten von Normalverteilungen")
 lines(x,y1, col="red")
 lines(x,y2, col="blue")
 lines(x,y3, col="green")
