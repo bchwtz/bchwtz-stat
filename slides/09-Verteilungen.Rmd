@@ -32,9 +32,9 @@ library(vcd)
 
 ## Lernziele
 
-- Ziel 1
-- Ziel 2
-- Ziel 3
+- Kennenlernen häufig verwendeter Verteilungen
+- Verdeutlichen des Zusammenhangs von Dichte- und Verteilungsfunktionen
+- Nachvollziehen von Verteilungstabellen als zentrales Arbeitsinstrument für das händische Rechnen mit Verteilungen
 
 ## Spezielle Verteilungen
 
