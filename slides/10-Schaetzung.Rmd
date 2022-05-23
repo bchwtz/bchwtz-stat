@@ -32,18 +32,18 @@ library(vcd)
 
 ## Lernziele
 
-- Ziel 1
-- Ziel 2
-- Ziel 3
+- Einführung in die Grundidee von Konfidenzintervallen
+- Verinnerlichen der Idee von Sicherheitswahrscheinlichkeiten
+- Konzeptionelle Erweiterung von Konfidenzintervallen hin zu Hypothesentests
 
 # Evaluation
 
-## Evaluation
+## Bitte evaluieren Sie den Kurs!
 \center
-\Huge
-Bitte evaluieren Sie den Kurs!
 \large
-http://evasys.fh-swf.de/evasys/online.php?pswd=64D4W
+http://evasys.fh-swf.de/evasys/online.php?pswd=WJVFL
+
+![Evaluation](./figs/qr_2022Statistics.jpg)
 
 # Konfidenzintervalle
 
@@ -70,9 +70,9 @@ $$\bar x = \frac{1}{n}\sum_{i=1}^{n}x_i \quad\text{oder}\quad \mu = \frac{1}{N}\
 ### Varianz
 $$s^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar x)^2 \quad\text{oder}\quad \sigma^2 = \frac{1}{N}\sum_{i=1}^{N}(x_i - \bar x)^2$$
 
-## Freiheitsgrade
+<!-- ## Freiheitsgrade -->
 
-TODO: Definition Freiheitsgrade und Beispiel
+<!-- TODO: Definition Freiheitsgrade und Beispiel -->
 
 ## Stichprobenauswahl
 
@@ -83,7 +83,8 @@ TODO: Definition Freiheitsgrade und Beispiel
 
 ## Punkt- und Intervallschätzung
 
-- TODO: Definition eines Schätzers
+- Schätzfunktionen sind Funktionen die Schätzer für unbekannte Parameter der Grundgesamtheit mit Hilfe der empirischen Daten einer Stichprobe schätzen.
+
 - Bei Schätzungen wird zwischen Punkt- und Intervallschätzungen unterschieden. **Punktschätzer** sind ein spezifischer Wert.
   + Als Punktschätzer für den Mittelwert der Grundgesamtheit $\mu$ wird der Mittelwert der Stichprobe $\bar x$ verwendet.
   + Als Punktschätzer für die Varianz der Grundgesamtheit $\sigma^2$ wird $s^2$ der Stichprobe verwendet.
@@ -112,9 +113,9 @@ polygon(c(-1.96, min(x), x[x<=-1.96]), c(0, 0, y[x<=-1.96]), col="red")
 Intervallschätzer werden (fast) immer symmetrisch um Punktschätzer konstruiert.
 \end{alertblock}
 
-## Irrtumswahrscheinlichkeit
+<!-- ## Irrtumswahrscheinlichkeit -->
 
-- TODO: Definition $\alpha$: Erläuterung und Beispiel
+<!-- - TODO: Definition $\alpha$: Erläuterung und Beispiel -->
 
 ## Konfidenzintervalle
 
@@ -148,7 +149,7 @@ $$
 :::{.column}
 \small
 **Aufgabe:**
-Das Ergebnis einer Studie mit 100 Ganztagsschüler*innen besagt, dass diese durchschnittlich 52 h/Woche in der Schule verbringen. Aus früheren Untersuchungen ist bekannt, dass die Standardabweichung der wöchentlichen Aufenthaltszeit in der Schule 12 Stunden beträgt.
+Das Ergebnis einer Studie mit 100 Ganztagsschüler:innen besagt, dass diese durchschnittlich 52 h/Woche in der Schule verbringen. Aus früheren Untersuchungen ist bekannt, dass die Standardabweichung der wöchentlichen Aufenthaltszeit in der Schule 12 Stunden beträgt.
 
 - Geben Sie ein 95%-Konfidenzintervall für die durchschnittliche wöchentliche Aufenthaltszeit in der Ganztagsschule an.
 - **Hinweis:** Eine Verteilungstabelle befindet sich auf der nächsten Seite.

@@ -38,12 +38,12 @@ library(vcd)
 
 # Evaluation
 
-## Evaluation
+## Bitte evaluieren Sie den Kurs!
 \center
-\Huge
-Bitte evaluieren Sie den Kurs!
 \large
-http://evasys.fh-swf.de/evasys/online.php?pswd=64D4W
+http://evasys.fh-swf.de/evasys/online.php?pswd=WJVFL
+
+![Evaluation](./figs/qr_2022Statistics.jpg)
 
 
 
