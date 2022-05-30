@@ -32,9 +32,9 @@ library(vcd)
 
 ## Lernziele
 
-- Ziel 1
-- Ziel 2
-- Ziel 3
+- Spezifizieren des Konzeptes von Hypothesentests
+- Kennenlernen von Hypothesentests für Mittelwerte und Anteilswerte
+- Erweiterung des Testportfolios auf Tests für diskrete Verteilungen (Anpassungstest) und Tests auf Unabhängigkeit von Merkmalen
 
 # Evaluation
 
@@ -118,7 +118,7 @@ Linksseitig  & $\pi \geq \pi_0$ & $\pi < \pi_0$    &                            
 **Aufgabe:**
 Ein Schraubenproduzent behauptet, dass seine Lieferung eines speziellen Schraubentyps einen Ausschussanteil von höchstens 1% enthält. Der Empfänger der Lieferung ist jedoch der Meinung,dass der Anteil höher ist. Er nimmt eine Stichprobe von 1000 Schrauben und findet in dieser 15 nicht den Anforderungen entsprechenden Schrauben.
 
-- Kann die Behauptung des Lieferanten mit dieser Stichprobe bei einem Signifikanzniveau von $\alpha = 0.05$ widerlegt werden?
+- Kann die Behauptung des Lieferanten bei einem Signifikanzniveau von $\alpha = 0.05$ widerlegt werden?
 - **Hinweis:** Verteilungstabelle siehe nächste Seite.
 
 :::
