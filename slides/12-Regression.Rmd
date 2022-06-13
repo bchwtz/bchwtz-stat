@@ -32,9 +32,9 @@ library(vcd)
 
 ## Lernziele
 
-- Ziel 1
-- Ziel 2
-- Ziel 3
+- Nachvollziehen der Grundideen des linearen Modells und verinnerlichen der Existenz einer Wirkungsrichtung in der Modellierung.
+- Verstehen der Idee der kleinsten Quadrate als zentrale Optimierungsgröße.
+- Verknüpfung der inferenzstatistischen vorgehensweise mit der linearen Regression.
 
 
 ## Lineare Regression
