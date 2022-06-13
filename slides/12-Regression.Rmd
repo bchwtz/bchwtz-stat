@@ -58,7 +58,7 @@ cbind(x,y)
 \begin{textblock}{4.6}(7.5,1)
 \begin{alertblock}{Datenbeschreibung}
 \texttt{x}\; Berufserfahrung in Jahren\\
-\texttt{y}\; Gehalt in Euro\\
+\texttt{y}\; Gehalt in Taused Euro\\
 \end{alertblock}
 \end{textblock}
 
@@ -106,10 +106,11 @@ axis(2,at=mean(salary), labels=expression(bar(y)), col="red", col.axis="red")
 - $(y_i - \bar{y})(x_i - \bar{x})$ ist das Produkt der vorherigen beiden Größen
 
 ```{r, echo=F}
-quandrant <- c("1 (top right)","2 (top left)","3 (bottom left)", "4 (bottom right)")
+quandrant <- c("1 (oben rechts)","2 (oben links)","3 (unten links)", "4 (unten rechts)")
 df <- data.frame(quandrant, x="", y="", z="")
 cnames <- c("Quadrant","$y_i -\\bar{y}$","$x_i - \\bar{x}$","$(y_i - \\bar{y})(x_i - \\bar{x})$")
-knitr::kable(df, booktabs=T, col.names = cnames, align = c("l","c","c","c"))
+knitr::kable(df, booktabs=T, col.names = cnames, align = c("l","c","c","c"), escape=F) %>%
+  kable_styling(position = "center")
 ```
 
 ## Kovarianz
