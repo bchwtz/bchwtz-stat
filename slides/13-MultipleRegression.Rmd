@@ -32,9 +32,9 @@ library(vcd)
 
 ## Lernziele
 
-- Ziel 1
-- Ziel 2
-- Ziel 3
+- Erweitern des Prinzips der einfachen linearen Regression auf mehrere Variablen.
+- Unterscheidung zwischen und Test von Partial- und aggregierten Effekten mittels Hypothesentest.
+- Identifikation von und Umgang mit speziellen Problemen (Residualannahmen, Multikollinearität, Nichtlinearität) im Kontext der Regression.
 
 # Multiple Lineare Regression
 
