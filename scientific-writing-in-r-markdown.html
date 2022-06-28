@@ -4,20 +4,20 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Kapitel 15 Daten 2022 | Statistics</title>
-  <meta name="description" content="Kapitel 15 Daten 2022 | Statistics Course Notes" />
+  <title>Kapitel 17 Scientific Writing in R Markdown | Statistics</title>
+  <meta name="description" content="Kapitel 17 Scientific Writing in R Markdown | Statistics Course Notes" />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Kapitel 15 Daten 2022 | Statistics" />
+  <meta property="og:title" content="Kapitel 17 Scientific Writing in R Markdown | Statistics" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Kapitel 15 Daten 2022 | Statistics Course Notes" />
+  <meta property="og:description" content="Kapitel 17 Scientific Writing in R Markdown | Statistics Course Notes" />
   <meta name="github-repo" content="bchwtz/bchwtz-stat" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Kapitel 15 Daten 2022 | Statistics" />
+  <meta name="twitter:title" content="Kapitel 17 Scientific Writing in R Markdown | Statistics" />
   
-  <meta name="twitter:description" content="Kapitel 15 Daten 2022 | Statistics Course Notes" />
+  <meta name="twitter:description" content="Kapitel 17 Scientific Writing in R Markdown | Statistics Course Notes" />
   
 
 <meta name="author" content="Benjamin Buchwitz" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="fhswf-package.html"/>
-<link rel="next" href="daten-2021.html"/>
+<link rel="prev" href="daten-2021.html"/>
+<link rel="next" href="datacamp.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -223,58 +223,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="daten-2022" class="section level1 hasAnchor" number="15">
-<h1><span class="header-section-number">Kapitel 15</span> Daten 2022<a href="daten-2022.html#daten-2022" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="nyc-airbnb" class="section level2 hasAnchor" number="15.1">
-<h2><span class="header-section-number">15.1</span> NYC Airbnb<a href="daten-2022.html#nyc-airbnb" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="daten-2022.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fhswf)       <span class="co"># Laden des fhswf-Packages</span></span>
-<span id="cb3-2"><a href="daten-2022.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(nycairbnb)      <span class="co"># Anzeigen der Daten</span></span>
-<span id="cb3-3"><a href="daten-2022.html#cb3-3" aria-hidden="true" tabindex="-1"></a>nycairbnb            <span class="co"># Anzeigen der Daten auf der Konsole</span></span>
-<span id="cb3-4"><a href="daten-2022.html#cb3-4" aria-hidden="true" tabindex="-1"></a>?nycairbnb           <span class="co"># Anzeigen der Datenbeschreibung</span></span></code></pre></div>
-<div id="beispiel" class="section level3 hasAnchor" number="15.1.1">
-<h3><span class="header-section-number">15.1.1</span> Beispiel<a href="daten-2022.html#beispiel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="daten-2022.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(nycairbnb<span class="sc">$</span>price) <span class="co"># Deskriptive Statistik des Preises pro Übernachtung</span></span></code></pre></div>
-<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##     0.0    69.0   106.0   152.7   175.0 10000.0</code></pre>
-</div>
-</div>
-<div id="autopreise" class="section level2 hasAnchor" number="15.2">
-<h2><span class="header-section-number">15.2</span> Autopreise<a href="daten-2022.html#autopreise" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="daten-2022.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fhswf)       <span class="co"># Laden des fhswf-Packages</span></span>
-<span id="cb6-2"><a href="daten-2022.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(carprices)      <span class="co"># Anzeigen der Daten</span></span>
-<span id="cb6-3"><a href="daten-2022.html#cb6-3" aria-hidden="true" tabindex="-1"></a>carprices            <span class="co"># Anzeigen der Daten auf der Konsole</span></span>
-<span id="cb6-4"><a href="daten-2022.html#cb6-4" aria-hidden="true" tabindex="-1"></a>?carprices           <span class="co"># Anzeigen der Datenbeschreibung</span></span></code></pre></div>
-<div id="beispiel-1" class="section level3 hasAnchor" number="15.2.1">
-<h3><span class="header-section-number">15.2.1</span> Beispiel<a href="daten-2022.html#beispiel-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="daten-2022.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(carprices<span class="sc">$</span>price) <span class="co"># Deskriptive Statistik des Kaufpreises</span></span></code></pre></div>
-<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
-##    5118    7775   10295   13207   16500   45400       4</code></pre>
-</div>
-</div>
-<div id="who-data" class="section level2 hasAnchor" number="15.3">
-<h2><span class="header-section-number">15.3</span> WHO Data<a href="daten-2022.html#who-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="daten-2022.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fhswf)     <span class="co"># Laden des fhswf-Packages</span></span>
-<span id="cb9-2"><a href="daten-2022.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(whodata)      <span class="co"># Anzeigen der Daten</span></span>
-<span id="cb9-3"><a href="daten-2022.html#cb9-3" aria-hidden="true" tabindex="-1"></a>whodata            <span class="co"># Anzeigen der Daten auf der Konsole</span></span>
-<span id="cb9-4"><a href="daten-2022.html#cb9-4" aria-hidden="true" tabindex="-1"></a>?whodata           <span class="co"># Anzeigen der Datenbeschreibung</span></span></code></pre></div>
-<div id="beispiel-2" class="section level3 hasAnchor" number="15.3.1">
-<h3><span class="header-section-number">15.3.1</span> Beispiel<a href="daten-2022.html#beispiel-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="daten-2022.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Human Development Index von Deutschland im Jahr 2015</span></span>
-<span id="cb10-2"><a href="daten-2022.html#cb10-2" aria-hidden="true" tabindex="-1"></a>whodata[whodata<span class="sc">$</span>country_code <span class="sc">==</span> <span class="st">&quot;DEU&quot;</span> <span class="sc">&amp;</span> whodata<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">2015</span>, ]<span class="sc">$</span>hdi</span></code></pre></div>
-<pre><code>## [1] 0.938</code></pre>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="daten-2022.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mittlerer Human Development Index über alle (verfügbaren) Länder in 2017</span></span>
-<span id="cb12-2"><a href="daten-2022.html#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(whodata[whodata<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">2017</span>, ]<span class="sc">$</span>hdi, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<pre><code>## [1] 0.736</code></pre>
-</div>
-</div>
+<div id="scientific-writing-in-r-markdown" class="section level1 hasAnchor" number="17">
+<h1><span class="header-section-number">Kapitel 17</span> Scientific Writing in R Markdown<a href="scientific-writing-in-r-markdown.html#scientific-writing-in-r-markdown" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Um das wissenschaftliche Arbeiten und Schreiben <em>in R Markdown</em> zu erleichtern, wurde das FHSWF Seminarpaper Template mit Hinweisen zum Thema wissenschaftliche Sprache, zur Erstellung von Tabellen, Abbildungen, Gleichungen, zur Darstellung von Code, zur Zitation etc. gefüllt.
+Diese können über nachfolgende Links heruntergeladen werden.</p>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="66%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Description</th>
+<th align="center">R script</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">R Markdown file: FHSWF Seminarpaper filled with notes and hints</td>
+<td align="center"><a href="ScWrt_in_RMarkdown/ScWrt_Template_with_hints.Rmd">FHSWF Seminarpaper with hints (.Rmd)</a></td>
+</tr>
+<tr class="even">
+<td align="center">PDF file: FHSWF Seminarpaper filled with notes and hints</td>
+<td align="center"><a href="ScWrt_in_RMarkdown/ScWrt_Template_with_hints.pdf">FHSWF Seminarpaper with hints (.pdf)</a></td>
+</tr>
+<tr class="odd">
+<td align="center">bib-file of FHSWF Seminarpaper filled with notes and hints</td>
+<td align="center"><a href="ScWrt_in_RMarkdown/references.bib">references.bib</a></td>
+</tr>
+</tbody>
+</table>
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="fhswf-package.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="daten-2021.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="daten-2021.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="datacamp.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -305,7 +292,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/14-Daten.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/Scientific_Writing_in_R_Markdown.Rmd",
 "text": "Edit"
 },
 "history": {
