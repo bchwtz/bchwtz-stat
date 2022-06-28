@@ -216,6 +216,8 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 
 # Scientific Writing in R Markdown {-}
 
+<!--chapter:end:Scientific_Writing_in_R_Markdown.Rmd-->
+
 # Evaluation {-}
 
 ```{r, eval=F}
