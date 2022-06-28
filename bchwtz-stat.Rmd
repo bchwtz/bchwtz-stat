@@ -214,7 +214,7 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 
 # (PART\*) Appendix {-} 
 
-# Scientific Writing in R Markdown {-}
+# Wissenschaftliches Arbeiten in R Markdown {-}
 
 <!--chapter:end:Scientific_Writing_in_R_Markdown.Rmd-->
 
