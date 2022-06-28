@@ -52,4 +52,4 @@ datenbeschreibung-2
 daten-laden-2
 tips-tricks-1
 quellen-2
-scientific-writing-in-r-markdown
+wissenschaftliches-arbeiten-in-r-markdown
