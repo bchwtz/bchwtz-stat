@@ -1,6 +1,6 @@
 # (PART\*) Appendix {-} 
 
-# Scientific Writing in R Markdown
+# Wissenschaftliches Arbeiten in R Markdown
 
 Um das wissenschaftliche Arbeiten und Schreiben *in R Markdown* zu erleichtern, wurde das FHSWF Seminarpaper Template mit Hinweisen zum Thema wissenschaftliche Sprache, zur Erstellung von Tabellen, Abbildungen, Gleichungen, zur Darstellung von Code, zur Zitation etc. gefüllt.
 Diese können über nachfolgende Links heruntergeladen werden.
