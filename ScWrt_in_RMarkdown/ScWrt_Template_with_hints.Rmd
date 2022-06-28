@@ -1,0 +1,754 @@
+---
+title: "Title"
+abstract: "A brief summary of our ideas (some sentences; see publications to get an idea of how to write an abstract)."
+keywords: "Meaningful keywords that characterize your idea and are associated with your paper"
+
+course: Statistics (Prof. Dr. Buchwitz)
+supervisor: Prof. Dr. Buchwitz
+city: Meschede
+
+# List of Authors
+author:
+- familyname: Curie
+  othernames: Marie
+  address: "MatNr: 123454678"
+  qualifications: "Business Administration (BA, 2. Semester)"
+  email: curie.marie@fh-swf.de
+  correspondingauthor: true
+  
+- familyname: Curie
+  othernames: Pierre
+  address: "MatNr: 87654321"
+  qualifications: "Electrical Engineering (MA, 1. Semester)"
+  email: curie.pierre@fh-swf.de
+  
+
+# Language Options
+german: false # German Dummy Text
+lang: en-gb   # Text Language: en-gb, en-us, de-de
+
+# Indexes
+toc: true     # Table of Contents
+lot: false    # List of Tables
+lof: false    # List of Figures
+
+# Output Options
+bibliography: references.bib
+biblio-style: authoryear-comp
+blind: false
+cover: true
+checklist: true
+output:
+  fhswf::seminarpaper:
+    fig_caption: yes
+    fig_height: 5
+    fig_width: 8
+    keep_tex: no
+    number_sections: yes
+    citation_package: biblatex
+knit: fhswf::render_seminarpaper
+
+header-includes:
+- \usepackage{xcolor}
+---
+
+\nocite{StudienbuchWA}
+\nocite{Zobel2014}
+
+\definecolor{orange}{RGB}{255,165,0}
+\definecolor{seagreen}{RGB}{46,139,87}
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, cache=FALSE, messages=FALSE, warning=FALSE, strip.white = FALSE, singlespacing = TRUE,
+                      attr.source='.numberLines', fig.pos = "!ht", out.extra = "")
+
+fhswf::fhswf_hooks()
+
+# Load Packages
+library(fhswf)
+library(ggplot2)
+library(dplyr)
+library(kableExtra)
+library(latex2exp)
+library(stargazer)
+```
+
+# Introduction
+
+Some general information:
+
++ When chapter 1 exists, then chapter 2 has to exist. 
+
++ When chapter 1.1 exists, then chapter 1.2 has to exist.
+
+and so on...
+
+Either you write an introductory text to **each** chapter or your leave it out and directly start with subsection 1.1, 1.2,..., 2.1, 2.2 and so on. Independently of the way you choose (ask your advisor (supervisor)) be **consistent**!
+
+A page does **not** end with a header or with a header and just one line of text! A pagebreak will be inserted by "\\pagebreak".
+
+\vspace{0.3cm}
+
+Mention the software and/or programming language you work with!
+
+The computations have been done in R (version: R-4.1.2) [@R2021] with the RStudio version 2021.9.2.382 [@RStudio2022].
+
+# Writing texts
+
+## Language
+
+German or (British or American) English $\rightarrow$ **Do not mix languages up!!!**
+
+To switch the language to German, change the parameters in the `YAML` Header to the following values.
+```{r, echo=T, eval=F}
+# Language Options
+german: true
+lang: de-de 
+```
+
+For British English:
+
+```{r, echo=T, eval=F}
+# Language Options
+german: false
+lang: en-gb 
+```
+
+For American English:
+```{r, echo=T, eval=F}
+# Language Options
+german: false
+lang: en-us
+```
+
+\newpage
+
+### Literary language 
+
++ Write full sentences.
+
++ Write as precise as you can (but **do not** use words that seems to be precise but which are not, e.g. "different" states (better: name the states)).
+
++ Do not use abbreviations, e.g. instead of "I'll examine..." write "I will examine...".
+
++ Avoid using: 
+
+    + modal verbs (would, should, could etc., dt.: sollen, können, etc.),
+    
+    + "man" (when you write in German),
+    
+    + "/" (e.g. "This results in considering the code/program..." (use either "code" or "program")) and
+    
+    + superlatives (when you use superlatives references are essential).
+   
+
+### Punctuation marks
+
+When you want to emphasize one or more words use make them italic (**do not** use quotations marks ("...") since quotations marks indicate citations), e.g.:
+
+"Before introducing the user interface that was developed *competing* apps with similar user interfaces that have been published over the last five years will be presented in section..."
+
+```{r meaning-punc-marks, echo=FALSE}
+df <- data.frame(symbol = c(",", "."),
+                 English = c("cutting point (e.g. 100,000 €)", "decimal point (e.g. 10.3 kg)"),
+                 German = c("decimal point (e.g. 10,3 kg)", "cutting point (e.g. 100.000 €)"))
+knitr::kable(df, booktabs = T, caption="Meaning of punctuation marks in English vs. in German.")%>%
+ kableExtra::kable_styling(latex_options = "hold_position")
+```
+
+Table \@ref(tab:meaning-punc-marks) shows the differences concerning the meanings of punctuation marks when you write texts in English vs. in German.
+
+### Terms in different languages
+
+When there is a specific English term like user interface (UI) that is important for the understanding of your paper (since some functions are named `checkUI()`, `designUI()` etc.) which is written in German, you can do the following:
+
+"Die Benutzeroberfläche (engl. user interface (UI)), die im Rahmen dieser Arbeit entwickelt wurde, lässt sich gliedern in..." 
+
+or the other way around, e.g.
+
+"In this paper a german data set which deals with life expectancy (dt. Lebenserwartung) will be considered by..."
+
+### Writing in English
+
+Attention: There are some differences between writing in American English (AE) and in British English (BE), e.g.:
+
++ summarize (AE) vs. summarise (BE),
+
++ optimization (AE) vs. optimisation (BE)
+
+(Dictionaries like [LEO](https://www.leo.org/englisch-deutsch) and [PONS](https://de.pons.com/) show you both alternatives.)
+
+$\rightarrow$ Talk to your advisor which form to take and be consistent!
+
+### Abbreviations
+
+When you introduce an abbrevation, e.g. UI:
+
++ Write down the full name when you use UI for the first time, e.g. "Based on the user interface (UI) that was developed by ..."
+
++ Then in the following of your text it is sufficient to write *UI* instead of *user interface*.
+
+
+## Bullet points and enumerations
+
+Structure your text by making use of bullet points and enumerations.
+
++ When you write about the topic of your thesis, make use of the following phrases
+
+    + This thesis deals with...
+    
+    + This paper is about...
+
++ Here are some phrases based on @Hrdina2009 in order to write about the aim of a thesis
+    
+    + The purpose of this paper is...
+    
+    + We focus on...
+    
+    + ...
+
+If the ordering of your enumerations plays a role, you will use numbers and letters, e.g. The R project that has been developed is composed of:
+
+\begin{itemize}
+\item[1)] the main program called...,
+
+\item[2)] a separate description file...,
+
+\item[3)] the following functions
+
+\begin{itemize}
+\item[3.1)] \texttt{ProjRead()} which calls further functions named
+
+\begin{itemize}
+\item[3.1.1)] \texttt{ProjReadConc()} and
+         
+\item[3.1.2)] \texttt{ProjReadConverte()},
+\end{itemize}
+
+\item[3.2)] \texttt{ProjCalc()} and
+\item[3.3)] \texttt{ProjSave()}.
+\end{itemize}
+
+\end{itemize}
+
+Sometimes it is also helpful to use graphics and diagrams instead of or additionally to enumerations in order to illustrate relations and dependencies.
+
+When you integrate colored diagrams (e.g. flow diagrams) in your text and when the color plays an important role (e.g. functions in the same color belong to each other), it might be helpful to color also words in your text, e.g.:
+
++ "The first step of reading in data consists of concatenating the single files with  \textcolor{orange}{\texttt{ProjReadConc()}} to one large data set."
+
++ "Function \textcolor{seagreen}{\texttt{ProjSave()}} is used when..."
+
+[How to use colors in texts based on the LaTeX package `xcolor`](https://en.wikibooks.org/wiki/LaTeX/Colors)
+
+# Figures and tables{#figandtab}
+
+## Figures
+
+Create **meaningful** figures, i.e. everyone has to understand your figures $\rightarrow$ facilitate it by
+
++ labeling the axes (use scientific notations e.g. $e^x$ $\rightarrow$ R package `latex2exp` [@latex2exp] and do not forget the units, e.g. weight [kg]),
+
++ adding legends, 
+
++ using colors to mark lines, points and text if necessary,
+
++ adding text in a plot to emphasize e.g. some values if necessary,
+
++ adding a caption (Use distinct captions! Captions always end up with a point.) and
+
++ cross-referencing to figures in your text (otherwise: your figure can be leaved out).
+
+
+### Reference to figures and tables
+
+Cross-reference to tables and figures by using the pattern: `\ref{tab:code-chunk-name-table}` and `\ref{fig:code-chunk-name-figure}` respectively, e.g.
+
+`\ref{tab:cars}` and `\ref{tab:growth-plants-plot1}` respectively
+
+
+### R chunk options to create meaningful figures
+
+Name the chunk of your figures and tables in order to refer to that figure and table respectively.
+
+The most frequently used R chunk options for figures are
+
++ `fig.cap`: to caption the figure,
+
++ `fig.height` and `fig.width` (in inches, see [R Markdown Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)): to define the height and width of the figure [@RMarkdownCheatsheet] and
+
++ `fig.pos`: to define the position of the figure. In order to print out the figures at that position where they have been defined use the following definition in the global code chunk:
+
+    `knitr::opts_chunk$set(fig.pos = "!ht", out.extra = "")`
+
+Furthermore, figures should be centered which is done by default.
+
+\newpage
+
+**Example 1**
+
+```{r growth-plants-plot1, fig.cap="Measured growth of plants in cm depending on the time in days (blue dots) compared to simulated exponential growth (black triangles).", eval=TRUE, fig.height = 4, fig.width=6.5}
+## some random values
+par(mar = c(4,4,2,2))# margins
+x <- sample(x = seq(from = 0, to = 10, by = 0.01), size = 20, replace=TRUE)
+y <- x^2 / 2
+z <- exp(x)
+plot(x, y, xlab = "Time [d]", ylab = "Growth of plants [cm]", col = "blue", pch = 19)
+points(x, z, col = "black", pch = 17)
+legend("bottomright", legend = c(latex2exp::TeX("$e^x$"), 
+latex2exp::TeX("Measured: $x^2/2")), text.col = c("black", "blue"),
+       pch = c(17, 19), col = c("black", "blue"), cex = 0.9)
+```
+
+The growth of plants cannot be described by an exponential function but by a polynomial function as figure \ref{fig:growth-plants-plot1} illustrates.
+
+\vspace{0.2cm}
+
+**Example 2**
+
+In order to use the backtick and @ notation (for citation) in the caption of tables and figures, go the following way:
+
++ Define (ref:ID) followed by a caption *outside* the code chunk and
+
++ refer to your caption in the code chunk by: `fig.cap="(ref:ID)"`.
+
+(ref:scatterplot-s-o) Scatterplot of mean ozone in parts per billion vs. solar radiation in Langleys based on the `airquality` data set [@datasets].
+
+```{r scatterplot-solar-ozone, fig.cap="(ref:scatterplot-s-o)", fig.width=5}
+ggplot(data = airquality, mapping = aes(x = Solar.R, y = Ozone))+
+  geom_point()+
+  xlab("Solar radiation [Langleys]")+
+  ylab("Mean ozone [ppb]")
+```
+
+\newpage
+
+## Tables
+
+Nice tables are created with `knitr::kable()` [@kable1; @kable2; @kable3].
+
++ Use the argument `booktabs = TRUE` to output a table whose layout consists of three horizontal lines.
+
++ Apply `kableExtra::kable_styling(latex_options = "hold_position")` [@kableExtra] to the table to print out the table at that position where it has been defined.
+
+(ref:tabcars) Some Cars based on the `mtcars` data set [@datasets].
+
+```{r cars}
+knitr::kable(head(mtcars), booktabs=T, linesep="", caption="(ref:tabcars)") %>%
+ kableExtra::kable_styling(latex_options = "hold_position")
+```
+
+Table \ref{tab:cars} contains some values for cars \dots
+
+Greek letters in column names are used by setting the argument `escape = FALSE` as follows:
+
+(ref:tabcarshp) Mean $\left(\bar{x}\right)$, standard deviation $\left(\sigma\right)$ and variance $\left(\sigma^2\right)$ of the gross horsepower (hp) of the `mtcars` data set [@datasets].
+
+```{r cars-hp}
+xquer <- mean(mtcars$hp)
+std <- sd(mtcars$hp)
+variance <- var(mtcars$hp)
+df_hp <- data.frame(xquer, std, variance)
+knitr::kable(df_hp, booktabs=T, col.names = c("$\\bar{x}$", "$\\sigma$", "$\\sigma^2$"), escape = FALSE, linesep="", caption="(ref:tabcarshp)") %>%
+ kableExtra::kable_styling(latex_options = "hold_position")
+```
+
+
+
+# Mathematical notations and outputs and equations
+
+## Mathematical notations{#mathnot1}
+
+\begin{itemize}
+\item[a)] When you use variables and mathematical expressions write them in \$...\$ (\emph{LaTeX}-notation) e.g. $\bar{x}$.
+
+\item[b)] Use Greek letters for parameters, e.g. $\sigma^2$ for the variance.
+
+\item[c)] When you use mathematical notations inside brackets, use \$$\backslash$left(...$\backslash$right)\$ to generate brackets whose sizes automatically adapt to the content inside the brackets, e.g.:
+
+    $y = x \cdot (a^2 + e^{x^2})$ is not neat, but $y = x \cdot \left(a^2 + e^{x^2}\right)$.
+
+\item[d)] Substitute $\ast$ by $\cdot$ in multiplications. When you use $\cdot$ in equations, then use it continuously.
+
+\item[e)] Use indices if necessary, e.g.
+
+\begin{itemize}
+\item[e.1)] $y_t$ at time points $t=1,...,n$
+    
+\item[e.2)] and in this formula:
+\begin{equation}
+y = \sum_{i=1}^n x_{i} \cdot \frac{1}{3} + \sqrt{x_i}.
+\label{someequation}
+\end{equation}
+\end{itemize}
+\end{itemize}
+      
+Cross-referencing to equations is similar to cross-referencing to figures and to tables (see subsection [3](#figandtab)), e.g. "By applying equation (\ref{someequation}) to the time series data..."
+
+[List of mathematical symbols and their notations in LaTeX](https://de.wikipedia.org/wiki/Liste_mathematischer_Symbole)
+
+\vspace{0.3cm}
+**Numbers**
+
++ numbers < 10: written in full words
+
++ numbers $\geq 10$: as numbers, e.g. 11, 102 etc.
+
++ number of decimal places: consistent and equal\newline
+$\rightarrow$ rounding to 4 places after decimal point, e.g. instead of 11.00046 $\rightarrow$ 11.0005
+
++ always mention the units (if available)
+
++ use the numbers which are returned by R after doing computations, e.g.
+
+    ```{r, echo=TRUE, eval=TRUE, singlespacing = FALSE}
+    x <- (1/17)
+    value <- 1000.6444 * x + 1.2225^13
+    ```
+    in your text by using backticks: "The value of the previous computation is `r value`."\newline
+    But think of rounding to four decimal places. Consequently, "The value of the previous computation is `r round(value, 4)`." results.
+  
+    For large numbers do **not** integrate notations such as `1e+06` in your texts, but `r 1000000`.
+
+\vspace{0.3cm}
+
+If you have very long equations e.g.
+
+$$ z = 2 + x_1 \cdot 3 + x_2 \cdot \frac{1}{12} + x_3 \cdot 0.8 + x_4 \cdot 1.1 + x_5 \cdot 12 + x_6 \cdot 1.9 + x_7 \cdot 0.5 + x_8 \cdot 2 + x_9 \cdot 1.2 + x_{10} + x_{11} \cdot \frac{1}{10} + x_{12} + x_{13} \cdot x_{2}$$
+
+use the `aligned` environment like this
+
+\begin{equation}
+\begin{aligned}
+z = 2 + x_1 \cdot 3 + x_2  \frac{1}{12} + x_3 \cdot 0.8 + x_4 \cdot 1.1 + x_5 \cdot 12 + x_6 \cdot 1.9 + x_7 \cdot 0.5 + x_8 \cdot 2 + x_9 \cdot 1.2 + \\
+x_{10} + x_{11} \cdot \frac{1}{10} + x_{12} + x_{13} \cdot x_{2}
+\end{aligned}
+\end{equation}
+
+or like this
+
+\begin{equation}
+\begin{aligned}
+z = {} & 2 + x_1 \cdot 3 + x_2  \frac{1}{12} + x_3 \cdot 0.8 + x_4 \cdot 1.1 + x_5 \cdot 12 + x_6 \cdot 1.9 + x_7 \cdot 0.5 + x_8 \cdot 2 + x_9 \cdot 1.2 + \\
+& x_{10} + x_{11} \cdot \frac{1}{10} + x_{12} + x_{13} \cdot x_{2}
+\end{aligned}
+\end{equation}
+
+to enforce a line break.
+
+## Summaries in general and of linear models
+
+
+(ref:crossref) Summary of mean ozone in parts per billion (ppb) and solar radiation in Langleys of the data set `datasets::airquality` [@datasets].
+
+```{r summary-ozone-solar}
+airquality <- na.omit(airquality)
+dstat <- sapply(list(Ozone = airquality$Ozone, SolarRadiation = airquality$Solar.R), summary)
+knitr::kable(dstat, booktabs=T, col.names = c("mean Ozone [ppb]", "Solar radiation [Langleys]"), caption="(ref:crossref)", linesep = "") %>%
+  kableExtra::kable_styling(latex_options = "hold_position")
+```
+
+\newpage
+
+**Linear Models**
+
+After describing the variables mean ozone (`Ozone`) and solar radiation (`Solar.R`) of the `airquality` data set (table \ref{tab:summary-ozone-solar}), a linear model with mean ozone as dependent variable and solar radiation as independent variable is defined in equation (\ref{linModel2}) based on the results in table \ref{tab:summaries1}.
+
+\begin{equation}
+\label{linModel2}
+\text{mean ozone} = 18.5987 + 0.1272 \cdot \text{solar radiation}
+\end{equation}
+
+A positive relation between solar radiation and mean ozone results from the linear model given by equation (\ref{linModel2}).
+
+(ref:sum1) Summary of the linear model with mean ozone (`Ozone`) as dependent and solar radiation (`Solar.R`) as independent variable.
+
+```{r summaries1, results='asis', eval=TRUE}
+# 'asis' takes LaTeX code as it is; no translation into R
+#mod <- lm(Wind ~ 1 + Temp, data = airquality)
+mod2 <- lm(Ozone ~ 1+ Solar.R, data = airquality)
+stargazer(mod2, title="(ref:sum1)", table.placement = "H", header = FALSE, label = "tab:summaries1")
+# stargazer(mod, mod2, title="(ref:sum1)", table.placement = "H", header = FALSE)
+```
+
+```{r summaries2, results='asis', eval=TRUE}
+# 'asis' takes LaTeX code as it is; no translation into R
+#texreg::texreg(list(mod, mod2))
+```
+
+
+# R Code
+
++ When you mention an R function, mention the corresponding R package (the R function comes from) by using the notation: `Rpackage::Rfunction()` [@Citation].
+
++ When you make use of a data set from an R package then use the notation: `Rpackage::dataset` [@Citation].
+
++ Mention the single arguments by their names, e.g. 
+
+    ```{r, echo=TRUE, eval=FALSE, singlespacing = FALSE}
+    plot(x = ..., y = ...)
+    ```
+
++ Use `<-` as assigning symbol (e.g. `x <- 4`), not `=`, e.g.
+
+    ```{r, singlespacing = FALSE, echo=TRUE}
+    x_values <- 1:10
+    average <- mean(x = x_values)
+    ```
+
+
++ Do **not** use the same name for functions and variables, e.g. do **not** use `mean` as variable name since `mean()` is a function.
+
++ Integrate white space between operators and the assigning symbol, e.g.
+
+    ```{r, echo=TRUE, eval=TRUE, singlespacing = FALSE}
+    y <- c(1, 2.5, 12, 31, 2.5)
+    res <- x || y
+    z <- 3 * 2.5 - (1/17) * sqrt(4.5)
+    ```
+
++ Indent your code (code is automatically indented in RStudio), e.g.
+
+    ```{r, echo=TRUE, eval=FALSE, singlespacing = FALSE}
+    summingValues <- function(x){
+      summing <- 0
+      for(idx in 1:length(x)){
+        summing <- summing + x[idx]
+      }
+      return(summing)
+    }
+    ```
+
+  When your code is not automatically indented in RStudio, then open Tools $\rightarrow$ Global options... $\rightarrow$ code and tick the box *Auto-indent code after paste*.
+
++ Do **not** use `i` as index in loops.
+
++ Document your R scripts (R files)
+
+    + by writing down at least
+
+      + the name of the author and the date,
+  
+      + the purpose of the program or function and
+  
+      + the meaning of the arguments and return values of the function
+  
+    +  and comment your code.
+    
++ Integrate code directly in your texts by using backticks (see subsection [4.1](#mathnot1)), e.g.
+
+  + "The variable `y` is a vector." .
+  
+  + When you want to present the value(s) of a variable, use the backtick notation starting with an \texttt{r} indicating that the value(s) of the variable will be returned or that some calculations will be executed within the text, e.g.
+
+    + "The variable `z` takes the value `r z`."
+    
+    + "Rounding the value of `z` to four decimal places leads to `r round(z, 4)`."
+
+# Citation
+
+## First step: Creating entries in the bib-file
+
+In order to create Bib(TeX) entries for *R packages* use: `utils::citation("Rpackage")` [@R2021], e.g.: 
+
+```{r, echo=TRUE, eval=TRUE}
+citation("ggplot2")
+```
+
+\begin{itemize}
+\item[$\rightarrow$] Copy this information (\emph{BibTeX-Eintrag}) and save it in 
+\begin{itemize}
+\item[a)] the already existing references.bib file or
+\item[b)] a new bib-file (open a new R Script, insert the
+BibTeX entry and save the file as e.g. referencesMyPaper.bib).
+\end{itemize}
+\item[$\rightarrow$] Create an ID (key) for the Bib entry like Wickham2016 (the ID usually consists of the (first) author and the year of publication).
+
+\item[$\rightarrow$] Add in the preamble of your R Markdown file
+ \texttt{bibliography:} followed by the name of your bib-file (\texttt{references.bib} or \texttt{referencesMyPaper.bib}).
+
+\item[$\rightarrow$] Add the header \emph{References} or \emph{Bibliography} to the last page of your R Markdown script.
+
+\item[$\rightarrow$] Cite the references you have saved in the .bib file by calling their ID (or key) as it is shown in the following subsection \ref{sec:secstep}.
+\end{itemize}
+
+$\rightarrow$ Every BibTeX entry you have cited in your R Markdown document will be automatically listed at the end of your document (under \emph{References} or \emph{Bibliography}).
+
+\vspace{0.3cm}
+
+Often predefined Bib(TeX) entries already exist, especially for articles and eBooks which can be accessed by the internet. Also take a look at the [KAI of the FHSWF](https://kai.fh-swf.de/primo-explore/search?vid=49FSWF_V1)!
+
+\vspace{0.3cm}
+
+$\rightarrow$ Do not forget to include the DOI and/or (e)ISBN of the sources you cite!
+
+$\rightarrow$ Control if no information is missing in the (predefined) Bib(TeX) entries!
+
+Apart from or instead of predefined BibTeX entries, sometimes other formats like *RIS* files are available (see \url{https://de.wikipedia.org/wiki/RIS_(Dateiformat)} for explanations).
+
+\vspace{0.3cm}
+
+**Do not forget to cite**
+
++ When you use data that was not collected by you then cite it, i.e. create an entry in the bib-file for the data (set) and refer to it in your text!
+
++ Cite R [@R2021] and RStudio [@RStudio2022] and mention their versions you have used! 
+
+  + You receive predefined BibTeX entries for R and RStudio by calling `citation()` (without defining any arguments) [@R2021] and `RStudio.Version()` respectively. 
+  
+  + To access the R version: Tools $\rightarrow$ Global Options... $\rightarrow$ R General $\rightarrow$ R version.
+
+
+**What you have to consider when you create Bib(TeX) entries**
+
++ **authors**: 
+
+    + When several authors exist, they are listed by connecting them with *and* (independently of writing your paper in German or in English).
+    
+    + When the author is an institution, e.g. named *XY Company* then use another `{...}` around the institution's name in the BibTeX entry:
+        ```{r, echo=TRUE, eval=FALSE, singlespacing = FALSE}
+        @book{IDbook,
+          author = {{XY Company}},
+          ...
+        }   
+        ```
+    
+
++ **Mutated vowel (dt. Umlaut) (ä, ö, ü)**:\newline
+When there is a mutated vowel in the author's name (e.g. Müller), title etc. use the following notation in your bib-file: 
+
+    ```{r, echo=TRUE, eval=FALSE, singlespacing = FALSE}
+    @book{IDbook,
+    title = {A title with an \"a}, # ä
+    author = {M\"uller}, # ü
+    year = {a year},
+    publisher = {a publisher},
+    address = {\"Osterreich}, # Ö
+    edition = {an edition}
+    }
+    ```
+
+**Do not cite Wikipedia!** Use Wikipedia to get an introduction into a topic! Look at the literature which is given below in the Wikipedia articles!
+
+
+## Second step: Using Citations in your texts (as well as in captions etc.)\label{sec:secstep}
+
+
+This template comes with some frequently used references.
+
+@StudienbuchStatistik
+
+@FoliensatzStatistik
+
+References can be cited in three different ways:
+
++ @Fahrmeir2016
+
++ @Fahrmeir2016[p. 1058]
+
++ [@Fahrmeir2016, p. 1058]
+
+When you want to print out an item to your bibliography (at the end of your paper) but without citing it (by @) in your text, then call this item in your R Markdown script as follows (leaving out the @):
+```{r, eval=FALSE, echo=TRUE}
+\nocite{itemToShowInBibliography} (e.g. \nocite{Zobel2014})
+```
+
+# Further formatting
+
+In order to allow that code chunks are indented in lists, in the code chunk `singlespacing` has to be set to `FALSE`, e.g.
+
+This template includes information about
+
++ how to generate figures and tables in R (Markdown),
+
++ how to use mathematical notations,
+
++ how to work with R code (chunks), e.g.
+
+    ```{r, echo=TRUE, singlespacing=FALSE}
+    x <- c(1:10, 24:19, TRUE, FALSE)
+    x
+    ```
+
++ and a lot more.
+
+
+In order to adjust the vertical space e.g. between a figure and text, use `\vspace{}` like `\vspace{0.2cm}` or `\vspace{-0.2cm}`. The former increases and the latter reduces the vertical space.
+
+Analogously, in order to adjust the horizontal space e.g. between a figure and text, use `\hspace{}` like `\hspace{0.2cm}` or `\hspace{-0.2cm}`. The former increases and the latter reduces the horizontal space.
+
+
+
+# Before handing in results
+
+Before you hand in your results:
+
++ Clear the workspace of your R environment and run your R scripts (main program, functions etc.), again! Everything works fine?
+
++ Check everything you have written. Any mistakes (concerning grammar, spelling, mode of expression, in terms of content, etc.) or is something missing?
+
++ Check the names of your files (Hand in the PDF-, RMardown-, Bib- and R-files (if necessary)!!!): Are they unambiguous?
+
++ Sign the declaration of authorship (ehrenwörtliche Erklärung). **If the declaration of authorship has not been signed by you, your paper cannot and will not be graded!!!**
+
++ Check whether everything that is listed in the checklist has been fulfilled.
+
++ Delete unnecessary information (in your code as well as in the template).
+
++ Check whether everything is readable and nothing has been truncated in your generated PDF-document.
+
++ Check whether no page ends with only a header or a header and just one line of text!
+
+
+\newpage
+
+# When you have further questions...
+
+Whenever you have further questions
+
+1) concerning how to work with R Markdown:
+
+    1.a) Search the internet: Several questions and answers have already been posted on plattforms like stackoverflow.
+    
+    1.b) If you do not find answers to your questions (see 1.a)), search for solutions to solve the problem in LaTeX. Since LaTeX-packages can also be integrated in R Markdown, this can be a helpful alternative to solve your problem.\newline But pay attention: Some problems might result when you mix up the *typical* \mbox{R Markdown-style} with the LaTeX-style.
+    
+    1.c) Do the DataCamp-course *Reporting with R Markdown* (track Data Scientist).
+    
+    1.d) See the R Markdown Cheat Sheet (\url{https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf}) [@RMarkdownCheatsheet].
+    
+    
+2) concerning how to write scientific texts:
+
+    2.a) Consider the book by @Hrdina2009 and further literature.
+    
+    2.b) Take part in courses which are offered by the library.
+
+
+\newpage
+\singlespacing
+
+\renewcommand{\thesection}{A}
+# Appendix 
+
+When your appendix is short, then it might be enough to list all your figures, tables, code etc. in the *Appendix* (no further subsections).
+
+When your appendix is more complex, then your appendix should be structured by defining subsections etc.
+
+## R Code
+
+### Main program
+
+### Functions
+
+## Technical Appendix
+
+```{r, echo = TRUE}
+Sys.time()
+sessionInfo()
+```
+
+
+\clearpage
+
+\addcontentsline{toc}{section}{References}
+# References
