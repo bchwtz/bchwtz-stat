@@ -26,7 +26,7 @@ Dabei bezeichnet $s_x^2$ die empirische Varianz der Variable $X$, $s_y^2$ die em
 
 ### Praktische Anwendung
 
-Angewendet werden kann der Signifikanztest für den Korrelationskoeffizienten nach Pearson in R mit der Funktion `cor.test` unter setzen des Arguments `method = "pearson"`. Die Festlegung der Richtung des Tests (rechtsseitig, linksseitig, beidseitig) durch Spezifikation der Alternativhypothese $H_1$ erlaubt das Argument `alternative`.
+Angewendet werden kann der Signifikanztest für den Korrelationskoeffizienten nach Pearson in R mit der Funktion `cor.test` unter setzen des Arguments `method = "pearson"`. Die Festlegung der Richtung des Tests (rechtsseitig, linksseitig, beidseitig) durch Spezifikation der Alternativhypothese $H_1$ erlaubt das Argument `alternative`. 
 
 ```{r}
 x <- c(44.4, 45.9, 41.9, 53.3, 44.7, 44.1, 50.7, 45.2, 60.1)
