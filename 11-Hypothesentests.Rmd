@@ -54,7 +54,7 @@ teststat <- (r*sqrt(n-2))/sqrt(1-r^2)
 alpha_imp <- 2 * pt(teststat, df = n-2, lower.tail = FALSE)
 ```
 
-Um die gezeigte Testvorschrift **manuell** prüfen zu können, wird nach Festlegen der maximalen Irrtumswahrscheinlichkeit $\alpha$ noch der Vergleichswert der $t$-Verteilung (rechte Seite der Ungleichungen aus der Tabelle mit den Testvorschriften) benötigt. Die Funktion `qt` gibt hier die Quatile der $t$-Verteilung an und übernimmt somit die Aufgabe der Verteilungstabelle. Die Testvorschrift kann also auch hier sowohl direkt über die oben gezeigten Ungleichungen als auch über das implizite Signifikanzniveau, dem p-Value $\alpha^*$, geprüft werden. Beide Vorgehensweisen führen (natürlich) zu einem identischen Ergebnis.
+Um die gezeigte Testvorschrift **manuell** prüfen zu können, wird nach Festlegen der maximalen Irrtumswahrscheinlichkeit $\alpha$ noch der Vergleichswert der $t$-Verteilung (rechte Seite der Ungleichungen aus der Tabelle mit den Testvorschriften) benötigt. Die Funktion `qt` gibt hier die Quantile der $t$-Verteilung an und übernimmt somit die Aufgabe der Verteilungstabelle. Die Testvorschrift kann also auch hier direkt über die oben gezeigten Ungleichungen als auch über das implizite Signifikanzniveau, dem p-Value $\alpha^*$, geprüft werden. Beide Vorgehensweisen führen (natürlich) zu einem identischen Ergebnis.
 
 ```{r, eval = FALSE}
 # Vergleichsgröße der t-Verteilung bestimmen
