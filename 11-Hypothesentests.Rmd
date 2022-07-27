@@ -14,7 +14,7 @@ $$
 r_{xy} = \frac{s_{xy}}{\sqrt{s_x^2 s_y^2}}
 $$
 
-Dabei bezeichnet $s_x^2$ die empirische Varianz der Variablen $X$, $s_y^2$ die empirische Varianz der Variablen $Y$ und $s_{xy}$ die empirische Kovarianz zwischen $X$ und $Y$.
+Dabei bezeichnet $s_x^2$ die empirische Varianz der Variable $X$, $s_y^2$ die empirische Varianz der Variable $Y$ und $s_{xy}$ die empirische Kovarianz zwischen den Variablen $X$ und $Y$.
 
 | Hypothesen                             | Testvorschrift: Verwerfe $H_0$, wenn gilt:                                                                         |
 |:--------------------------------|:--------------------------------------|
@@ -30,8 +30,30 @@ Angewendet kann der Signifikanztest für den Korrelationskoeffizienten nach Pear
 x <- c(44.4, 45.9, 41.9, 53.3, 44.7, 44.1, 50.7, 45.2, 60.1)
 y <- c( 2.6,  3.1,  2.5,  5.0,  3.6,  4.0,  5.2,  2.8,  3.8)
 
-cor.test(x, y, method = "pearson", alternative = "two.sided")
+result <- cor.test(x, y, method = "pearson", alternative = "two.sided")
+result
 ```
+
+Im gezeigten Beispiel wird ein beidseitiger Hypothesentest (`alternative = "two.sided"`) für einen fiktiven Datensatz mit $n=$`r length(x)` Beobachtungen durchgeführt.
 
 ### Ergänzende Erläuterung
 
+```{r}
+# Stichprobengröße auslesen
+n <- length(x) <- length(y)
+
+# Teststatistik berechnen
+r <- cor(x,y)
+teststat <- (r*sqrt(n-2))/sqrt(1-r^2)
+
+# Vergleichsgröße der t-Verteilung bestimmen
+alpha <- 0.05
+tval <- qt(1-alpha/2, df = n-2)
+
+# Testentscheidung: H0 verwerfen?
+teststat > tval
+teststat < -tval
+
+# Implizite Irrtunswahrscheinlichkeit berechnen
+2 * pt(teststat, df = n-2, lower.tail = FALSE)
+```
