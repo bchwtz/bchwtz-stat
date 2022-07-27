@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@main
 #     - name: Install R-Dependencies
 #        run: Rscript -e 'install.packages(c("kableExtra","HistogramTools","ineq","fGarch","gtools","vcd","texreg","car","remotes"))'
-#      - name: Install remote R-Dependencies
+#      - name: Ensure latest fhswf-Package Version
 #        run: Rscript -e 'remotes::install_github("bchwtz/fhswf", upgrade = "never")'
 #      - name: Install Sys-Dependencies
 #        run: sudo apt update; sudo apt install -yq imagemagick
