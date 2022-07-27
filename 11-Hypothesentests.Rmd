@@ -14,7 +14,7 @@ $$
 r_{xy} = \frac{s_{xy}}{\sqrt{s_x^2 s_y^2}}
 $$
 
-Dabei bezeichnet $s_x^2$ die empirische Varianz der Variable $X$, $s_y^2$ die empirische Varianz der Variable $Y$ und $s_{xy}$ die empirische Kovarianz zwischen den Variablen $X$ und $Y$. Die nachfolgende Tabelle zeigt die Hypothesen und die Testvorschriften für einen rechtssseitigen, linksseitigen und beidseitigen Hypothesentest. Die Nullhypothese $H_0: \rho = 0$ entspricht der Annahme der stochastischen Unabhängigkeit. Zur Vereinfachung der Notation wird der Korrelationskoeffizient zwischen $X$ und $Y$, in der nachfolgenden Tabelle nur mit $\rho$ bzw. $r$ bezeichnet.
+Dabei bezeichnet $s_x^2$ die empirische Varianz der Variable $X$, $s_y^2$ die empirische Varianz der Variable $Y$ und $s_{xy}$ die empirische Kovarianz zwischen den Variablen $X$ und $Y$. Die nachfolgende Tabelle zeigt die Hypothesen und die Testvorschriften für einen rechtssseitigen, linksseitigen und beidseitigen Hypothesentest. Die Nullhypothese $H_0: \rho = 0$ entspricht der Annahme der stochastischen Unabhängigkeit. Zur Vereinfachung der Notation wird der Korrelationskoeffizient zwischen $X$ und $Y$, in der nachfolgenden Tabelle nur mit $\rho$ bzw. $r$ bezeichnet. 
 
 **Annahmen:** Bivariate Normalverteilung von $X$ und $Y$ in der Grundgesamtheit, $n\leq 30$.
 

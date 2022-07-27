@@ -12,20 +12,20 @@ jobs:
   bookdown:
     name: Render-and-Deploy
     runs-on: ubuntu-20.04
-    container: rocker/verse:devel
+    container: ghcr.io/bchwtz/courserunner:latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@main
-      - name: Install R-Dependencies
-        run: Rscript -e 'install.packages(c("kableExtra","HistogramTools","ineq","fGarch","gtools","vcd","texreg","car","remotes"))'
-      - name: Install remote R-Dependencies
-        run: Rscript -e 'remotes::install_github("bchwtz/fhswf", upgrade = "never")'
-      - name: Install Sys-Dependencies
-        run: sudo apt update; sudo apt install -yq imagemagick
-      - name: Set Imagemagick PDF Policy (insecure)
-        run: sudo sed -i -e 's/none/read|write/g' /etc/ImageMagick-6/policy.xml
-      - name: Install Tex-Dependencies
-        run: tlmgr install microtype; tlmgr install multirow; tlmgr install carlito
+#     - name: Install R-Dependencies
+#        run: Rscript -e 'install.packages(c("kableExtra","HistogramTools","ineq","fGarch","gtools","vcd","texreg","car","remotes"))'
+#      - name: Install remote R-Dependencies
+#        run: Rscript -e 'remotes::install_github("bchwtz/fhswf", upgrade = "never")'
+#      - name: Install Sys-Dependencies
+#        run: sudo apt update; sudo apt install -yq imagemagick
+#      - name: Set Imagemagick PDF Policy (insecure)
+#        run: sudo sed -i -e 's/none/read|write/g' /etc/ImageMagick-6/policy.xml
+#      - name: Install Tex-Dependencies
+#        run: tlmgr install microtype; tlmgr install multirow; tlmgr install carlito
       - name: Render Slides
         run: cd slides; make clean pdf gif clean-cache; cd ..
       - name: Render Book
