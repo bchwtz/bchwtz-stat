@@ -1,5 +1,37 @@
 # Hypothesentests
- 
+
 ```{r, echo = F, out.width="80%", fig.cap="[Download Slides](slides/11-Hypothesentests.pdf)"}
 knitr::include_graphics("slides/gifs/11-Hypothesentests.gif")
 ```
+
+## Signifikanztest für Korrelationskoeffizient
+
+### Theoretische Grundlagen
+
+Der empirische Korrelationskoeffizient nach Pearson $r_{xy}$ als Schätzer für den Korrelationskoeffizienten in der Grundgesamtheit $\rho_{xy}$ ist wie folgt definiert.
+
+$$
+r_{xy} = \frac{s_{xy}}{\sqrt{s_x^2 s_y^2}}
+$$
+
+Dabei bezeichnet $s_x^2$ die empirische Varianz der Variablen $X$, $s_y^2$ die empirische Varianz der Variablen $Y$ und $s_{xy}$ die empirische Kovarianz zwischen $X$ und $Y$.
+
+| Hypothesen                             | Testvorschrift: Verwerfe $H_0$, wenn gilt:                                                                         |
+|:--------------------------------|:--------------------------------------|
+| $H_0: \rho = 0$ vs. $H_1: \rho > 0$    | $\frac{r\sqrt{n-2}}{\sqrt{1-r^2}} > t_{n-2,1-\alpha}$                                                              |
+| $H_0: \rho = 0$ vs. $H_1: \rho < 0$    | $\frac{r\sqrt{n-2}}{\sqrt{1-r^2}} < -t_{n-2,1-\alpha}$                                                             |
+| $H_0: \rho = 0$ vs. $H_1: \rho \neq 0$ | $\frac{r\sqrt{n-2}}{\sqrt{1-r^2}} < -t_{n-2,1-\alpha}$ oder $\frac{r\sqrt{n-2}}{\sqrt{1-r^2}} < -t_{n-2,1-\alpha}$ |
+
+### Praktische Anwendung
+
+Angewendet kann der Signifikanztest für den Korrelationskoeffizienten nach Pearson in R mit der Funktion `cor.test` unter setzen des Arguments `method = "pearson"`. Die Festlegung der Richtung des Tests (rechtsseitig, linksseitig, beidseitig) durch Spezifikation der Alternativhypothese $H_1$ erlaubt das Argument `alternative`.
+
+```{r}
+x <- c(44.4, 45.9, 41.9, 53.3, 44.7, 44.1, 50.7, 45.2, 60.1)
+y <- c( 2.6,  3.1,  2.5,  5.0,  3.6,  4.0,  5.2,  2.8,  3.8)
+
+cor.test(x, y, method = "pearson", alternative = "two.sided")
+```
+
+### Ergänzende Erläuterung
+
