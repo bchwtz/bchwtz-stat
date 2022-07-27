@@ -4,7 +4,7 @@
 knitr::include_graphics("slides/gifs/11-Hypothesentests.gif")
 ```
 
-## Signifikanztest für Korrelationskoeffizient
+## Korrelationskoeffizient (Pearson)
 
 ### Theoretische Grundlagen
 
@@ -14,7 +14,7 @@ $$
 r_{xy} = \frac{s_{xy}}{\sqrt{s_x^2 s_y^2}}
 $$
 
-Dabei bezeichnet $s_x^2$ die empirische Varianz der Variable $X$, $s_y^2$ die empirische Varianz der Variable $Y$ und $s_{xy}$ die empirische Kovarianz zwischen den Variablen $X$ und $Y$. Die nachfolgende Tabelle zeigt die Hyptohesen und die Testvorschriften für einen rechtssseitigen, linksseitigen und beidseitigen Hypothesentest. Die Nullhypothese $H_0: \rho = 0$ entspricht der Annahme der stoachtischen Unabhängigkeit. Zur Vereinfachung wird der Korrelationskoeffizient zwischen $X$ und $Y$ $r_{xy}$ nur mit $r$ bezeichnet.
+Dabei bezeichnet $s_x^2$ die empirische Varianz der Variable $X$, $s_y^2$ die empirische Varianz der Variable $Y$ und $s_{xy}$ die empirische Kovarianz zwischen den Variablen $X$ und $Y$. Die nachfolgende Tabelle zeigt die Hypothesen und die Testvorschriften für einen rechtssseitigen, linksseitigen und beidseitigen Hypothesentest. Die Nullhypothese $H_0: \rho = 0$ entspricht der Annahme der stocahtischen Unabhängigkeit. Zur Vereinfachung wird der Korrelationskoeffizient zwischen $X$ und $Y$ $r_{xy}$ in der nachfolgenden Tabelle nur mit $r$ bezeichnet.
 
 **Annahmen:** Bivariate Normalverteilung von $X$ und $Y$ in der Grundgesamtheit, $n\leq 30$.
 
@@ -36,11 +36,13 @@ result <- cor.test(x, y, method = "pearson", alternative = "two.sided")
 result
 ```
 
-Im gezeigten Beispiel wird ein **beidseitiger** Hypothesentest (`alternative = "two.sided"`) für einen fiktiven Datensatz mit $n=$`r length(x)` Beobachtungen durchgeführt. Der berechnete empirische Korrelationskoeffizient beträgt hier $r_{xy}=$ `r result$estimate`. Die berechnete Teststatistik aus einer $t$-Verteilung mit `r result$parameter` Freiheitsgerade beträgt `r result$statistic`. Die Nullhypothese kann erstmals ab einem Signifikanzniveau von $\alpha^*=$ `r result$p.value` verworfen werden. Angenommen der Test wird mit einem Signifikanznvieau von $\alpha = 0.05 = 5\%$ durchgeführt, so kann die Nullhypothese $H_0$ nicht verworfen werden. Es liegt keine empirische Evidenz für die Abhängigkeit von $X$ und $Y$ in der Grundgesamtheit vor. Es gilt $\rho_{xy}=0$.
+Im gezeigten Beispiel wird ein **beidseitiger** Hypothesentest (`alternative = "two.sided"`) für einen fiktiven Datensatz mit $n=$ `r length(x)` Beobachtungen durchgeführt. Der berechnete empirische Korrelationskoeffizient beträgt hier $r_{xy}=$ `r result$estimate`. Die berechnete Teststatistik aus einer $t$-Verteilung mit `r result$parameter` Freiheitsgerade beträgt `r result$statistic`. Die Nullhypothese kann erstmals ab einem Signifikanzniveau von $\alpha^*=$ `r result$p.value` verworfen werden. Angenommen der Test wird mit einem Signifikanznvieau von $\alpha = 0.05 = 5\%$ durchgeführt, so kann die Nullhypothese $H_0$ nicht verworfen werden. Es liegt keine empirische Evidenz für die Abhängigkeit von $X$ und $Y$ in der Grundgesamtheit vor. Es gilt $\rho_{xy}=0$, die Variablen $X$ und $Y$ sind voneinander nicht linear abhängig.
 
-### Ergänzende Erläuterung
+### Ergänzende Erläuterungen
 
-```{r}
+Nachfolgend wird die manuelle Berechnung für die wesentlichen Werte des Hypothesentests nachvollzogen. Die gezeigten Werte sind Deckungsgleich mit den Werten der Funktion `cor.test` aus dem zuvor gezeigten Beispiel.
+
+```{r, eval = FALSE}
 # Stichprobengröße auslesen
 n <- length(x) <- length(y)
 
@@ -48,18 +50,20 @@ n <- length(x) <- length(y)
 r <- cor(x,y)
 teststat <- (r*sqrt(n-2))/sqrt(1-r^2)
 
+# Implizite Irrtumswahrscheinlichkeit berechnen
+alpha_imp <- 2 * pt(teststat, df = n-2, lower.tail = FALSE)
+```
+
+Um die gezeigte Testvorschrift **manuell** prüfen zu können, wird nach Festlegen der maximalen Irrtumswahrscheinlichkeit $\alpha$ noch der Vergleichswert der $t$-Verteilung (rechte Seite der Ungleichungen aus der Tabelle mit den Testvorschriften) benötigt. Die Funktion `qt` gibt hier die Quatile der $t$-Verteilung an und übernimmt somit die Aufgabe der Verteilungstabelle. Die Testvorschrift kann also auch hier sowohl direkt über die oben gezeigten Ungleichungen als auch über das implizite Signifikanzniveau, dem p-Value $\alpha^*$, geprüft werden. Beide Vorgehensweisen führen (natürlich) zu einem identischen Ergebnis.
+
+```{r, eval = FALSE}
 # Vergleichsgröße der t-Verteilung bestimmen
 alpha <- 0.05
 tval <- qt(1-alpha/2, df = n-2)
 
 # Testentscheidung: H0 verwerfen?
 # Prüfung mittels Testvorschrift
-teststat > tval
-teststat < -tval
-
-# Implizite Irrtumswahrscheinlichkeit berechnen
-alpha_imp <- 2 * pt(teststat, df = n-2, lower.tail = FALSE)
-alpha_imp
+(teststat > tval) | (teststat < -tval)
 
 # Testentscheidung: H0 verwerfen?
 # Prüfung mittels implizitem Signifikanzniveau 
