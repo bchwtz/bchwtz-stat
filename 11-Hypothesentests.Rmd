@@ -22,7 +22,7 @@ Dabei bezeichnet $s_x^2$ die empirische Varianz der Variable $X$, $s_y^2$ die em
 |:--------------------------------|:--------------------------------------|
 | $H_0: \rho = 0$ vs. $H_1: \rho > 0$    | $\frac{r\sqrt{n-2}}{\sqrt{1-r^2}} > t_{n-2,1-\alpha}$                                                                   |
 | $H_0: \rho = 0$ vs. $H_1: \rho < 0$    | $\frac{r\sqrt{n-2}}{\sqrt{1-r^2}} < -t_{n-2,1-\alpha}$                                                                  |
-| $H_0: \rho = 0$ vs. $H_1: \rho \neq 0$ | $\frac{r\sqrt{n-2}}{\sqrt{1-r^2}} < -t_{n-2,1-\alpha}$ oder $\frac{r\sqrt{n-2}}{\sqrt{1-r^2}} < -t_{n-2,1-\alpha}$ |
+| $H_0: \rho = 0$ vs. $H_1: \rho \neq 0$ | $\frac{r\sqrt{n-2}}{\sqrt{1-r^2}} > t_{n-2,1-\alpha}$ oder $\frac{r\sqrt{n-2}}{\sqrt{1-r^2}} < -t_{n-2,1-\alpha}$ |
 
 ### Praktische Anwendung
 
