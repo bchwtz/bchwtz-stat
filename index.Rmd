@@ -27,7 +27,13 @@ library("fhswf")
 library("tidyverse")
 library("knitr")
 library("kableExtra")
+
+inline_hook <- function(x){
+  format(x, digits = 4)
+}
+
 knitr::opts_chunk$set(echo = TRUE, fig.align = "center")
+knitr::knit_hooks$set(inline=inline_hook)
 ```
 
 Herzlich Willkommen zum Kurs Statistik
