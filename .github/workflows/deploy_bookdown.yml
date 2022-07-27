@@ -16,16 +16,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@main
-#     - name: Install R-Dependencies
-#        run: Rscript -e 'install.packages(c("kableExtra","HistogramTools","ineq","fGarch","gtools","vcd","texreg","car","remotes"))'
-#      - name: Ensure latest fhswf-Package Version
-#        run: Rscript -e 'remotes::install_github("bchwtz/fhswf", upgrade = "never")'
-#      - name: Install Sys-Dependencies
-#        run: sudo apt update; sudo apt install -yq imagemagick
-#      - name: Set Imagemagick PDF Policy (insecure)
-#        run: sudo sed -i -e 's/none/read|write/g' /etc/ImageMagick-6/policy.xml
-#      - name: Install Tex-Dependencies
-#        run: tlmgr install microtype; tlmgr install multirow; tlmgr install carlito
+      - name: Ensure latest FHSWF Package Version
+        run: Rscript -e 'remotes::install_github("bchwtz/fhswf", upgrade = "never")'
       - name: Render Slides
         run: cd slides; make clean pdf gif clean-cache; cd ..
       - name: Render Book
@@ -40,61 +32,4 @@ jobs:
            EMAIL: ${{ secrets.EMAIL }}               # must be a verified email
            GH_TOKEN: ${{ secrets.GH_PAT }} # https://github.com/settings/tokens
            BUILD_DIR: _book/                     # "_site/" by default
-     
-
-
-# on:
-#   push:
-#      branches:
-#        - main
-# 
-# 
-# 
-# name: renderbook
-# 
-# jobs:
-#   bookdown:
-#     name: Render-Book
-#     runs-on: macOS-latest
-#     steps:
-#       - uses: actions/checkout@v1
-#       - uses: r-lib/actions/setup-r@v1
-#       - uses: r-lib/actions/setup-pandoc@v1
-#       - name: Install rmarkdown
-#         run: Rscript -e 'install.packages(c("rmarkdown","bookdown", "kableExtra", "tidyverse"))'
-#       - name: Render Book
-#         run: Rscript -e 'bookdown::render_book("index.Rmd")'
-#       - name: Copy Slide Directory
-#         run: cp -r slides _book
-#       - name: Copy Data Directory
-#         run: cp -r data _book
-#       - uses: actions/upload-artifact@v1
-#         with:
-#           name: _book
-#           path: _book/
-# 
-# # Need to first create an empty gh-pages branch
-# # see https://pkgdown.r-lib.org/reference/deploy_site_github.html
-# # and also add secrets for a GH_PAT and EMAIL to the repository
-# # gh-action from Cecilapp/GitHub-Pages-deploy
-#   checkout-and-deploy:
-#    runs-on: ubuntu-latest
-#    needs: bookdown
-#    steps:
-#      - name: Checkout
-#        uses: actions/checkout@main
-#      - name: Download artifact
-#        uses: actions/download-artifact@v1.0.0
-#        with:
-#          # Artifact name
-#          name: _book # optional
-#          # Destination path
-#          path: _book # optional
-#      - name: Deploy to GitHub Pages
-#        uses: Cecilapp/GitHub-Pages-deploy@v2
-#        env:
-#           EMAIL: ${{ secrets.EMAIL }}               # must be a verified email
-#           GH_TOKEN: ${{ secrets.GH_PAT }} # https://github.com/settings/tokens
-#           BUILD_DIR: _book/                     # "_site/" by default
-# 
-# 
+ 
