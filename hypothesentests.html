@@ -247,7 +247,7 @@ Figure 11.1: <a href="slides/11-Hypothesentests.pdf">Download Slides</a>
 <p><span class="math display">\[
 r_{xy} = \frac{s_{xy}}{\sqrt{s_x^2 s_y^2}}
 \]</span></p>
-<p>Dabei bezeichnet <span class="math inline">\(s_x^2\)</span> die empirische Varianz der Variablen <span class="math inline">\(X\)</span>, <span class="math inline">\(s_y^2\)</span> die empirische Varianz der Variablen <span class="math inline">\(Y\)</span> und <span class="math inline">\(s_{xy}\)</span> die empirische Kovarianz zwischen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span>.</p>
+<p>Dabei bezeichnet <span class="math inline">\(s_x^2\)</span> die empirische Varianz der Variable <span class="math inline">\(X\)</span>, <span class="math inline">\(s_y^2\)</span> die empirische Varianz der Variable <span class="math inline">\(Y\)</span> und <span class="math inline">\(s_{xy}\)</span> die empirische Kovarianz zwischen den Variablen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span>.</p>
 <table>
 <colgroup>
 <col width="45%" />
@@ -281,7 +281,8 @@ r_{xy} = \frac{s_{xy}}{\sqrt{s_x^2 s_y^2}}
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="hypothesentests.html#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">44.4</span>, <span class="fl">45.9</span>, <span class="fl">41.9</span>, <span class="fl">53.3</span>, <span class="fl">44.7</span>, <span class="fl">44.1</span>, <span class="fl">50.7</span>, <span class="fl">45.2</span>, <span class="fl">60.1</span>)</span>
 <span id="cb1-2"><a href="hypothesentests.html#cb1-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>( <span class="fl">2.6</span>,  <span class="fl">3.1</span>,  <span class="fl">2.5</span>,  <span class="fl">5.0</span>,  <span class="fl">3.6</span>,  <span class="fl">4.0</span>,  <span class="fl">5.2</span>,  <span class="fl">2.8</span>,  <span class="fl">3.8</span>)</span>
 <span id="cb1-3"><a href="hypothesentests.html#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="hypothesentests.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(x, y, <span class="at">method =</span> <span class="st">&quot;pearson&quot;</span>, <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)</span></code></pre></div>
+<span id="cb1-4"><a href="hypothesentests.html#cb1-4" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(x, y, <span class="at">method =</span> <span class="st">&quot;pearson&quot;</span>, <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)</span>
+<span id="cb1-5"><a href="hypothesentests.html#cb1-5" aria-hidden="true" tabindex="-1"></a>result</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -293,9 +294,29 @@ r_{xy} = \frac{s_{xy}}{\sqrt{s_x^2 s_y^2}}
 ## sample estimates:
 ##       cor 
 ## 0.5711816</code></pre>
+<p>Im gezeigten Beispiel wird ein beidseitiger Hypothesentest (<code>alternative = "two.sided"</code>) für einen fiktiven Datensatz mit $n=$9 Beobachtungen durchgeführt.</p>
 </div>
 <div id="ergänzende-erläuterung" class="section level3 hasAnchor" number="11.1.3">
 <h3><span class="header-section-number">11.1.3</span> Ergänzende Erläuterung<a href="hypothesentests.html#ergänzende-erläuterung" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="hypothesentests.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Stichprobengröße auslesen</span></span>
+<span id="cb3-2"><a href="hypothesentests.html#cb3-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">length</span>(x) <span class="ot">&lt;-</span> <span class="fu">length</span>(y)</span>
+<span id="cb3-3"><a href="hypothesentests.html#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="hypothesentests.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Teststatistik berechnen</span></span>
+<span id="cb3-5"><a href="hypothesentests.html#cb3-5" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">cor</span>(x,y)</span>
+<span id="cb3-6"><a href="hypothesentests.html#cb3-6" aria-hidden="true" tabindex="-1"></a>teststat <span class="ot">&lt;-</span> (r<span class="sc">*</span><span class="fu">sqrt</span>(n<span class="dv">-2</span>))<span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">-</span>r<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb3-7"><a href="hypothesentests.html#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="hypothesentests.html#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Vergleichsgröße der t-Verteilung bestimmen</span></span>
+<span id="cb3-9"><a href="hypothesentests.html#cb3-9" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb3-10"><a href="hypothesentests.html#cb3-10" aria-hidden="true" tabindex="-1"></a>tval <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>, <span class="at">df =</span> n<span class="dv">-2</span>)</span>
+<span id="cb3-11"><a href="hypothesentests.html#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="hypothesentests.html#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Testentscheidung: H0 verwerfen?</span></span>
+<span id="cb3-13"><a href="hypothesentests.html#cb3-13" aria-hidden="true" tabindex="-1"></a>teststat <span class="sc">&gt;</span> tval</span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="hypothesentests.html#cb5-1" aria-hidden="true" tabindex="-1"></a>teststat <span class="sc">&lt;</span> <span class="sc">-</span>tval</span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="hypothesentests.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Implizite Irrtunswahrscheinlichkeit berechnen</span></span>
+<span id="cb7-2"><a href="hypothesentests.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> <span class="fu">pt</span>(teststat, <span class="at">df =</span> n<span class="dv">-2</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>## [1] 0.1081731</code></pre>
 
 </div>
 </div>
