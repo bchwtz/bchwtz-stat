@@ -247,7 +247,8 @@ Figure 11.1: <a href="slides/11-Hypothesentests.pdf">Download Slides</a>
 <p><span class="math display">\[
 r_{xy} = \frac{s_{xy}}{\sqrt{s_x^2 s_y^2}}
 \]</span></p>
-<p>Dabei bezeichnet <span class="math inline">\(s_x^2\)</span> die empirische Varianz der Variable <span class="math inline">\(X\)</span>, <span class="math inline">\(s_y^2\)</span> die empirische Varianz der Variable <span class="math inline">\(Y\)</span> und <span class="math inline">\(s_{xy}\)</span> die empirische Kovarianz zwischen den Variablen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span>.</p>
+<p>Dabei bezeichnet <span class="math inline">\(s_x^2\)</span> die empirische Varianz der Variable <span class="math inline">\(X\)</span>, <span class="math inline">\(s_y^2\)</span> die empirische Varianz der Variable <span class="math inline">\(Y\)</span> und <span class="math inline">\(s_{xy}\)</span> die empirische Kovarianz zwischen den Variablen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span>. Die nachfolgende Tabelle zeigt die Hyptohesen und die Testvorschriften für einen rechtssseitigen, linksseitigen und beidseitigen Hypothesentest. Die Nullhypothese <span class="math inline">\(H_0: \rho = 0\)</span> entspricht der Annahme der stoachtischen Unabhängigkeit. Zur Vereinfachung wird der Korrelationskoeffizient zwischen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> <span class="math inline">\(r_{xy}\)</span> nur mit <span class="math inline">\(r\)</span> bezeichnet.</p>
+<p><strong>Annahmen:</strong> Bivariate Normalverteilung von <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> in der Grundgesamtheit, <span class="math inline">\(n\leq 30\)</span>.</p>
 <table>
 <colgroup>
 <col width="45%" />
@@ -277,7 +278,7 @@ r_{xy} = \frac{s_{xy}}{\sqrt{s_x^2 s_y^2}}
 </div>
 <div id="praktische-anwendung" class="section level3 hasAnchor" number="11.1.2">
 <h3><span class="header-section-number">11.1.2</span> Praktische Anwendung<a href="hypothesentests.html#praktische-anwendung" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Angewendet kann der Signifikanztest für den Korrelationskoeffizienten nach Pearson in R mit der Funktion <code>cor.test</code> unter setzen des Arguments <code>method = "pearson"</code>. Die Festlegung der Richtung des Tests (rechtsseitig, linksseitig, beidseitig) durch Spezifikation der Alternativhypothese <span class="math inline">\(H_1\)</span> erlaubt das Argument <code>alternative</code>.</p>
+<p>Angewendet werden kann der Signifikanztest für den Korrelationskoeffizienten nach Pearson in R mit der Funktion <code>cor.test</code> unter setzen des Arguments <code>method = "pearson"</code>. Die Festlegung der Richtung des Tests (rechtsseitig, linksseitig, beidseitig) durch Spezifikation der Alternativhypothese <span class="math inline">\(H_1\)</span> erlaubt das Argument <code>alternative</code>.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="hypothesentests.html#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">44.4</span>, <span class="fl">45.9</span>, <span class="fl">41.9</span>, <span class="fl">53.3</span>, <span class="fl">44.7</span>, <span class="fl">44.1</span>, <span class="fl">50.7</span>, <span class="fl">45.2</span>, <span class="fl">60.1</span>)</span>
 <span id="cb1-2"><a href="hypothesentests.html#cb1-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>( <span class="fl">2.6</span>,  <span class="fl">3.1</span>,  <span class="fl">2.5</span>,  <span class="fl">5.0</span>,  <span class="fl">3.6</span>,  <span class="fl">4.0</span>,  <span class="fl">5.2</span>,  <span class="fl">2.8</span>,  <span class="fl">3.8</span>)</span>
 <span id="cb1-3"><a href="hypothesentests.html#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -294,7 +295,7 @@ r_{xy} = \frac{s_{xy}}{\sqrt{s_x^2 s_y^2}}
 ## sample estimates:
 ##       cor 
 ## 0.5711816</code></pre>
-<p>Im gezeigten Beispiel wird ein beidseitiger Hypothesentest (<code>alternative = "two.sided"</code>) für einen fiktiven Datensatz mit $n=$9 Beobachtungen durchgeführt.</p>
+<p>Im gezeigten Beispiel wird ein <strong>beidseitiger</strong> Hypothesentest (<code>alternative = "two.sided"</code>) für einen fiktiven Datensatz mit $n=$9 Beobachtungen durchgeführt. Der berechnete empirische Korrelationskoeffizient beträgt hier <span class="math inline">\(r_{xy}=\)</span> 0.5711816. Die berechnete Teststatistik aus einer <span class="math inline">\(t\)</span>-Verteilung mit 7 Freiheitsgerade beträgt 1.8410826. Die Nullhypothese kann erstmals ab einem Signifikanzniveau von <span class="math inline">\(\alpha^*=\)</span> 0.1081731 verworfen werden. Angenommen der Test wird mit einem Signifikanznvieau von <span class="math inline">\(\alpha = 0.05 = 5\%\)</span> durchgeführt, so kann die Nullhypothese <span class="math inline">\(H_0\)</span> nicht verworfen werden. Es liegt keine empirische Evidenz für die Abhängigkeit von <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> in der Grundgesamtheit vor. Es gilt <span class="math inline">\(\rho_{xy}=0\)</span>.</p>
 </div>
 <div id="ergänzende-erläuterung" class="section level3 hasAnchor" number="11.1.3">
 <h3><span class="header-section-number">11.1.3</span> Ergänzende Erläuterung<a href="hypothesentests.html#ergänzende-erläuterung" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -310,13 +311,19 @@ r_{xy} = \frac{s_{xy}}{\sqrt{s_x^2 s_y^2}}
 <span id="cb3-10"><a href="hypothesentests.html#cb3-10" aria-hidden="true" tabindex="-1"></a>tval <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>, <span class="at">df =</span> n<span class="dv">-2</span>)</span>
 <span id="cb3-11"><a href="hypothesentests.html#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-12"><a href="hypothesentests.html#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Testentscheidung: H0 verwerfen?</span></span>
-<span id="cb3-13"><a href="hypothesentests.html#cb3-13" aria-hidden="true" tabindex="-1"></a>teststat <span class="sc">&gt;</span> tval</span></code></pre></div>
+<span id="cb3-13"><a href="hypothesentests.html#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Prüfung mittels Testvorschrift</span></span>
+<span id="cb3-14"><a href="hypothesentests.html#cb3-14" aria-hidden="true" tabindex="-1"></a>teststat <span class="sc">&gt;</span> tval</span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="hypothesentests.html#cb5-1" aria-hidden="true" tabindex="-1"></a>teststat <span class="sc">&lt;</span> <span class="sc">-</span>tval</span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="hypothesentests.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Implizite Irrtunswahrscheinlichkeit berechnen</span></span>
-<span id="cb7-2"><a href="hypothesentests.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> <span class="fu">pt</span>(teststat, <span class="at">df =</span> n<span class="dv">-2</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="hypothesentests.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Implizite Irrtumswahrscheinlichkeit berechnen</span></span>
+<span id="cb7-2"><a href="hypothesentests.html#cb7-2" aria-hidden="true" tabindex="-1"></a>alpha_imp <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">pt</span>(teststat, <span class="at">df =</span> n<span class="dv">-2</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb7-3"><a href="hypothesentests.html#cb7-3" aria-hidden="true" tabindex="-1"></a>alpha_imp</span></code></pre></div>
 <pre><code>## [1] 0.1081731</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="hypothesentests.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Testentscheidung: H0 verwerfen?</span></span>
+<span id="cb9-2"><a href="hypothesentests.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Prüfung mittels implizitem Signifikanzniveau </span></span>
+<span id="cb9-3"><a href="hypothesentests.html#cb9-3" aria-hidden="true" tabindex="-1"></a>alpha_imp <span class="sc">&lt;</span> alpha</span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
 
 </div>
 </div>
