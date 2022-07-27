@@ -9,8 +9,8 @@ fig:unnamed-chunk-10
 fig:unnamed-chunk-11
 fig:unnamed-chunk-12
 fig:unnamed-chunk-13
-fig:unnamed-chunk-14
 fig:unnamed-chunk-15
+fig:unnamed-chunk-16
 grundlagen
 begriff-der-häufigkeit
 maßzahlen
@@ -22,6 +22,10 @@ wahrscheinlichkeitsverteilungen
 spezielle-verteilungen
 von-der-stichprobe-zur-grundgesamtheit
 hypothesentests
+signifikanztest-für-korrelationskoeffizient
+theoretische-grundlagen
+praktische-anwendung
+ergänzende-erläuterung
 lineare-regression
 multiple-regression
 fhswf-package
