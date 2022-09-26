@@ -2,13 +2,13 @@ bookdown::gitbook:
   css: style.css
   config:
     toc:
+      collapse: section
       before: |
         <li><a href="./"><b>Statistik</b></a></li>
       after: |
         <li><a href="http://www.bchwtz.de" target="blank"><center>www.<b>BCHWTZ</b>.de</center></a></li>
     edit: https://github.com/rstudio/bookdown-demo/edit/master/%s
     download: ["pdf", "epub"]
-    collapse: section
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
