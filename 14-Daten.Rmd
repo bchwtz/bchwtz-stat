@@ -24,7 +24,44 @@ fhswf::install_fhswf()                   # Fehlende LaTeX Pakete installieren
 Der Installationsprozess ergänzt eine Vielzahl von LaTeX Komponenten und benötigt je nach Leistung und Auslastung des benutzten Computers **etwa 30 Minuten**. 
 
 <!-- Das folgende Video zeigt den vollständigen Installationsprozess und das erstellen eines PDFs mit Hilfe des Templates. -->
- 
+
+## Nutzung des Templates
+
+Um das Template fhswf-seminarpaper nutzen zu können, klicken Sie unter
+`File` auf `New File` und dann auf `R Markdown...`.
+Anschließend öffnet sich ein Fenster, in dem Sie auf "From Template" klicken und dann sollte dort "FHSWF - Seminarpaper (pdf)" aufgelistet sein (siehe Abbildung \@ref(fig:fig-template-fhswf)). Dieses Template klicken Sie dann an, geben unter "Name" (siehe Abbildung \@ref(fig:fig-template-fhswf)) einen Namen für die Rmd-Datei ein, bestätigen dies mit `OK` und das Template öffnet sich anschließend (es wird ein Ordner mit dem von Ihnen angegebenen Namen erstellt, in dem alle für das Template erforderlichen Dateien abgespeichert sind).
+
+
+```{r fig-template-fhswf, echo=FALSE, fig.cap="(ref:fhswftemplate)", out.width="100%"}
+knitr::include_graphics("ScWrt_in_RMarkdown/screenshot_template_fhswf.PNG")
+```
+
+(ref:fhswftemplate) Aufruf des Templates FHSWF - Seminarpaper (pdf) aus dem R-Paket `fhswf` [@fhswf].
+
+**Verweis auf Quellen und Quellenverzeichnis** 
+
+um auf die von Ihnen verwendeten Quellen im Text zu verweisen und um diese einschließlich der von Ihnen genutzten R-Pakete im Quellenverzeichnis anzuführen, nutzen Sie das `fhswf` Seminarpaper Template wie folgt:
+
+Indem Sie das Template FHSWF - Seminarpaper verwenden, wird eine Bib-Datei namens *references* automatisch mitgeladen. In dieser Datei sehen Sie Einträge, die jeweils für beispielhafte Quellen angelegt worden sind, wie z.B.:
+
+```{r, echo=TRUE, eval=FALSE}
+@ARTICLE{BC64,
+title = {An analysis of transformations},
+author = "Box, George E P and Cox, David R",
+journal = "Journal of the Royal Statistical Society. Series B",
+volume = 26,
+number = 2,
+pages = "211--252",
+year = 1964
+}
+```
+
+Für die von Ihnen genutzten Quellen legen Sie entsprechend einzelne Einträge in references.bib an.
+Im Text (in R Markdown) verweisen Sie dann auf die verwendeten Quellen mithilfe des @-Symbols wie z.B. @BC64 (BC64 ist eine ID für die entsprechende Quelle). Im basierend auf dem R Markdown-Dokument generierten PDF-Dokument erscheinen dann entsprechend der/die Autor(en) und das Erscheinungsjahr.
+Wenn Sie das fhswf-seminarpaper Template öffnen, sind im Abschnitt *Using Citations* Beispiele zum Thema Zitation gegeben.
+Sind Ihre Quellen in der Bib-Datei angelegt und haben Sie auf diese im Text verwiesen, wird automatisch ein Literatur- bzw. Quellenverzeichnis erstellt.
+
+Möchten Sie Quellen, auf die Sie **nicht** im Text verweisen, manuell zum Quellenverzeichnis hinzufügen, legen Sie ebenfalls entsprechende Einträge in der Bib-Datei an und rufen diese über \nocite{IDderQuelle} in R Markdown auf.
  
 # Daten 2022
 
