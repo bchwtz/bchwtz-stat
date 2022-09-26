@@ -19,6 +19,7 @@ knitr::opts_chunk$set(echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE,
                       dev.args=list(pointsize=11), size="scriptsize")
 
 # Packages
+library(fhswf)
 library(car)
 library(fGarch)
 library(gtools)
@@ -263,4 +264,9 @@ plot(ecdf(x), main="Empirische Verteilungsfunktion",
 - Was zeigt die empirische Verteilungsfunktion?
     + Anhand der empirischen Verteilungsfunktion kann man die relative Häufigkeit ablesen, mit der ein Wert höchstens eine bestimmte Größe hat. Die empirische Verteilungsfunktion gibt so die kumulierten relativen Häufigkeiten bis zu einem bestimmten Wert an.
 
+## Anhang
 
+```{r, size="tiny"}
+Sys.time()
+sessionInfo()
+```

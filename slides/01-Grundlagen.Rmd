@@ -19,6 +19,7 @@ knitr::opts_chunk$set(echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE,
                       dev.args=list(pointsize=11), size="scriptsize")
 
 # Packages
+library(fhswf)
 library(car)
 library(fGarch)
 library(gtools)
@@ -176,3 +177,11 @@ https://www.rstudio.com/products/rstudio/download/#download
 - Sehen Sie Statistiksoftware als Hilfsmittel, um dem Computer mitzuteilen, wie Sie Ihre Daten analysieren wollen.
 - Für einfache Analysen reichen einfache Programme, aber gerade in Excel haben Sie irgendwann das letzte Untermenü oder die letzte Formel erreicht und können nicht mehr weiter arbeiten.
 - R-Befehle sind Ihre Anweisungen an den Computer.
+
+## Anhang
+
+```{r, size="tiny"}
+Sys.time()
+sessionInfo()
+```
+
