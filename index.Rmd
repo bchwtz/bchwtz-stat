@@ -3,10 +3,7 @@ title: "Statistics"
 author: "Benjamin Buchwitz"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
-output: bookdown::gitbook:
-  config:
-    toc:
-      collapse: section
+output: bookdown::gitbook
 documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
