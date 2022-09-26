@@ -33,6 +33,8 @@ fhswf-package
 installation
 template
 nutzung-des-templates
+wissenschaftliches-arbeiten-in-r-markdown
+datacamp-zertifikate
 daten-2022
 nyc-airbnb
 beispiel
@@ -58,4 +60,3 @@ datenbeschreibung-2
 daten-laden-2
 tips-tricks-1
 quellen-2
-wissenschaftliches-arbeiten-in-r-markdown
