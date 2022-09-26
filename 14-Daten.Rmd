@@ -62,6 +62,29 @@ Wenn Sie das fhswf-seminarpaper Template öffnen, sind im Abschnitt *Using Citat
 Sind Ihre Quellen in der Bib-Datei angelegt und haben Sie auf diese im Text verwiesen, wird automatisch ein Literatur- bzw. Quellenverzeichnis erstellt.
 
 Möchten Sie Quellen, auf die Sie **nicht** im Text verweisen, manuell zum Quellenverzeichnis hinzufügen, legen Sie ebenfalls entsprechende Einträge in der Bib-Datei an und rufen diese über "\\nocite{IDderQuelle}" in R Markdown auf.
+
+## Wissenschaftliches Arbeiten in R Markdown
+
+Um das wissenschaftliche Arbeiten und Schreiben *in R Markdown* zu erleichtern, wurde das FHSWF Seminarpaper Template mit Hinweisen zum Thema wissenschaftliche Sprache, zur Erstellung von Tabellen, Abbildungen, Gleichungen, zur Darstellung von Code, zur Zitation etc. gefüllt.
+Diese können über nachfolgende Links heruntergeladen werden.
+
+| Description | R script | 
+| :---: | :--------:   | 
+| R Markdown Datei: FHSWF Template mit Notizen und Hinweisen | [FHSWF Template mit Hinweisen (.Rmd)](ScWrt_in_RMarkdown/ScWrt_Template_with_hints.Rmd)   |
+| PDF Datei: FHSWF Template mit Notizen und Hinweisen | [FHSWF Template mit Hinweisen (.pdf)](ScWrt_in_RMarkdown/ScWrt_Template_with_hints.pdf) |
+| bib-Datei des mit Hinweisen versehenen FHSWF Templates | [references.bib](ScWrt_in_RMarkdown/references.bib) |
+
+##  Datacamp(-zertifikate)
+
+Die Anmeldung bei [DataCamp](https://www.datacamp.com/groups/shared_links/6c29db40d79200c5c48aca9ec64682de22a5e604bf61b174ef9535f3173f9518) muss mit einer `@fh-swf.de`-Emailadresse erfolgen. 
+
+[DataCamp Zugang](https://www.datacamp.com/groups/shared_links/6c29db40d79200c5c48aca9ec64682de22a5e604bf61b174ef9535f3173f9518)
+
+
+Komfortables Einbetten der Datacamp Zertifikate in das erzeugte PDF erlaubt die Funktion `fhswf::include_datacamp()`. Dazu müssen die PDF Dokumente in einem Unterorder des Seminararbeits-Projektes abgelegt werden. In der Standardeinstellung nutzt die Funktion `fhswf::include_datacamp()` einen Ordner mit dem Namen `datacamp`. Der nachfolgende Screenshot zeigt den notwendigen Programmcode für die Einbettung der Zertifikate und das daraus resultierende Ergebnis. Dabei werden die PDF Dokumente bewusst in der geringen Größe eingebettet - diese sind detailreich, hereinzoombar und daher für die Korrektoren gut prüfbar. Der Programmcode ist ebenfalls auf der Hilfeseite `?include_datacamp()` einsebar.
+
+![](./data/rstudio-datacampcertificates.png)
+
  
 # Daten 2022
 
