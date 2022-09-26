@@ -40,7 +40,7 @@ knitr::include_graphics("ScWrt_in_RMarkdown/screenshot_template_fhswf.PNG")
 
 **Verweis auf Quellen und Quellenverzeichnis** 
 
-um auf die von Ihnen verwendeten Quellen im Text zu verweisen und um diese einschließlich der von Ihnen genutzten R-Pakete im Quellenverzeichnis anzuführen, nutzen Sie das `fhswf` Seminarpaper Template wie folgt:
+Um auf die von Ihnen verwendeten Quellen im Text zu verweisen und um diese einschließlich der von Ihnen genutzten R-Pakete im Quellenverzeichnis anzuführen, nutzen Sie das `fhswf` Seminarpaper Template wie folgt:
 
 Indem Sie das Template FHSWF - Seminarpaper verwenden, wird eine Bib-Datei namens *references* automatisch mitgeladen. In dieser Datei sehen Sie Einträge, die jeweils für beispielhafte Quellen angelegt worden sind, wie z.B.:
 
@@ -57,11 +57,11 @@ year = 1964
 ```
 
 Für die von Ihnen genutzten Quellen legen Sie entsprechend einzelne Einträge in references.bib an.
-Im Text (in R Markdown) verweisen Sie dann auf die verwendeten Quellen mithilfe des @-Symbols wie z.B. @BC64 (BC64 ist eine ID für die entsprechende Quelle). Im basierend auf dem R Markdown-Dokument generierten PDF-Dokument erscheinen dann entsprechend der/die Autor(en) und das Erscheinungsjahr.
+Im Text (in R Markdown) verweisen Sie dann auf die verwendeten Quellen mithilfe des @-Symbols wie z.B. \@BC64 (BC64 ist eine ID für die entsprechende Quelle). Im basierend auf dem R Markdown-Dokument generierten PDF-Dokument erscheinen dann entsprechend der/die Autor(en) und das Erscheinungsjahr.
 Wenn Sie das fhswf-seminarpaper Template öffnen, sind im Abschnitt *Using Citations* Beispiele zum Thema Zitation gegeben.
 Sind Ihre Quellen in der Bib-Datei angelegt und haben Sie auf diese im Text verwiesen, wird automatisch ein Literatur- bzw. Quellenverzeichnis erstellt.
 
-Möchten Sie Quellen, auf die Sie **nicht** im Text verweisen, manuell zum Quellenverzeichnis hinzufügen, legen Sie ebenfalls entsprechende Einträge in der Bib-Datei an und rufen diese über \nocite{IDderQuelle} in R Markdown auf.
+Möchten Sie Quellen, auf die Sie **nicht** im Text verweisen, manuell zum Quellenverzeichnis hinzufügen, legen Sie ebenfalls entsprechende Einträge in der Bib-Datei an und rufen diese über "\\nocite{IDderQuelle}" in R Markdown auf.
  
 # Daten 2022
 
