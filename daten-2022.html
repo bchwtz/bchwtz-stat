@@ -23,7 +23,7 @@
 <meta name="author" content="Benjamin Buchwitz" />
 
 
-<meta name="date" content="2022-09-25" />
+<meta name="date" content="2022-09-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -163,6 +163,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="14.1" data-path="fhswf-package.html"><a href="fhswf-package.html#installation"><i class="fa fa-check"></i><b>14.1</b> Installation</a></li>
 <li class="chapter" data-level="14.2" data-path="fhswf-package.html"><a href="fhswf-package.html#template"><i class="fa fa-check"></i><b>14.2</b> Template</a></li>
+<li class="chapter" data-level="14.3" data-path="fhswf-package.html"><a href="fhswf-package.html#nutzung-des-templates"><i class="fa fa-check"></i><b>14.3</b> Nutzung des Templates</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="daten-2022.html"><a href="daten-2022.html"><i class="fa fa-check"></i><b>15</b> Daten 2022</a>
 <ul>
@@ -235,43 +236,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Kapitel 15</span> Daten 2022<a href="daten-2022.html#daten-2022" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="nyc-airbnb" class="section level2 hasAnchor" number="15.1">
 <h2><span class="header-section-number">15.1</span> NYC Airbnb<a href="daten-2022.html#nyc-airbnb" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="daten-2022.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fhswf)       <span class="co"># Laden des fhswf-Packages</span></span>
-<span id="cb7-2"><a href="daten-2022.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(nycairbnb)      <span class="co"># Anzeigen der Daten</span></span>
-<span id="cb7-3"><a href="daten-2022.html#cb7-3" aria-hidden="true" tabindex="-1"></a>nycairbnb            <span class="co"># Anzeigen der Daten auf der Konsole</span></span>
-<span id="cb7-4"><a href="daten-2022.html#cb7-4" aria-hidden="true" tabindex="-1"></a>?nycairbnb           <span class="co"># Anzeigen der Datenbeschreibung</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="daten-2022.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fhswf)       <span class="co"># Laden des fhswf-Packages</span></span>
+<span id="cb8-2"><a href="daten-2022.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(nycairbnb)      <span class="co"># Anzeigen der Daten</span></span>
+<span id="cb8-3"><a href="daten-2022.html#cb8-3" aria-hidden="true" tabindex="-1"></a>nycairbnb            <span class="co"># Anzeigen der Daten auf der Konsole</span></span>
+<span id="cb8-4"><a href="daten-2022.html#cb8-4" aria-hidden="true" tabindex="-1"></a>?nycairbnb           <span class="co"># Anzeigen der Datenbeschreibung</span></span></code></pre></div>
 <div id="beispiel" class="section level3 hasAnchor" number="15.1.1">
 <h3><span class="header-section-number">15.1.1</span> Beispiel<a href="daten-2022.html#beispiel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="daten-2022.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(nycairbnb<span class="sc">$</span>price) <span class="co"># Deskriptive Statistik des Preises pro Übernachtung</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="daten-2022.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(nycairbnb<span class="sc">$</span>price) <span class="co"># Deskriptive Statistik des Preises pro Übernachtung</span></span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##     0.0    69.0   106.0   152.7   175.0 10000.0</code></pre>
 </div>
 </div>
 <div id="autopreise" class="section level2 hasAnchor" number="15.2">
 <h2><span class="header-section-number">15.2</span> Autopreise<a href="daten-2022.html#autopreise" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="daten-2022.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fhswf)       <span class="co"># Laden des fhswf-Packages</span></span>
-<span id="cb10-2"><a href="daten-2022.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(carprices)      <span class="co"># Anzeigen der Daten</span></span>
-<span id="cb10-3"><a href="daten-2022.html#cb10-3" aria-hidden="true" tabindex="-1"></a>carprices            <span class="co"># Anzeigen der Daten auf der Konsole</span></span>
-<span id="cb10-4"><a href="daten-2022.html#cb10-4" aria-hidden="true" tabindex="-1"></a>?carprices           <span class="co"># Anzeigen der Datenbeschreibung</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="daten-2022.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fhswf)       <span class="co"># Laden des fhswf-Packages</span></span>
+<span id="cb11-2"><a href="daten-2022.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(carprices)      <span class="co"># Anzeigen der Daten</span></span>
+<span id="cb11-3"><a href="daten-2022.html#cb11-3" aria-hidden="true" tabindex="-1"></a>carprices            <span class="co"># Anzeigen der Daten auf der Konsole</span></span>
+<span id="cb11-4"><a href="daten-2022.html#cb11-4" aria-hidden="true" tabindex="-1"></a>?carprices           <span class="co"># Anzeigen der Datenbeschreibung</span></span></code></pre></div>
 <div id="beispiel-1" class="section level3 hasAnchor" number="15.2.1">
 <h3><span class="header-section-number">15.2.1</span> Beispiel<a href="daten-2022.html#beispiel-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="daten-2022.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(carprices<span class="sc">$</span>price) <span class="co"># Deskriptive Statistik des Kaufpreises</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="daten-2022.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(carprices<span class="sc">$</span>price) <span class="co"># Deskriptive Statistik des Kaufpreises</span></span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
 ##    5118    7775   10295   13207   16500   45400       4</code></pre>
 </div>
 </div>
 <div id="who-data" class="section level2 hasAnchor" number="15.3">
 <h2><span class="header-section-number">15.3</span> WHO Data<a href="daten-2022.html#who-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="daten-2022.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fhswf)     <span class="co"># Laden des fhswf-Packages</span></span>
-<span id="cb13-2"><a href="daten-2022.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(whodata)      <span class="co"># Anzeigen der Daten</span></span>
-<span id="cb13-3"><a href="daten-2022.html#cb13-3" aria-hidden="true" tabindex="-1"></a>whodata            <span class="co"># Anzeigen der Daten auf der Konsole</span></span>
-<span id="cb13-4"><a href="daten-2022.html#cb13-4" aria-hidden="true" tabindex="-1"></a>?whodata           <span class="co"># Anzeigen der Datenbeschreibung</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="daten-2022.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fhswf)     <span class="co"># Laden des fhswf-Packages</span></span>
+<span id="cb14-2"><a href="daten-2022.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(whodata)      <span class="co"># Anzeigen der Daten</span></span>
+<span id="cb14-3"><a href="daten-2022.html#cb14-3" aria-hidden="true" tabindex="-1"></a>whodata            <span class="co"># Anzeigen der Daten auf der Konsole</span></span>
+<span id="cb14-4"><a href="daten-2022.html#cb14-4" aria-hidden="true" tabindex="-1"></a>?whodata           <span class="co"># Anzeigen der Datenbeschreibung</span></span></code></pre></div>
 <div id="beispiel-2" class="section level3 hasAnchor" number="15.3.1">
 <h3><span class="header-section-number">15.3.1</span> Beispiel<a href="daten-2022.html#beispiel-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="daten-2022.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Human Development Index von Deutschland im Jahr 2015</span></span>
-<span id="cb14-2"><a href="daten-2022.html#cb14-2" aria-hidden="true" tabindex="-1"></a>whodata[whodata<span class="sc">$</span>country_code <span class="sc">==</span> <span class="st">&quot;DEU&quot;</span> <span class="sc">&amp;</span> whodata<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">2015</span>, ]<span class="sc">$</span>hdi</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="daten-2022.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Human Development Index von Deutschland im Jahr 2015</span></span>
+<span id="cb15-2"><a href="daten-2022.html#cb15-2" aria-hidden="true" tabindex="-1"></a>whodata[whodata<span class="sc">$</span>country_code <span class="sc">==</span> <span class="st">&quot;DEU&quot;</span> <span class="sc">&amp;</span> whodata<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">2015</span>, ]<span class="sc">$</span>hdi</span></code></pre></div>
 <pre><code>## [1] 0.938</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="daten-2022.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mittlerer Human Development Index über alle (verfügbaren) Länder in 2017</span></span>
-<span id="cb16-2"><a href="daten-2022.html#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(whodata[whodata<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">2017</span>, ]<span class="sc">$</span>hdi, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="daten-2022.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mittlerer Human Development Index über alle (verfügbaren) Länder in 2017</span></span>
+<span id="cb17-2"><a href="daten-2022.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(whodata[whodata<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">2017</span>, ]<span class="sc">$</span>hdi, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] 0.736</code></pre>
 </div>
 </div>

@@ -23,7 +23,7 @@
 <meta name="author" content="Benjamin Buchwitz" />
 
 
-<meta name="date" content="2022-09-25" />
+<meta name="date" content="2022-09-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -163,6 +163,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="14.1" data-path="fhswf-package.html"><a href="fhswf-package.html#installation"><i class="fa fa-check"></i><b>14.1</b> Installation</a></li>
 <li class="chapter" data-level="14.2" data-path="fhswf-package.html"><a href="fhswf-package.html#template"><i class="fa fa-check"></i><b>14.2</b> Template</a></li>
+<li class="chapter" data-level="14.3" data-path="fhswf-package.html"><a href="fhswf-package.html#nutzung-des-templates"><i class="fa fa-check"></i><b>14.3</b> Nutzung des Templates</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="daten-2022.html"><a href="daten-2022.html"><i class="fa fa-check"></i><b>15</b> Daten 2022</a>
 <ul>
@@ -247,6 +248,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb6-2"><a href="fhswf-package.html#cb6-2" aria-hidden="true" tabindex="-1"></a>fhswf<span class="sc">::</span><span class="fu">install_fhswf</span>()                   <span class="co"># Fehlende LaTeX Pakete installieren</span></span></code></pre></div>
 <p>Der Installationsprozess ergänzt eine Vielzahl von LaTeX Komponenten und benötigt je nach Leistung und Auslastung des benutzten Computers <strong>etwa 30 Minuten</strong>.</p>
 <!-- Das folgende Video zeigt den vollständigen Installationsprozess und das erstellen eines PDFs mit Hilfe des Templates. -->
+</div>
+<div id="nutzung-des-templates" class="section level2 hasAnchor" number="14.3">
+<h2><span class="header-section-number">14.3</span> Nutzung des Templates<a href="fhswf-package.html#nutzung-des-templates" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Um das Template fhswf-seminarpaper nutzen zu können, klicken Sie unter
+<code>File</code> auf <code>New File</code> und dann auf <code>R Markdown...</code>.
+Anschließend öffnet sich ein Fenster, in dem Sie auf “From Template” klicken und dann sollte dort “FHSWF - Seminarpaper (pdf)” aufgelistet sein (siehe Abbildung <a href="fhswf-package.html#fig:fig-template-fhswf">14.1</a>). Dieses Template klicken Sie dann an, geben unter “Name” (siehe Abbildung <a href="fhswf-package.html#fig:fig-template-fhswf">14.1</a>) einen Namen für die Rmd-Datei ein, bestätigen dies mit <code>OK</code> und das Template öffnet sich anschließend (es wird ein Ordner mit dem von Ihnen angegebenen Namen erstellt, in dem alle für das Template erforderlichen Dateien abgespeichert sind).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-template-fhswf"></span>
+<img src="ScWrt_in_RMarkdown/screenshot_template_fhswf.PNG" alt="Aufruf des Templates FHSWF - Seminarpaper (pdf) aus dem R-Paket fhswf (fhswf?)." width="100%" />
+<p class="caption">
+Figure 14.1: Aufruf des Templates FHSWF - Seminarpaper (pdf) aus dem R-Paket <code>fhswf</code> <span class="citation">(<a href="#ref-fhswf" role="doc-biblioref"><strong>fhswf?</strong></a>)</span>.
+</p>
+</div>
+
+<p><strong>Verweis auf Quellen und Quellenverzeichnis</strong></p>
+<p>um auf die von Ihnen verwendeten Quellen im Text zu verweisen und um diese einschließlich der von Ihnen genutzten R-Pakete im Quellenverzeichnis anzuführen, nutzen Sie das <code>fhswf</code> Seminarpaper Template wie folgt:</p>
+<p>Indem Sie das Template FHSWF - Seminarpaper verwenden, wird eine Bib-Datei namens <em>references</em> automatisch mitgeladen. In dieser Datei sehen Sie Einträge, die jeweils für beispielhafte Quellen angelegt worden sind, wie z.B.:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="fhswf-package.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="sc">@</span>ARTICLE{BC64,</span>
+<span id="cb7-2"><a href="fhswf-package.html#cb7-2" aria-hidden="true" tabindex="-1"></a>title <span class="ot">=</span> {An analysis of transformations},</span>
+<span id="cb7-3"><a href="fhswf-package.html#cb7-3" aria-hidden="true" tabindex="-1"></a>author <span class="ot">=</span> <span class="st">&quot;Box, George E P and Cox, David R&quot;</span>,</span>
+<span id="cb7-4"><a href="fhswf-package.html#cb7-4" aria-hidden="true" tabindex="-1"></a>journal <span class="ot">=</span> <span class="st">&quot;Journal of the Royal Statistical Society. Series B&quot;</span>,</span>
+<span id="cb7-5"><a href="fhswf-package.html#cb7-5" aria-hidden="true" tabindex="-1"></a>volume <span class="ot">=</span> <span class="dv">26</span>,</span>
+<span id="cb7-6"><a href="fhswf-package.html#cb7-6" aria-hidden="true" tabindex="-1"></a>number <span class="ot">=</span> <span class="dv">2</span>,</span>
+<span id="cb7-7"><a href="fhswf-package.html#cb7-7" aria-hidden="true" tabindex="-1"></a>pages <span class="ot">=</span> <span class="st">&quot;211--252&quot;</span>,</span>
+<span id="cb7-8"><a href="fhswf-package.html#cb7-8" aria-hidden="true" tabindex="-1"></a>year <span class="ot">=</span> <span class="dv">1964</span></span>
+<span id="cb7-9"><a href="fhswf-package.html#cb7-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Für die von Ihnen genutzten Quellen legen Sie entsprechend einzelne Einträge in references.bib an.
+Im Text (in R Markdown) verweisen Sie dann auf die verwendeten Quellen mithilfe des @-Symbols wie z.B. <span class="citation">(<a href="#ref-BC64" role="doc-biblioref"><strong>BC64?</strong></a>)</span> (BC64 ist eine ID für die entsprechende Quelle). Im basierend auf dem R Markdown-Dokument generierten PDF-Dokument erscheinen dann entsprechend der/die Autor(en) und das Erscheinungsjahr.
+Wenn Sie das fhswf-seminarpaper Template öffnen, sind im Abschnitt <em>Using Citations</em> Beispiele zum Thema Zitation gegeben.
+Sind Ihre Quellen in der Bib-Datei angelegt und haben Sie auf diese im Text verwiesen, wird automatisch ein Literatur- bzw. Quellenverzeichnis erstellt.</p>
+<p>Möchten Sie Quellen, auf die Sie <strong>nicht</strong> im Text verweisen, manuell zum Quellenverzeichnis hinzufügen, legen Sie ebenfalls entsprechende Einträge in der Bib-Datei an und rufen diese über in R Markdown auf.</p>
 </div>
 </div>
             </section>

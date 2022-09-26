@@ -23,7 +23,7 @@
 <meta name="author" content="Benjamin Buchwitz" />
 
 
-<meta name="date" content="2022-09-25" />
+<meta name="date" content="2022-09-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -163,6 +163,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="14.1" data-path="fhswf-package.html"><a href="fhswf-package.html#installation"><i class="fa fa-check"></i><b>14.1</b> Installation</a></li>
 <li class="chapter" data-level="14.2" data-path="fhswf-package.html"><a href="fhswf-package.html#template"><i class="fa fa-check"></i><b>14.2</b> Template</a></li>
+<li class="chapter" data-level="14.3" data-path="fhswf-package.html"><a href="fhswf-package.html#nutzung-des-templates"><i class="fa fa-check"></i><b>14.3</b> Nutzung des Templates</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="daten-2022.html"><a href="daten-2022.html"><i class="fa fa-check"></i><b>15</b> Daten 2022</a>
 <ul>
@@ -233,20 +234,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="evaluation" class="section level1 unnumbered hasAnchor">
 <h1>Evaluation<a href="evaluation.html#evaluation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="evaluation.html#cb32-1" aria-hidden="true" tabindex="-1"></a>stats_ss2021 <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
-<span id="cb32-2"><a href="evaluation.html#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>date, <span class="sc">~</span>vg, <span class="sc">~</span>g, <span class="sc">~</span>n, <span class="sc">~</span>b, <span class="sc">~</span>vb, <span class="sc">~</span>total,</span>
-<span id="cb32-3"><a href="evaluation.html#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;07.04.2021&quot;</span>,<span class="dv">45</span>,<span class="dv">71</span>,<span class="dv">7</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">128</span>,</span>
-<span id="cb32-4"><a href="evaluation.html#cb32-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;12.04.2021&quot;</span>,<span class="dv">24</span>,<span class="dv">63</span>,<span class="dv">10</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">119</span>,</span>
-<span id="cb32-5"><a href="evaluation.html#cb32-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;14.04.2021&quot;</span>,<span class="dv">34</span>,<span class="dv">55</span>,<span class="dv">20</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">118</span>,</span>
-<span id="cb32-6"><a href="evaluation.html#cb32-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;19.04.2021&quot;</span>,<span class="dv">15</span>,<span class="dv">54</span>,<span class="dv">12</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">97</span>,</span>
-<span id="cb32-7"><a href="evaluation.html#cb32-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;26.04.2021&quot;</span>,<span class="dv">17</span>,<span class="dv">42</span>,<span class="dv">8</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">99</span>,</span>
-<span id="cb32-8"><a href="evaluation.html#cb32-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;28.04.2021&quot;</span>,<span class="dv">55</span>,<span class="dv">38</span>,<span class="dv">13</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">115</span>,</span>
-<span id="cb32-9"><a href="evaluation.html#cb32-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;05.05.2021&quot;</span>,<span class="dv">23</span>,<span class="dv">37</span>,<span class="dv">13</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">110</span></span>
-<span id="cb32-10"><a href="evaluation.html#cb32-10" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb32-11"><a href="evaluation.html#cb32-11" aria-hidden="true" tabindex="-1"></a>evcnames<span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Datum&quot;</span>,<span class="st">&quot;sehr zufrieden&quot;</span>, <span class="st">&quot;zufrieden&quot;</span>, </span>
-<span id="cb32-12"><a href="evaluation.html#cb32-12" aria-hidden="true" tabindex="-1"></a>           <span class="st">&quot;weder zufrieden noch unzufrieden&quot;</span>, </span>
-<span id="cb32-13"><a href="evaluation.html#cb32-13" aria-hidden="true" tabindex="-1"></a>           <span class="st">&quot;unzufrieden&quot;</span>, <span class="st">&quot;sehr unzufrieden&quot;</span>, <span class="st">&quot;anwesend&quot;</span>)</span>
-<span id="cb32-14"><a href="evaluation.html#cb32-14" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(stats_ss2021, <span class="at">booktabbs=</span>T, <span class="at">col.names =</span> evcnames)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="evaluation.html#cb33-1" aria-hidden="true" tabindex="-1"></a>stats_ss2021 <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb33-2"><a href="evaluation.html#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>date, <span class="sc">~</span>vg, <span class="sc">~</span>g, <span class="sc">~</span>n, <span class="sc">~</span>b, <span class="sc">~</span>vb, <span class="sc">~</span>total,</span>
+<span id="cb33-3"><a href="evaluation.html#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;07.04.2021&quot;</span>,<span class="dv">45</span>,<span class="dv">71</span>,<span class="dv">7</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">128</span>,</span>
+<span id="cb33-4"><a href="evaluation.html#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;12.04.2021&quot;</span>,<span class="dv">24</span>,<span class="dv">63</span>,<span class="dv">10</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">119</span>,</span>
+<span id="cb33-5"><a href="evaluation.html#cb33-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;14.04.2021&quot;</span>,<span class="dv">34</span>,<span class="dv">55</span>,<span class="dv">20</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">118</span>,</span>
+<span id="cb33-6"><a href="evaluation.html#cb33-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;19.04.2021&quot;</span>,<span class="dv">15</span>,<span class="dv">54</span>,<span class="dv">12</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">97</span>,</span>
+<span id="cb33-7"><a href="evaluation.html#cb33-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;26.04.2021&quot;</span>,<span class="dv">17</span>,<span class="dv">42</span>,<span class="dv">8</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">99</span>,</span>
+<span id="cb33-8"><a href="evaluation.html#cb33-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;28.04.2021&quot;</span>,<span class="dv">55</span>,<span class="dv">38</span>,<span class="dv">13</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">115</span>,</span>
+<span id="cb33-9"><a href="evaluation.html#cb33-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;05.05.2021&quot;</span>,<span class="dv">23</span>,<span class="dv">37</span>,<span class="dv">13</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">110</span></span>
+<span id="cb33-10"><a href="evaluation.html#cb33-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb33-11"><a href="evaluation.html#cb33-11" aria-hidden="true" tabindex="-1"></a>evcnames<span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Datum&quot;</span>,<span class="st">&quot;sehr zufrieden&quot;</span>, <span class="st">&quot;zufrieden&quot;</span>, </span>
+<span id="cb33-12"><a href="evaluation.html#cb33-12" aria-hidden="true" tabindex="-1"></a>           <span class="st">&quot;weder zufrieden noch unzufrieden&quot;</span>, </span>
+<span id="cb33-13"><a href="evaluation.html#cb33-13" aria-hidden="true" tabindex="-1"></a>           <span class="st">&quot;unzufrieden&quot;</span>, <span class="st">&quot;sehr unzufrieden&quot;</span>, <span class="st">&quot;anwesend&quot;</span>)</span>
+<span id="cb33-14"><a href="evaluation.html#cb33-14" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(stats_ss2021, <span class="at">booktabbs=</span>T, <span class="at">col.names =</span> evcnames)</span></code></pre></div>
 </div>
             </section>
 
