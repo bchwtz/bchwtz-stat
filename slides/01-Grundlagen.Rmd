@@ -51,12 +51,16 @@ library(vcd)
 - **Prüfungsvorleistung:** Bedingung der PVL sind das Erreichen von mindestens 5 Punkte in der Gruppenarbeit zum Stand der Zwischenabgabe sowie das vorlegen von 3 vorgegebenen Datacamp-Zertifikaten. 
 - **Bestehen:** Das Modul *Statistik* gilt als bestanden, wenn Sie mindestens 50 Punkte aus der Gruppenarbeit (max. 25 Punkte) und der Klausur (max. 75 Punkte) erreichen.
 
+<!-- ## Deadlines -->
+
+<!-- * Gruppenanmeldung: **Fr. 08.04.2022: 12:00 Uhr** -->
+<!-- * Abgabe Exposé: **Fr. 22.04.2022: 12:00 Uhr** -->
+<!-- * Abgabe Zwischenabgabe: **Fr. 27.05.2022: 12:00 Uhr** -->
+<!-- * Endabgabe: **Fr. 29.07.2022: 12:00 Uhr** -->
+
 ## Deadlines
 
-* Gruppenanmeldung: **Fr. 08.04.2022: 12:00 Uhr**
-* Abgabe Exposé: **Fr. 22.04.2022: 12:00 Uhr**
-* Abgabe Zwischenabgabe: **Fr. 27.05.2022: 12:00 Uhr**
-* Endabgabe: **Fr. 29.07.2022: 12:00 Uhr**
+\kariert{16}
 
 ## Was ist Statistik?
 
