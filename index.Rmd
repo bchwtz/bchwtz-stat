@@ -47,5 +47,9 @@ Herzlich Willkommen zum Kurs Statistik
 | 4    | Kombinatorik      | [PDF](slides/05-Kombinatorik.pdf)     |
 | 5    | Wahrscheinlichkeitsrechnung| [PDF](slides/06-Wahrscheinlichkeitsrechnung.pdf)|
 | 6    | Anwendung der Wsk.Rechnung | [PDF](slides/07-WskAnwendung.pdf)|
-| 7    | Verteilungen | [PDF](slides/08-WskVerteilungen.pdf)|
-| 8    | Verteilungen | [PDF](slides/09-Verteilungen.pdf)|
+| 7    | Verteilungen 1/2 | [PDF](slides/08-WskVerteilungen.pdf)|
+| 8    | Verteilungen 1/2 | [PDF](slides/09-Verteilungen.pdf)|
+| 9    | Schätzung | [PDF](slides/10-Schaetzung.pdf)|
+| 10   | Hypothesentests | [PDF](slides/11-Hypothesentests.pdf)|
+| 11   | Lineare Regression | [PDF](slides/12-Regression.pdf)|
+| 12   | Multiple Regression | [PDF](sli13-MultipleRegression.pdf.pdf)|
