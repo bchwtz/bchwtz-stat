@@ -4,20 +4,20 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Kapitel 11 Hypothesentests | Statistics</title>
-  <meta name="description" content="Kapitel 11 Hypothesentests | Statistics Course Notes" />
+  <title>Kapitel 15 Daten 2023 | Statistics</title>
+  <meta name="description" content="Kapitel 15 Daten 2023 | Statistics Course Notes" />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Kapitel 11 Hypothesentests | Statistics" />
+  <meta property="og:title" content="Kapitel 15 Daten 2023 | Statistics" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Kapitel 11 Hypothesentests | Statistics Course Notes" />
+  <meta property="og:description" content="Kapitel 15 Daten 2023 | Statistics Course Notes" />
   <meta name="github-repo" content="bchwtz/bchwtz-stat" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Kapitel 11 Hypothesentests | Statistics" />
+  <meta name="twitter:title" content="Kapitel 15 Daten 2023 | Statistics" />
   
-  <meta name="twitter:description" content="Kapitel 11 Hypothesentests | Statistics Course Notes" />
+  <meta name="twitter:description" content="Kapitel 15 Daten 2023 | Statistics Course Notes" />
   
 
 <meta name="author" content="Benjamin Buchwitz" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="von-der-stichprobe-zur-grundgesamtheit.html"/>
-<link rel="next" href="lineare-regression.html"/>
+<link rel="prev" href="fhswf-package.html"/>
+<link rel="next" href="daten-2022.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -260,97 +260,19 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="hypothesentests" class="section level1 hasAnchor" number="11">
-<h1><span class="header-section-number">Kapitel 11</span> Hypothesentests<a href="hypothesentests.html#hypothesentests" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-13"></span>
-<img src="slides/gifs/11-Hypothesentests.gif" alt="[Download Slides](slides/11-Hypothesentests.pdf)" width="80%" />
-<p class="caption">
-Figure 11.1: <a href="slides/11-Hypothesentests.pdf">Download Slides</a>
-</p>
-</div>
-<div id="korrelationskoeffizient-pearson" class="section level2 hasAnchor" number="11.1">
-<h2><span class="header-section-number">11.1</span> Korrelationskoeffizient (Pearson)<a href="hypothesentests.html#korrelationskoeffizient-pearson" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="theoretische-grundlagen" class="section level3 hasAnchor" number="11.1.1">
-<h3><span class="header-section-number">11.1.1</span> Theoretische Grundlagen<a href="hypothesentests.html#theoretische-grundlagen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Der empirische Korrelationskoeffizient nach Pearson <span class="math inline">\(r_{xy}\)</span> als Schätzer für den Korrelationskoeffizienten in der Grundgesamtheit <span class="math inline">\(\rho_{xy}\)</span> ist wie folgt definiert.</p>
-<p><span class="math display">\[
-r_{xy} = \frac{s_{xy}}{\sqrt{s_x^2 s_y^2}}
-\]</span></p>
-<p>Dabei bezeichnet <span class="math inline">\(s_x^2\)</span> die empirische Varianz der Variable <span class="math inline">\(X\)</span>, <span class="math inline">\(s_y^2\)</span> die empirische Varianz der Variable <span class="math inline">\(Y\)</span> und <span class="math inline">\(s_{xy}\)</span> die empirische Kovarianz zwischen den Variablen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span>. Die nachfolgende Tabelle zeigt die Hypothesen und die Testvorschriften für einen rechtssseitigen, linksseitigen und beidseitigen Hypothesentest. Die Nullhypothese <span class="math inline">\(H_0: \rho = 0\)</span> entspricht der Annahme der stochastischen Unabhängigkeit. Zur Vereinfachung der Notation wird der Korrelationskoeffizient zwischen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span>, in der nachfolgenden Tabelle nur mit <span class="math inline">\(\rho\)</span> bzw. <span class="math inline">\(r\)</span> bezeichnet.</p>
-<p><strong>Annahmen:</strong> Bivariate Normalverteilung von <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> in der Grundgesamtheit, <span class="math inline">\(n\leq 30\)</span>.</p>
-<table>
-<colgroup>
-<col width="45%" />
-<col width="54%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Hypothesen</th>
-<th align="left">Testvorschrift: Verwerfe <span class="math inline">\(H_0\)</span>, wenn gilt:</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><span class="math inline">\(H_0: \rho = 0\)</span> vs. <span class="math inline">\(H_1: \rho &gt; 0\)</span></td>
-<td align="left"><span class="math inline">\(\frac{r\sqrt{n-2}}{\sqrt{1-r^2}} &gt; t_{n-2,1-\alpha}\)</span></td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(H_0: \rho = 0\)</span> vs. <span class="math inline">\(H_1: \rho &lt; 0\)</span></td>
-<td align="left"><span class="math inline">\(\frac{r\sqrt{n-2}}{\sqrt{1-r^2}} &lt; -t_{n-2,1-\alpha}\)</span></td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(H_0: \rho = 0\)</span> vs. <span class="math inline">\(H_1: \rho \neq 0\)</span></td>
-<td align="left"><span class="math inline">\(\frac{r\sqrt{n-2}}{\sqrt{1-r^2}} &gt; t_{n-2,1-\alpha}\)</span> oder <span class="math inline">\(\frac{r\sqrt{n-2}}{\sqrt{1-r^2}} &lt; -t_{n-2,1-\alpha}\)</span></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="praktische-anwendung" class="section level3 hasAnchor" number="11.1.2">
-<h3><span class="header-section-number">11.1.2</span> Praktische Anwendung<a href="hypothesentests.html#praktische-anwendung" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Angewendet werden kann der Signifikanztest für den Korrelationskoeffizienten nach Pearson in R mit der Funktion <code>cor.test</code> unter setzen des Arguments <code>method = "pearson"</code>. Die Festlegung der Richtung des Tests (rechtsseitig, linksseitig, beidseitig) durch Spezifikation der Alternativhypothese <span class="math inline">\(H_1\)</span> erlaubt das Argument <code>alternative</code>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="hypothesentests.html#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">44.4</span>, <span class="fl">45.9</span>, <span class="fl">41.9</span>, <span class="fl">53.3</span>, <span class="fl">44.7</span>, <span class="fl">44.1</span>, <span class="fl">50.7</span>, <span class="fl">45.2</span>, <span class="fl">60.1</span>)</span>
-<span id="cb1-2"><a href="hypothesentests.html#cb1-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>( <span class="fl">2.6</span>,  <span class="fl">3.1</span>,  <span class="fl">2.5</span>,  <span class="fl">5.0</span>,  <span class="fl">3.6</span>,  <span class="fl">4.0</span>,  <span class="fl">5.2</span>,  <span class="fl">2.8</span>,  <span class="fl">3.8</span>)</span>
-<span id="cb1-3"><a href="hypothesentests.html#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="hypothesentests.html#cb1-4" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(x, y, <span class="at">method =</span> <span class="st">&quot;pearson&quot;</span>, <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)</span>
-<span id="cb1-5"><a href="hypothesentests.html#cb1-5" aria-hidden="true" tabindex="-1"></a>result</span></code></pre></div>
-<pre><code>## 
-##  Pearson&#39;s product-moment correlation
-## 
-## data:  x and y
-## t = 1.8411, df = 7, p-value = 0.1082
-## alternative hypothesis: true correlation is not equal to 0
-## 95 percent confidence interval:
-##  -0.1497426  0.8955795
-## sample estimates:
-##       cor 
-## 0.5711816</code></pre>
-<p>Im gezeigten Beispiel wird ein <strong>beidseitiger</strong> Hypothesentest (<code>alternative = "two.sided"</code>) für einen fiktiven Datensatz mit <span class="math inline">\(n=\)</span> 9 Beobachtungen durchgeführt. Der berechnete empirische Korrelationskoeffizient beträgt hier <span class="math inline">\(r_{xy}=\)</span> 0.5712. Die berechnete Teststatistik aus einer <span class="math inline">\(t\)</span>-Verteilung mit 7 Freiheitsgerade beträgt 1.841. Die Nullhypothese kann erstmals ab einem Signifikanzniveau von <span class="math inline">\(\alpha^*=\)</span> 0.1082 verworfen werden. Angenommen der Test wird mit einem Signifikanzniveau von <span class="math inline">\(\alpha = 0.05 = 5\%\)</span> durchgeführt, so kann die Nullhypothese <span class="math inline">\(H_0\)</span> nicht verworfen werden. Es liegt keine empirische Evidenz für die Abhängigkeit von <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> in der Grundgesamtheit vor. Es gilt <span class="math inline">\(\rho_{xy}=0\)</span>, die Variablen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> sind voneinander nicht linear abhängig.</p>
-</div>
-<div id="ergänzende-erläuterungen" class="section level3 hasAnchor" number="11.1.3">
-<h3><span class="header-section-number">11.1.3</span> Ergänzende Erläuterungen<a href="hypothesentests.html#ergänzende-erläuterungen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Nachfolgend wird die manuelle Berechnung für die wesentlichen Werte des Hypothesentests nachvollzogen. Die gezeigten Werte sind Deckungsgleich mit den Werten der Funktion <code>cor.test</code> aus dem zuvor gezeigten Beispiel.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="hypothesentests.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Stichprobengröße auslesen</span></span>
-<span id="cb3-2"><a href="hypothesentests.html#cb3-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">length</span>(x) <span class="ot">&lt;-</span> <span class="fu">length</span>(y)</span>
-<span id="cb3-3"><a href="hypothesentests.html#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="hypothesentests.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Teststatistik berechnen</span></span>
-<span id="cb3-5"><a href="hypothesentests.html#cb3-5" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">cor</span>(x,y)</span>
-<span id="cb3-6"><a href="hypothesentests.html#cb3-6" aria-hidden="true" tabindex="-1"></a>teststat <span class="ot">&lt;-</span> (r<span class="sc">*</span><span class="fu">sqrt</span>(n<span class="dv">-2</span>))<span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">-</span>r<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb3-7"><a href="hypothesentests.html#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="hypothesentests.html#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Implizite Irrtumswahrscheinlichkeit berechnen</span></span>
-<span id="cb3-9"><a href="hypothesentests.html#cb3-9" aria-hidden="true" tabindex="-1"></a>alpha_imp <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">pt</span>(teststat, <span class="at">df =</span> n<span class="dv">-2</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
-<p>Um die gezeigte Testvorschrift <strong>manuell</strong> prüfen zu können, wird nach Festlegen der maximalen Irrtumswahrscheinlichkeit <span class="math inline">\(\alpha\)</span> noch der Vergleichswert der <span class="math inline">\(t\)</span>-Verteilung (rechte Seite der Ungleichungen aus der Tabelle mit den Testvorschriften) benötigt. Die Funktion <code>qt</code> gibt hier die Quantile der <span class="math inline">\(t\)</span>-Verteilung an und übernimmt somit die Aufgabe der Verteilungstabelle. Die Testvorschrift kann also auch hier direkt über die oben gezeigten Ungleichungen als auch über das implizite Signifikanzniveau, dem p-Value <span class="math inline">\(\alpha^*\)</span>, geprüft werden. Beide Vorgehensweisen führen (natürlich) zu einem identischen Ergebnis.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="hypothesentests.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vergleichsgröße der t-Verteilung bestimmen</span></span>
-<span id="cb4-2"><a href="hypothesentests.html#cb4-2" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb4-3"><a href="hypothesentests.html#cb4-3" aria-hidden="true" tabindex="-1"></a>tval <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>, <span class="at">df =</span> n<span class="dv">-2</span>)</span>
-<span id="cb4-4"><a href="hypothesentests.html#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="hypothesentests.html#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Testentscheidung: H0 verwerfen?</span></span>
-<span id="cb4-6"><a href="hypothesentests.html#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Prüfung mittels Testvorschrift</span></span>
-<span id="cb4-7"><a href="hypothesentests.html#cb4-7" aria-hidden="true" tabindex="-1"></a>(teststat <span class="sc">&gt;</span> tval) <span class="sc">|</span> (teststat <span class="sc">&lt;</span> <span class="sc">-</span>tval)</span>
-<span id="cb4-8"><a href="hypothesentests.html#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="hypothesentests.html#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Testentscheidung: H0 verwerfen?</span></span>
-<span id="cb4-10"><a href="hypothesentests.html#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Prüfung mittels implizitem Signifikanzniveau </span></span>
-<span id="cb4-11"><a href="hypothesentests.html#cb4-11" aria-hidden="true" tabindex="-1"></a>alpha_imp <span class="sc">&lt;</span> alpha</span></code></pre></div>
-
+<div id="daten-2023" class="section level1 hasAnchor" number="15">
+<h1><span class="header-section-number">Kapitel 15</span> Daten 2023<a href="daten-2023.html#daten-2023" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="bike-sharing" class="section level2 hasAnchor" number="15.1">
+<h2><span class="header-section-number">15.1</span> Bike Sharing<a href="daten-2023.html#bike-sharing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="daten-2023.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fhswf)       <span class="co"># Laden des fhswf-Packages</span></span>
+<span id="cb8-2"><a href="daten-2023.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(bikesharing)    <span class="co"># Anzeigen der Daten</span></span>
+<span id="cb8-3"><a href="daten-2023.html#cb8-3" aria-hidden="true" tabindex="-1"></a>bikesharing          <span class="co"># Anzeigen der Daten auf der Konsole</span></span>
+<span id="cb8-4"><a href="daten-2023.html#cb8-4" aria-hidden="true" tabindex="-1"></a>?bikesharing         <span class="co"># Anzeigen der Datenbeschreibung</span></span></code></pre></div>
+<div id="beispiel" class="section level3 hasAnchor" number="15.1.1">
+<h3><span class="header-section-number">15.1.1</span> Beispiel<a href="daten-2023.html#beispiel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="daten-2023.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(bikesharing<span class="sc">$</span>cnt) <span class="co"># Deskriptive Statistik der benutzten Fahrräder pro Tag</span></span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##      22    3152    4548    4504    5956    8714</code></pre>
 </div>
 </div>
 </div>
@@ -359,8 +281,8 @@ r_{xy} = \frac{s_{xy}}{\sqrt{s_x^2 s_y^2}}
           </div>
         </div>
       </div>
-<a href="von-der-stichprobe-zur-grundgesamtheit.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="lineare-regression.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="fhswf-package.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="daten-2022.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -391,7 +313,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/11-Hypothesentests.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/14-Daten.Rmd",
 "text": "Edit"
 },
 "history": {
