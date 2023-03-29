@@ -85,7 +85,24 @@ Komfortables Einbetten der Datacamp Zertifikate in das erzeugte PDF erlaubt die 
 
 ![](./data/rstudio-datacampcertificates.png)
 
- 
+
+# Daten 2023
+
+## Bike Sharing
+
+```{r, eval = FALSE}
+library(fhswf)       # Laden des fhswf-Packages
+View(bikesharing)    # Anzeigen der Daten
+bikesharing          # Anzeigen der Daten auf der Konsole
+?bikesharing         # Anzeigen der Datenbeschreibung
+```
+
+### Beispiel
+
+```{r}
+summary(bikesharing$cnt) # Deskriptive Statistik der benutzten Fahrräder pro Tag
+```
+
 # Daten 2022
 
 ## NYC Airbnb
