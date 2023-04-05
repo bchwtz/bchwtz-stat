@@ -108,7 +108,7 @@ summary(bikesharing$cnt)
 
 ```{r, eval = FALSE}
 library(fhswf)       # Laden des fhswf-Packages
-View(boatprices)     # Anzeigen der Daten
+View(boatprices)     # Anzeigen der Daten 
 boatprices           # Anzeigen der Daten auf der Konsole
 ?boatprices          # Anzeigen der Datenbeschreibung
 ```
