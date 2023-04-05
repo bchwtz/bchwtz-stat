@@ -103,6 +103,21 @@ bikesharing          # Anzeigen der Daten auf der Konsole
 summary(bikesharing$cnt) # Deskriptive Statistik der benutzten Fahrräder pro Tag
 ```
 
+## 2023: Insurance
+
+```{r, eval = FALSE}
+library(fhswf)       # Laden des fhswf-Packages
+View(insurance)      # Anzeigen der Daten
+insurance            # Anzeigen der Daten auf der Konsole
+?insurance           # Anzeigen der Datenbeschreibung
+```
+
+### Beispiel {-}
+
+```{r}
+summary(insurance$charges) # Deskriptive Statistik der jährlichen
+                           # Versicherungskosten in US Dollar
+```
 
 ## 2022: NYC Airbnb
 
