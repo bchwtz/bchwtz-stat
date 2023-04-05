@@ -100,7 +100,8 @@ bikesharing          # Anzeigen der Daten auf der Konsole
 ### Beispiel {-}
 
 ```{r}
-summary(bikesharing$cnt) # Deskriptive Statistik der benutzten Fahrräder pro Tag
+# Deskriptive Statistik der benutzten Fahrräder pro Tag
+summary(bikesharing$cnt)
 ```
 
 ## 2023: Yacht Prices
@@ -115,8 +116,8 @@ boatprices           # Anzeigen der Daten auf der Konsole
 ### Beispiel {-}
 
 ```{r}
-summary(boatprices$price) # Deskriptive Statistik des Preises der 
-                          # gelisteten Boote in Euro
+# Deskriptive Statistik des Preises der gelisteten Boote in Euro
+summary(boatprices$price)  
 ```
 
 ## 2023: Insurance
@@ -131,8 +132,8 @@ insurance            # Anzeigen der Daten auf der Konsole
 ### Beispiel {-}
 
 ```{r}
-summary(insurance$charges) # Deskriptive Statistik der jährlichen
-                           # Versicherungskosten in US Dollar
+# Deskriptive Statistik der jährlichen Versicherungskosten in US Dollar
+summary(insurance$charges) 
 ```
 
 ## 2022: NYC Airbnb
