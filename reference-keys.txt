@@ -37,6 +37,7 @@ wissenschaftliches-arbeiten-in-r-markdown
 datacamp-zertifikate
 daten
 bike-sharing
+yacht-prices
 insurance
 nyc-airbnb
 autopreise
