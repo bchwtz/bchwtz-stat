@@ -37,6 +37,7 @@ wissenschaftliches-arbeiten-in-r-markdown
 datacamp-zertifikate
 daten
 bike-sharing
+insurance
 nyc-airbnb
 autopreise
 who-data
