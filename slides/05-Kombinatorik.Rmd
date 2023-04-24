@@ -30,11 +30,6 @@ library(tidyverse)
 library(vcd)
 ```
 
-## Lernziele
-
-- Ziel 1
-- Ziel 2
-- Ziel 3
 
 ## Kombinatorik
 
