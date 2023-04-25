@@ -130,7 +130,7 @@ setdiff(M1, M2)   # Differenzmenge
 
 ## Wahrscheinlichkeiten
 
-### Definition: Wahrscheinlichkeit (von Mieses)
+### Definition: Wahrscheinlichkeit (von Mises)
 Die statistische Wahrscheinlichkeit eines Ereignisses $A$ ist der Grenzwert der relativen Häufigkeit des Auftretens des Ereignisses, also die relative Häufigkeit bei einer sehr großen Anzahl von Wiederholungen.
 
 $$P(A) = \frac{\text{Anzahl des Eintreffens von A}}{\text{Anzahl der Wiederholungen des Zufallsexperiments}}$$
