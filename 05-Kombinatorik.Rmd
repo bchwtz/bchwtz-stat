@@ -5,3 +5,4 @@ knitr::include_graphics("slides/gifs/05-Kombinatorik.gif")
 ```
 
  
+![](./data/combinatorialtree.png)
