@@ -45,7 +45,7 @@ Um auf die von Ihnen verwendeten Quellen im Text zu verweisen und um diese einsc
 Indem Sie das Template FHSWF - Seminarpaper verwenden, wird eine Bib-Datei namens *references* automatisch mitgeladen. In dieser Datei sehen Sie Einträge, die jeweils für beispielhafte Quellen angelegt worden sind, wie z.B.:
 
 ```{r, echo=TRUE, eval=FALSE}
-@ARTICLE{BC64,
+@ARTICLE{BC64, 
 title = {An analysis of transformations},
 author = "Box, George E P and Cox, David R",
 journal = "Journal of the Royal Statistical Society. Series B",
@@ -57,7 +57,7 @@ year = 1964
 ```
 
 Für die von Ihnen genutzten Quellen legen Sie entsprechend einzelne Einträge in references.bib an.
-Im Text (in R Markdown) verweisen Sie dann auf die verwendeten Quellen mithilfe des @-Symbols wie z.B. \@BC64 (BC64 ist eine ID für die entsprechende Quelle). Im basierend auf dem R Markdown-Dokument generierten PDF-Dokument erscheinen dann entsprechend der/die Autor(en) und das Erscheinungsjahr.
+Im Text (in R Markdown) verweisen Sie dann auf die verwendeten Quellen mithilfe des @-Symbols wie z.B. \@BC64 (BC64 ist eine ID für die entsprechende Quelle, diese ID darf keine Leerzeichen enthalten). Im - basierend auf dem R Markdown-Dokument - generierten PDF-Dokument erscheinen dann entsprechend der/die Autor(en) und das Erscheinungsjahr.
 Wenn Sie das fhswf-seminarpaper Template öffnen, sind im Abschnitt *Using Citations* Beispiele zum Thema Zitation gegeben.
 Sind Ihre Quellen in der Bib-Datei angelegt und haben Sie auf diese im Text verwiesen, wird automatisch ein Literatur- bzw. Quellenverzeichnis erstellt.
 
@@ -76,7 +76,7 @@ Diese können über nachfolgende Links heruntergeladen werden.
 
 ##  Datacamp(-zertifikate)
 
-Komfortables Einbetten der Datacamp Zertifikate in das erzeugte PDF erlaubt die Funktion `fhswf::include_datacamp()`. Dazu müssen die PDF Dokumente in einem Unterorder des Seminararbeits-Projektes abgelegt werden. In der Standardeinstellung nutzt die Funktion `fhswf::include_datacamp()` einen Ordner mit dem Namen `datacamp`. Der nachfolgende Screenshot zeigt den notwendigen Programmcode für die Einbettung der Zertifikate und das daraus resultierende Ergebnis. Dabei werden die PDF Dokumente bewusst in der geringen Größe eingebettet - diese sind detailreich, hereinzoombar und daher für die Korrektoren gut prüfbar. Der Programmcode ist ebenfalls auf der Hilfeseite `?include_datacamp()` einsebar.
+Komfortables Einbetten der Datacamp Zertifikate in das erzeugte PDF erlaubt die Funktion `fhswf::include_datacamp()`. Dazu müssen die PDF Dokumente in einem Unterorder des Seminararbeits-Projektes abgelegt werden. In der Standardeinstellung nutzt die Funktion `fhswf::include_datacamp()` einen Ordner mit dem Namen `datacamp`. Die Dateinamen der Zertifikate und der Dateipfad sollten keine Sonderzeichen enthalten, da dies häufig zu Problemen führt. Auch Leerzeichen im Namen der Zertifikate sollten vermieden werden. Die Funktion `fhswf::include_datacamp()` benennt die PDF Dateien der Zertifikate (in der Standardeinstellung) automatisch um, sodass bei der Erstellung des Seminarpapers weniger Fehler auftreten. Der nachfolgende Screenshot zeigt den notwendigen Programmcode für die Einbettung der Zertifikate und das daraus resultierende Ergebnis. Dabei werden die PDF Dokumente bewusst in der geringen Größe eingebettet - diese sind detailreich, hereinzoombar und daher für die Korrektoren gut prüfbar. Der Programmcode ist ebenfalls auf der Hilfeseite `?include_datacamp()` einsebar.
 
 ![](./data/rstudio-datacampcertificates.png)
 
