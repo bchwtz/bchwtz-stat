@@ -23,7 +23,7 @@
 <meta name="author" content="Benjamin Buchwitz" />
 
 
-<meta name="date" content="2023-05-09" />
+<meta name="date" content="2023-05-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -294,7 +294,7 @@ Figure 14.1: Aufruf des Templates FHSWF - Seminarpaper (pdf) aus dem R-Paket <co
 <p><strong>Verweis auf Quellen und Quellenverzeichnis</strong></p>
 <p>Um auf die von Ihnen verwendeten Quellen im Text zu verweisen und um diese einschließlich der von Ihnen genutzten R-Pakete im Quellenverzeichnis anzuführen, nutzen Sie das <code>fhswf</code> Seminarpaper Template wie folgt:</p>
 <p>Indem Sie das Template FHSWF - Seminarpaper verwenden, wird eine Bib-Datei namens <em>references</em> automatisch mitgeladen. In dieser Datei sehen Sie Einträge, die jeweils für beispielhafte Quellen angelegt worden sind, wie z.B.:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="fhswf-package.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="sc">@</span>ARTICLE{BC64,</span>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="fhswf-package.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="sc">@</span>ARTICLE{BC64, </span>
 <span id="cb7-2"><a href="fhswf-package.html#cb7-2" aria-hidden="true" tabindex="-1"></a>title <span class="ot">=</span> {An analysis of transformations},</span>
 <span id="cb7-3"><a href="fhswf-package.html#cb7-3" aria-hidden="true" tabindex="-1"></a>author <span class="ot">=</span> <span class="st">&quot;Box, George E P and Cox, David R&quot;</span>,</span>
 <span id="cb7-4"><a href="fhswf-package.html#cb7-4" aria-hidden="true" tabindex="-1"></a>journal <span class="ot">=</span> <span class="st">&quot;Journal of the Royal Statistical Society. Series B&quot;</span>,</span>
@@ -304,7 +304,7 @@ Figure 14.1: Aufruf des Templates FHSWF - Seminarpaper (pdf) aus dem R-Paket <co
 <span id="cb7-8"><a href="fhswf-package.html#cb7-8" aria-hidden="true" tabindex="-1"></a>year <span class="ot">=</span> <span class="dv">1964</span></span>
 <span id="cb7-9"><a href="fhswf-package.html#cb7-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>Für die von Ihnen genutzten Quellen legen Sie entsprechend einzelne Einträge in references.bib an.
-Im Text (in R Markdown) verweisen Sie dann auf die verwendeten Quellen mithilfe des @-Symbols wie z.B. @BC64 (BC64 ist eine ID für die entsprechende Quelle). Im basierend auf dem R Markdown-Dokument generierten PDF-Dokument erscheinen dann entsprechend der/die Autor(en) und das Erscheinungsjahr.
+Im Text (in R Markdown) verweisen Sie dann auf die verwendeten Quellen mithilfe des @-Symbols wie z.B. @BC64 (BC64 ist eine ID für die entsprechende Quelle, diese ID darf keine Leerzeichen enthalten). Im - basierend auf dem R Markdown-Dokument - generierten PDF-Dokument erscheinen dann entsprechend der/die Autor(en) und das Erscheinungsjahr.
 Wenn Sie das fhswf-seminarpaper Template öffnen, sind im Abschnitt <em>Using Citations</em> Beispiele zum Thema Zitation gegeben.
 Sind Ihre Quellen in der Bib-Datei angelegt und haben Sie auf diese im Text verwiesen, wird automatisch ein Literatur- bzw. Quellenverzeichnis erstellt.</p>
 <p>Möchten Sie Quellen, auf die Sie <strong>nicht</strong> im Text verweisen, manuell zum Quellenverzeichnis hinzufügen, legen Sie ebenfalls entsprechende Einträge in der Bib-Datei an und rufen diese über “\nocite{IDderQuelle}” in R Markdown auf.</p>
@@ -342,7 +342,7 @@ Diese können über nachfolgende Links heruntergeladen werden.</p>
 </div>
 <div id="datacamp-zertifikate" class="section level2 hasAnchor" number="14.5">
 <h2><span class="header-section-number">14.5</span> Datacamp(-zertifikate)<a href="fhswf-package.html#datacamp-zertifikate" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Komfortables Einbetten der Datacamp Zertifikate in das erzeugte PDF erlaubt die Funktion <code>fhswf::include_datacamp()</code>. Dazu müssen die PDF Dokumente in einem Unterorder des Seminararbeits-Projektes abgelegt werden. In der Standardeinstellung nutzt die Funktion <code>fhswf::include_datacamp()</code> einen Ordner mit dem Namen <code>datacamp</code>. Der nachfolgende Screenshot zeigt den notwendigen Programmcode für die Einbettung der Zertifikate und das daraus resultierende Ergebnis. Dabei werden die PDF Dokumente bewusst in der geringen Größe eingebettet - diese sind detailreich, hereinzoombar und daher für die Korrektoren gut prüfbar. Der Programmcode ist ebenfalls auf der Hilfeseite <code>?include_datacamp()</code> einsebar.</p>
+<p>Komfortables Einbetten der Datacamp Zertifikate in das erzeugte PDF erlaubt die Funktion <code>fhswf::include_datacamp()</code>. Dazu müssen die PDF Dokumente in einem Unterorder des Seminararbeits-Projektes abgelegt werden. In der Standardeinstellung nutzt die Funktion <code>fhswf::include_datacamp()</code> einen Ordner mit dem Namen <code>datacamp</code>. Die Dateinamen der Zertifikate und der Dateipfad sollten keine Sonderzeichen enthalten, da dies häufig zu Problemen führt. Auch Leerzeichen im Namen der Zertifikate sollten vermieden werden. Die Funktion <code>fhswf::include_datacamp()</code> benennt die PDF Dateien der Zertifikate (in der Standardeinstellung) automatisch um, sodass bei der Erstellung des Seminarpapers weniger Fehler auftreten. Der nachfolgende Screenshot zeigt den notwendigen Programmcode für die Einbettung der Zertifikate und das daraus resultierende Ergebnis. Dabei werden die PDF Dokumente bewusst in der geringen Größe eingebettet - diese sind detailreich, hereinzoombar und daher für die Korrektoren gut prüfbar. Der Programmcode ist ebenfalls auf der Hilfeseite <code>?include_datacamp()</code> einsebar.</p>
 <p><img src="data/rstudio-datacampcertificates.png" /></p>
 </div>
 </div>
