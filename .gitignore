@@ -5,6 +5,7 @@
 .RData
 .Ruserdata
 **.DS_Store
+nongit*
 nongit/*
 _book
 packages.bib
