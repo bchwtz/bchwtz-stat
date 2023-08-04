@@ -26,7 +26,6 @@ kable(stats_ss2021, booktabbs=T, col.names = evcnames)
 ```
 
 
-
 # System Info {-}
 ```{r}
 Sys.time()
