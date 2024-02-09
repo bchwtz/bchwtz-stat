@@ -92,7 +92,7 @@ michelin             # Anzeigen der Daten auf der Konsole
 ?michelin            # Anzeigen der Datenbeschreibung
 ```
 
-## 2024: Flixbus
+## 2024: FlixBus
 
 ```{r, eval = FALSE}
 library(fhswf)       # Laden des fhswf-Packages
