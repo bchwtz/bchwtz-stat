@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Kapitel 11 Hypothesentests | Statistics</title>
   <meta name="description" content="Kapitel 11 Hypothesentests | Statistics Course Notes" />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Kapitel 11 Hypothesentests | Statistics" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Benjamin Buchwitz" />
 
 
-<meta name="date" content="2023-08-04" />
+<meta name="date" content="2024-02-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -92,7 +92,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -105,7 +105,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -119,6 +119,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -191,31 +195,34 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="15" data-path="daten.html"><a href="daten.html"><i class="fa fa-check"></i><b>15</b> Daten</a>
 <ul>
-<li class="chapter" data-level="15.1" data-path="daten.html"><a href="daten.html#bike-sharing"><i class="fa fa-check"></i><b>15.1</b> 2023: Bike Sharing</a>
+<li class="chapter" data-level="15.1" data-path="daten.html"><a href="daten.html#guide-michelin"><i class="fa fa-check"></i><b>15.1</b> 2024: Guide Michelin</a></li>
+<li class="chapter" data-level="15.2" data-path="daten.html"><a href="daten.html#flixbus"><i class="fa fa-check"></i><b>15.2</b> 2024: Flixbus</a></li>
+<li class="chapter" data-level="15.3" data-path="daten.html"><a href="daten.html#lego"><i class="fa fa-check"></i><b>15.3</b> 2024: Lego</a></li>
+<li class="chapter" data-level="15.4" data-path="daten.html"><a href="daten.html#bike-sharing"><i class="fa fa-check"></i><b>15.4</b> 2023: Bike Sharing</a>
 <ul>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#beispiel"><i class="fa fa-check"></i>Beispiel</a></li>
 </ul></li>
-<li class="chapter" data-level="15.2" data-path="daten.html"><a href="daten.html#yacht-prices"><i class="fa fa-check"></i><b>15.2</b> 2023: Yacht Prices</a>
+<li class="chapter" data-level="15.5" data-path="daten.html"><a href="daten.html#yacht-prices"><i class="fa fa-check"></i><b>15.5</b> 2023: Yacht Prices</a>
 <ul>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#beispiel-1"><i class="fa fa-check"></i>Beispiel</a></li>
 </ul></li>
-<li class="chapter" data-level="15.3" data-path="daten.html"><a href="daten.html#insurance"><i class="fa fa-check"></i><b>15.3</b> 2023: Insurance</a>
+<li class="chapter" data-level="15.6" data-path="daten.html"><a href="daten.html#insurance"><i class="fa fa-check"></i><b>15.6</b> 2023: Insurance</a>
 <ul>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#beispiel-2"><i class="fa fa-check"></i>Beispiel</a></li>
 </ul></li>
-<li class="chapter" data-level="15.4" data-path="daten.html"><a href="daten.html#nyc-airbnb"><i class="fa fa-check"></i><b>15.4</b> 2022: NYC Airbnb</a>
+<li class="chapter" data-level="15.7" data-path="daten.html"><a href="daten.html#nyc-airbnb"><i class="fa fa-check"></i><b>15.7</b> 2022: NYC Airbnb</a>
 <ul>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#beispiel-3"><i class="fa fa-check"></i>Beispiel</a></li>
 </ul></li>
-<li class="chapter" data-level="15.5" data-path="daten.html"><a href="daten.html#autopreise"><i class="fa fa-check"></i><b>15.5</b> 2022: Autopreise</a>
+<li class="chapter" data-level="15.8" data-path="daten.html"><a href="daten.html#autopreise"><i class="fa fa-check"></i><b>15.8</b> 2022: Autopreise</a>
 <ul>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#beispiel-4"><i class="fa fa-check"></i>Beispiel</a></li>
 </ul></li>
-<li class="chapter" data-level="15.6" data-path="daten.html"><a href="daten.html#who-data"><i class="fa fa-check"></i><b>15.6</b> 2022: WHO Data</a>
+<li class="chapter" data-level="15.9" data-path="daten.html"><a href="daten.html#who-data"><i class="fa fa-check"></i><b>15.9</b> 2022: WHO Data</a>
 <ul>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#beispiel-5"><i class="fa fa-check"></i>Beispiel</a></li>
 </ul></li>
-<li class="chapter" data-level="15.7" data-path="daten.html"><a href="daten.html#taxi-trips"><i class="fa fa-check"></i><b>15.7</b> 2021: Taxi Trips</a>
+<li class="chapter" data-level="15.10" data-path="daten.html"><a href="daten.html#taxi-trips"><i class="fa fa-check"></i><b>15.10</b> 2021: Taxi Trips</a>
 <ul>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#vorbereitungen"><i class="fa fa-check"></i>Vorbereitungen</a></li>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#datenbeschreibung"><i class="fa fa-check"></i>Datenbeschreibung</a></li>
@@ -223,14 +230,14 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#tips-tricks"><i class="fa fa-check"></i>Tips &amp; Tricks</a></li>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#quellen"><i class="fa fa-check"></i>Quellen</a></li>
 </ul></li>
-<li class="chapter" data-level="15.8" data-path="daten.html"><a href="daten.html#hauspreise"><i class="fa fa-check"></i><b>15.8</b> 2021: Hauspreise</a>
+<li class="chapter" data-level="15.11" data-path="daten.html"><a href="daten.html#hauspreise"><i class="fa fa-check"></i><b>15.11</b> 2021: Hauspreise</a>
 <ul>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#vorbereitungen-1"><i class="fa fa-check"></i>Vorbereitungen</a></li>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#datenbeschreibung-1"><i class="fa fa-check"></i>Datenbeschreibung</a></li>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#daten-laden-1"><i class="fa fa-check"></i>Daten laden</a></li>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#quellen-1"><i class="fa fa-check"></i>Quellen</a></li>
 </ul></li>
-<li class="chapter" data-level="15.9" data-path="daten.html"><a href="daten.html#human-ressources"><i class="fa fa-check"></i><b>15.9</b> 2021: Human Ressources</a>
+<li class="chapter" data-level="15.12" data-path="daten.html"><a href="daten.html#human-ressources"><i class="fa fa-check"></i><b>15.12</b> 2021: Human Ressources</a>
 <ul>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#vorbereitungen-2"><i class="fa fa-check"></i>Vorbereitungen</a></li>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#datenbeschreibung-2"><i class="fa fa-check"></i>Datenbeschreibung</a></li>
@@ -310,11 +317,11 @@ r_{xy} = \frac{s_{xy}}{\sqrt{s_x^2 s_y^2}}
 <div id="praktische-anwendung" class="section level3 hasAnchor" number="11.1.2">
 <h3><span class="header-section-number">11.1.2</span> Praktische Anwendung<a href="hypothesentests.html#praktische-anwendung" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Angewendet werden kann der Signifikanztest für den Korrelationskoeffizienten nach Pearson in R mit der Funktion <code>cor.test</code> unter setzen des Arguments <code>method = "pearson"</code>. Die Festlegung der Richtung des Tests (rechtsseitig, linksseitig, beidseitig) durch Spezifikation der Alternativhypothese <span class="math inline">\(H_1\)</span> erlaubt das Argument <code>alternative</code>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="hypothesentests.html#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">44.4</span>, <span class="fl">45.9</span>, <span class="fl">41.9</span>, <span class="fl">53.3</span>, <span class="fl">44.7</span>, <span class="fl">44.1</span>, <span class="fl">50.7</span>, <span class="fl">45.2</span>, <span class="fl">60.1</span>)</span>
-<span id="cb1-2"><a href="hypothesentests.html#cb1-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>( <span class="fl">2.6</span>,  <span class="fl">3.1</span>,  <span class="fl">2.5</span>,  <span class="fl">5.0</span>,  <span class="fl">3.6</span>,  <span class="fl">4.0</span>,  <span class="fl">5.2</span>,  <span class="fl">2.8</span>,  <span class="fl">3.8</span>)</span>
-<span id="cb1-3"><a href="hypothesentests.html#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="hypothesentests.html#cb1-4" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(x, y, <span class="at">method =</span> <span class="st">&quot;pearson&quot;</span>, <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)</span>
-<span id="cb1-5"><a href="hypothesentests.html#cb1-5" aria-hidden="true" tabindex="-1"></a>result</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="hypothesentests.html#cb1-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">44.4</span>, <span class="fl">45.9</span>, <span class="fl">41.9</span>, <span class="fl">53.3</span>, <span class="fl">44.7</span>, <span class="fl">44.1</span>, <span class="fl">50.7</span>, <span class="fl">45.2</span>, <span class="fl">60.1</span>)</span>
+<span id="cb1-2"><a href="hypothesentests.html#cb1-2" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>( <span class="fl">2.6</span>,  <span class="fl">3.1</span>,  <span class="fl">2.5</span>,  <span class="fl">5.0</span>,  <span class="fl">3.6</span>,  <span class="fl">4.0</span>,  <span class="fl">5.2</span>,  <span class="fl">2.8</span>,  <span class="fl">3.8</span>)</span>
+<span id="cb1-3"><a href="hypothesentests.html#cb1-3" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="hypothesentests.html#cb1-4" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(x, y, <span class="at">method =</span> <span class="st">&quot;pearson&quot;</span>, <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)</span>
+<span id="cb1-5"><a href="hypothesentests.html#cb1-5" tabindex="-1"></a>result</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -331,27 +338,27 @@ r_{xy} = \frac{s_{xy}}{\sqrt{s_x^2 s_y^2}}
 <div id="ergänzende-erläuterungen" class="section level3 hasAnchor" number="11.1.3">
 <h3><span class="header-section-number">11.1.3</span> Ergänzende Erläuterungen<a href="hypothesentests.html#ergänzende-erläuterungen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Nachfolgend wird die manuelle Berechnung für die wesentlichen Werte des Hypothesentests nachvollzogen. Die gezeigten Werte sind Deckungsgleich mit den Werten der Funktion <code>cor.test</code> aus dem zuvor gezeigten Beispiel.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="hypothesentests.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Stichprobengröße auslesen</span></span>
-<span id="cb3-2"><a href="hypothesentests.html#cb3-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">length</span>(x) <span class="ot">&lt;-</span> <span class="fu">length</span>(y)</span>
-<span id="cb3-3"><a href="hypothesentests.html#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="hypothesentests.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Teststatistik berechnen</span></span>
-<span id="cb3-5"><a href="hypothesentests.html#cb3-5" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">cor</span>(x,y)</span>
-<span id="cb3-6"><a href="hypothesentests.html#cb3-6" aria-hidden="true" tabindex="-1"></a>teststat <span class="ot">&lt;-</span> (r<span class="sc">*</span><span class="fu">sqrt</span>(n<span class="dv">-2</span>))<span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">-</span>r<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb3-7"><a href="hypothesentests.html#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="hypothesentests.html#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Implizite Irrtumswahrscheinlichkeit berechnen</span></span>
-<span id="cb3-9"><a href="hypothesentests.html#cb3-9" aria-hidden="true" tabindex="-1"></a>alpha_imp <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">pt</span>(teststat, <span class="at">df =</span> n<span class="dv">-2</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="hypothesentests.html#cb3-1" tabindex="-1"></a><span class="co"># Stichprobengröße auslesen</span></span>
+<span id="cb3-2"><a href="hypothesentests.html#cb3-2" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">length</span>(x) <span class="ot">&lt;-</span> <span class="fu">length</span>(y)</span>
+<span id="cb3-3"><a href="hypothesentests.html#cb3-3" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="hypothesentests.html#cb3-4" tabindex="-1"></a><span class="co"># Teststatistik berechnen</span></span>
+<span id="cb3-5"><a href="hypothesentests.html#cb3-5" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">cor</span>(x,y)</span>
+<span id="cb3-6"><a href="hypothesentests.html#cb3-6" tabindex="-1"></a>teststat <span class="ot">&lt;-</span> (r<span class="sc">*</span><span class="fu">sqrt</span>(n<span class="dv">-2</span>))<span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">-</span>r<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb3-7"><a href="hypothesentests.html#cb3-7" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="hypothesentests.html#cb3-8" tabindex="-1"></a><span class="co"># Implizite Irrtumswahrscheinlichkeit berechnen</span></span>
+<span id="cb3-9"><a href="hypothesentests.html#cb3-9" tabindex="-1"></a>alpha_imp <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">pt</span>(teststat, <span class="at">df =</span> n<span class="dv">-2</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p>Um die gezeigte Testvorschrift <strong>manuell</strong> prüfen zu können, wird nach Festlegen der maximalen Irrtumswahrscheinlichkeit <span class="math inline">\(\alpha\)</span> noch der Vergleichswert der <span class="math inline">\(t\)</span>-Verteilung (rechte Seite der Ungleichungen aus der Tabelle mit den Testvorschriften) benötigt. Die Funktion <code>qt</code> gibt hier die Quantile der <span class="math inline">\(t\)</span>-Verteilung an und übernimmt somit die Aufgabe der Verteilungstabelle. Die Testvorschrift kann also auch hier direkt über die oben gezeigten Ungleichungen als auch über das implizite Signifikanzniveau, dem p-Value <span class="math inline">\(\alpha^*\)</span>, geprüft werden. Beide Vorgehensweisen führen (natürlich) zu einem identischen Ergebnis.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="hypothesentests.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vergleichsgröße der t-Verteilung bestimmen</span></span>
-<span id="cb4-2"><a href="hypothesentests.html#cb4-2" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb4-3"><a href="hypothesentests.html#cb4-3" aria-hidden="true" tabindex="-1"></a>tval <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>, <span class="at">df =</span> n<span class="dv">-2</span>)</span>
-<span id="cb4-4"><a href="hypothesentests.html#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="hypothesentests.html#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Testentscheidung: H0 verwerfen?</span></span>
-<span id="cb4-6"><a href="hypothesentests.html#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Prüfung mittels Testvorschrift</span></span>
-<span id="cb4-7"><a href="hypothesentests.html#cb4-7" aria-hidden="true" tabindex="-1"></a>(teststat <span class="sc">&gt;</span> tval) <span class="sc">|</span> (teststat <span class="sc">&lt;</span> <span class="sc">-</span>tval)</span>
-<span id="cb4-8"><a href="hypothesentests.html#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="hypothesentests.html#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Testentscheidung: H0 verwerfen?</span></span>
-<span id="cb4-10"><a href="hypothesentests.html#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Prüfung mittels implizitem Signifikanzniveau </span></span>
-<span id="cb4-11"><a href="hypothesentests.html#cb4-11" aria-hidden="true" tabindex="-1"></a>alpha_imp <span class="sc">&lt;</span> alpha</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="hypothesentests.html#cb4-1" tabindex="-1"></a><span class="co"># Vergleichsgröße der t-Verteilung bestimmen</span></span>
+<span id="cb4-2"><a href="hypothesentests.html#cb4-2" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb4-3"><a href="hypothesentests.html#cb4-3" tabindex="-1"></a>tval <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>, <span class="at">df =</span> n<span class="dv">-2</span>)</span>
+<span id="cb4-4"><a href="hypothesentests.html#cb4-4" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="hypothesentests.html#cb4-5" tabindex="-1"></a><span class="co"># Testentscheidung: H0 verwerfen?</span></span>
+<span id="cb4-6"><a href="hypothesentests.html#cb4-6" tabindex="-1"></a><span class="co"># Prüfung mittels Testvorschrift</span></span>
+<span id="cb4-7"><a href="hypothesentests.html#cb4-7" tabindex="-1"></a>(teststat <span class="sc">&gt;</span> tval) <span class="sc">|</span> (teststat <span class="sc">&lt;</span> <span class="sc">-</span>tval)</span>
+<span id="cb4-8"><a href="hypothesentests.html#cb4-8" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="hypothesentests.html#cb4-9" tabindex="-1"></a><span class="co"># Testentscheidung: H0 verwerfen?</span></span>
+<span id="cb4-10"><a href="hypothesentests.html#cb4-10" tabindex="-1"></a><span class="co"># Prüfung mittels implizitem Signifikanzniveau </span></span>
+<span id="cb4-11"><a href="hypothesentests.html#cb4-11" tabindex="-1"></a>alpha_imp <span class="sc">&lt;</span> alpha</span></code></pre></div>
 
 </div>
 </div>
@@ -422,7 +429,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

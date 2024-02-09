@@ -36,6 +36,9 @@ nutzung-des-templates
 wissenschaftliches-arbeiten-in-r-markdown
 datacamp-zertifikate
 daten
+guide-michelin
+flixbus
+lego
 bike-sharing
 yacht-prices
 insurance

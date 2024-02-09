@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Kapitel 15 Daten | Statistics</title>
   <meta name="description" content="Kapitel 15 Daten | Statistics Course Notes" />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Kapitel 15 Daten | Statistics" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Benjamin Buchwitz" />
 
 
-<meta name="date" content="2023-08-04" />
+<meta name="date" content="2024-02-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -92,7 +92,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -105,7 +105,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -119,6 +119,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -191,31 +195,34 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="15" data-path="daten.html"><a href="daten.html"><i class="fa fa-check"></i><b>15</b> Daten</a>
 <ul>
-<li class="chapter" data-level="15.1" data-path="daten.html"><a href="daten.html#bike-sharing"><i class="fa fa-check"></i><b>15.1</b> 2023: Bike Sharing</a>
+<li class="chapter" data-level="15.1" data-path="daten.html"><a href="daten.html#guide-michelin"><i class="fa fa-check"></i><b>15.1</b> 2024: Guide Michelin</a></li>
+<li class="chapter" data-level="15.2" data-path="daten.html"><a href="daten.html#flixbus"><i class="fa fa-check"></i><b>15.2</b> 2024: Flixbus</a></li>
+<li class="chapter" data-level="15.3" data-path="daten.html"><a href="daten.html#lego"><i class="fa fa-check"></i><b>15.3</b> 2024: Lego</a></li>
+<li class="chapter" data-level="15.4" data-path="daten.html"><a href="daten.html#bike-sharing"><i class="fa fa-check"></i><b>15.4</b> 2023: Bike Sharing</a>
 <ul>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#beispiel"><i class="fa fa-check"></i>Beispiel</a></li>
 </ul></li>
-<li class="chapter" data-level="15.2" data-path="daten.html"><a href="daten.html#yacht-prices"><i class="fa fa-check"></i><b>15.2</b> 2023: Yacht Prices</a>
+<li class="chapter" data-level="15.5" data-path="daten.html"><a href="daten.html#yacht-prices"><i class="fa fa-check"></i><b>15.5</b> 2023: Yacht Prices</a>
 <ul>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#beispiel-1"><i class="fa fa-check"></i>Beispiel</a></li>
 </ul></li>
-<li class="chapter" data-level="15.3" data-path="daten.html"><a href="daten.html#insurance"><i class="fa fa-check"></i><b>15.3</b> 2023: Insurance</a>
+<li class="chapter" data-level="15.6" data-path="daten.html"><a href="daten.html#insurance"><i class="fa fa-check"></i><b>15.6</b> 2023: Insurance</a>
 <ul>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#beispiel-2"><i class="fa fa-check"></i>Beispiel</a></li>
 </ul></li>
-<li class="chapter" data-level="15.4" data-path="daten.html"><a href="daten.html#nyc-airbnb"><i class="fa fa-check"></i><b>15.4</b> 2022: NYC Airbnb</a>
+<li class="chapter" data-level="15.7" data-path="daten.html"><a href="daten.html#nyc-airbnb"><i class="fa fa-check"></i><b>15.7</b> 2022: NYC Airbnb</a>
 <ul>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#beispiel-3"><i class="fa fa-check"></i>Beispiel</a></li>
 </ul></li>
-<li class="chapter" data-level="15.5" data-path="daten.html"><a href="daten.html#autopreise"><i class="fa fa-check"></i><b>15.5</b> 2022: Autopreise</a>
+<li class="chapter" data-level="15.8" data-path="daten.html"><a href="daten.html#autopreise"><i class="fa fa-check"></i><b>15.8</b> 2022: Autopreise</a>
 <ul>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#beispiel-4"><i class="fa fa-check"></i>Beispiel</a></li>
 </ul></li>
-<li class="chapter" data-level="15.6" data-path="daten.html"><a href="daten.html#who-data"><i class="fa fa-check"></i><b>15.6</b> 2022: WHO Data</a>
+<li class="chapter" data-level="15.9" data-path="daten.html"><a href="daten.html#who-data"><i class="fa fa-check"></i><b>15.9</b> 2022: WHO Data</a>
 <ul>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#beispiel-5"><i class="fa fa-check"></i>Beispiel</a></li>
 </ul></li>
-<li class="chapter" data-level="15.7" data-path="daten.html"><a href="daten.html#taxi-trips"><i class="fa fa-check"></i><b>15.7</b> 2021: Taxi Trips</a>
+<li class="chapter" data-level="15.10" data-path="daten.html"><a href="daten.html#taxi-trips"><i class="fa fa-check"></i><b>15.10</b> 2021: Taxi Trips</a>
 <ul>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#vorbereitungen"><i class="fa fa-check"></i>Vorbereitungen</a></li>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#datenbeschreibung"><i class="fa fa-check"></i>Datenbeschreibung</a></li>
@@ -223,14 +230,14 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#tips-tricks"><i class="fa fa-check"></i>Tips &amp; Tricks</a></li>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#quellen"><i class="fa fa-check"></i>Quellen</a></li>
 </ul></li>
-<li class="chapter" data-level="15.8" data-path="daten.html"><a href="daten.html#hauspreise"><i class="fa fa-check"></i><b>15.8</b> 2021: Hauspreise</a>
+<li class="chapter" data-level="15.11" data-path="daten.html"><a href="daten.html#hauspreise"><i class="fa fa-check"></i><b>15.11</b> 2021: Hauspreise</a>
 <ul>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#vorbereitungen-1"><i class="fa fa-check"></i>Vorbereitungen</a></li>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#datenbeschreibung-1"><i class="fa fa-check"></i>Datenbeschreibung</a></li>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#daten-laden-1"><i class="fa fa-check"></i>Daten laden</a></li>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#quellen-1"><i class="fa fa-check"></i>Quellen</a></li>
 </ul></li>
-<li class="chapter" data-level="15.9" data-path="daten.html"><a href="daten.html#human-ressources"><i class="fa fa-check"></i><b>15.9</b> 2021: Human Ressources</a>
+<li class="chapter" data-level="15.12" data-path="daten.html"><a href="daten.html#human-ressources"><i class="fa fa-check"></i><b>15.12</b> 2021: Human Ressources</a>
 <ul>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#vorbereitungen-2"><i class="fa fa-check"></i>Vorbereitungen</a></li>
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#datenbeschreibung-2"><i class="fa fa-check"></i>Datenbeschreibung</a></li>
@@ -264,182 +271,203 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="daten" class="section level1 hasAnchor" number="15">
 <h1><span class="header-section-number">Kapitel 15</span> Daten<a href="daten.html#daten" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="bike-sharing" class="section level2 hasAnchor" number="15.1">
-<h2><span class="header-section-number">15.1</span> 2023: Bike Sharing<a href="daten.html#bike-sharing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="daten.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fhswf)       <span class="co"># Laden des fhswf-Packages</span></span>
-<span id="cb8-2"><a href="daten.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(bikesharing)    <span class="co"># Anzeigen der Daten</span></span>
-<span id="cb8-3"><a href="daten.html#cb8-3" aria-hidden="true" tabindex="-1"></a>bikesharing          <span class="co"># Anzeigen der Daten auf der Konsole</span></span>
-<span id="cb8-4"><a href="daten.html#cb8-4" aria-hidden="true" tabindex="-1"></a>?bikesharing         <span class="co"># Anzeigen der Datenbeschreibung</span></span></code></pre></div>
+<div id="guide-michelin" class="section level2 hasAnchor" number="15.1">
+<h2><span class="header-section-number">15.1</span> 2024: Guide Michelin<a href="daten.html#guide-michelin" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="daten.html#cb8-1" tabindex="-1"></a><span class="fu">library</span>(fhswf)       <span class="co"># Laden des fhswf-Packages</span></span>
+<span id="cb8-2"><a href="daten.html#cb8-2" tabindex="-1"></a><span class="fu">View</span>(michelin)       <span class="co"># Anzeigen der Daten</span></span>
+<span id="cb8-3"><a href="daten.html#cb8-3" tabindex="-1"></a>michelin             <span class="co"># Anzeigen der Daten auf der Konsole</span></span>
+<span id="cb8-4"><a href="daten.html#cb8-4" tabindex="-1"></a>?michelin            <span class="co"># Anzeigen der Datenbeschreibung</span></span></code></pre></div>
+</div>
+<div id="flixbus" class="section level2 hasAnchor" number="15.2">
+<h2><span class="header-section-number">15.2</span> 2024: Flixbus<a href="daten.html#flixbus" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="daten.html#cb9-1" tabindex="-1"></a><span class="fu">library</span>(fhswf)       <span class="co"># Laden des fhswf-Packages</span></span>
+<span id="cb9-2"><a href="daten.html#cb9-2" tabindex="-1"></a><span class="fu">View</span>(flixbus)        <span class="co"># Anzeigen der Daten</span></span>
+<span id="cb9-3"><a href="daten.html#cb9-3" tabindex="-1"></a>flixbus              <span class="co"># Anzeigen der Daten auf der Konsole</span></span>
+<span id="cb9-4"><a href="daten.html#cb9-4" tabindex="-1"></a>?flixbus             <span class="co"># Anzeigen der Datenbeschreibung</span></span></code></pre></div>
+</div>
+<div id="lego" class="section level2 hasAnchor" number="15.3">
+<h2><span class="header-section-number">15.3</span> 2024: Lego<a href="daten.html#lego" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="daten.html#cb10-1" tabindex="-1"></a><span class="fu">library</span>(fhswf)       <span class="co"># Laden des fhswf-Packages</span></span>
+<span id="cb10-2"><a href="daten.html#cb10-2" tabindex="-1"></a><span class="fu">View</span>(lego)           <span class="co"># Anzeigen der Daten</span></span>
+<span id="cb10-3"><a href="daten.html#cb10-3" tabindex="-1"></a>lego                 <span class="co"># Anzeigen der Daten auf der Konsole</span></span>
+<span id="cb10-4"><a href="daten.html#cb10-4" tabindex="-1"></a>?lego                <span class="co"># Anzeigen der Datenbeschreibung</span></span></code></pre></div>
+</div>
+<div id="bike-sharing" class="section level2 hasAnchor" number="15.4">
+<h2><span class="header-section-number">15.4</span> 2023: Bike Sharing<a href="daten.html#bike-sharing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="daten.html#cb11-1" tabindex="-1"></a><span class="fu">library</span>(fhswf)       <span class="co"># Laden des fhswf-Packages</span></span>
+<span id="cb11-2"><a href="daten.html#cb11-2" tabindex="-1"></a><span class="fu">View</span>(bikesharing)    <span class="co"># Anzeigen der Daten</span></span>
+<span id="cb11-3"><a href="daten.html#cb11-3" tabindex="-1"></a>bikesharing          <span class="co"># Anzeigen der Daten auf der Konsole</span></span>
+<span id="cb11-4"><a href="daten.html#cb11-4" tabindex="-1"></a>?bikesharing         <span class="co"># Anzeigen der Datenbeschreibung</span></span></code></pre></div>
 <div id="beispiel" class="section level3 unnumbered hasAnchor">
 <h3>Beispiel<a href="daten.html#beispiel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="daten.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Deskriptive Statistik der benutzten Fahrräder pro Tag</span></span>
-<span id="cb9-2"><a href="daten.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(bikesharing<span class="sc">$</span>cnt)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="daten.html#cb12-1" tabindex="-1"></a><span class="co"># Deskriptive Statistik der benutzten Fahrräder pro Tag</span></span>
+<span id="cb12-2"><a href="daten.html#cb12-2" tabindex="-1"></a><span class="fu">summary</span>(bikesharing<span class="sc">$</span>cnt)</span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##      22    3152    4548    4504    5956    8714</code></pre>
 </div>
 </div>
-<div id="yacht-prices" class="section level2 hasAnchor" number="15.2">
-<h2><span class="header-section-number">15.2</span> 2023: Yacht Prices<a href="daten.html#yacht-prices" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="daten.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fhswf)       <span class="co"># Laden des fhswf-Packages</span></span>
-<span id="cb11-2"><a href="daten.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(boatprices)     <span class="co"># Anzeigen der Daten </span></span>
-<span id="cb11-3"><a href="daten.html#cb11-3" aria-hidden="true" tabindex="-1"></a>boatprices           <span class="co"># Anzeigen der Daten auf der Konsole</span></span>
-<span id="cb11-4"><a href="daten.html#cb11-4" aria-hidden="true" tabindex="-1"></a>?boatprices          <span class="co"># Anzeigen der Datenbeschreibung</span></span></code></pre></div>
+<div id="yacht-prices" class="section level2 hasAnchor" number="15.5">
+<h2><span class="header-section-number">15.5</span> 2023: Yacht Prices<a href="daten.html#yacht-prices" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="daten.html#cb14-1" tabindex="-1"></a><span class="fu">library</span>(fhswf)       <span class="co"># Laden des fhswf-Packages</span></span>
+<span id="cb14-2"><a href="daten.html#cb14-2" tabindex="-1"></a><span class="fu">View</span>(boatprices)     <span class="co"># Anzeigen der Daten </span></span>
+<span id="cb14-3"><a href="daten.html#cb14-3" tabindex="-1"></a>boatprices           <span class="co"># Anzeigen der Daten auf der Konsole</span></span>
+<span id="cb14-4"><a href="daten.html#cb14-4" tabindex="-1"></a>?boatprices          <span class="co"># Anzeigen der Datenbeschreibung</span></span></code></pre></div>
 <div id="beispiel-1" class="section level3 unnumbered hasAnchor">
 <h3>Beispiel<a href="daten.html#beispiel-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="daten.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Deskriptive Statistik des Preises der gelisteten Boote in Euro</span></span>
-<span id="cb12-2"><a href="daten.html#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(boatprices<span class="sc">$</span>price)  </span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="daten.html#cb15-1" tabindex="-1"></a><span class="co"># Deskriptive Statistik des Preises der gelisteten Boote in Euro</span></span>
+<span id="cb15-2"><a href="daten.html#cb15-2" tabindex="-1"></a><span class="fu">summary</span>(boatprices<span class="sc">$</span>price)  </span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##    3500   46670   85000  109823  160000  299750</code></pre>
 </div>
 </div>
-<div id="insurance" class="section level2 hasAnchor" number="15.3">
-<h2><span class="header-section-number">15.3</span> 2023: Insurance<a href="daten.html#insurance" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="daten.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fhswf)       <span class="co"># Laden des fhswf-Packages</span></span>
-<span id="cb14-2"><a href="daten.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(insurance)      <span class="co"># Anzeigen der Daten</span></span>
-<span id="cb14-3"><a href="daten.html#cb14-3" aria-hidden="true" tabindex="-1"></a>insurance            <span class="co"># Anzeigen der Daten auf der Konsole</span></span>
-<span id="cb14-4"><a href="daten.html#cb14-4" aria-hidden="true" tabindex="-1"></a>?insurance           <span class="co"># Anzeigen der Datenbeschreibung</span></span></code></pre></div>
+<div id="insurance" class="section level2 hasAnchor" number="15.6">
+<h2><span class="header-section-number">15.6</span> 2023: Insurance<a href="daten.html#insurance" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="daten.html#cb17-1" tabindex="-1"></a><span class="fu">library</span>(fhswf)       <span class="co"># Laden des fhswf-Packages</span></span>
+<span id="cb17-2"><a href="daten.html#cb17-2" tabindex="-1"></a><span class="fu">View</span>(insurance)      <span class="co"># Anzeigen der Daten</span></span>
+<span id="cb17-3"><a href="daten.html#cb17-3" tabindex="-1"></a>insurance            <span class="co"># Anzeigen der Daten auf der Konsole</span></span>
+<span id="cb17-4"><a href="daten.html#cb17-4" tabindex="-1"></a>?insurance           <span class="co"># Anzeigen der Datenbeschreibung</span></span></code></pre></div>
 <div id="beispiel-2" class="section level3 unnumbered hasAnchor">
 <h3>Beispiel<a href="daten.html#beispiel-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="daten.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Deskriptive Statistik der jährlichen Versicherungskosten in US Dollar</span></span>
-<span id="cb15-2"><a href="daten.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(insurance<span class="sc">$</span>charges) </span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="daten.html#cb18-1" tabindex="-1"></a><span class="co"># Deskriptive Statistik der jährlichen Versicherungskosten in US Dollar</span></span>
+<span id="cb18-2"><a href="daten.html#cb18-2" tabindex="-1"></a><span class="fu">summary</span>(insurance<span class="sc">$</span>charges) </span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##    1122    4740    9382   13270   16640   63770</code></pre>
 </div>
 </div>
-<div id="nyc-airbnb" class="section level2 hasAnchor" number="15.4">
-<h2><span class="header-section-number">15.4</span> 2022: NYC Airbnb<a href="daten.html#nyc-airbnb" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="daten.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fhswf)       <span class="co"># Laden des fhswf-Packages</span></span>
-<span id="cb17-2"><a href="daten.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(nycairbnb)      <span class="co"># Anzeigen der Daten</span></span>
-<span id="cb17-3"><a href="daten.html#cb17-3" aria-hidden="true" tabindex="-1"></a>nycairbnb            <span class="co"># Anzeigen der Daten auf der Konsole</span></span>
-<span id="cb17-4"><a href="daten.html#cb17-4" aria-hidden="true" tabindex="-1"></a>?nycairbnb           <span class="co"># Anzeigen der Datenbeschreibung</span></span></code></pre></div>
+<div id="nyc-airbnb" class="section level2 hasAnchor" number="15.7">
+<h2><span class="header-section-number">15.7</span> 2022: NYC Airbnb<a href="daten.html#nyc-airbnb" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="daten.html#cb20-1" tabindex="-1"></a><span class="fu">library</span>(fhswf)       <span class="co"># Laden des fhswf-Packages</span></span>
+<span id="cb20-2"><a href="daten.html#cb20-2" tabindex="-1"></a><span class="fu">View</span>(nycairbnb)      <span class="co"># Anzeigen der Daten</span></span>
+<span id="cb20-3"><a href="daten.html#cb20-3" tabindex="-1"></a>nycairbnb            <span class="co"># Anzeigen der Daten auf der Konsole</span></span>
+<span id="cb20-4"><a href="daten.html#cb20-4" tabindex="-1"></a>?nycairbnb           <span class="co"># Anzeigen der Datenbeschreibung</span></span></code></pre></div>
 <div id="beispiel-3" class="section level3 unnumbered hasAnchor">
 <h3>Beispiel<a href="daten.html#beispiel-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="daten.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(nycairbnb<span class="sc">$</span>price) <span class="co"># Deskriptive Statistik des Preises pro Übernachtung</span></span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="daten.html#cb21-1" tabindex="-1"></a><span class="fu">summary</span>(nycairbnb<span class="sc">$</span>price) <span class="co"># Deskriptive Statistik des Preises pro Übernachtung</span></span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##     0.0    69.0   106.0   152.7   175.0 10000.0</code></pre>
 </div>
 </div>
-<div id="autopreise" class="section level2 hasAnchor" number="15.5">
-<h2><span class="header-section-number">15.5</span> 2022: Autopreise<a href="daten.html#autopreise" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="daten.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fhswf)       <span class="co"># Laden des fhswf-Packages</span></span>
-<span id="cb20-2"><a href="daten.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(carprices)      <span class="co"># Anzeigen der Daten</span></span>
-<span id="cb20-3"><a href="daten.html#cb20-3" aria-hidden="true" tabindex="-1"></a>carprices            <span class="co"># Anzeigen der Daten auf der Konsole</span></span>
-<span id="cb20-4"><a href="daten.html#cb20-4" aria-hidden="true" tabindex="-1"></a>?carprices           <span class="co"># Anzeigen der Datenbeschreibung</span></span></code></pre></div>
+<div id="autopreise" class="section level2 hasAnchor" number="15.8">
+<h2><span class="header-section-number">15.8</span> 2022: Autopreise<a href="daten.html#autopreise" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="daten.html#cb23-1" tabindex="-1"></a><span class="fu">library</span>(fhswf)       <span class="co"># Laden des fhswf-Packages</span></span>
+<span id="cb23-2"><a href="daten.html#cb23-2" tabindex="-1"></a><span class="fu">View</span>(carprices)      <span class="co"># Anzeigen der Daten</span></span>
+<span id="cb23-3"><a href="daten.html#cb23-3" tabindex="-1"></a>carprices            <span class="co"># Anzeigen der Daten auf der Konsole</span></span>
+<span id="cb23-4"><a href="daten.html#cb23-4" tabindex="-1"></a>?carprices           <span class="co"># Anzeigen der Datenbeschreibung</span></span></code></pre></div>
 <div id="beispiel-4" class="section level3 unnumbered hasAnchor">
 <h3>Beispiel<a href="daten.html#beispiel-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="daten.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(carprices<span class="sc">$</span>price) <span class="co"># Deskriptive Statistik des Kaufpreises</span></span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="daten.html#cb24-1" tabindex="-1"></a><span class="fu">summary</span>(carprices<span class="sc">$</span>price) <span class="co"># Deskriptive Statistik des Kaufpreises</span></span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
 ##    5118    7775   10295   13207   16500   45400       4</code></pre>
 </div>
 </div>
-<div id="who-data" class="section level2 hasAnchor" number="15.6">
-<h2><span class="header-section-number">15.6</span> 2022: WHO Data<a href="daten.html#who-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="daten.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fhswf)     <span class="co"># Laden des fhswf-Packages</span></span>
-<span id="cb23-2"><a href="daten.html#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(whodata)      <span class="co"># Anzeigen der Daten</span></span>
-<span id="cb23-3"><a href="daten.html#cb23-3" aria-hidden="true" tabindex="-1"></a>whodata            <span class="co"># Anzeigen der Daten auf der Konsole</span></span>
-<span id="cb23-4"><a href="daten.html#cb23-4" aria-hidden="true" tabindex="-1"></a>?whodata           <span class="co"># Anzeigen der Datenbeschreibung</span></span></code></pre></div>
+<div id="who-data" class="section level2 hasAnchor" number="15.9">
+<h2><span class="header-section-number">15.9</span> 2022: WHO Data<a href="daten.html#who-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="daten.html#cb26-1" tabindex="-1"></a><span class="fu">library</span>(fhswf)     <span class="co"># Laden des fhswf-Packages</span></span>
+<span id="cb26-2"><a href="daten.html#cb26-2" tabindex="-1"></a><span class="fu">View</span>(whodata)      <span class="co"># Anzeigen der Daten</span></span>
+<span id="cb26-3"><a href="daten.html#cb26-3" tabindex="-1"></a>whodata            <span class="co"># Anzeigen der Daten auf der Konsole</span></span>
+<span id="cb26-4"><a href="daten.html#cb26-4" tabindex="-1"></a>?whodata           <span class="co"># Anzeigen der Datenbeschreibung</span></span></code></pre></div>
 <div id="beispiel-5" class="section level3 unnumbered hasAnchor">
 <h3>Beispiel<a href="daten.html#beispiel-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="daten.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Human Development Index von Deutschland im Jahr 2015</span></span>
-<span id="cb24-2"><a href="daten.html#cb24-2" aria-hidden="true" tabindex="-1"></a>whodata[whodata<span class="sc">$</span>country_code <span class="sc">==</span> <span class="st">&quot;DEU&quot;</span> <span class="sc">&amp;</span> whodata<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">2015</span>, ]<span class="sc">$</span>hdi</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="daten.html#cb27-1" tabindex="-1"></a><span class="co"># Human Development Index von Deutschland im Jahr 2015</span></span>
+<span id="cb27-2"><a href="daten.html#cb27-2" tabindex="-1"></a>whodata[whodata<span class="sc">$</span>country_code <span class="sc">==</span> <span class="st">&quot;DEU&quot;</span> <span class="sc">&amp;</span> whodata<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">2015</span>, ]<span class="sc">$</span>hdi</span></code></pre></div>
 <pre><code>## [1] 0.938</code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="daten.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mittlerer Human Development Index über alle (verfügbaren) Länder in 2017</span></span>
-<span id="cb26-2"><a href="daten.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(whodata[whodata<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">2017</span>, ]<span class="sc">$</span>hdi, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="daten.html#cb29-1" tabindex="-1"></a><span class="co"># Mittlerer Human Development Index über alle (verfügbaren) Länder in 2017</span></span>
+<span id="cb29-2"><a href="daten.html#cb29-2" tabindex="-1"></a><span class="fu">median</span>(whodata[whodata<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">2017</span>, ]<span class="sc">$</span>hdi, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] 0.736</code></pre>
 </div>
 </div>
-<div id="taxi-trips" class="section level2 hasAnchor" number="15.7">
-<h2><span class="header-section-number">15.7</span> 2021: Taxi Trips<a href="daten.html#taxi-trips" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="taxi-trips" class="section level2 hasAnchor" number="15.10">
+<h2><span class="header-section-number">15.10</span> 2021: Taxi Trips<a href="daten.html#taxi-trips" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="vorbereitungen" class="section level3 unnumbered hasAnchor">
 <h3>Vorbereitungen<a href="daten.html#vorbereitungen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="daten.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(geodist)</span>
-<span id="cb28-2"><a href="daten.html#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(osrm)</span>
-<span id="cb28-3"><a href="daten.html#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-4"><a href="daten.html#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co"># load raw data</span></span>
-<span id="cb28-5"><a href="daten.html#cb28-5" aria-hidden="true" tabindex="-1"></a>coursepath <span class="ot">&lt;-</span> <span class="st">&quot;~/sciebo/courses/bchwtz-stat&quot;</span></span>
-<span id="cb28-6"><a href="daten.html#cb28-6" aria-hidden="true" tabindex="-1"></a>filepath <span class="ot">&lt;-</span> <span class="st">&quot;nongit/data/2021-taxi/nyctaxi.csv&quot;</span></span>
-<span id="cb28-7"><a href="daten.html#cb28-7" aria-hidden="true" tabindex="-1"></a>savepath <span class="ot">&lt;-</span> <span class="st">&quot;data&quot;</span></span>
-<span id="cb28-8"><a href="daten.html#cb28-8" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">file.path</span>(coursepath, filepath))</span>
-<span id="cb28-9"><a href="daten.html#cb28-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-10"><a href="daten.html#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="co"># select a subset of the data</span></span>
-<span id="cb28-11"><a href="daten.html#cb28-11" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
-<span id="cb28-12"><a href="daten.html#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">20210408</span>)</span>
-<span id="cb28-13"><a href="daten.html#cb28-13" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> d[<span class="fu">sample</span>(<span class="fu">nrow</span>(d), <span class="at">size =</span> n), ]</span>
-<span id="cb28-14"><a href="daten.html#cb28-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-15"><a href="daten.html#cb28-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to make points dataframe</span></span>
-<span id="cb28-16"><a href="daten.html#cb28-16" aria-hidden="true" tabindex="-1"></a>make_pts <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
-<span id="cb28-17"><a href="daten.html#cb28-17" aria-hidden="true" tabindex="-1"></a>  pts <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">long =</span> <span class="fu">c</span>(x[<span class="st">&quot;pickup_longitude&quot;</span>], x[<span class="st">&quot;dropoff_longitude&quot;</span>]), </span>
-<span id="cb28-18"><a href="daten.html#cb28-18" aria-hidden="true" tabindex="-1"></a>                    <span class="at">lat =</span> <span class="fu">c</span>(x[<span class="st">&quot;pickup_latitude&quot;</span>], x[<span class="st">&quot;dropoff_latitude&quot;</span>]),</span>
-<span id="cb28-19"><a href="daten.html#cb28-19" aria-hidden="true" tabindex="-1"></a>                    <span class="at">row.names =</span> <span class="cn">NULL</span>)</span>
-<span id="cb28-20"><a href="daten.html#cb28-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(pts)</span>
-<span id="cb28-21"><a href="daten.html#cb28-21" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb28-22"><a href="daten.html#cb28-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-23"><a href="daten.html#cb28-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to request route information from openstreetmap</span></span>
-<span id="cb28-24"><a href="daten.html#cb28-24" aria-hidden="true" tabindex="-1"></a>make_dist_duration <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">type=</span><span class="fu">c</span>(<span class="st">&quot;car&quot;</span>,<span class="st">&quot;bike&quot;</span>,<span class="st">&quot;foot&quot;</span>)[<span class="dv">1</span>]){</span>
-<span id="cb28-25"><a href="daten.html#cb28-25" aria-hidden="true" tabindex="-1"></a>  pts <span class="ot">&lt;-</span> <span class="fu">make_pts</span>(x)</span>
-<span id="cb28-26"><a href="daten.html#cb28-26" aria-hidden="true" tabindex="-1"></a>  route <span class="ot">&lt;-</span> osrm<span class="sc">::</span><span class="fu">osrmRoute</span>(<span class="at">loc=</span>pts, <span class="at">returnclass =</span> <span class="st">&quot;sf&quot;</span>, <span class="at">osrm.profile =</span> type)</span>
-<span id="cb28-27"><a href="daten.html#cb28-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">c</span>(<span class="at">osrm_distance=</span>route<span class="sc">$</span>dist, <span class="at">osrm_duration=</span>route<span class="sc">$</span>duration))</span>
-<span id="cb28-28"><a href="daten.html#cb28-28" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb28-29"><a href="daten.html#cb28-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-30"><a href="daten.html#cb28-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Funtion to calculate geodesic_distance</span></span>
-<span id="cb28-31"><a href="daten.html#cb28-31" aria-hidden="true" tabindex="-1"></a>make_geodesic_distance <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
-<span id="cb28-32"><a href="daten.html#cb28-32" aria-hidden="true" tabindex="-1"></a>  pickup_loc <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">longitude=</span>x[<span class="st">&quot;pickup_longitude&quot;</span>],</span>
-<span id="cb28-33"><a href="daten.html#cb28-33" aria-hidden="true" tabindex="-1"></a>                  <span class="at">latitude=</span>x[<span class="st">&quot;pickup_latitude&quot;</span>])</span>
-<span id="cb28-34"><a href="daten.html#cb28-34" aria-hidden="true" tabindex="-1"></a>  dropoff_loc <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">longitude=</span>x[<span class="st">&quot;dropoff_longitude&quot;</span>],</span>
-<span id="cb28-35"><a href="daten.html#cb28-35" aria-hidden="true" tabindex="-1"></a>                   <span class="at">latitude=</span>x[<span class="st">&quot;dropoff_latitude&quot;</span>])</span>
-<span id="cb28-36"><a href="daten.html#cb28-36" aria-hidden="true" tabindex="-1"></a>  geodesic_distance <span class="ot">&lt;-</span> geodist<span class="sc">::</span><span class="fu">geodist</span>(<span class="at">x=</span>pickup_loc,</span>
-<span id="cb28-37"><a href="daten.html#cb28-37" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">y=</span>dropoff_loc, </span>
-<span id="cb28-38"><a href="daten.html#cb28-38" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">measure =</span> <span class="st">&quot;geodesic&quot;</span>)</span>
-<span id="cb28-39"><a href="daten.html#cb28-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(geodesic_distance)</span>
-<span id="cb28-40"><a href="daten.html#cb28-40" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb28-41"><a href="daten.html#cb28-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-42"><a href="daten.html#cb28-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-43"><a href="daten.html#cb28-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Getting route information involves an external server and needs to be batched</span></span>
-<span id="cb28-44"><a href="daten.html#cb28-44" aria-hidden="true" tabindex="-1"></a><span class="co"># so that it does not time out</span></span>
-<span id="cb28-45"><a href="daten.html#cb28-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-46"><a href="daten.html#cb28-46" aria-hidden="true" tabindex="-1"></a>mb <span class="ot">&lt;-</span> <span class="dv">15</span> <span class="co"># microbatch size</span></span>
-<span id="cb28-47"><a href="daten.html#cb28-47" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">rep</span>((<span class="dv">1</span><span class="sc">:</span><span class="fu">ceiling</span>(<span class="fu">nrow</span>(d)<span class="sc">/</span>mb)), <span class="at">each=</span>mb)[<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(d)] <span class="co"># splitkey</span></span>
-<span id="cb28-48"><a href="daten.html#cb28-48" aria-hidden="true" tabindex="-1"></a>dlist <span class="ot">&lt;-</span> <span class="fu">split</span>(d, f)</span>
-<span id="cb28-49"><a href="daten.html#cb28-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-50"><a href="daten.html#cb28-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-51"><a href="daten.html#cb28-51" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (idx <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(dlist)){</span>
-<span id="cb28-52"><a href="daten.html#cb28-52" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb28-53"><a href="daten.html#cb28-53" aria-hidden="true" tabindex="-1"></a>  batch <span class="ot">&lt;-</span> dlist[[idx]]</span>
-<span id="cb28-54"><a href="daten.html#cb28-54" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Generate route information and add to dataset</span></span>
-<span id="cb28-55"><a href="daten.html#cb28-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">try</span>({</span>
-<span id="cb28-56"><a href="daten.html#cb28-56" aria-hidden="true" tabindex="-1"></a>  res <span class="ot">&lt;-</span> <span class="fu">apply</span>(batch, <span class="at">MARGIN=</span><span class="dv">1</span>, make_dist_duration)</span>
-<span id="cb28-57"><a href="daten.html#cb28-57" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">cbind</span>(batch, <span class="fu">t</span>(res))</span>
-<span id="cb28-58"><a href="daten.html#cb28-58" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb28-59"><a href="daten.html#cb28-59" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add day of the week to dataset</span></span>
-<span id="cb28-60"><a href="daten.html#cb28-60" aria-hidden="true" tabindex="-1"></a>  df<span class="sc">$</span>weekday <span class="ot">&lt;-</span> <span class="fu">weekdays</span>(<span class="fu">as.Date</span>(df<span class="sc">$</span>pickup_datetime))</span>
-<span id="cb28-61"><a href="daten.html#cb28-61" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb28-62"><a href="daten.html#cb28-62" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add geodesic distance to dataset</span></span>
-<span id="cb28-63"><a href="daten.html#cb28-63" aria-hidden="true" tabindex="-1"></a>  df<span class="sc">$</span>geodesic_distance <span class="ot">&lt;-</span> <span class="fu">apply</span>(df, <span class="at">MARGIN=</span><span class="dv">1</span>, make_geodesic_distance)</span>
-<span id="cb28-64"><a href="daten.html#cb28-64" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb28-65"><a href="daten.html#cb28-65" aria-hidden="true" tabindex="-1"></a>  <span class="co"># caching: export to csv</span></span>
-<span id="cb28-66"><a href="daten.html#cb28-66" aria-hidden="true" tabindex="-1"></a>  filename <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;cache_&quot;</span>,idx,<span class="st">&quot;-2021_fhswf_stat_taxi.csv&quot;</span>)</span>
-<span id="cb28-67"><a href="daten.html#cb28-67" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write.csv</span>(df,</span>
-<span id="cb28-68"><a href="daten.html#cb28-68" aria-hidden="true" tabindex="-1"></a>            <span class="at">file =</span> <span class="fu">file.path</span>(coursepath,savepath,filename),</span>
-<span id="cb28-69"><a href="daten.html#cb28-69" aria-hidden="true" tabindex="-1"></a>            <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb28-70"><a href="daten.html#cb28-70" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb28-71"><a href="daten.html#cb28-71" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb28-72"><a href="daten.html#cb28-72" aria-hidden="true" tabindex="-1"></a>  <span class="fu">Sys.sleep</span>(<span class="fu">runif</span>(<span class="dv">1</span>,<span class="dv">1</span>,mb))</span>
-<span id="cb28-73"><a href="daten.html#cb28-73" aria-hidden="true" tabindex="-1"></a>  <span class="fu">message</span>(idx)</span>
-<span id="cb28-74"><a href="daten.html#cb28-74" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb28-75"><a href="daten.html#cb28-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-76"><a href="daten.html#cb28-76" aria-hidden="true" tabindex="-1"></a>files <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="fu">file.path</span>(coursepath,savepath), </span>
-<span id="cb28-77"><a href="daten.html#cb28-77" aria-hidden="true" tabindex="-1"></a>                    <span class="at">pattern =</span> <span class="st">&quot;^cache*&quot;</span>, <span class="at">full.names =</span> T)</span>
-<span id="cb28-78"><a href="daten.html#cb28-78" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(files)</span>
-<span id="cb28-79"><a href="daten.html#cb28-79" aria-hidden="true" tabindex="-1"></a>flist <span class="ot">&lt;-</span> <span class="fu">lapply</span>(files, read.csv)</span>
-<span id="cb28-80"><a href="daten.html#cb28-80" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">do.call</span>(<span class="st">&quot;rbind&quot;</span>, flist)</span>
-<span id="cb28-81"><a href="daten.html#cb28-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-82"><a href="daten.html#cb28-82" aria-hidden="true" tabindex="-1"></a><span class="co"># write final csv</span></span>
-<span id="cb28-83"><a href="daten.html#cb28-83" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df,</span>
-<span id="cb28-84"><a href="daten.html#cb28-84" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="fu">file.path</span>(coursepath,savepath,<span class="st">&quot;2021_fhswf_stat_taxi.csv&quot;</span>),</span>
-<span id="cb28-85"><a href="daten.html#cb28-85" aria-hidden="true" tabindex="-1"></a>          <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb28-86"><a href="daten.html#cb28-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-87"><a href="daten.html#cb28-87" aria-hidden="true" tabindex="-1"></a><span class="co"># delete cache files</span></span>
-<span id="cb28-88"><a href="daten.html#cb28-88" aria-hidden="true" tabindex="-1"></a><span class="fu">unlink</span>(files)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="daten.html#cb31-1" tabindex="-1"></a><span class="fu">library</span>(geodist)</span>
+<span id="cb31-2"><a href="daten.html#cb31-2" tabindex="-1"></a><span class="fu">library</span>(osrm)</span>
+<span id="cb31-3"><a href="daten.html#cb31-3" tabindex="-1"></a></span>
+<span id="cb31-4"><a href="daten.html#cb31-4" tabindex="-1"></a><span class="co"># load raw data</span></span>
+<span id="cb31-5"><a href="daten.html#cb31-5" tabindex="-1"></a>coursepath <span class="ot">&lt;-</span> <span class="st">&quot;~/sciebo/courses/bchwtz-stat&quot;</span></span>
+<span id="cb31-6"><a href="daten.html#cb31-6" tabindex="-1"></a>filepath <span class="ot">&lt;-</span> <span class="st">&quot;nongit/data/2021-taxi/nyctaxi.csv&quot;</span></span>
+<span id="cb31-7"><a href="daten.html#cb31-7" tabindex="-1"></a>savepath <span class="ot">&lt;-</span> <span class="st">&quot;data&quot;</span></span>
+<span id="cb31-8"><a href="daten.html#cb31-8" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">file.path</span>(coursepath, filepath))</span>
+<span id="cb31-9"><a href="daten.html#cb31-9" tabindex="-1"></a></span>
+<span id="cb31-10"><a href="daten.html#cb31-10" tabindex="-1"></a><span class="co"># select a subset of the data</span></span>
+<span id="cb31-11"><a href="daten.html#cb31-11" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb31-12"><a href="daten.html#cb31-12" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">20210408</span>)</span>
+<span id="cb31-13"><a href="daten.html#cb31-13" tabindex="-1"></a>d <span class="ot">&lt;-</span> d[<span class="fu">sample</span>(<span class="fu">nrow</span>(d), <span class="at">size =</span> n), ]</span>
+<span id="cb31-14"><a href="daten.html#cb31-14" tabindex="-1"></a></span>
+<span id="cb31-15"><a href="daten.html#cb31-15" tabindex="-1"></a><span class="co"># Function to make points dataframe</span></span>
+<span id="cb31-16"><a href="daten.html#cb31-16" tabindex="-1"></a>make_pts <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb31-17"><a href="daten.html#cb31-17" tabindex="-1"></a>  pts <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">long =</span> <span class="fu">c</span>(x[<span class="st">&quot;pickup_longitude&quot;</span>], x[<span class="st">&quot;dropoff_longitude&quot;</span>]), </span>
+<span id="cb31-18"><a href="daten.html#cb31-18" tabindex="-1"></a>                    <span class="at">lat =</span> <span class="fu">c</span>(x[<span class="st">&quot;pickup_latitude&quot;</span>], x[<span class="st">&quot;dropoff_latitude&quot;</span>]),</span>
+<span id="cb31-19"><a href="daten.html#cb31-19" tabindex="-1"></a>                    <span class="at">row.names =</span> <span class="cn">NULL</span>)</span>
+<span id="cb31-20"><a href="daten.html#cb31-20" tabindex="-1"></a>  <span class="fu">return</span>(pts)</span>
+<span id="cb31-21"><a href="daten.html#cb31-21" tabindex="-1"></a>}</span>
+<span id="cb31-22"><a href="daten.html#cb31-22" tabindex="-1"></a></span>
+<span id="cb31-23"><a href="daten.html#cb31-23" tabindex="-1"></a><span class="co"># Function to request route information from openstreetmap</span></span>
+<span id="cb31-24"><a href="daten.html#cb31-24" tabindex="-1"></a>make_dist_duration <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">type=</span><span class="fu">c</span>(<span class="st">&quot;car&quot;</span>,<span class="st">&quot;bike&quot;</span>,<span class="st">&quot;foot&quot;</span>)[<span class="dv">1</span>]){</span>
+<span id="cb31-25"><a href="daten.html#cb31-25" tabindex="-1"></a>  pts <span class="ot">&lt;-</span> <span class="fu">make_pts</span>(x)</span>
+<span id="cb31-26"><a href="daten.html#cb31-26" tabindex="-1"></a>  route <span class="ot">&lt;-</span> osrm<span class="sc">::</span><span class="fu">osrmRoute</span>(<span class="at">loc=</span>pts, <span class="at">returnclass =</span> <span class="st">&quot;sf&quot;</span>, <span class="at">osrm.profile =</span> type)</span>
+<span id="cb31-27"><a href="daten.html#cb31-27" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">c</span>(<span class="at">osrm_distance=</span>route<span class="sc">$</span>dist, <span class="at">osrm_duration=</span>route<span class="sc">$</span>duration))</span>
+<span id="cb31-28"><a href="daten.html#cb31-28" tabindex="-1"></a>}</span>
+<span id="cb31-29"><a href="daten.html#cb31-29" tabindex="-1"></a></span>
+<span id="cb31-30"><a href="daten.html#cb31-30" tabindex="-1"></a><span class="co"># Funtion to calculate geodesic_distance</span></span>
+<span id="cb31-31"><a href="daten.html#cb31-31" tabindex="-1"></a>make_geodesic_distance <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb31-32"><a href="daten.html#cb31-32" tabindex="-1"></a>  pickup_loc <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">longitude=</span>x[<span class="st">&quot;pickup_longitude&quot;</span>],</span>
+<span id="cb31-33"><a href="daten.html#cb31-33" tabindex="-1"></a>                  <span class="at">latitude=</span>x[<span class="st">&quot;pickup_latitude&quot;</span>])</span>
+<span id="cb31-34"><a href="daten.html#cb31-34" tabindex="-1"></a>  dropoff_loc <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">longitude=</span>x[<span class="st">&quot;dropoff_longitude&quot;</span>],</span>
+<span id="cb31-35"><a href="daten.html#cb31-35" tabindex="-1"></a>                   <span class="at">latitude=</span>x[<span class="st">&quot;dropoff_latitude&quot;</span>])</span>
+<span id="cb31-36"><a href="daten.html#cb31-36" tabindex="-1"></a>  geodesic_distance <span class="ot">&lt;-</span> geodist<span class="sc">::</span><span class="fu">geodist</span>(<span class="at">x=</span>pickup_loc,</span>
+<span id="cb31-37"><a href="daten.html#cb31-37" tabindex="-1"></a>                                        <span class="at">y=</span>dropoff_loc, </span>
+<span id="cb31-38"><a href="daten.html#cb31-38" tabindex="-1"></a>                                        <span class="at">measure =</span> <span class="st">&quot;geodesic&quot;</span>)</span>
+<span id="cb31-39"><a href="daten.html#cb31-39" tabindex="-1"></a>  <span class="fu">return</span>(geodesic_distance)</span>
+<span id="cb31-40"><a href="daten.html#cb31-40" tabindex="-1"></a>}</span>
+<span id="cb31-41"><a href="daten.html#cb31-41" tabindex="-1"></a></span>
+<span id="cb31-42"><a href="daten.html#cb31-42" tabindex="-1"></a></span>
+<span id="cb31-43"><a href="daten.html#cb31-43" tabindex="-1"></a><span class="co"># Getting route information involves an external server and needs to be batched</span></span>
+<span id="cb31-44"><a href="daten.html#cb31-44" tabindex="-1"></a><span class="co"># so that it does not time out</span></span>
+<span id="cb31-45"><a href="daten.html#cb31-45" tabindex="-1"></a></span>
+<span id="cb31-46"><a href="daten.html#cb31-46" tabindex="-1"></a>mb <span class="ot">&lt;-</span> <span class="dv">15</span> <span class="co"># microbatch size</span></span>
+<span id="cb31-47"><a href="daten.html#cb31-47" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">rep</span>((<span class="dv">1</span><span class="sc">:</span><span class="fu">ceiling</span>(<span class="fu">nrow</span>(d)<span class="sc">/</span>mb)), <span class="at">each=</span>mb)[<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(d)] <span class="co"># splitkey</span></span>
+<span id="cb31-48"><a href="daten.html#cb31-48" tabindex="-1"></a>dlist <span class="ot">&lt;-</span> <span class="fu">split</span>(d, f)</span>
+<span id="cb31-49"><a href="daten.html#cb31-49" tabindex="-1"></a></span>
+<span id="cb31-50"><a href="daten.html#cb31-50" tabindex="-1"></a></span>
+<span id="cb31-51"><a href="daten.html#cb31-51" tabindex="-1"></a><span class="cf">for</span> (idx <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(dlist)){</span>
+<span id="cb31-52"><a href="daten.html#cb31-52" tabindex="-1"></a>  </span>
+<span id="cb31-53"><a href="daten.html#cb31-53" tabindex="-1"></a>  batch <span class="ot">&lt;-</span> dlist[[idx]]</span>
+<span id="cb31-54"><a href="daten.html#cb31-54" tabindex="-1"></a>  <span class="co"># Generate route information and add to dataset</span></span>
+<span id="cb31-55"><a href="daten.html#cb31-55" tabindex="-1"></a>  <span class="fu">try</span>({</span>
+<span id="cb31-56"><a href="daten.html#cb31-56" tabindex="-1"></a>  res <span class="ot">&lt;-</span> <span class="fu">apply</span>(batch, <span class="at">MARGIN=</span><span class="dv">1</span>, make_dist_duration)</span>
+<span id="cb31-57"><a href="daten.html#cb31-57" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">cbind</span>(batch, <span class="fu">t</span>(res))</span>
+<span id="cb31-58"><a href="daten.html#cb31-58" tabindex="-1"></a>  </span>
+<span id="cb31-59"><a href="daten.html#cb31-59" tabindex="-1"></a>  <span class="co"># Add day of the week to dataset</span></span>
+<span id="cb31-60"><a href="daten.html#cb31-60" tabindex="-1"></a>  df<span class="sc">$</span>weekday <span class="ot">&lt;-</span> <span class="fu">weekdays</span>(<span class="fu">as.Date</span>(df<span class="sc">$</span>pickup_datetime))</span>
+<span id="cb31-61"><a href="daten.html#cb31-61" tabindex="-1"></a>  </span>
+<span id="cb31-62"><a href="daten.html#cb31-62" tabindex="-1"></a>  <span class="co"># Add geodesic distance to dataset</span></span>
+<span id="cb31-63"><a href="daten.html#cb31-63" tabindex="-1"></a>  df<span class="sc">$</span>geodesic_distance <span class="ot">&lt;-</span> <span class="fu">apply</span>(df, <span class="at">MARGIN=</span><span class="dv">1</span>, make_geodesic_distance)</span>
+<span id="cb31-64"><a href="daten.html#cb31-64" tabindex="-1"></a>  </span>
+<span id="cb31-65"><a href="daten.html#cb31-65" tabindex="-1"></a>  <span class="co"># caching: export to csv</span></span>
+<span id="cb31-66"><a href="daten.html#cb31-66" tabindex="-1"></a>  filename <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;cache_&quot;</span>,idx,<span class="st">&quot;-2021_fhswf_stat_taxi.csv&quot;</span>)</span>
+<span id="cb31-67"><a href="daten.html#cb31-67" tabindex="-1"></a>  <span class="fu">write.csv</span>(df,</span>
+<span id="cb31-68"><a href="daten.html#cb31-68" tabindex="-1"></a>            <span class="at">file =</span> <span class="fu">file.path</span>(coursepath,savepath,filename),</span>
+<span id="cb31-69"><a href="daten.html#cb31-69" tabindex="-1"></a>            <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb31-70"><a href="daten.html#cb31-70" tabindex="-1"></a>  })</span>
+<span id="cb31-71"><a href="daten.html#cb31-71" tabindex="-1"></a>  </span>
+<span id="cb31-72"><a href="daten.html#cb31-72" tabindex="-1"></a>  <span class="fu">Sys.sleep</span>(<span class="fu">runif</span>(<span class="dv">1</span>,<span class="dv">1</span>,mb))</span>
+<span id="cb31-73"><a href="daten.html#cb31-73" tabindex="-1"></a>  <span class="fu">message</span>(idx)</span>
+<span id="cb31-74"><a href="daten.html#cb31-74" tabindex="-1"></a>}</span>
+<span id="cb31-75"><a href="daten.html#cb31-75" tabindex="-1"></a></span>
+<span id="cb31-76"><a href="daten.html#cb31-76" tabindex="-1"></a>files <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="fu">file.path</span>(coursepath,savepath), </span>
+<span id="cb31-77"><a href="daten.html#cb31-77" tabindex="-1"></a>                    <span class="at">pattern =</span> <span class="st">&quot;^cache*&quot;</span>, <span class="at">full.names =</span> T)</span>
+<span id="cb31-78"><a href="daten.html#cb31-78" tabindex="-1"></a><span class="fu">length</span>(files)</span>
+<span id="cb31-79"><a href="daten.html#cb31-79" tabindex="-1"></a>flist <span class="ot">&lt;-</span> <span class="fu">lapply</span>(files, read.csv)</span>
+<span id="cb31-80"><a href="daten.html#cb31-80" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">do.call</span>(<span class="st">&quot;rbind&quot;</span>, flist)</span>
+<span id="cb31-81"><a href="daten.html#cb31-81" tabindex="-1"></a></span>
+<span id="cb31-82"><a href="daten.html#cb31-82" tabindex="-1"></a><span class="co"># write final csv</span></span>
+<span id="cb31-83"><a href="daten.html#cb31-83" tabindex="-1"></a><span class="fu">write.csv</span>(df,</span>
+<span id="cb31-84"><a href="daten.html#cb31-84" tabindex="-1"></a>          <span class="at">file =</span> <span class="fu">file.path</span>(coursepath,savepath,<span class="st">&quot;2021_fhswf_stat_taxi.csv&quot;</span>),</span>
+<span id="cb31-85"><a href="daten.html#cb31-85" tabindex="-1"></a>          <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb31-86"><a href="daten.html#cb31-86" tabindex="-1"></a></span>
+<span id="cb31-87"><a href="daten.html#cb31-87" tabindex="-1"></a><span class="co"># delete cache files</span></span>
+<span id="cb31-88"><a href="daten.html#cb31-88" tabindex="-1"></a><span class="fu">unlink</span>(files)</span></code></pre></div>
 </div>
 <div id="datenbeschreibung" class="section level3 unnumbered hasAnchor">
 <h3>Datenbeschreibung<a href="daten.html#datenbeschreibung" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -467,18 +495,18 @@ div.csl-indent {
 </div>
 <div id="daten-laden" class="section level3 unnumbered hasAnchor">
 <h3>Daten laden<a href="daten.html#daten-laden" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="daten.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load the data</span></span>
-<span id="cb29-2"><a href="daten.html#cb29-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_taxi.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="daten.html#cb32-1" tabindex="-1"></a><span class="co"># load the data</span></span>
+<span id="cb32-2"><a href="daten.html#cb32-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_taxi.csv&quot;</span>)</span></code></pre></div>
 </div>
 <div id="tips-tricks" class="section level3 unnumbered hasAnchor">
 <h3>Tips &amp; Tricks<a href="daten.html#tips-tricks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="daten.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># working with dates and times</span></span>
-<span id="cb30-2"><a href="daten.html#cb30-2" aria-hidden="true" tabindex="-1"></a>x<span class="sc">$</span>pickup_datetime <span class="ot">&lt;-</span> <span class="fu">as.POSIXlt</span>(x<span class="sc">$</span>pickup_datetime, <span class="at">tz=</span><span class="st">&quot;America/New_York&quot;</span>)</span>
-<span id="cb30-3"><a href="daten.html#cb30-3" aria-hidden="true" tabindex="-1"></a>x<span class="sc">$</span>pickup_datetime[<span class="dv">1</span>]</span></code></pre></div>
-<pre><code>## [1] &quot;2016-04-29 13:32:54 America&quot;</code></pre>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="daten.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">weekdays</span>(x<span class="sc">$</span>pickup_datetime[<span class="dv">1</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="daten.html#cb33-1" tabindex="-1"></a><span class="co"># working with dates and times</span></span>
+<span id="cb33-2"><a href="daten.html#cb33-2" tabindex="-1"></a>x<span class="sc">$</span>pickup_datetime <span class="ot">&lt;-</span> <span class="fu">as.POSIXlt</span>(x<span class="sc">$</span>pickup_datetime, <span class="at">tz=</span><span class="st">&quot;America/New_York&quot;</span>)</span>
+<span id="cb33-3"><a href="daten.html#cb33-3" tabindex="-1"></a>x<span class="sc">$</span>pickup_datetime[<span class="dv">1</span>]</span></code></pre></div>
+<pre><code>## [1] &quot;2016-04-29 13:32:54 EDT&quot;</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="daten.html#cb35-1" tabindex="-1"></a><span class="fu">weekdays</span>(x<span class="sc">$</span>pickup_datetime[<span class="dv">1</span>])</span></code></pre></div>
 <pre><code>## [1] &quot;Friday&quot;</code></pre>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="daten.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">months</span>(x<span class="sc">$</span>pickup_datetime[<span class="dv">1</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="daten.html#cb37-1" tabindex="-1"></a><span class="fu">months</span>(x<span class="sc">$</span>pickup_datetime[<span class="dv">1</span>])</span></code></pre></div>
 <pre><code>## [1] &quot;April&quot;</code></pre>
 </div>
 <div id="quellen" class="section level3 unnumbered hasAnchor">
@@ -489,52 +517,52 @@ div.csl-indent {
 </ul>
 </div>
 </div>
-<div id="hauspreise" class="section level2 hasAnchor" number="15.8">
-<h2><span class="header-section-number">15.8</span> 2021: Hauspreise<a href="daten.html#hauspreise" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="hauspreise" class="section level2 hasAnchor" number="15.11">
+<h2><span class="header-section-number">15.11</span> 2021: Hauspreise<a href="daten.html#hauspreise" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="vorbereitungen-1" class="section level3 unnumbered hasAnchor">
 <h3>Vorbereitungen<a href="daten.html#vorbereitungen-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="daten.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb36-2"><a href="daten.html#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="co"># load raw data</span></span>
-<span id="cb36-3"><a href="daten.html#cb36-3" aria-hidden="true" tabindex="-1"></a>coursepath <span class="ot">&lt;-</span> <span class="st">&quot;~/sciebo/courses/bchwtz-stat&quot;</span></span>
-<span id="cb36-4"><a href="daten.html#cb36-4" aria-hidden="true" tabindex="-1"></a>filepath <span class="ot">&lt;-</span> <span class="st">&quot;nongit/data/2021-housing/germany_housing.csv&quot;</span></span>
-<span id="cb36-5"><a href="daten.html#cb36-5" aria-hidden="true" tabindex="-1"></a>savepath <span class="ot">&lt;-</span> <span class="st">&quot;data&quot;</span></span>
-<span id="cb36-6"><a href="daten.html#cb36-6" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">file.path</span>(coursepath, filepath))</span>
-<span id="cb36-7"><a href="daten.html#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="co"># rename columns and select relevant ones</span></span>
-<span id="cb36-8"><a href="daten.html#cb36-8" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span></span>
-<span id="cb36-9"><a href="daten.html#cb36-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
-<span id="cb36-10"><a href="daten.html#cb36-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">id =</span> X,</span>
-<span id="cb36-11"><a href="daten.html#cb36-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">price =</span> Price,</span>
-<span id="cb36-12"><a href="daten.html#cb36-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">type =</span> Type,</span>
-<span id="cb36-13"><a href="daten.html#cb36-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">living_space =</span> Living_space,</span>
-<span id="cb36-14"><a href="daten.html#cb36-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">lot_size =</span> Lot,</span>
-<span id="cb36-15"><a href="daten.html#cb36-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">additional_area =</span> Usable_area,</span>
-<span id="cb36-16"><a href="daten.html#cb36-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">availability =</span> Free_of_Relation,</span>
-<span id="cb36-17"><a href="daten.html#cb36-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">rooms =</span> Rooms,</span>
-<span id="cb36-18"><a href="daten.html#cb36-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">bedrooms =</span> Bedrooms,</span>
-<span id="cb36-19"><a href="daten.html#cb36-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">bathrooms =</span> Bathrooms,</span>
-<span id="cb36-20"><a href="daten.html#cb36-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">floors =</span> Floors,</span>
-<span id="cb36-21"><a href="daten.html#cb36-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">year_construction =</span> Year_built,</span>
-<span id="cb36-22"><a href="daten.html#cb36-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">year_modernization =</span> Year_renovated,</span>
-<span id="cb36-23"><a href="daten.html#cb36-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">condition =</span> Condition,</span>
-<span id="cb36-24"><a href="daten.html#cb36-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">heating =</span> Heating,</span>
-<span id="cb36-25"><a href="daten.html#cb36-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">facility_quality =</span> Furnishing_quality,</span>
-<span id="cb36-26"><a href="daten.html#cb36-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">energy_source =</span> Energy_source,</span>
-<span id="cb36-27"><a href="daten.html#cb36-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">energy_certificate =</span> Energy_certificate,</span>
-<span id="cb36-28"><a href="daten.html#cb36-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">energy_certificate_type =</span> Energy_certificate_type,</span>
-<span id="cb36-29"><a href="daten.html#cb36-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">energy_consumption =</span> Energy_consumption,</span>
-<span id="cb36-30"><a href="daten.html#cb36-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">energy_efficiency_class =</span> Energy_efficiency_class,</span>
-<span id="cb36-31"><a href="daten.html#cb36-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">state =</span> State,</span>
-<span id="cb36-32"><a href="daten.html#cb36-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">district =</span> City,</span>
-<span id="cb36-33"><a href="daten.html#cb36-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">city =</span> Place,</span>
-<span id="cb36-34"><a href="daten.html#cb36-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">parking_lot =</span> Garages,</span>
-<span id="cb36-35"><a href="daten.html#cb36-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">parking_lot_type =</span> Garagetype</span>
-<span id="cb36-36"><a href="daten.html#cb36-36" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb36-37"><a href="daten.html#cb36-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>availability)</span>
-<span id="cb36-38"><a href="daten.html#cb36-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-39"><a href="daten.html#cb36-39" aria-hidden="true" tabindex="-1"></a><span class="co"># export to csv</span></span>
-<span id="cb36-40"><a href="daten.html#cb36-40" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(d,</span>
-<span id="cb36-41"><a href="daten.html#cb36-41" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="fu">file.path</span>(coursepath,savepath,<span class="st">&quot;2021_fhswf_stat_housing.csv&quot;</span>),</span>
-<span id="cb36-42"><a href="daten.html#cb36-42" aria-hidden="true" tabindex="-1"></a>          <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="daten.html#cb39-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb39-2"><a href="daten.html#cb39-2" tabindex="-1"></a><span class="co"># load raw data</span></span>
+<span id="cb39-3"><a href="daten.html#cb39-3" tabindex="-1"></a>coursepath <span class="ot">&lt;-</span> <span class="st">&quot;~/sciebo/courses/bchwtz-stat&quot;</span></span>
+<span id="cb39-4"><a href="daten.html#cb39-4" tabindex="-1"></a>filepath <span class="ot">&lt;-</span> <span class="st">&quot;nongit/data/2021-housing/germany_housing.csv&quot;</span></span>
+<span id="cb39-5"><a href="daten.html#cb39-5" tabindex="-1"></a>savepath <span class="ot">&lt;-</span> <span class="st">&quot;data&quot;</span></span>
+<span id="cb39-6"><a href="daten.html#cb39-6" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">file.path</span>(coursepath, filepath))</span>
+<span id="cb39-7"><a href="daten.html#cb39-7" tabindex="-1"></a><span class="co"># rename columns and select relevant ones</span></span>
+<span id="cb39-8"><a href="daten.html#cb39-8" tabindex="-1"></a>d <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span></span>
+<span id="cb39-9"><a href="daten.html#cb39-9" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb39-10"><a href="daten.html#cb39-10" tabindex="-1"></a>    <span class="at">id =</span> X,</span>
+<span id="cb39-11"><a href="daten.html#cb39-11" tabindex="-1"></a>    <span class="at">price =</span> Price,</span>
+<span id="cb39-12"><a href="daten.html#cb39-12" tabindex="-1"></a>    <span class="at">type =</span> Type,</span>
+<span id="cb39-13"><a href="daten.html#cb39-13" tabindex="-1"></a>    <span class="at">living_space =</span> Living_space,</span>
+<span id="cb39-14"><a href="daten.html#cb39-14" tabindex="-1"></a>    <span class="at">lot_size =</span> Lot,</span>
+<span id="cb39-15"><a href="daten.html#cb39-15" tabindex="-1"></a>    <span class="at">additional_area =</span> Usable_area,</span>
+<span id="cb39-16"><a href="daten.html#cb39-16" tabindex="-1"></a>    <span class="at">availability =</span> Free_of_Relation,</span>
+<span id="cb39-17"><a href="daten.html#cb39-17" tabindex="-1"></a>    <span class="at">rooms =</span> Rooms,</span>
+<span id="cb39-18"><a href="daten.html#cb39-18" tabindex="-1"></a>    <span class="at">bedrooms =</span> Bedrooms,</span>
+<span id="cb39-19"><a href="daten.html#cb39-19" tabindex="-1"></a>    <span class="at">bathrooms =</span> Bathrooms,</span>
+<span id="cb39-20"><a href="daten.html#cb39-20" tabindex="-1"></a>    <span class="at">floors =</span> Floors,</span>
+<span id="cb39-21"><a href="daten.html#cb39-21" tabindex="-1"></a>    <span class="at">year_construction =</span> Year_built,</span>
+<span id="cb39-22"><a href="daten.html#cb39-22" tabindex="-1"></a>    <span class="at">year_modernization =</span> Year_renovated,</span>
+<span id="cb39-23"><a href="daten.html#cb39-23" tabindex="-1"></a>    <span class="at">condition =</span> Condition,</span>
+<span id="cb39-24"><a href="daten.html#cb39-24" tabindex="-1"></a>    <span class="at">heating =</span> Heating,</span>
+<span id="cb39-25"><a href="daten.html#cb39-25" tabindex="-1"></a>    <span class="at">facility_quality =</span> Furnishing_quality,</span>
+<span id="cb39-26"><a href="daten.html#cb39-26" tabindex="-1"></a>    <span class="at">energy_source =</span> Energy_source,</span>
+<span id="cb39-27"><a href="daten.html#cb39-27" tabindex="-1"></a>    <span class="at">energy_certificate =</span> Energy_certificate,</span>
+<span id="cb39-28"><a href="daten.html#cb39-28" tabindex="-1"></a>    <span class="at">energy_certificate_type =</span> Energy_certificate_type,</span>
+<span id="cb39-29"><a href="daten.html#cb39-29" tabindex="-1"></a>    <span class="at">energy_consumption =</span> Energy_consumption,</span>
+<span id="cb39-30"><a href="daten.html#cb39-30" tabindex="-1"></a>    <span class="at">energy_efficiency_class =</span> Energy_efficiency_class,</span>
+<span id="cb39-31"><a href="daten.html#cb39-31" tabindex="-1"></a>    <span class="at">state =</span> State,</span>
+<span id="cb39-32"><a href="daten.html#cb39-32" tabindex="-1"></a>    <span class="at">district =</span> City,</span>
+<span id="cb39-33"><a href="daten.html#cb39-33" tabindex="-1"></a>    <span class="at">city =</span> Place,</span>
+<span id="cb39-34"><a href="daten.html#cb39-34" tabindex="-1"></a>    <span class="at">parking_lot =</span> Garages,</span>
+<span id="cb39-35"><a href="daten.html#cb39-35" tabindex="-1"></a>    <span class="at">parking_lot_type =</span> Garagetype</span>
+<span id="cb39-36"><a href="daten.html#cb39-36" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb39-37"><a href="daten.html#cb39-37" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>availability)</span>
+<span id="cb39-38"><a href="daten.html#cb39-38" tabindex="-1"></a></span>
+<span id="cb39-39"><a href="daten.html#cb39-39" tabindex="-1"></a><span class="co"># export to csv</span></span>
+<span id="cb39-40"><a href="daten.html#cb39-40" tabindex="-1"></a><span class="fu">write.csv</span>(d,</span>
+<span id="cb39-41"><a href="daten.html#cb39-41" tabindex="-1"></a>          <span class="at">file =</span> <span class="fu">file.path</span>(coursepath,savepath,<span class="st">&quot;2021_fhswf_stat_housing.csv&quot;</span>),</span>
+<span id="cb39-42"><a href="daten.html#cb39-42" tabindex="-1"></a>          <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 </div>
 <div id="datenbeschreibung-1" class="section level3 unnumbered hasAnchor">
 <h3>Datenbeschreibung<a href="daten.html#datenbeschreibung-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -568,8 +596,8 @@ div.csl-indent {
 </div>
 <div id="daten-laden-1" class="section level3 unnumbered hasAnchor">
 <h3>Daten laden<a href="daten.html#daten-laden-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="daten.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load the data</span></span>
-<span id="cb37-2"><a href="daten.html#cb37-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_housing.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="daten.html#cb40-1" tabindex="-1"></a><span class="co"># load the data</span></span>
+<span id="cb40-2"><a href="daten.html#cb40-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_housing.csv&quot;</span>)</span></code></pre></div>
 </div>
 <div id="quellen-1" class="section level3 unnumbered hasAnchor">
 <h3>Quellen<a href="daten.html#quellen-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -578,23 +606,23 @@ div.csl-indent {
 </ul>
 </div>
 </div>
-<div id="human-ressources" class="section level2 hasAnchor" number="15.9">
-<h2><span class="header-section-number">15.9</span> 2021: Human Ressources<a href="daten.html#human-ressources" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="human-ressources" class="section level2 hasAnchor" number="15.12">
+<h2><span class="header-section-number">15.12</span> 2021: Human Ressources<a href="daten.html#human-ressources" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="vorbereitungen-2" class="section level3 unnumbered hasAnchor">
 <h3>Vorbereitungen<a href="daten.html#vorbereitungen-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="daten.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load raw data</span></span>
-<span id="cb38-2"><a href="daten.html#cb38-2" aria-hidden="true" tabindex="-1"></a>coursepath <span class="ot">&lt;-</span> <span class="st">&quot;~/sciebo/courses/bchwtz-stat&quot;</span></span>
-<span id="cb38-3"><a href="daten.html#cb38-3" aria-hidden="true" tabindex="-1"></a>filepath <span class="ot">&lt;-</span> <span class="st">&quot;nongit/data/2021-hr/HRDataset_v14.csv&quot;</span></span>
-<span id="cb38-4"><a href="daten.html#cb38-4" aria-hidden="true" tabindex="-1"></a>savepath <span class="ot">&lt;-</span> <span class="st">&quot;data&quot;</span></span>
-<span id="cb38-5"><a href="daten.html#cb38-5" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">file.path</span>(coursepath, filepath))</span>
-<span id="cb38-6"><a href="daten.html#cb38-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-7"><a href="daten.html#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="co"># harmonize variable names</span></span>
-<span id="cb38-8"><a href="daten.html#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(d) <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">&quot;_&quot;</span>,<span class="st">&quot;&quot;</span>,<span class="fu">names</span>(d))</span>
-<span id="cb38-9"><a href="daten.html#cb38-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-10"><a href="daten.html#cb38-10" aria-hidden="true" tabindex="-1"></a><span class="co"># export to csv</span></span>
-<span id="cb38-11"><a href="daten.html#cb38-11" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(d,</span>
-<span id="cb38-12"><a href="daten.html#cb38-12" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="fu">file.path</span>(coursepath,savepath,<span class="st">&quot;2021_fhswf_stat_hr.csv&quot;</span>),</span>
-<span id="cb38-13"><a href="daten.html#cb38-13" aria-hidden="true" tabindex="-1"></a>          <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="daten.html#cb41-1" tabindex="-1"></a><span class="co"># load raw data</span></span>
+<span id="cb41-2"><a href="daten.html#cb41-2" tabindex="-1"></a>coursepath <span class="ot">&lt;-</span> <span class="st">&quot;~/sciebo/courses/bchwtz-stat&quot;</span></span>
+<span id="cb41-3"><a href="daten.html#cb41-3" tabindex="-1"></a>filepath <span class="ot">&lt;-</span> <span class="st">&quot;nongit/data/2021-hr/HRDataset_v14.csv&quot;</span></span>
+<span id="cb41-4"><a href="daten.html#cb41-4" tabindex="-1"></a>savepath <span class="ot">&lt;-</span> <span class="st">&quot;data&quot;</span></span>
+<span id="cb41-5"><a href="daten.html#cb41-5" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">file.path</span>(coursepath, filepath))</span>
+<span id="cb41-6"><a href="daten.html#cb41-6" tabindex="-1"></a></span>
+<span id="cb41-7"><a href="daten.html#cb41-7" tabindex="-1"></a><span class="co"># harmonize variable names</span></span>
+<span id="cb41-8"><a href="daten.html#cb41-8" tabindex="-1"></a><span class="fu">names</span>(d) <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">&quot;_&quot;</span>,<span class="st">&quot;&quot;</span>,<span class="fu">names</span>(d))</span>
+<span id="cb41-9"><a href="daten.html#cb41-9" tabindex="-1"></a></span>
+<span id="cb41-10"><a href="daten.html#cb41-10" tabindex="-1"></a><span class="co"># export to csv</span></span>
+<span id="cb41-11"><a href="daten.html#cb41-11" tabindex="-1"></a><span class="fu">write.csv</span>(d,</span>
+<span id="cb41-12"><a href="daten.html#cb41-12" tabindex="-1"></a>          <span class="at">file =</span> <span class="fu">file.path</span>(coursepath,savepath,<span class="st">&quot;2021_fhswf_stat_hr.csv&quot;</span>),</span>
+<span id="cb41-13"><a href="daten.html#cb41-13" tabindex="-1"></a>          <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 </div>
 <div id="datenbeschreibung-2" class="section level3 unnumbered hasAnchor">
 <h3>Datenbeschreibung<a href="daten.html#datenbeschreibung-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -661,17 +689,17 @@ div.csl-indent {
 </div>
 <div id="daten-laden-2" class="section level3 unnumbered hasAnchor">
 <h3>Daten laden<a href="daten.html#daten-laden-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="daten.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load the data</span></span>
-<span id="cb39-2"><a href="daten.html#cb39-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_hr.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="daten.html#cb42-1" tabindex="-1"></a><span class="co"># load the data</span></span>
+<span id="cb42-2"><a href="daten.html#cb42-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://bchwtz.github.io/bchwtz-stat/data/2021_fhswf_stat_hr.csv&quot;</span>)</span></code></pre></div>
 </div>
 <div id="tips-tricks-1" class="section level3 unnumbered hasAnchor">
 <h3>Tips &amp; Tricks<a href="daten.html#tips-tricks-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="daten.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># working with dates and times</span></span>
-<span id="cb40-2"><a href="daten.html#cb40-2" aria-hidden="true" tabindex="-1"></a>x<span class="sc">$</span>Date_Hiring <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(x<span class="sc">$</span>DateofHire,<span class="at">format=</span><span class="st">&#39;%m/%d/%Y&#39;</span>)</span>
-<span id="cb40-3"><a href="daten.html#cb40-3" aria-hidden="true" tabindex="-1"></a>x<span class="sc">$</span>Date_Termination <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(x<span class="sc">$</span>DateofTermination,<span class="at">format=</span><span class="st">&#39;%m/%d/%Y&#39;</span>)</span>
-<span id="cb40-4"><a href="daten.html#cb40-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-5"><a href="daten.html#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="co"># example difference between two timepoints</span></span>
-<span id="cb40-6"><a href="daten.html#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="fu">difftime</span>(x<span class="sc">$</span>Date_Termination[<span class="dv">2</span>],x<span class="sc">$</span>Date_Hiring[<span class="dv">2</span>], <span class="at">units =</span> <span class="st">&quot;days&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="daten.html#cb43-1" tabindex="-1"></a><span class="co"># working with dates and times</span></span>
+<span id="cb43-2"><a href="daten.html#cb43-2" tabindex="-1"></a>x<span class="sc">$</span>Date_Hiring <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(x<span class="sc">$</span>DateofHire,<span class="at">format=</span><span class="st">&#39;%m/%d/%Y&#39;</span>)</span>
+<span id="cb43-3"><a href="daten.html#cb43-3" tabindex="-1"></a>x<span class="sc">$</span>Date_Termination <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(x<span class="sc">$</span>DateofTermination,<span class="at">format=</span><span class="st">&#39;%m/%d/%Y&#39;</span>)</span>
+<span id="cb43-4"><a href="daten.html#cb43-4" tabindex="-1"></a></span>
+<span id="cb43-5"><a href="daten.html#cb43-5" tabindex="-1"></a><span class="co"># example difference between two timepoints</span></span>
+<span id="cb43-6"><a href="daten.html#cb43-6" tabindex="-1"></a><span class="fu">difftime</span>(x<span class="sc">$</span>Date_Termination[<span class="dv">2</span>],x<span class="sc">$</span>Date_Hiring[<span class="dv">2</span>], <span class="at">units =</span> <span class="st">&quot;days&quot;</span>)</span></code></pre></div>
 <pre><code>## Time difference of 444 days</code></pre>
 </div>
 <div id="quellen-2" class="section level3 unnumbered hasAnchor">
@@ -750,7 +778,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
