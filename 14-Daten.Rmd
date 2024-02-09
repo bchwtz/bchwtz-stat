@@ -83,6 +83,33 @@ Komfortables Einbetten der Datacamp Zertifikate in das erzeugte PDF erlaubt die 
 
 # Daten 
 
+## 2024: Guide Michelin 
+
+```{r, eval = FALSE}
+library(fhswf)       # Laden des fhswf-Packages
+View(michelin)       # Anzeigen der Daten
+michelin             # Anzeigen der Daten auf der Konsole
+?michelin            # Anzeigen der Datenbeschreibung
+```
+
+## 2024: Flixbus
+
+```{r, eval = FALSE}
+library(fhswf)       # Laden des fhswf-Packages
+View(flixbus)        # Anzeigen der Daten
+flixbus              # Anzeigen der Daten auf der Konsole
+?flixbus             # Anzeigen der Datenbeschreibung
+```
+
+## 2024: Lego
+
+```{r, eval = FALSE}
+library(fhswf)       # Laden des fhswf-Packages
+View(lego)           # Anzeigen der Daten
+lego                 # Anzeigen der Daten auf der Konsole
+?lego                # Anzeigen der Datenbeschreibung
+```
+
 ## 2023: Bike Sharing
 
 ```{r, eval = FALSE}
