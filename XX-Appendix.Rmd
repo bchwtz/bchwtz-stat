@@ -2,8 +2,8 @@
 
 Die Bewertung der Gruppenarbeiten erfolgt mit dem folgenden Formular:
 
-- [Download Beispielbogen](data/2022 - Statistik - Gruppensprecher - Gruppenname.pdf)
-- [Download Bewertungsformular](data/2022- Statistik - Gruppenarbeiten.xlsm)
+- [Download Beispielbogen](data/Vorlage - Statistik - Gruppensprecher - Gruppenname.pdf)
+- [Download Bewertungsformular](data/Vorlage- Statistik - Gruppenarbeiten.xlsm)
 
 
 # Evaluation {-}
