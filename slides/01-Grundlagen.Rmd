@@ -1,7 +1,7 @@
 ---
 title: "Statistik"
 author: "CH.1 - Grundlagen"
-date: "SS 2023 || Prof. Dr. Buchwitz, Sommer, Henke"
+date: "`r format(Sys.time(), '%Y')` || Prof. Dr. Buchwitz, Sommer, Henke"
 
 toc: true
 tocoverview: false
@@ -45,22 +45,6 @@ library(vcd)
 - Raum 2.3.14, Lindenstr. 53, Meschede
 - **Email:** buchwitz.benjamin@fh-swf.de
 
-## Formalia
-
-- **Prüfung:** Zusätzlich zur Klausur wird eine semesterbegleitende Gruppenarbeit erstellt. Die Note in dem Modul Statistik setzt sich aus der Gruppenarbeit (25%) und der Klausur (75%) zusammen. 
-- **Prüfungsvorleistung:** Bedingung der PVL sind das Erreichen von mindestens 5 Punkte in der Gruppenarbeit zum Stand der Zwischenabgabe sowie das vorlegen von 3 vorgegebenen Datacamp-Zertifikaten. 
-- **Bestehen:** Das Modul *Statistik* gilt als bestanden, wenn Sie mindestens 50 Punkte aus der Gruppenarbeit (max. 25 Punkte) und der Klausur (max. 75 Punkte) erreichen.
-
-<!-- ## Deadlines -->
-
-<!-- * Gruppenanmeldung: **Fr. 08.04.2022: 12:00 Uhr** -->
-<!-- * Abgabe Exposé: **Fr. 22.04.2022: 12:00 Uhr** -->
-<!-- * Abgabe Zwischenabgabe: **Fr. 27.05.2022: 12:00 Uhr** -->
-<!-- * Endabgabe: **Fr. 29.07.2022: 12:00 Uhr** -->
-
-## Deadlines
-
-\kariert{16}
 
 ## Was ist Statistik?
 
@@ -158,6 +142,47 @@ Mit diesen Daten möchten Sie auf den Schokoladenkonsum der Bevölkerung im Hoch
 ### Alle Unterlagen finden Sie hier:
 https://bchwtz.github.io/bchwtz-stat/
 
+
+## Modul: Statistik
+
+Als Hochschule für *angewandte Wissenschaften* lernen Sie im Modul *Statistik* nicht nur die theoretischen Grundlagen der Statistik kennen, sondern Sie wenden diese auch mit der Software *R* an. Dieses Semester werden die folgenden Veranstaltungen angeboten:
+
+- **Vorlesung:** Vermittlung der theoretischen Grundlagen, erste exemplarische Anwendung der vorgestellten Verfahren inklusive Interpretationslogiken der Ergebnisse.
+
+- **Seminar:** Festigung der Lerninhalte und vertiefte Anwendung der statistischen Verfahren, Arbeiten mit der Statistiksoftware R, Vorbereitung der semesterbegleitenden Gruppenarbeit.
+
+- **R-Sprechstunde:** Freie Sprechstunde zur Unterstützung bei allen Aspekte die die Statistiksoftware R betreffen. 
+
+- **Tutorium:** Vertiefung der rechnerischen Anwendung der statistischen Verfahren. Rechnen von Übungsblättern.
+
+
+## Formalia
+
+Die Prüfungsleistung im Modul Statistik ist eine Klausur, die durch eine semesterbegleitende Gruppenarbeit ergänzt wird. Die Endnote im Modul Statistik setzt sich aus Gruppenarbeit (25%) und Klausur (75%) zusammen.
+
+\small
+
+- **Klausur (75%):** Prüfung der theoretischen und rechnerischen Grundlagen der Statistik inkl. Interpretation von Ergebnissen. **Hilfsmittel: Taschenrechner + Studienbuch inkl. handschriftlicher Anmerkungen**
+
+- **Gruppenarbeit (25% + PVL):** Prüfung der eigenständigen Anwendung um Umsetzung statistischer Analyselogiken. Für die Gruppenarbeit gibt es drei Abgaben: Exposé, Zwischenabgabe und Endabgabe. Für die Anwendung mit R müssen zudem Kurse der online Lernplattform *DataCamp* nachgewiesen werden. Für die **PVL** sind mindestens 5 Punkte in der Gruppenarbeit zum Stand der Zwischenabgabe zu erreichen und es müssen 3 der 4 vorgegebenen Datacamp-Zertifikaten vorgelegt werden.
+
+\normalsize
+
+### Abschluss des Moduls
+Das Modul *Statistik* gilt als bestanden, wenn Sie mindestens 50 Punkte aus der Gruppenarbeit (max. 25 Punkte) und der Klausur (max. 75 Punkte) erreichen.
+
+
+## Gruppenarbeit
+
+Für die Gruppenarbeit wenden Sie die erlenten Verfahren mit Hilfe von R an und erstellen mit Hilfe der Analyseergebnisse eine **wissenschaftliche Arbeit**. 
+
+- Die Gruppenarbeit bestehte aus drei Abgaben: Exposé, Zwischenabgabe und Endabgabe. Jeder Gruppe wird ein Korrektor zugeordnet, der alle Abgaben betreut.
+- Für das Erstellen der Gruppenarbeit gibt es eine Vorlage die es erlaubt Analyseprogramm (R) und Text in einer Datei zu kombinieren. Diese Vorlage enthält eine Ehrenwörtliche Erklärung und eine Checkliste für die Abgabe zur Vermeidung von häufigen Fehlern.
+- Die erzielten Punkte für die Gruppenarbeit gelten für die Prüfung im aktuellen Semester sowie für die Wiederholungsprüfung; erzielte Punkte bleiben also *zwei Semester* lang bestehen. Die PVL bleibt nach einmaligem bestehen **immer** gültig.
+
+\center\Large
+**Alle Details zur Gruppenarbeit erfahren Sie im Seminar!**
+
 ## R und RStudio
 
 ### R Installieren
@@ -169,14 +194,8 @@ https://www.rstudio.com/products/rstudio/download/#download
 ### DataCamp Zugang 
 Über die Einschreibung bei Moodle erhalten Sie den Zugang zu DataCamp für die begleitenden Online Kurse.
 
-## Was ist Statistiksoftware
 
-- Ein Programm, das Zahlen als Input nimmt, und daraus Tabellen (und Grafiken) erzeugt?
-- Ein(e) (Sammlung von) Programm(en) für Exploration, Inferenz und Modellierung?
-- Ein Werkzeug zur Verwaltung, Manipulation und Analyse von Daten?
-- Ein Kommunikationsmedium mit CPU (Grafikkarte, Drucker, . . . ) des Rechners?
-
-## Wieso R
+## Statistiksoftware R
 - R ist eine kostenlose Software-Umgebung für statistische Datenanalyse und Graphiken. Es beruht auf einer Implementation der Sprache S. Anfänglich wurde R von Ross Ihaka und Robert Gentleman (Univ. Auckland) entwickelt und wird seit Mitte der 90er Jahre von einem Entwickler-Kollektiv (R-Core) betreut.
 - Sehen Sie Statistiksoftware als Hilfsmittel, um dem Computer mitzuteilen, wie Sie Ihre Daten analysieren wollen.
 - Für einfache Analysen reichen einfache Programme, aber gerade in Excel haben Sie irgendwann das letzte Untermenü oder die letzte Formel erreicht und können nicht mehr weiter arbeiten.
