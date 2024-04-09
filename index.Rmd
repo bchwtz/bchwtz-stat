@@ -40,7 +40,7 @@ Herzlich Willkommen zum Kurs Statistik
 
 | Woche| Thema             | Slides    |
 | ---: | :--------         | :---:        |
-| 1    | Grundlagen + Häufigkeit        | [PDF](slides/01-Grundlagen.pdf) [PDF](slides/02-Haeufigkeit.pdf)   |
+| 1    | Grundlagen + Häufigkeit        | [PDF](slides/01-Grundlagen.pdf) + [PDF](slides/02-Haeufigkeit.pdf)   |
 | 2    | Maßzahlen         | [PDF](slides/03-Masszahlen.pdf)     |
 | 3    | Zusammenhang      | [PDF](slides/04-Zusammenhang.pdf)     |
 | 4    | Kombinatorik      | [PDF](slides/05-Kombinatorik.pdf)     |
@@ -51,7 +51,7 @@ Herzlich Willkommen zum Kurs Statistik
 | 9    | Schätzung | [PDF](slides/10-Schaetzung.pdf)|
 | 10   | Hypothesentests | [PDF](slides/11-Hypothesentests.pdf)|
 | 11   | Lineare Regression | [PDF](slides/12-Regression.pdf)|
-| 12   | Multiple Regression | [PDF](sli13-MultipleRegression.pdf.pdf)|
+| 12   | Multiple Regression | [PDF](slides/13-MultipleRegression.pdf)|
 
 
 
