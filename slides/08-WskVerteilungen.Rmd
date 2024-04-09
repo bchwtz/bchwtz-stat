@@ -1,7 +1,7 @@
 ---
 title: "Statistik"
 author: "CH.8 - Wahrscheinlichkeitsverteilungen"
-date: "SS 2023 || Prof. Dr. Buchwitz, Sommer, Henke"
+date: "`r format(Sys.time(), '%Y')` || Prof. Dr. Buchwitz, Sommer, Henke"
 
 toc: true
 tocoverview: false
