@@ -41,9 +41,9 @@ library(vcd)
 Bei der Anwendung der Wahrscheinlichkeitsrechnung gibt es zahlreiche Sonderfälle und Überraschungen. Wir diskutieren im Folgenden diese Themen:
 
 - Urnenmodell
-- Geburtstagsproblem
-- Simpson Paradoxon
 - Entscheidungsbäume
+- Simpson Paradoxon
+- Geburtstagsproblem
 
 # Urnenmodell
 
@@ -142,6 +142,71 @@ p_1 <- (choose(16,1)*choose(784,49))/choose(800,50)
 1 - p_0 - p_1
 ```
 
+# Entscheidungsbäume
+
+## Entscheidungsbäume: Überblick
+- Zahlreiche von Unsicherheit geprägte Sachverhalte können als Entscheidungsbäume dargestellt werden. **Beispiel:** Würfeln mit einem und mit zwei Würfeln.
+
+\kariert{15}
+
+## Entscheidungsbäume: Überblick
+
+\kariert{20}
+
+## Entscheidungsbäume
+
+- Unternehmen müssen täglich Entscheidungen treffen, z.B.:
+  + über den Standort eines neuen Werkes
+  + zwischen mehreren unterschiedlichen Anlageformen
+  + über Investitionen in neue Maschinen etc.
+  
+- Was ist dabei zu beachten:
+  + Nicht alle Informationen, die der Entscheider gerne zur Verfügung hätte, sind bekannt
+  + Das Unternehmen ist darauf angewiesen, Wahrscheinlichkeiten für das Eintreffen der verschiedenen Ereignisse abzuschätzen
+  + Basierend auf diesen Wahrscheinlichkeiten werden Entscheidungen getroffen
+  + Während des Entscheidungsprozesses kann es möglich sein, dass das Unternehmen an Zusatzinformationen gelangt
+  + Durch diese Zusatzinformationen verändern sich die Wahrscheinlichkeiten für das Eintreffen der verschiedenen Ereignisse.
+
+## Entscheidungsbäume: Beispiel
+
+\kariert{20}
+
+## Entscheidungsbäume: Beispiel
+
+\kariert{20}
+
+## Entscheidungsbäume: Beispiel
+
+\kariert{20}
+
+# Simpsons Paradoxon
+
+## Simpsons Paradoxon
+
+```{r}
+UCBAdmissions[ , ,1] # Department A
+```
+
+## Simpsons Paradoxon
+
+- Frauen haben eine niedrigere Zulassunsgsquote
+
+```{r}
+apply(UCBAdmissions,c(1,2),sum)
+```
+
+## Simpsons Paradoxon
+
+```{r}
+plot(UCBAdmissions)
+```
+
+## Simpsons Paradoxon
+
+\begin{alertblock}{}\Large
+Bewertung verschiedener Gruppen fällt scheinbar unterschiedlich aus, je nachdem, ob man die Ergebnisse der Gruppen kombiniert oder nicht.
+\end{alertblock}
+
 # Geburtstagsproblem
 
 ## Geburtstagsproblem: Überblick
@@ -184,69 +249,3 @@ k <- 100
 \begin{alertblock}{}\Large
 Intuitiv werden bestimmte Wahrscheinlichkeiten häufig falsch eingeschätzt.
 \end{alertblock}
-
-# Simpsons Paradoxon
-
-## Simpsons Paradoxon
-
-```{r}
-UCBAdmissions[ , ,1] # Department A
-```
-
-## Simpsons Paradoxon
-
-- Frauen haben eine niedrigere Zulassunsgsquote
-
-```{r}
-apply(UCBAdmissions,c(1,2),sum)
-```
-
-## Simpsons Paradoxon
-
-```{r}
-plot(UCBAdmissions)
-```
-
-## Simpsons Paradoxon
-
-\begin{alertblock}{}\Large
-Bewertung verschiedener Gruppen fällt scheinbar unterschiedlich aus, je nachdem, ob man die Ergebnisse der Gruppen kombiniert oder nicht.
-\end{alertblock}
-
-
-# Entscheidungsbäume
-
-## Entscheidungsbäume: Überblick
-- Zahlreiche von Unsicherheit geprägte Sachverhalte können als Entscheidungsbäume dargestellt werden. **Beispiel:** Würfeln mit einem und mit zwei Würfeln.
-
-\kariert{15}
-
-## Entscheidungsbäume: Überblick
-
-\kariert{20}
-
-## Entscheidungsbäume
-
-- Unternehmen müssen täglich Entscheidungen treffen, z.B.:
-  + über den Standort eines neuen Werkes
-  + zwischen mehreren unterschiedlichen Anlageformen
-  + über Investitionen in neue Maschinen etc.
-  
-- Was ist dabei zu beachten:
-  + Nicht alle Informationen, die der Entscheider gerne zur Verfügung hätte, sind bekannt
-  + Das Unternehmen ist darauf angewiesen, Wahrscheinlichkeiten für das Eintreffen der verschiedenen Ereignisse abzuschätzen
-  + Basierend auf diesen Wahrscheinlichkeiten werden Entscheidungen getroffen
-  + Während des Entscheidungsprozesses kann es möglich sein, dass das Unternehmen an Zusatzinformationen gelangt
-  + Durch diese Zusatzinformationen verändern sich die Wahrscheinlichkeiten für das Eintreffen der verschiedenen Ereignisse.
-
-## Entscheidungsbäume: Beispiel
-
-\kariert{20}
-
-## Entscheidungsbäume: Beispiel
-
-\kariert{20}
-
-## Entscheidungsbäume: Beispiel
-
-\kariert{20}
