@@ -36,7 +36,7 @@ knitr::opts_chunk$set(echo = TRUE, fig.align = "center")
 knitr::knit_hooks$set(inline=inline_hook)
 ```
 
-Herzlich Willkommen zum Kurs Statistik
+Herzlich Willkommen im Kurs Statistik
 
 | Woche| Thema             | Slides    |
 | ---: | :--------         | :---:        |
