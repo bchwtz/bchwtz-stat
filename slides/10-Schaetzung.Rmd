@@ -22,7 +22,7 @@ knitr::opts_chunk$set(echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE,
 library(car)
 library(fGarch)
 library(gtools)
-library(HistogramTools)
+#library(HistogramTools)
 library(ineq)
 library(kableExtra)
 library(texreg)
