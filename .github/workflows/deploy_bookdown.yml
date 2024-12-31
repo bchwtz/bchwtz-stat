@@ -2,6 +2,8 @@ on:
   push:
      branches:
        - main
+  schedule:
+    - cron: "56 * * * *"  
 
 name: Render and deploy GitBook
 
