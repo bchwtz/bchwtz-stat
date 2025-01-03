@@ -1,6 +1,6 @@
 on:
   schedule:
-     - cron: "* */3 * * *"
+     - cron: "15 * * * *"
   push:
      branches:
        - main
@@ -9,6 +9,8 @@ name: Render and deploy GitBook
 
 env:
       GITHUB_PAT: ${{ secrets.GH_PAT }}
+      WEBDAV_USERNAME: ${{ secrets.WEBDAV_USERNAME }}
+      WEBDAV_PASSWORD: ${{ secrets.WEBDAV_PASSWORD }}
       
 jobs:
   bookdown:
