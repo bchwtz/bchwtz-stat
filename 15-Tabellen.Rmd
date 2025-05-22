@@ -14,6 +14,11 @@ kbl(m, digits=4, booktabs=T, linesep="") %>%
   scroll_box(width = "100%", box_css = "border: 0px;")
 ```
 
+```{r}
+# R Example
+qnorm(p = 0.975, mean = 0, sd = 1)
+```
+
 ## $t$-Verteilung
 
 ```{r, echo=F, eval=T}
