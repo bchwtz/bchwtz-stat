@@ -13,10 +13,25 @@ kbl(m, digits=4, booktabs=T, linesep="") %>%
   kable_styling(position = "center")
 ```
 
+## $t$-Verteilung
+
+```{r, echo=F, eval=T}
+n <- c(1:30, seq(40,100,10), seq(200,1000,100))
+gamma <- c(0.995, 0.990, 0.975, 0.950, 0.900, 0.750, 0.500)
+m <- t(sapply(n, function(n,g){qt(g, df=n)}, g=gamma))
+rownames(m) <- NULL; colnames(m) <- gamma
+m <- cbind(n=n, m)
+kbl(m, digits=4, booktabs=T, linesep="") %>%
+  add_header_above(header=c("Beispiel: $F(z) = P(z \\leq 1.96) = 0.9750$" = ncol(m)), escape=F) %>% 
+  add_header_above(header=c("Verteilungsfunktion $F(z)$ der Standardnormalverteilung $N(0,1)$" = ncol(m)), escape = F, bold=T, line= F) %>%
+  kable_styling(position = "center")
+```
+
+
 
 ## $\mathcal{X}^2_{n;\,\gamma}$-Verteilung
 
-```{r, echo=F, size="tiny"}
+```{r, echo=F, eval=T}
 n <- c(1:29,seq(30,100,10),150,200,250,300,400,600,800,1000)
 gamma <- c(0.995, 0.990, 0.975, 0.950, 0.900, 0.750, 0.500, 0.250, 0.100, 0.050, 0.010, 0.005)
 m <- t(sapply(n, function(n,g){qchisq(g, df=n)}, g=gamma))
@@ -27,5 +42,4 @@ kbl(m, digits = 4, booktabs=T, linesep="",col.names = c("$n \\setminus \\gamma$"
   add_header_above(header=c("Beispiel: $P(\\\\mathcal{X}^2_{10} \\\\leq 20.4832) = 0.975$" = ncol(m)), escape=F) %>% 
   add_header_above(header=c("Quantile $\\\\mathcal{X}^2_{n;\\\\,\\\\gamma}$ der $\\\\mathcal{X}^2_n$-Verteilung" = ncol(m)), escape = F, bold=T, line= F) %>% 
   kable_styling(position = "center")
-
 ```
