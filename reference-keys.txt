@@ -50,4 +50,5 @@ hauspreise
 human-ressources
 tabellen
 normalverteilung
+t-verteilung
 mathcalx2_ngamma-verteilung
