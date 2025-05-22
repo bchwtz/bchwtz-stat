@@ -252,7 +252,11 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="daten.html"><a href="daten.html#quellen-2"><i class="fa fa-check"></i>Quellen</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="tabellen.html"><a href="tabellen.html"><i class="fa fa-check"></i><b>16</b> Tabellen</a></li>
+<li class="chapter" data-level="16" data-path="tabellen.html"><a href="tabellen.html"><i class="fa fa-check"></i><b>16</b> Tabellen</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="tabellen.html"><a href="tabellen.html#normalverteilung"><i class="fa fa-check"></i><b>16.1</b> Normalverteilung</a></li>
+<li class="chapter" data-level="16.2" data-path="tabellen.html"><a href="tabellen.html#mathcalx2_ngamma-verteilung"><i class="fa fa-check"></i><b>16.2</b> <span class="math inline">\(\mathcal{X}^2_{n;\,\gamma}\)</span>-Verteilung</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="gruppenarbeit.html"><a href="gruppenarbeit.html"><i class="fa fa-check"></i>Gruppenarbeit</a></li>
 <li class="chapter" data-level="" data-path="evaluation.html"><a href="evaluation.html"><i class="fa fa-check"></i>Evaluation</a></li>
 <li class="chapter" data-level="" data-path="system-info.html"><a href="system-info.html"><i class="fa fa-check"></i>System Info</a></li>
@@ -278,20 +282,20 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="evaluation" class="section level1 unnumbered hasAnchor">
 <h1>Evaluation<a href="evaluation.html#evaluation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="evaluation.html#cb46-1" tabindex="-1"></a>stats_ss2021 <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
-<span id="cb46-2"><a href="evaluation.html#cb46-2" tabindex="-1"></a>  <span class="sc">~</span>date, <span class="sc">~</span>vg, <span class="sc">~</span>g, <span class="sc">~</span>n, <span class="sc">~</span>b, <span class="sc">~</span>vb, <span class="sc">~</span>total,</span>
-<span id="cb46-3"><a href="evaluation.html#cb46-3" tabindex="-1"></a>  <span class="st">&quot;07.04.2021&quot;</span>,<span class="dv">45</span>,<span class="dv">71</span>,<span class="dv">7</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">128</span>,</span>
-<span id="cb46-4"><a href="evaluation.html#cb46-4" tabindex="-1"></a>  <span class="st">&quot;12.04.2021&quot;</span>,<span class="dv">24</span>,<span class="dv">63</span>,<span class="dv">10</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">119</span>,</span>
-<span id="cb46-5"><a href="evaluation.html#cb46-5" tabindex="-1"></a>  <span class="st">&quot;14.04.2021&quot;</span>,<span class="dv">34</span>,<span class="dv">55</span>,<span class="dv">20</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">118</span>,</span>
-<span id="cb46-6"><a href="evaluation.html#cb46-6" tabindex="-1"></a>  <span class="st">&quot;19.04.2021&quot;</span>,<span class="dv">15</span>,<span class="dv">54</span>,<span class="dv">12</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">97</span>,</span>
-<span id="cb46-7"><a href="evaluation.html#cb46-7" tabindex="-1"></a>  <span class="st">&quot;26.04.2021&quot;</span>,<span class="dv">17</span>,<span class="dv">42</span>,<span class="dv">8</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">99</span>,</span>
-<span id="cb46-8"><a href="evaluation.html#cb46-8" tabindex="-1"></a>  <span class="st">&quot;28.04.2021&quot;</span>,<span class="dv">55</span>,<span class="dv">38</span>,<span class="dv">13</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">115</span>,</span>
-<span id="cb46-9"><a href="evaluation.html#cb46-9" tabindex="-1"></a>  <span class="st">&quot;05.05.2021&quot;</span>,<span class="dv">23</span>,<span class="dv">37</span>,<span class="dv">13</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">110</span></span>
-<span id="cb46-10"><a href="evaluation.html#cb46-10" tabindex="-1"></a>)</span>
-<span id="cb46-11"><a href="evaluation.html#cb46-11" tabindex="-1"></a>evcnames<span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Datum&quot;</span>,<span class="st">&quot;sehr zufrieden&quot;</span>, <span class="st">&quot;zufrieden&quot;</span>, </span>
-<span id="cb46-12"><a href="evaluation.html#cb46-12" tabindex="-1"></a>           <span class="st">&quot;weder zufrieden noch unzufrieden&quot;</span>, </span>
-<span id="cb46-13"><a href="evaluation.html#cb46-13" tabindex="-1"></a>           <span class="st">&quot;unzufrieden&quot;</span>, <span class="st">&quot;sehr unzufrieden&quot;</span>, <span class="st">&quot;anwesend&quot;</span>)</span>
-<span id="cb46-14"><a href="evaluation.html#cb46-14" tabindex="-1"></a><span class="fu">kable</span>(stats_ss2021, <span class="at">booktabbs=</span>T, <span class="at">col.names =</span> evcnames)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="evaluation.html#cb47-1" tabindex="-1"></a>stats_ss2021 <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb47-2"><a href="evaluation.html#cb47-2" tabindex="-1"></a>  <span class="sc">~</span>date, <span class="sc">~</span>vg, <span class="sc">~</span>g, <span class="sc">~</span>n, <span class="sc">~</span>b, <span class="sc">~</span>vb, <span class="sc">~</span>total,</span>
+<span id="cb47-3"><a href="evaluation.html#cb47-3" tabindex="-1"></a>  <span class="st">&quot;07.04.2021&quot;</span>,<span class="dv">45</span>,<span class="dv">71</span>,<span class="dv">7</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">128</span>,</span>
+<span id="cb47-4"><a href="evaluation.html#cb47-4" tabindex="-1"></a>  <span class="st">&quot;12.04.2021&quot;</span>,<span class="dv">24</span>,<span class="dv">63</span>,<span class="dv">10</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">119</span>,</span>
+<span id="cb47-5"><a href="evaluation.html#cb47-5" tabindex="-1"></a>  <span class="st">&quot;14.04.2021&quot;</span>,<span class="dv">34</span>,<span class="dv">55</span>,<span class="dv">20</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">118</span>,</span>
+<span id="cb47-6"><a href="evaluation.html#cb47-6" tabindex="-1"></a>  <span class="st">&quot;19.04.2021&quot;</span>,<span class="dv">15</span>,<span class="dv">54</span>,<span class="dv">12</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">97</span>,</span>
+<span id="cb47-7"><a href="evaluation.html#cb47-7" tabindex="-1"></a>  <span class="st">&quot;26.04.2021&quot;</span>,<span class="dv">17</span>,<span class="dv">42</span>,<span class="dv">8</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">99</span>,</span>
+<span id="cb47-8"><a href="evaluation.html#cb47-8" tabindex="-1"></a>  <span class="st">&quot;28.04.2021&quot;</span>,<span class="dv">55</span>,<span class="dv">38</span>,<span class="dv">13</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">115</span>,</span>
+<span id="cb47-9"><a href="evaluation.html#cb47-9" tabindex="-1"></a>  <span class="st">&quot;05.05.2021&quot;</span>,<span class="dv">23</span>,<span class="dv">37</span>,<span class="dv">13</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">110</span></span>
+<span id="cb47-10"><a href="evaluation.html#cb47-10" tabindex="-1"></a>)</span>
+<span id="cb47-11"><a href="evaluation.html#cb47-11" tabindex="-1"></a>evcnames<span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Datum&quot;</span>,<span class="st">&quot;sehr zufrieden&quot;</span>, <span class="st">&quot;zufrieden&quot;</span>, </span>
+<span id="cb47-12"><a href="evaluation.html#cb47-12" tabindex="-1"></a>           <span class="st">&quot;weder zufrieden noch unzufrieden&quot;</span>, </span>
+<span id="cb47-13"><a href="evaluation.html#cb47-13" tabindex="-1"></a>           <span class="st">&quot;unzufrieden&quot;</span>, <span class="st">&quot;sehr unzufrieden&quot;</span>, <span class="st">&quot;anwesend&quot;</span>)</span>
+<span id="cb47-14"><a href="evaluation.html#cb47-14" tabindex="-1"></a><span class="fu">kable</span>(stats_ss2021, <span class="at">booktabbs=</span>T, <span class="at">col.names =</span> evcnames)</span></code></pre></div>
 </div>
             </section>
 

@@ -49,3 +49,5 @@ taxi-trips
 hauspreise
 human-ressources
 tabellen
+normalverteilung
+mathcalx2_ngamma-verteilung
