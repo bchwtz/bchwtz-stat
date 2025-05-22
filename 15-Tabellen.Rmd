@@ -30,7 +30,7 @@ kbl(m, digits = 4, booktabs=T, linesep="",col.names = c("$n \\setminus \\gamma$"
 
 
 
-## $\mathcal{X}^2_{n;\,\gamma}$-Verteilung
+## $\mathcal{X}^{2}_{n;\,\gamma}$-Verteilung
 
 ```{r, echo=F, eval=T}
 n <- c(1:29,seq(30,100,10),150,200,250,300,400,600,800,1000)
