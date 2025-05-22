@@ -1,0 +1,15 @@
+# Tabellen
+
+```{r}
+row <- seq(0,3,0.1); col <- seq(0,0.09, 0.01)
+m <- t(sapply(row, function(r,c){pnorm(r+c)},c=col))
+colnames(m) <- col; rownames(m) <- NULL
+m <- cbind(z=row,m)
+kbl(m, digits=4, booktabs=T, format = "latex", linesep="") %>%
+  add_header_above(header=c("Beispiel: $F(z) = P(z \\\\leq 1.96) = 0.9750$" = ncol(m)), escape=F) %>% 
+  add_header_above(header=c("Verteilungsfunktion $F(z)$ der Standardnormalverteilung $N(0,1)$" = ncol(m)), escape = F, bold=T, line= F) %>%
+  kable_styling(position = "center")
+```
+
+
+
