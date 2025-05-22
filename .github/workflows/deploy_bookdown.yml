@@ -15,7 +15,7 @@ env:
 jobs:
   bookdown:
     name: Render-and-Deploy
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     container: ghcr.io/bchwtz/courserunner:latest
     steps:
       - name: Checkout Repository
