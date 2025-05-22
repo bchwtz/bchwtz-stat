@@ -1,6 +1,6 @@
 # Tabellen
 
-```{r}
+```{r, echo=F, eval=T}
 row <- seq(0,3,0.1); col <- seq(0,0.09, 0.01)
 m <- t(sapply(row, function(r,c){pnorm(r+c)},c=col))
 colnames(m) <- col; rownames(m) <- NULL
