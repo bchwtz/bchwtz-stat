@@ -1,5 +1,7 @@
 # Tabellen
 
+## Normalverteilung
+
 ```{r, echo=F, eval=T}
 row <- seq(0,3,0.1); col <- seq(0,0.09, 0.01)
 m <- t(sapply(row, function(r,c){pnorm(r+c)},c=col))
@@ -12,4 +14,18 @@ kbl(m, digits=4, booktabs=T, linesep="") %>%
 ```
 
 
+## $\mathcal{X}^2_{n;\,\gamma}$-Verteilung
 
+```{r, echo=F, size="tiny"}
+n <- c(1:29,seq(30,100,10),150,200,250,300,400,600,800,1000)
+gamma <- c(0.995, 0.990, 0.975, 0.950, 0.900, 0.750, 0.500, 0.250, 0.100, 0.050, 0.010, 0.005)
+m <- t(sapply(n, function(n,g){qchisq(g, df=n)}, g=gamma))
+rownames(m) <- NULL; colnames(m) <- gamma
+m <- cbind(df=n, m)
+
+kbl(m, digits = 4, booktabs=T, linesep="",col.names = c("$n \\setminus \\gamma$",colnames(m)[-1]), escape = F) %>%
+  add_header_above(header=c("Beispiel: $P(\\\\mathcal{X}^2_{10} \\\\leq 20.4832) = 0.975$" = ncol(m)), escape=F) %>% 
+  add_header_above(header=c("Quantile $\\\\mathcal{X}^2_{n;\\\\,\\\\gamma}$ der $\\\\mathcal{X}^2_n$-Verteilung" = ncol(m)), escape = F, bold=T, line= F) %>% 
+  kable_styling(position = "center")
+
+```
