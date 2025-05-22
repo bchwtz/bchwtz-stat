@@ -10,7 +10,8 @@ m <- cbind(z=row,m)
 kbl(m, digits=4, booktabs=T, linesep="") %>%
   add_header_above(header=c("Beispiel: $F(z) = P(z \\leq 1.96) = 0.9750$" = ncol(m)), escape=F) %>% 
   add_header_above(header=c("Verteilungsfunktion $F(z)$ der Standardnormalverteilung $N(0,1)$" = ncol(m)), escape = F, bold=T, line= F) %>%
-  kable_styling(position = "center")
+  kable_styling(position = "center") %>%
+  scroll_box(width = "100%", box_css = "border: 0px;")
 ```
 
 ## $t$-Verteilung
@@ -23,7 +24,8 @@ rownames(m) <- NULL; colnames(m) <- gamma
 m <- cbind(n=n, m)
 kbl(m, digits = 4, booktabs=T, linesep="",col.names = c("$n \\setminus \\gamma$",colnames(m)[-1]), escape = F) %>%
   add_header_above(header=c("Quantile $t_{n;\\gamma}$ der $t_n$-Verteilung" = ncol(m)), escape = F, bold=T, line= F) %>%
-  kable_styling(position = "center")
+  kable_styling(position = "center") %>%
+  scroll_box(width = "100%", box_css = "border: 0px;")
 ```
 
 
@@ -40,5 +42,6 @@ m <- cbind(df=n, m)
 kbl(m, digits = 4, booktabs=T, linesep="",col.names = c("$n \\setminus \\gamma$",colnames(m)[-1]), escape = F) %>%
   add_header_above(header=c("Beispiel: $P(\\mathcal{X}^2_{10} \\leq 20.4832) = 0.975$" = ncol(m)), escape=F) %>% 
   add_header_above(header=c("Quantile $\\mathcal{X}^2_{n;\\,\\gamma}$ der $\\mathcal{X}^2_n$-Verteilung" = ncol(m)), escape = F, bold=T, line= F) %>% 
-  kable_styling(position = "center")
+  kable_styling(position = "center") %>%
+  scroll_box(width = "100%", box_css = "border: 0px;")
 ```
