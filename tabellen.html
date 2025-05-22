@@ -4,20 +4,20 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Kapitel 13 Multiple Regression | Statistics</title>
-  <meta name="description" content="Kapitel 13 Multiple Regression | Statistics Course Notes" />
+  <title>Kapitel 16 Tabellen | Statistics</title>
+  <meta name="description" content="Kapitel 16 Tabellen | Statistics Course Notes" />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Kapitel 13 Multiple Regression | Statistics" />
+  <meta property="og:title" content="Kapitel 16 Tabellen | Statistics" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Kapitel 13 Multiple Regression | Statistics Course Notes" />
+  <meta property="og:description" content="Kapitel 16 Tabellen | Statistics Course Notes" />
   <meta name="github-repo" content="bchwtz/bchwtz-stat" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Kapitel 13 Multiple Regression | Statistics" />
+  <meta name="twitter:title" content="Kapitel 16 Tabellen | Statistics" />
   
-  <meta name="twitter:description" content="Kapitel 13 Multiple Regression | Statistics Course Notes" />
+  <meta name="twitter:description" content="Kapitel 16 Tabellen | Statistics Course Notes" />
   
 
 <meta name="author" content="Benjamin Buchwitz" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="lineare-regression.html"/>
-<link rel="next" href="fhswf-package.html"/>
+<link rel="prev" href="daten.html"/>
+<link rel="next" href="gruppenarbeit.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -166,8 +166,8 @@ div.csl-indent {
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path=""><a href="#einf%C3%BChrung"><i class="fa fa-check"></i>Einführung</a></li>
 <li class="chapter" data-level="1" data-path="grundlagen.html"><a href="grundlagen.html"><i class="fa fa-check"></i><b>1</b> Grundlagen</a></li>
-<li class="chapter" data-level="2" data-path="13-MultipleRegression.html"><a href="#begriff-der-h%C3%A4ufigkeit"><i class="fa fa-check"></i><b>2</b> Begriff der Häufigkeit</a></li>
-<li class="chapter" data-level="3" data-path="13-MultipleRegression.html"><a href="#ma%C3%9Fzahlen"><i class="fa fa-check"></i><b>3</b> Maßzahlen</a></li>
+<li class="chapter" data-level="2" data-path="15-Tabellen.html"><a href="#begriff-der-h%C3%A4ufigkeit"><i class="fa fa-check"></i><b>2</b> Begriff der Häufigkeit</a></li>
+<li class="chapter" data-level="3" data-path="15-Tabellen.html"><a href="#ma%C3%9Fzahlen"><i class="fa fa-check"></i><b>3</b> Maßzahlen</a></li>
 <li class="chapter" data-level="4" data-path="zweidimensionale-verteilungen.html"><a href="zweidimensionale-verteilungen.html"><i class="fa fa-check"></i><b>4</b> Zweidimensionale Verteilungen</a></li>
 <li class="chapter" data-level="5" data-path="kombinatorik.html"><a href="kombinatorik.html"><i class="fa fa-check"></i><b>5</b> Kombinatorik</a></li>
 <li class="chapter" data-level="6" data-path="wahrscheinlichkeitsrechnung.html"><a href="wahrscheinlichkeitsrechnung.html"><i class="fa fa-check"></i><b>6</b> Wahrscheinlichkeitsrechnung</a></li>
@@ -181,7 +181,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="11.1.1" data-path="hypothesentests.html"><a href="hypothesentests.html#theoretische-grundlagen"><i class="fa fa-check"></i><b>11.1.1</b> Theoretische Grundlagen</a></li>
 <li class="chapter" data-level="11.1.2" data-path="hypothesentests.html"><a href="hypothesentests.html#praktische-anwendung"><i class="fa fa-check"></i><b>11.1.2</b> Praktische Anwendung</a></li>
-<li class="chapter" data-level="11.1.3" data-path="13-MultipleRegression.html"><a href="#erg%C3%A4nzende-erl%C3%A4uterungen"><i class="fa fa-check"></i><b>11.1.3</b> Ergänzende Erläuterungen</a></li>
+<li class="chapter" data-level="11.1.3" data-path="15-Tabellen.html"><a href="#erg%C3%A4nzende-erl%C3%A4uterungen"><i class="fa fa-check"></i><b>11.1.3</b> Ergänzende Erläuterungen</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="lineare-regression.html"><a href="lineare-regression.html"><i class="fa fa-check"></i><b>12</b> Lineare Regression</a></li>
@@ -272,26 +272,73 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="multiple-regression" class="section level1 hasAnchor" number="13">
-<h1><span class="header-section-number">Kapitel 13</span> Multiple Regression<a href="multiple-regression.html#multiple-regression" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-18"></span>
-<img src="slides/gifs/13-MultipleRegression.gif" alt="[Download Slides](slides/13-MultipleRegression.pdf)" width="80%" />
-<p class="caption">
-Figure 13.1: <a href="slides/13-MultipleRegression.pdf">Download Slides</a>
-</p>
-</div>
+<div id="tabellen" class="section level1 hasAnchor" number="16">
+<h1><span class="header-section-number">Kapitel 16</span> Tabellen<a href="tabellen.html#tabellen" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="tabellen.html#cb45-1" tabindex="-1"></a>row <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">3</span>,<span class="fl">0.1</span>); col <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="fl">0.09</span>, <span class="fl">0.01</span>)</span>
+<span id="cb45-2"><a href="tabellen.html#cb45-2" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">sapply</span>(row, <span class="cf">function</span>(r,c){<span class="fu">pnorm</span>(r<span class="sc">+</span>c)},<span class="at">c=</span>col))</span>
+<span id="cb45-3"><a href="tabellen.html#cb45-3" tabindex="-1"></a><span class="fu">colnames</span>(m) <span class="ot">&lt;-</span> col; <span class="fu">rownames</span>(m) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb45-4"><a href="tabellen.html#cb45-4" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">z=</span>row,m)</span>
+<span id="cb45-5"><a href="tabellen.html#cb45-5" tabindex="-1"></a><span class="fu">kbl</span>(m, <span class="at">digits=</span><span class="dv">4</span>, <span class="at">booktabs=</span>T, <span class="at">format =</span> <span class="st">&quot;latex&quot;</span>, <span class="at">linesep=</span><span class="st">&quot;&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb45-6"><a href="tabellen.html#cb45-6" tabindex="-1"></a>  <span class="fu">add_header_above</span>(<span class="at">header=</span><span class="fu">c</span>(<span class="st">&quot;Beispiel: $F(z) = P(z </span><span class="sc">\\\\</span><span class="st">leq 1.96) = 0.9750$&quot;</span> <span class="ot">=</span> <span class="fu">ncol</span>(m)), <span class="at">escape=</span>F) <span class="sc">%&gt;%</span> </span>
+<span id="cb45-7"><a href="tabellen.html#cb45-7" tabindex="-1"></a>  <span class="fu">add_header_above</span>(<span class="at">header=</span><span class="fu">c</span>(<span class="st">&quot;Verteilungsfunktion $F(z)$ der Standardnormalverteilung $N(0,1)$&quot;</span> <span class="ot">=</span> <span class="fu">ncol</span>(m)), <span class="at">escape =</span> F, <span class="at">bold=</span>T, <span class="at">line=</span> F) <span class="sc">%&gt;%</span></span>
+<span id="cb45-8"><a href="tabellen.html#cb45-8" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">position =</span> <span class="st">&quot;center&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning in attr(.knitEnv$meta, &quot;knit_meta_id&quot;): &#39;xfun::attr()&#39; is deprecated.
+## Use &#39;xfun::attr2()&#39; instead.
+## See help(&quot;Deprecated&quot;)
+## Warning in attr(.knitEnv$meta, &quot;knit_meta_id&quot;): &#39;xfun::attr()&#39; is deprecated.
+## Use &#39;xfun::attr2()&#39; instead.
+## See help(&quot;Deprecated&quot;)
+## Warning in attr(.knitEnv$meta, &quot;knit_meta_id&quot;): &#39;xfun::attr()&#39; is deprecated.
+## Use &#39;xfun::attr2()&#39; instead.
+## See help(&quot;Deprecated&quot;)
+## Warning in attr(.knitEnv$meta, &quot;knit_meta_id&quot;): &#39;xfun::attr()&#39; is deprecated.
+## Use &#39;xfun::attr2()&#39; instead.
+## See help(&quot;Deprecated&quot;)
+## Warning in attr(.knitEnv$meta, &quot;knit_meta_id&quot;): &#39;xfun::attr()&#39; is deprecated.
+## Use &#39;xfun::attr2()&#39; instead.
+## See help(&quot;Deprecated&quot;)
+## Warning in attr(.knitEnv$meta, &quot;knit_meta_id&quot;): &#39;xfun::attr()&#39; is deprecated.
+## Use &#39;xfun::attr2()&#39; instead.
+## See help(&quot;Deprecated&quot;)
+## Warning in attr(.knitEnv$meta, &quot;knit_meta_id&quot;): &#39;xfun::attr()&#39; is deprecated.
+## Use &#39;xfun::attr2()&#39; instead.
+## See help(&quot;Deprecated&quot;)
+## Warning in attr(.knitEnv$meta, &quot;knit_meta_id&quot;): &#39;xfun::attr()&#39; is deprecated.
+## Use &#39;xfun::attr2()&#39; instead.
+## See help(&quot;Deprecated&quot;)
+## Warning in attr(.knitEnv$meta, &quot;knit_meta_id&quot;): &#39;xfun::attr()&#39; is deprecated.
+## Use &#39;xfun::attr2()&#39; instead.
+## See help(&quot;Deprecated&quot;)
+## Warning in attr(.knitEnv$meta, &quot;knit_meta_id&quot;): &#39;xfun::attr()&#39; is deprecated.
+## Use &#39;xfun::attr2()&#39; instead.
+## See help(&quot;Deprecated&quot;)
+## Warning in attr(.knitEnv$meta, &quot;knit_meta_id&quot;): &#39;xfun::attr()&#39; is deprecated.
+## Use &#39;xfun::attr2()&#39; instead.
+## See help(&quot;Deprecated&quot;)
+## Warning in attr(.knitEnv$meta, &quot;knit_meta_id&quot;): &#39;xfun::attr()&#39; is deprecated.
+## Use &#39;xfun::attr2()&#39; instead.
+## See help(&quot;Deprecated&quot;)
+## Warning in attr(.knitEnv$meta, &quot;knit_meta_id&quot;): &#39;xfun::attr()&#39; is deprecated.
+## Use &#39;xfun::attr2()&#39; instead.
+## See help(&quot;Deprecated&quot;)
+## Warning in attr(.knitEnv$meta, &quot;knit_meta_id&quot;): &#39;xfun::attr()&#39; is deprecated.
+## Use &#39;xfun::attr2()&#39; instead.
+## See help(&quot;Deprecated&quot;)</code></pre>
+<pre><code>## Warning in attr(x, &quot;align&quot;): &#39;xfun::attr()&#39; is deprecated.
+## Use &#39;xfun::attr2()&#39; instead.
+## See help(&quot;Deprecated&quot;)</code></pre>
+<pre><code>## Warning in attr(x, &quot;format&quot;): &#39;xfun::attr()&#39; is deprecated.
+## Use &#39;xfun::attr2()&#39; instead.
+## See help(&quot;Deprecated&quot;)</code></pre>
 
 </div>
-
-
-
             </section>
 
           </div>
         </div>
       </div>
-<a href="lineare-regression.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="fhswf-package.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="daten.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="gruppenarbeit.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -322,7 +369,7 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://github.com/rstudio/bookdown-demo/edit/master/13-MultipleRegression.Rmd",
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/15-Tabellen.Rmd",
     "text": "Edit"
   },
   "history": {
